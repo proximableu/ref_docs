@@ -286,3 +286,92 @@ if __name__ == "__main__":
     main()
 
 ```
+## Critical Pitfall: AttrMap List Comprehensions & Reference Desynchronization
+
+When mapping styling or attributes across lists of widgets (e.g., list indicators, menus, or status bars), NEVER rebuild and reassign wrappers directly in the list (e.g., `self.stage_widgets[i] = urwid.AttrMap(...)`). 
+
+### The Reference Bug
+In Urwid, parent containers (like `Columns`, `Pile`, or `GridFlow`) store active reference pointers to their children. Reassigning a wrapper in a local Python list breaks the link to the container. The local list updates, but the parent container still renders the old widget reference, meaning changes will never appear on screen.
+
+### The Idiomatic Solution: Encapsulation via `urwid.WidgetWrap`
+To guarantee dynamic text and styling mutations update correctly in parent containers without rebuilding lists, wrap your target widget in a custom `urwid.WidgetWrap` subclass. This exposes a clean, self-contained API for the LLM and keeps references intact.
+
+```python
+import urwid
+
+class StatefulIndicator(urwid.WidgetWrap):
+    """
+    Standard pattern for dynamic list elements.
+    Encapsulates both the inner text and its AttrMap style decorator.
+    """
+    def __init__(self, text: str, initial_style: str = 'idle'):
+        self.text_widget = urwid.Text(text, align='center')
+        self.map_widget = urwid.AttrMap(self.text_widget, initial_style)
+        # Pass the top-most decorator to WidgetWrap
+        super().__init__(self.map_widget)
+
+    def set_style(self, style_name: str):
+        """Safely mutates the styling attribute in-place without breaking parent references."""
+        self.map_widget.set_attr_map({None: style_name})
+
+    def set_text(self, text: str):
+        """Safely mutates the text contents of the inner widget."""
+        self.text_widget.set_text(text)
+
+# Usage Example:
+# 1. Initialize a single, stateful list
+self.stage_indicators = [
+    StatefulIndicator("1. Idle State", 'stage_idle'),
+    StatefulIndicator("2. Idle State", 'stage_idle')
+]
+
+# 2. Add to container (container holds a reference to these specific wrapper instances)
+self.header = urwid.Columns(self.stage_indicators, dividechars=2)
+
+# 3. Mutate elements in-place (the parent container auto-detects the change)
+self.stage_indicators[0].set_style('stage_active')
+self.stage_indicators[0].set_text("1. Active State")## Critical Pitfall: AttrMap List Comprehensions & Reference Desynchronization
+
+When mapping styling or attributes across lists of widgets (e.g., list indicators, menus, or status bars), NEVER rebuild and reassign wrappers directly in the list (e.g., `self.stage_widgets[i] = urwid.AttrMap(...)`). 
+
+### The Reference Bug
+In Urwid, parent containers (like `Columns`, `Pile`, or `GridFlow`) store active reference pointers to their children. Reassigning a wrapper in a local Python list breaks the link to the container. The local list updates, but the parent container still renders the old widget reference, meaning changes will never appear on screen.
+
+### The Idiomatic Solution: Encapsulation via `urwid.WidgetWrap`
+To guarantee dynamic text and styling mutations update correctly in parent containers without rebuilding lists, wrap your target widget in a custom `urwid.WidgetWrap` subclass. This exposes a clean, self-contained API for the LLM and keeps references intact.
+
+```python
+import urwid
+
+class StatefulIndicator(urwid.WidgetWrap):
+    """
+    Standard pattern for dynamic list elements.
+    Encapsulates both the inner text and its AttrMap style decorator.
+    """
+    def __init__(self, text: str, initial_style: str = 'idle'):
+        self.text_widget = urwid.Text(text, align='center')
+        self.map_widget = urwid.AttrMap(self.text_widget, initial_style)
+        # Pass the top-most decorator to WidgetWrap
+        super().__init__(self.map_widget)
+
+    def set_style(self, style_name: str):
+        """Safely mutates the styling attribute in-place without breaking parent references."""
+        self.map_widget.set_attr_map({None: style_name})
+
+    def set_text(self, text: str):
+        """Safely mutates the text contents of the inner widget."""
+        self.text_widget.set_text(text)
+
+# Usage Example:
+# 1. Initialize a single, stateful list
+self.stage_indicators = [
+    StatefulIndicator("1. Idle State", 'stage_idle'),
+    StatefulIndicator("2. Idle State", 'stage_idle')
+]
+
+# 2. Add to container (container holds a reference to these specific wrapper instances)
+self.header = urwid.Columns(self.stage_indicators, dividechars=2)
+
+# 3. Mutate elements in-place (the parent container auto-detects the change)
+self.stage_indicators[0].set_style('stage_active')
+self.stage_indicators[0].set_text("1. Active State")
