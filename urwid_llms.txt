@@ -1,0 +1,5300 @@
+# docs
+
+> A comprehensive technical documentation and code reference for this project.
+
+## Technical Documentation
+
+### examples
+
+#### edit_text.txt
+
+**Title:** Edit Text
+
+**Path:** `examples/edit_text.txt`
+
+**Content:**
+
+```text
+```
+Control Characters: \x01\x02\x03\x04\x05\x06\x07\x08\x0B\x0C\x0E\x0F
+Tabs: 	|
+╔══════════════════════╗
+║ • “smart quotes”	 ║
+║         ╭─────────╮  ║
+║ • euro: │ € 14.95 │  ║
+║         ╰─────────╯  ║
+╚══════════════════════╝
+Math: ∮ E⋅da = Q, n → ∞, ∑ f(i) = ∏ g(i), ∀x∈ℝ: ⌈x⌉ = −⌊−x⌋, α ∧ ¬β = ¬(¬α ∨ β)
+♔♕♖♗♘♙♚♛♜♝♞♟♠♡♢♣♤♥♦♧♨♩♪♫♬
+
+A👨‍👩‍👧B🇨🇦C中文D한글Eあいう
+café☕naïve🍷résumé🍾Ångström
+12345👋🏻67890👋🏿ABCDE👨🏾‍🍳XYZ
+test🇺🇸flag🇯🇵test🇰🇷flag🇨🇳end
+👨‍👩‍👧 👨‍👩‍👧‍👦 👨‍👨‍👦 👩‍👩‍👧‍👧 👨‍👦 👩‍👧
+👩🏻‍💻 👨🏾‍🍳 👩🏽‍🔬 👨🏿‍🚀 👩🏼‍🎨 👨🏻‍⚕️ 👩🏾‍🔧
+👨‍❤️‍👨 👩‍❤️‍💋‍👩 👨🏻‍🤝‍👨🏿 👩🏼‍🤝‍👩🏾
+🇨🇦 🇺🇸 🇬🇧 🇯🇵 🇰🇷 🇫🇷 🇩🇪 🇮🇹 🇪🇸 🇧🇷 🇮🇳 🇨🇳 🇷🇺
+👋🏻👋🏼👋🏽👋🏾👋🏿 👍🏻👍🏼👍🏽👍🏾👍🏿 ✋🏻✋🏼✋🏽✋🏾✋🏿
+café naïve résumé Ångström ñoño façade coöperate
+❤️ ☀️ ⭐ ☕ 🍷 🍾 🎉 vs ❤ ☀ ★ ♠ ♣ ♥ ♦
+人人生而自由,在尊严和权利上一律平等。 すべての人間は、 生まれながらにして自由であり、
+かつ、尊厳と権利とについて平等である。 모든 인간은 태어날 때부터 자유로우며 그 존엄과 권리에 있어 동등하다.
+يولد جميع الناس أحرارًا متساوين في الكرامة والحقوق وقد وهبوا عقلاً وضميرًا
+כל בני האדם נולדו בני חורין ושווים בערכם ובזכויותיהם
+सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त है।
+ＡＢＣＤＥＦＧ １２３４５ Hello世界こんにちは안녕하세요مرحبا
+क ख ग घ ङ च छ ज झ ञ ट ठ ड ढ ण त थ द ध न क्ष त्र ज्ञ श्र द्ध क्क त्त द्व द्य
+ก ข ฃ ค ฅ ฆ ง จ ฉ ช ซ ฌ ญ ฎ ฏ ฐ ฑ ฒ ณ ก็ กี้ กื้อ กุ๊ กู้ เก๋ แก่ โก้ ใก๊ ไก๋
+─━│┃┄┅┆┇┈┉┊┋┌┍┎┏┐┑┒┓└┕┖┗┘┙┚┛├┝┞┟┠┡┢┣┤┥┦┧┨┩┪┫ ▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐░▒▓▔▕▖▗▘▙▚▛▜▝▞▟
+■□▢▣▤▥▦▧▨▩▪▫▬▭▮▯▰▱▲△▴▵▶▷▸▹►▻▼▽▾▿◀◁◂◃◄◅◆◇ ←↑→↓↔↕↖↗↘↙↚↛↜↝↞↟↠↡↢↣↤↥↦↧↨↩↪↫↬↭↮↯↰↱↲↳↴↵
+♈♉♊♋♌♍♎♏♐♑♒♓
+🌍🌎🌏🌐🌑🌒🌓🌔🌕🌖🌗🌘🌙🌚🌛🌜🌝🌞🌟🌠 🎀🎁🎂🎃🎄🎅🎆🎇🎈🎉🎊🎋🎌🎍🎎🎏🎐🎑🎒🎓
+🐀🐁🐂🐃🐄🐅🐆🐇🐈🐉🐊🐋🐌🐍🐎🐏🐐🐑🐒🐓 🍀🍁🍂🍃🍄🍅🍆🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓
+# Limit input size for API calls
+```
+```
+
+#### index.rst
+
+**Title:** tour.py
+
+**Path:** `examples/index.rst`
+
+**Content:**
+
+```text
+```
+.. _example-programs:
+
+********************
+  Example Programs
+********************
+
+.. currentmodule:: urwid
+
+Examples in the distribution's `examples/` directory:
+
+- **tour.py**: Demonstrates layout of standard widgets.
+- **graph.py**: Shows `BarGraph` usage with alarm-driven animation.
+- **edit.py**: Simple text editor with lazy loading.
+- **browse.py**: Lazy directory browser featuring file selection, tree-view, custom widgets, and list walker.
+- **subproc.py**: Subprocess monitoring and output display.
+- **palette_test.py**: Tests available colors across screen modes.
+- **pop_up.py**: Pop-up/drop-down/window anchored to a widget.
+- **bigtext.py**: Demonstrates `BigText` widget.
+
+All examples include visual references (e.g., `tour1.png`, `graph2.png`, etc.) and preserve full API, class hierarchy, parameter types, return types, and technical terminology. Code examples remain fully intact with cross-references preserved.
+```
+```
+
+### manual
+
+#### canvascache.rst
+
+**Title:** Composite Canvases
+
+**Path:** `manual/canvascache.rst`
+
+**Content:**
+
+```text
+.. _canvas-cache:
+
+****************
+  Canvas Cache
+****************
+
+.. currentmodule:: urwid
+
+In Urwid, screen redraws typically update only part of the display. The canvas cache stores unchanged visible canvases to avoid re-rendering widgets unnecessarily.
+
+The :class:`Widget` base class uses metaclass magic to cache results from :meth:`Widget.render`, returning cached canvases on subsequent calls with identical parameters. Invalidate cached state via :meth:`Widget._invalidate`, which forces a redraw on next update.
+
+Similarly, flow widgets' :meth:`Widget.rows` method caches results using the same mechanism; cached rows are returned if matching parameters exist.
+
+**Composite Canvases**  
+Container and decoration widgets combine child canvases into nested composite canvases forming a tree rooted at the topmost widget’s :meth:`Widget.render`. These reference children's content/layout, minimizing duplication. When a canvas is invalidated via :meth:`Widget._invalidate`, all direct parents are also removed from cache (cascade-removal), triggering re-rendering on next update. This occurs only once per screen update, enabling efficient batch updates—critical when input processing precedes rendering.
+
+**Cache Lifetime**  
+Canvases in the cache are weak references; real references must exist for caching to persist. Urwid’s display modules retain the current topmost canvas, ensuring all visible canvases remain cached. Unused canvases are garbage collected.
+
+**Future Work**  
+An update method invalidating only specific screen regions without re-rendering parents would improve efficiency for layout-preserving changes. See mailing list for contributions on display optimizations.
+```
+
+#### displayattributes.rst
+
+**Title:** Using Display Attributes
+
+**Path:** `manual/displayattributes.rst`
+
+**Content:**
+
+```text
+```
+.. _display-attributes:
+
+**********************
+  Display Attributes
+**********************
+
+.. currentmodule:: urwid
+
+Urwid supports monochrome, 16-color, 88-color, 256-color, and 24-bit (true color) display attributes.  
+Support for modes may be enabled via command-line args or interfaces; degradation is graceful.
+
+Palettes in :class:`MainLoop` or directly on screen instances define attributes per mode. Switch modes using:
+:meth:`screen.set_terminal_properties() <raw_display.Screen.set_terminal_properties>`, where ``screen`` is a screen instance or :attr:`MainLoop.screen`.
+
+.. seealso::
+   :meth:`register_palette() reference <BaseScreen.register_palette>`,
+
+.. _using-display-attributes:
+
+Using Display Attributes
+========================
+
+Palette names are used anywhere display attributes are expected. Default: ``None``, rendered using terminal’s default fg/bg.
+
+Use :class:`AttrSpec` for exact fg/bg; requires awareness of current color mode (number of colors).
+
+.. _text-markup:
+
+Text Markup
+-----------
+
+:class:`Text` widgets use markup format per :class:`Text class reference <Text>`. Examples:
+
+- `Text(u"a simple string with default attribute")`: text and padding use ``None``.
+- `Text(('attr1', u"a string in display attribute attr1"))`: text uses palette's ``'attr1'``, padding defaults.
+- `Text([u"a simple string ", ('attr1', u"ending with attr1")])`: first part default, last part ``'attr1'``.
+- `Text([('attr1', u"start in attr1 "), ('attr2', u"end in attr2")])`: text uses respective attrs; padding defaults.
+- `Text(('attr1', [u"nesting example ", ('attr2', u"inside"), u" outside"]))`: only innermost ``'attr2'`` applies.
+
+.. _foreground-background:
+
+Foreground and Background Settings
+==================================
+
+.. list-table::
+   :header-rows: 1
+   :widths: 23 15 10 10 15
+
+   * - Terminal Support
+     - xterm / gnome-term
+     - rxvt
+     - linux console
+     - others
+   * - 16 standard fg colors
+     - YES
+     - YES
+     - YES
+     - widely supported
+   * - 8 standard bg colors
+     - YES
+     - YES
+     - YES
+     - widely supported
+   * - default fg/bg
+     - YES
+     - YES
+     - YES
+     - widely supported
+   * - bold, underline, standout
+     - YES
+     - YES
+     - standout
+     - widely supported
+   * - italics
+     - YES
+     - YES
+     - NO
+     - widely supported
+   * - blink
+     - YES/NO
+     - NO
+     - NO
+     - some support
+   * - strikethrough
+     - YES
+     - NO
+     - NO
+     - some support
+   * - "bright" bg colors
+     - YES
+     - urxvt
+     -
+     - some support
+   * - 256-color fg/bg
+     - YES
+     -
+     -
+     - some support
+   * - 88-color fg/bg
+     - w/palette setting
+     - urxvt
+     -
+     - limited support
+   * - RGB palette setting
+     - YES
+     -
+     -
+     - limited support
+
+.. _16-standard-foreground:
+
+16 Standard Foreground Colors
+-----------------------------
+
+* ``'black'``
+* ``'dark red'``
+* ``'dark green'``
+* ``'brown'``
+* ``'dark blue'``
+* ``'dark magenta'``
+* ``'dark cyan'``
+* ``'light gray'``
+* ``'dark gray'``
+* ``'light red'``
+* ``'light green'``
+* ``'yellow'``
+* ``'light blue'``
+* ``'light magenta'``
+* ``'light cyan'``
+* ``'white'``
+
+.. _8-standard-background:
+
+8 Standard Background Colors
+----------------------------
+
+* ``'black'``
+* ``'dark red'``
+* ``'dark green'``
+* ``'brown'``
+* ``'dark blue'``
+* ``'dark magenta'``
+* ``'dark cyan'``
+* ``'light gray'``
+
+.. _default-foreground-background:
+
+Default Foreground and Background
+---------------------------------
+
+* ``'default'`` (or ``''``)
+
+Use to apply terminal’s default fg/bg. Required for transparent backgrounds. No way to query defaults; use together with other defaults for contrast.
+
+.. _bold-underline-standout:
+
+Bold, Underline, Standout
+-------------------------
+
+* ``'bold'``, ``'underline'``, ``'standout'``, ``'blink'``, ``'italics'``, ``'strikethrough'``
+
+Comma-separated: e.g., ``'light gray,underline,bold,strikethrough'``.  
+In monochrome mode, only these combined values are valid.
+
+Bold may render fg as "bright" (e.g., ``'dark blue,bold'`` → ``'light blue'``). To disable bright-as-bold: set `bright_is_bold=False` in :meth:`BaseScreen.set_terminal_properties`, if supported.
+
+``'standout'`` typically reverses fg/bg.
+
+.. _bright-background:
+
+"Bright" Background Colors
+--------------------------
+
+Supported via terminal-specific settings. Limited support; see table above.
+```
+```
+
+#### displaymodules.rst
+
+**Title:** Raw and Curses Display Modules
+
+**Path:** `manual/displaymodules.rst`
+
+**Content:**
+
+```text
+```rst
+.. _display-modules:
+
+*******************
+  Display Modules
+*******************
+
+.. currentmodule:: urwid
+
+Urwid's display modules abstract screen drawing and user input handling. Choose based on runtime environment.
+
+Typically, select via :class:`MainLoop` constructor:
+
+::
+
+    loop = MainLoop(widget, ..., screen=urwid.display.curses.Screen())
+    # Default: urwid.display.raw.Screen() if not specified
+
+Raw vs Curses Display
+=====================
+
+- **``display.raw.Screen``**: Pure-Python; sends escape sequences directly. No external deps. Default for :class:`MainLoop`.
+- **``display.curses.Screen``**: Uses OS-provided curses/ncurses; optimizes updates, uses termcap. Disables colors on monochrome terminals. Does not support high color (88-/256-/24-bit). Bright foreground without bold unsupported.
+
+| Feature                     | raw       | curses         |
+|-----------------------------|-----------|----------------|
+| optimized C code            | no        | YES            |
+| any terminal compatibility  | no        | YES [1]_       |
+| UTF-8 support               | YES       | YES [2]_       |
+| bright fg without bold      | YES [3]_  | no             |
+| high color support          | YES       | no             |
+| mouse dragging              | YES       | no             |
+| external event loop         | YES       | no             |
+
+.. [1] if termcap entry exists and ``TERM`` set correctly  
+.. [2] if Python linked against wide ncurses  
+.. [3] xterm, gnome-terminal only
+
+Other Display Modules
+=====================
+
+**CGI Web (``display.web``)**  
+Run apps as CGI under Apache. Proof of concept; not production-ready due to security and responsiveness issues. Demonstrated in `tour.py`_, `calc.py`_.
+
+**HTML Screenshot (``display.html_fragment``)**  
+:class:`HtmlGenerator` simulates input, captures screen as HTML fragments via :meth:`draw_screen()`. Fragments embeddable in ``<pre>`` tags; text searchable/selectable, responsive to font scaling. See `example screenshots`_.
+
+**LCD Display (``display.lcd``)**  
+Base classes for grid-based character displays. Full implementation: :class:`CF635Screen` for Crystal Fontz 635 USB with 6 buttons. Example: `lcd_cf635.py`_.  
+.. seealso:: `Urwid on Crystalfontz 635 LCD <http://excess.org/article/2010/03/urwid-crystalfontz-635-lcd/>`
+
+**Setting a Palette**
+===================
+
+Pass ``palette`` to :class:`MainLoop`; forwarded to :meth:`BaseScreen.register_palette()`.
+
+Palette: list of attribute definitions with fg/bg per mode (monochrome, normal, high color). Example:
+
+::
+
+    loop = MainLoop(widget, palette=[
+        ('headings', 'white,underline', 'black', 'bold,underline'),
+        ('body_text', 'dark cyan', 'light gray'),
+        ('buttons', 'yellow', 'dark green', 'standout'),
+        ('section_text', 'body_text'),  # alias
+    ])
+
+See :ref:`display-attributes` for full attribute options.
+```
+```
+
+#### encodings.rst
+
+**Title:** Unicode Support
+
+**Path:** `manual/encodings.rst`
+
+**Content:**
+
+```text
+.. vim: set fileencoding=utf-8:
+
+.. _text-encodings:
+
+***********************
+  Encodings Supported
+***********************
+
+.. currentmodule:: urwid
+
+Urwid uses a single global text encoding setting, initialized at startup based on the locale. Change it via :meth:`set_encoding`, e.g.:
+
+::
+
+    urwid.set_encoding("UTF-8")
+
+Two modes exist: **Unicode** (for `unicode` strings) and **Pass-through** (for `str` strings).  
+- ``txt_a = urwid.Text(u"El Niño")`` → Unicode mode: auto-encoded on display.  
+- ``txt_b = urwid.Text("El Niño")`` → Pass-through mode: assumed to be in user’s expected encoding; incorrect mismatch causes "mojibake".
+
+Pass-through is only safe when using encodings that don’t round-trip properly to Unicode, or when fully aware of implications.
+
+**Unicode Support**  
+Urwid handles basic character widths for layout and wrapping. No RTL support. Supports all valid Unicode characters under the global encoding, plus common DEC graphics:
+
+```
+\u00A3 (£), \u00B0 (°), \u00B1 (±), \u00B7 (·), \u03C0 (π),
+\u2260 (≠), \u2264 (≤), \u2265 (≥), \u23ba (⎺), \u23bb (⎻),
+\u23bc (⎼), \u23bd (⎽), \u2500 (─), \u2502 (│), \u250c (┌),
+\u2510 (┐), \u2514 (└), \u2518 (┘), \u251c (├), \u2524 (┤),
+\u252c (┬), \u2534 (┴), \u253c (┼), \u2592 (▒), \u25c6 (◆)
+```
+
+Non-UTF-8 encodings send these via alternate character set sequences in compatible terminals.
+
+**Pass-through Support**  
+Supported: UTF-8, ISO-8859-*, EUC-JP (JISX 0208 only), EUC-KR, EUC-CN (CN-GB), EUC-TW (CNS 11643 plain 1 only), GB2312, GBK, BIG5, UHC.  
+Character width rules:  
+- UTF-8: per Unicode standard.  
+- ISO-8859-*: all bytes = 1 column wide.  
+- Others: high-bit set → half of a 2-column character.
+
+Unimplemented: additional EUC plains.
+
+**Future Work**  
+Encoding should be **per-screen (display module)**, not global. Enables mixed encodings across screens—requires modifying widget method signatures to include encoding alongside size and focus.  
+Device-specific Unicode mappings also needed (e.g., LCD display with non-standard 8-bit → Unicode mapping), while retaining Unicode text support for device-relevant characters.
+```
+
+#### index.rst
+
+**Title:** Index
+
+**Path:** `manual/index.rst`
+
+**Content:**
+
+```text
+.. _urwid-manual:
+
+################
+  Urwid Manual
+################
+
+.. toctree::
+   :maxdepth: 2
+
+   overview
+   mainloop
+   displaymodules
+   widgets
+   userinput
+   textlayout
+   encodings
+   displayattributes
+   canvascache
+
+
+
+```
+
+#### mainloop.rst
+
+**Title:** Widgets Displayed
+
+**Path:** `manual/mainloop.rst`
+
+**Content:**
+
+```text
+```rst
+*************
+  Main Loop
+*************
+
+.. currentmodule:: urwid
+
+:class:`MainLoop` integrates a :ref:`display module <display-modules>`, widgets, and an :ref:`event loop <event-loops>`. It routes input to widgets, renders the widget tree, and updates the display.
+
+Customize input handling via:
+- :meth:`MainLoop.input_filter`: pre-process user input
+- :meth:`MainLoop.unhandled_input`: handle unprocessed input
+
+Schedule timed events using:
+- :meth:`MainLoop.set_alarm_at`: set alarm at absolute time
+- :meth:`MainLoop.set_alarm_in`: set alarm after delay  
+- Alarms auto-trigger :func:`MainLoop.draw_screen` post-callback
+
+Exit cleanly via :exc:`ExitMainLoop`. Other exceptions terminate the screen and re-raise.
+
+:class:`MainLoop` is recommended but optional; no dependencies exist in other Urwid components.
+
+**Widget Management**
+The top widget is passed to constructor. Change dynamically via:
+- ``loop.widget = new_widget`` (for mode/view switching)
+
+Prefer extending widgets for input logic over :meth:`unhandled_input`, as it improves extensibility.
+
+.. _event-loops:
+
+Event Loops
+===========
+
+Urwid event loops manage waiting for I/O and timeouts. Support integration with:
+- Asyncio_, Twisted_, Glib_, Tornado_, ZMQ_
+- Or a ``select``-based loop (default)
+
+Single instance typically suffices, even across multiple :class:`MainLoop` instances.
+
+Add file descriptors via :meth:`watch_file() <SelectEventLoop.watch_file>`, which handles :exc:`ExitMainLoop` and exceptions in Glib_, Twisted_, Tornado_ callbacks.
+
+.. _Asyncio: https://docs.python.org/3/library/asyncio.html
+.. _Twisted: http://twistedmatrix.com/trac/
+.. _Glib: http://developer.gnome.org/glib/stable/
+.. _Tornado: http://www.tornadoweb.org/
+.. _ZMQ: https://pyzmq.readthedocs.io/en/latest/
+
+**SelectEventLoop**
+-------------------
+Default event loop using ``select.select()``.
+
+::
+
+    # Equivalent to:
+    loop = urwid.MainLoop(widget)
+
+.. seealso:: :class:`SelectEventLoop reference <SelectEventLoop>`
+
+**AsyncioEventLoop**
+--------------------
+Integrates with Python's `asyncio` module.
+
+::
+
+    import asyncio
+    evl = urwid.AsyncioEventLoop(loop=asyncio.get_event_loop())
+    loop = urwid.MainLoop(widget, event_loop=evl)
+
+.. note::
+   Use :meth:`run_in_executor` instead of direct executor usage in multithreaded/multiprocess contexts.  
+   Matches `asyncio.loop.run_in_executor_`.
+
+.. warning::
+   Input uses selectors; only `SelectorEventLoop` supported on Windows.
+
+.. note:: `uvloop` not officially supported.
+
+.. _run_in_executor: https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.run_in_executor
+.. _SelectorEventLoop: https://docs.python.org/3/library/asyncio-eventloop.html?highlight=selectoreventloop#asyncio.SelectorEventLoop
+
+.. seealso:: :class:`AsyncioEventLoop reference <AsyncioEventLoop>`
+
+**TwistedEventLoop**
+--------------------
+Uses Twisted's reactor, emulates :class:`SelectEventLoop` behavior with auto-start/stop on error.
+
+::
+
+    loop = urwid.MainLoop(widget, event_loop=urwid.TwistedEventLoop())
+
+.. note::
+   Use `deferToThread_` for threading; avoid `concurrent.futures` executors.
+
+.. _deferToThread: https://docs.twisted.org/en/stable/core/howto/threading.html#getting-results
+
+.. seealso:: :class:`TwistedEventLoop reference <TwistedEventLoop>`
+
+**GLibEventLoop**
+-----------------
+Uses GLib's event loop; ideal for DBus-integrated apps without Twisted dependency.
+
+::
+
+    loop = urwid.MainLoop(widget, event_loop=urwid.GLibEventLoop())
+
+.. seealso:: :class:`GLibEventLoop reference <GLibEventLoop>`
+
+**TornadoEventLoop**
+--------------------
+Integrates with Tornado's `IOLoop`.
+
+::
+
+    from tornado.ioloop import IOLoop
+    evl = urwid.TornadoEventLoop(IOLoop())
+    loop = urwid.MainLoop(widget, event_loop=evl)
+
+.. note::
+   Use :meth:`run_in_executor` for multiprocessing/threading; mirrors Tornado’s `IOLoop.run_in_executor_`.
+
+.. seealso:: :class:`TornadoEventLoop reference <TornadoEventLoop>`
+
+**ZMQEventLoop**
+----------------
+Integrates with 0MQ.
+
+::
+
+    evl = urwid.ZMQEventLoop()
+    loop = urwid.MainLoop(widget, event_loop=evl)
+
+.. seealso:: :class:`ZMQEventLoop reference <ZMQEventLoop>`
+```
+```
+
+#### overview.rst
+
+**Title:** Library Overview
+
+**Path:** `manual/overview.rst`
+
+**Content:**
+
+```text
+**Library Overview**  
+================  
+
+`urwid` is a console UI library for Python, offering an alternative to direct `curses` usage by automating low-level tasks. Components are loosely coupled and extensible.
+
+- **Display modules**: Handle user input (keystrokes, mouse events), render screen content, map canvas attributes to terminal colors.
+- **Widgets**: Modular building blocks; base interface defined in :class:`Widget`. Layout governed by :ref:`widget layout <widget-layout>`.
+- **Text handling**: Supports multiple :ref:`text encodings <text-encodings>` and configurable :ref:`text layout <text-layout>` for alignment/wrapping. Custom layouts possible.
+- **Display attributes**: Full support for 24-bit/256-color fg/bg, bold, underline, standout; adaptive to terminal capabilities via runtime detection.
+- **ListBox**: Powerful scrollable container; controls contents via built-in or custom list walker classes (ideal for long/nested lists with folding).
+- **Canvas cache**: Stores weak references to rendered canvases. Maintained by active display modules to avoid recomputation during redraws.
+- **Main loop**: Simplifies input handling and screen updates; supports integration with external event loops (:ref:`event-loops <event-loops>`) such as Twisted_ or Glib_.
+
+.. _Glib: http://developer.gnome.org/glib/stable/glib-The-Main-Event-Loop.html  
+.. _Twisted: http://twistedmatrix.com/documents/current/core/howto/reactor-basics.html  
+
+# Limit input size for API calls
+```
+
+#### textlayout.rst
+
+**Title:** Textlayout
+
+**Path:** `manual/textlayout.rst`
+
+**Content:**
+
+```text
+```rst
+.. _text-layout:
+
+***************
+  Text Layout
+***************
+
+.. currentmodule:: urwid
+
+Mapping a text string to screen coordinates in a widget is *text layout*. The :class:`Text` widget's default layout (:class:`StandardTextLayout`) supports left, center, or right alignment and wrapping modes: ``'space'`` (default), ``'any'``, ``'clip'``, and ``'ellipsis'``. Wrapping occurs at spaces or any character; clipped text may include an ellipsis.
+
+::
+
+    Text("Showing some different alignment modes", align=...)
+    # align='left' (default)
+    +----------------+   +------------------------+
+    |Showing some    |   |Showing some different  |
+    |different       |   |alignment modes         |
+    |alignment modes |   +------------------------+
+    +----------------+
+
+    # align='center'
+    +----------------+   +------------------------+
+    |  Showing some  |   | Showing some different |
+    |   different    |   |    alignment modes     |
+    |alignment modes |   +------------------------+
+    +----------------+
+
+    # align='right'
+    +----------------+   +------------------------+
+    |    Showing some|   |  Showing some different|
+    |       different|   |         alignment modes|
+    | alignment modes|   +------------------------+
+    +----------------+
+
+::
+
+    Text("Showing some different wrapping modes\nnewline", wrap=...)
+    # wrap='space' (default)
+    +----------------+   +------------------------+
+    |Showing some    |   |Showing some different  |
+    |different       |   |wrapping modes          |
+    |wrapping modes  |   |newline                 |
+    |newline         |   +------------------------+
+    +----------------+
+
+    # wrap='any'
+    +----------------+   +------------------------+
+    |Showing some dif|   |Showing some different w|
+    |ferent wrapping |   |rapping modes           |
+    |modes           |   |newline                 |
+    |newline         |   +------------------------+
+    +----------------+
+
+    # wrap='clip'
+    +----------------+   +------------------------+
+    |Showing some dif|   |Showing some different w|
+    |newline         |   |newline                 |
+    +----------------+   +------------------------+
+
+    # wrap='ellipsis'
+    +----------------+   +------------------------+
+    |Showing some di…|   |Showing some different …|
+    |newline         |   |newline                 |
+    +----------------+   +------------------------+
+
+.. seealso::
+   :class:`Text widget reference <Text>`
+
+Custom Text Layouts
+===================
+
+The default layout is set via :attr:`Text.layout`. Individual :class:`Text` instances may override this. Custom layouts must extend :class:`TextLayout`, implementing a ``layout()`` method returning text layout structures.
+
+.. seealso::
+   :class:`TextLayout reference <TextLayout>`
+
+Text Layout Structures
+======================
+
+A text layout structure maps string offsets to screen positions and is used for rendering :class:`Text` widgets and cursor positioning in :class:`Edit`. It consists of a list of line layouts, each representing one row.
+
+Each line layout is a list of tuples:
+
+- A. (*column width*, *start offset*, *end offset*) — displays text segment; column width accounts for zero/double-width characters.
+- B. (*space count*, *text offset* or ``None``) — inserts space chars, optionally tied to text offset.
+- C. (*column width*, *offset*, *new text*) — inserts arbitrary text (e.g., hyphenation); not used by :class:`StandardTextLayout`.
+
+.. seealso::
+   :class:`TextLayout reference <TextLayout>`,
+   :class:`StandardTextLayout reference <StandardTextLayout>`
+```
+```
+
+#### userinput.rst
+
+**Title:** Keyboard Input
+
+**Path:** `manual/userinput.rst`
+
+**Content:**
+
+```text
+```rst
+.. vim: set fileencoding=utf-8:
+
+.. _user-input:
+
+**************
+  User Input
+**************
+
+.. currentmodule:: urwid
+
+User input is parsed by the display module and returned via :meth:`get_input()` or :meth:`get_input_nonblocking()`, as a list. Window resize events are included.
+
+:class:`MainLoop` processes each item in the list, passing it to widget methods :meth:`keypress()` or :meth:`mouse_event()`. Input may be filtered before widget dispatch, or unhandled input caught via functions passed to :class:`MainLoop`'s constructor. On resize, :class:`MainLoop` queries new screen dimensions and updates accordingly.
+
+Multiple keystrokes or mouse events are processed individually per list item.
+
+.. _keyboard-input:
+
+Keyboard Input
+==============
+
+Terminal-dependent key transmission; Urwid reports all received keys.
+
+============= =================
+Key pressed   Input returned
+============= =================
+H             ``'h'``
+SHIFT+H       ``'H'``
+SPACE         ``' '``
+ENTER         ``'enter'``
+UP            ``'up'``
+PAGE DOWN     ``'page down'``
+F5            ``'f5'``
+SHIFT+F5      ``'shift f5'``
+CTRL+SHIFT+F5 ``'shift ctrl f5'``
+ALT+J         ``'meta j'``
+============= =================
+
+With Unicode :ref:`text encoding <text-encodings>`, non-ASCII characters return as Unicode strings:
+
+=========== ==============
+Key pressed Input returned
+=========== ==============
+é           ``u'é'``
+Ж           ``u'Ж'``
+カ          ``u'カ'``
+=========== ==============
+
+With non-Unicode encodings, input is returned in original encoding:
+
+=========== =========================================
+Key pressed Input returned (encoding-dependent)
+=========== =========================================
+é           ``'é'``
+Ж           ``'Ж'``
+カ          ``'カ'`` (2 bytes)
+=========== =========================================
+
+Urwid does not convert to Unicode to preserve data integrity. Use an input filter for forced Unicode conversion.
+
+.. _mouse-input:
+
+Mouse Input
+===========
+
+Input as (*event*, *button*, *x*, *y*) tuple:
+- *event*: string, optionally prefixed with ``'shift '``, ``'meta '``, or ``'ctrl'`` if modifier keys held.
+- *button*: 1–5 (left, middle, right, scroll up, scroll down).
+- *x*, *y*: character coordinates from (0, 0) top-left.
+
+Right mouse and modifiers poorly supported; avoid reliance.
+
+``'mouse press'``
+-----------------
+
+=============== ======================
+`button`        Mouse button
+=============== ======================
+1               Left
+2               Middle
+3               Right
+4               Scroll up [#first]_
+5               Scroll down [#first]_
+=============== ======================
+
+.. [#first] Typically no release event sent
+
+``'mouse release'``
+-------------------
+
+*button* = 0 if unknown.
+
+``'mouse drag'``
+----------------
+
+Rare; enables tracking mouse movement across cells. Coordinates may be off-screen at edges.
+```
+```
+
+#### widgets.rst
+
+**Title:** Widget Layout
+
+**Path:** `manual/widgets.rst`
+
+**Content:**
+
+```text
+***********
+  Widgets
+***********
+
+.. currentmodule:: urwid
+
+.. _widget-layout:
+
+Widget Layout
+=============
+
+Urwid uses widgets to partition screen space, enabling fluid interfaces that adapt to terminal size and font. Rendering proceeds hierarchically:
+
+1. Topmost widget *(a)* renders at full screen dimensions.
+2. *(a)* renders child *(b)* up to full screen width/height.
+3. *(b)* distributes its available columns among children *(c)*, *(d)*, *(e)*.
+4. *(e)* divides its available rows between *(f)* and *(g)*.
+5. *(e)* combines canvases from *(f)* and *(g)* → returns to *(b)*.
+6. *(b)* combines canvases from *(c)*, *(d)*, *(e)* → returns to *(a)*.
+7. *(a)* optionally modifies the canvas → final output.
+
+*(a)*, *(b)*, *(e)* are **container widgets**, responsible for positioning and sizing children. They also track focus: when input flows down the hierarchy:
+
+1. Keypress routed to topmost widget *(a)*.
+2. *(a)* → *(b)*.
+3. *(b)* → focused child *(e)*.
+4. *(e)* → its focused child *(f)*.
+5. *(f)* handles or returns keypress.
+6. *(e)* may handle if returned from *(f)*.
+7. *(b)* may handle if returned from *(e)*.
+8. *(a)* may handle if returned from *(b)*.
+
+Box, Flow and Fixed Widgets
+===========================
+
+Widget size is measured in screen columns (`maxcol`) and rows (`maxrow`):
+
+- **Box**: container controls both `maxcol`, `maxrow`.
+- **Flow**: container sets `maxcol`; widget determines `maxrow` via `.rows()`.
+- **Fixed**: widget self-determines both `maxcol`, `maxrow` via `.pack()`.
+
+.. list-table:: Size Determination
+   :widths: 20 40 40
+   :header-rows: 1
+
+   * - Mode
+     - Width
+     - Height
+   * - ``'box'``
+     - Container decides
+     - Container decides
+   * - ``'flow'``
+     - Container decides
+     - Widget’s `.rows()`
+   * - ``'fixed'``
+     - Widget’s `.pack()`
+     - Widget’s `.pack()`
+
+Convention: use `maxcol`, `maxrow` for size.  
+- Box widgets require `(maxcol, maxrow)` tuple.
+- Flow widgets expect `(maxcol,)`.
+- Fixed widgets accept `()`.
+
+.. _basic-grafic-widgets:
+
+Included Widgets
+================
+
+:ref:`Widget class reference <widget-classes>`
+
+.. image:: images/urwid_widgets_1.png  
+Basic and graphic widgets provide interactive content; may be used in custom widget construction.
+
+.. image:: images/urwid_widgets_2.png  
+
+.. _decoration-widgets:
+
+Decoration Widgets
+==================
+
+Alter appearance or position of a single wrapped widget. Accessible via:
+- `original_widget`: direct reference to the decorated widget.
+- `base_widget`: resolves through chain of decorations; points to self on non-decoration widgets.
+
+Safe for universal use in any context.
+
+.. _container-widgets:
+
+Container Widgets
+=================
+
+Divide space among children and manage focus hierarchy. Support nested layouts, where focused child may be multiple levels deep.
+
+**Shared API (preferred)**:
+- `container.focus`: read-only → returns currently focused widget; `None` if empty or non-container.
+- `container.focus_position`: read/write → position of focused child.  
+  - Integer for: `Columns`, `Pile`, `GridFlow`, `Overlay`, `ListBox` with `SimpleListWalker`/`SimpleFocusListWalker`.  
+  - String (`'body'`, `'header'`, `'footer'`) for `Frame`.  
+  - Custom types via list walker in `ListBox`.  
+  → Raises `IndexError` on invalid write or read from empty/non-container widgets. Auto-redraws on update.
+- `container.contents`: read-only (mutable in some cases) → mapping/list-like object of `(child, options)` tuples. Supports:
+  - `__getitem__(x)`
+  - `__setitem__(x, value)`
+  - `__delitem__(x)`
+  → Triggers redraw upon modification.
+  - `Columns`, `Pile`, `GridFlow`: allow assignment from iterable to overwrite contents.
+  - All of: `Columns`, `Pile`, `GridFlow`, `Overlay`, `Frame` support item assignment/deletion.
+- `container.options(...)`: returns option tuple for container-specific layout. Arguments match container’s `__init__()`.  
+  Returns `(str, int, ...)` or `None`; future-proofing via extensible options → **defensive programming required**.
+
+- `container.__getitem__(x)`, alias: `container[x]`:
+  - Equivalent to `container.contents[x][0].base_widget`
+  - Returns child widget at position *x*, skipping decoration layers.
+  - Applies to all containers; skips wrapping decorators like `Padding`.
+
+## Embedded Code Examples
+
+### `wmod.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class QuestionnaireItem(urwid.WidgetWrap[urwid.GridFlow]):
+    def __init__(self) -> None:
+        self.options: list[urwid.RadioButton] = []
+        unsure = urwid.RadioButton(self.options, "Unsure")
+        yes = urwid.RadioButton(self.options, "Yes")
+        no = urwid.RadioButton(self.options, "No")
+        display_widget = urwid.GridFlow([unsure, yes, no], 15, 3, 1, "left")
+        super().__init__(display_widget)
+
+    def get_state(self) -> str:
+        return next(o.label for o in self.options if o.state is True)
+
+```
+
+### `wanat.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class Pudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW,))
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding], maxcol=maxcol)
+
+
+class BoxPudding(urwid.Widget):
+    _sizing = frozenset((urwid.BOX,))
+
+    def render(self, size: tuple[int, int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol, maxrow) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding] * maxrow, maxcol=maxcol)
+
+```
+
+### `wanat_multi.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class MultiPudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW, urwid.BOX))
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int] | tuple[int, int], focus: bool = False) -> urwid.TextCanvas:
+        if len(size) == 1:
+            (maxcol,) = size
+            maxrow = 1
+        else:
+            (maxcol, maxrow) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding] * maxrow, maxcol=maxcol)
+
+```
+
+### `wsel.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class SelectablePudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW,))
+    _selectable = True
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.pudding = "pudding"
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len(self.pudding)
+        pudding = self.pudding
+        if focus:
+            pudding = pudding.upper()
+        return urwid.TextCanvas([pudding.encode("utf-8") * num_pudding], maxcol=maxcol)
+
+    def keypress(self, size: tuple[int], key: str) -> str | None:
+        if len(key) > 1:
+            return key
+
+        if key.lower() in self.pudding:
+            # remove letter from pudding
+            n = self.pudding.index(key.lower())
+            self.pudding = self.pudding[:n] + self.pudding[n + 1 :]
+            if not self.pudding:
+                self.pudding = "pudding"
+            self._invalidate()
+            return None
+
+        return key
+
+```
+
+### `wcur1.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class CursorPudding(urwid.Widget):
+    _sizing = frozenset(["flow"])
+    _selectable = True
+
+    def __init__(self):
+        super().__init__()
+        self.cursor_col = 0
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len("Pudding")
+        cursor = None
+        if focus:
+            cursor = self.get_cursor_coords(size)
+        return urwid.TextCanvas([b"Pudding" * num_pudding], [], cursor=cursor, maxcol=maxcol)
+
+    def get_cursor_coords(self, size: tuple[int]) -> tuple[int, int]:
+        (maxcol,) = size
+        col = min(self.cursor_col, maxcol - 1)
+        return col, 0
+
+    def keypress(self, size: tuple[int], key: str) -> str | None:
+        (maxcol,) = size
+        if key == "left":
+            col = self.cursor_col - 1
+        elif key == "right":
+            col = self.cursor_col + 1
+        else:
+            return key
+        self.cursor_x = max(0, min(maxcol - 1, col))
+        self._invalidate()
+        return None
+
+```
+
+### `wcur2.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class Widget(urwid.ListBox):
+    def get_pref_col(self, size: tuple[int, int]) -> int:
+        return self.cursor_x
+
+    def move_cursor_to_coords(self, size: tuple[int, int], col: int, row: int) -> bool:
+        assert row == 0  # noqa: S101  # in examples we can use `assert`
+        self.cursor_x = col
+        return True
+
+```
+
+
+```
+
+### reference
+
+#### attrspec.rst
+
+**Title:** Raw Display Attributes
+
+**Path:** `reference/attrspec.rst`
+
+**Content:**
+
+```text
+Raw Display Attributes
+======================
+
+.. currentmodule:: urwid
+
+.. autoclass:: AttrSpec
+
+```
+
+#### canvas.rst
+
+**Title:** Canvas Classes and Functions
+
+**Path:** `reference/canvas.rst`
+
+**Content:**
+
+```text
+Canvas Classes and Functions
+============================
+
+.. currentmodule:: urwid
+
+Canvas Classes
+--------------
+
+.. autoclass:: Canvas
+
+.. autoclass:: TextCanvas
+
+.. autoclass:: BlankCanvas
+
+.. autoclass:: SolidCanvas
+
+.. autoclass:: CompositeCanvas
+
+CompositeCanvas Builders
+------------------------
+
+.. autofunction:: CanvasCombine
+
+.. autofunction:: CanvasJoin
+
+.. autofunction:: CanvasOverlay
+
+CanvasCache
+-----------
+
+.. autoclass:: CanvasCache
+
+```
+
+#### command_map.rst
+
+**Title:** Command Map
+
+**Path:** `reference/command_map.rst`
+
+**Content:**
+
+```text
+Command Map
+-----------
+
+.. currentmodule:: urwid
+
+.. autoclass:: CommandMap
+
+```
+
+#### constants.rst
+
+**Title:** Constants
+
+**Path:** `reference/constants.rst`
+
+**Content:**
+
+```text
+```rst
+Constants
+=========
+
+.. currentmodule:: urwid
+
+.. note::
+   Constants may be used, but string literals are equally valid. Internally used to prevent spelling errors; examples typically use strings.
+
+Widget Sizing Methods
+---------------------
+One or more of these values returned by :meth:`Widget.sizing` indicating supported sizing modes:
+
+.. data:: FLOW
+   :annotation: = 'flow'
+   Widget given columns by parent, calculates required rows (e.g. :class:`Text`).
+
+.. data:: BOX
+   :annotation: = 'box'
+   Widget given both columns and rows by parent, must render at exact size (e.g. :class:`ListBox`).
+
+.. data:: FIXED
+   :annotation: = 'fixed'
+   Widget knows fixed column/row count, renders only at that size (e.g. :class:`BigText`).
+
+Horizontal Alignment
+--------------------
+Used for horizontal alignment in :class:`Text`, and child widgets of :class:`Padding`, :class:`Overlay`.
+
+.. data:: LEFT
+   :annotation: = 'left'
+
+.. data:: CENTER
+   :annotation: = 'center'
+
+.. data:: RIGHT
+   :annotation: = 'right'
+
+Vertical Alignment
+------------------
+Used for vertical alignment in child widgets of :class:`Filler`, :class:`Overlay`.
+
+.. data:: TOP
+   :annotation: = 'top'
+
+.. data:: MIDDLE
+   :annotation: = 'middle'
+
+.. data:: BOTTOM
+   :annotation: = 'bottom'
+
+Width and Height Settings
+-------------------------
+Used to distribute or set dimensions in child widgets of :class:`Padding`, :class:`Filler`, :class:`Columns`, :class:`Pile`, :class:`Overlay`.
+
+.. data:: PACK
+   :annotation: = 'pack'
+   Child widget calculates required columns/rows.
+
+.. data:: GIVEN
+   :annotation: = 'given'
+   Fixed size, e.g. ('given', 10) assigns exactly 10 cols/rows.
+
+.. data:: RELATIVE
+   :annotation: = 'relative'
+   Percentage of total space, e.g. ('relative', 50) gives half the available width/height.
+
+.. data:: RELATIVE_100
+   :annotation: = ('relative', 100)
+
+.. data:: WEIGHT
+   :annotation: = 'weight'
+   Weighted distribution; e.g. ('weight', 3) gets 3× more space than a widget with ('weight', 1).
+
+Text Wrapping Modes
+-------------------
+.. data:: SPACE
+   :annotation: = 'space'
+   Wrap on spaces or wide character boundaries.
+
+.. data:: ANY
+   :annotation: = 'any'
+   Wrap before any character exceeding available columns.
+
+.. data:: CLIP
+   :annotation: = 'clip'
+   Clip text beyond column limit, no display of overflow.
+
+.. data:: ELLIPSIS
+   :annotation: = 'ellipsis'
+   Clip if over; append ellipsis at end.
+
+Foreground and Background Colors
+--------------------------------
+
+Standard colors:
+- .. data:: BLACK        :annotation: = 'black'
+- .. data:: DARK_RED     :annotation: = 'dark red'
+- .. data:: DARK_GREEN   :annotation: = 'dark green'
+- .. data:: BROWN        :annotation: = 'brown'
+- .. data:: DARK_BLUE    :annotation: = 'dark blue'
+- .. data:: DARK_MAGENTA :annotation: = 'dark magenta'
+- .. data:: DARK_CYAN    :annotation: = 'dark cyan'
+- .. data:: LIGHT_GRAY   :annotation: = 'light gray'
+
+Standard foregrounds (not safe as background):
+- .. data:: DARK_GRAY     :annotation: = 'dark gray'
+- .. data:: LIGHT_RED     :annotation: = 'light red'
+- .. data:: LIGHT_GREEN   :annotation: = 'light green'
+- .. data:: YELLOW        :annotation: = 'yellow'
+- .. data:: LIGHT_BLUE    :annotation: = 'light blue'
+- .. data:: LIGHT_MAGENTA :annotation: = 'light magenta'
+- .. data:: LIGHT_CYAN    :annotation: = 'light cyan'
+- .. data:: WHITE         :annotation: = 'white'
+
+.. note::
+   No way to detect user terminal’s default light/dark color; use ``DEFAULT`` for both fg/bg only.
+
+.. data:: DEFAULT
+   :annotation: = 'default'
+
+256/88 Color Foregrounds and Backgrounds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+No constants defined. See :ref:`high-colors`.
+
+Signal Names
+------------
+.. data:: UPDATE_PALETTE_ENTRY
+   :annotation: = 'update palette entry'
+   Emitted by :class:`BaseScreen` (e.g. :class:`raw_display.Screen`) when palette changes; handled by :class:`MainLoop`, triggers full redraw.
+
+.. data:: INPUT_DESCRIPTORS_CHANGED
+   :annotation: = 'input descriptors changed'
+   Emitted on input FD list change in :class:`BaseScreen`; handled by :class:`MainLoop` to update event loop monitoring.
+
+Command Names
+-------------
+Used as values in :class:`CommandMap`. Widgets resolve keypresses via :meth:`Widget.keypress`.
+
+Standard commands:
+- .. data:: REDRAW_SCREEN
+   :annotation: = 'redraw screen'
+   Default key: ``ctrl l``; triggers screen refresh in :meth:`MainLoop.process_input` (e.g. for corruption recovery).
+
+- .. data:: ACTIVATE
+   :annotation: = 'activate'
+   Default keys: `` ` ``, ``enter``; activates widgets like :class:`Button`, :class:`CheckBox`, :class:`RadioButton`.
+
+- .. data:: CURSOR_UP
+   :annotation: = 'cursor up'
+   Default key: ``up``; moves selection up one row.
+
+- .. data:: CURSOR_DOWN
+   :annotation: = 'cursor down'
+   Default key: ``down``; moves selection down one row.
+
+- .. data:: CURSOR_LEFT
+   :annotation: = 'cursor left'
+   Default key: ``left``; moves cursor left one column.
+
+- .. data:: CURSOR_RIGHT
+   :annotation: = 'cursor right'
+   Default key: ``right``; moves cursor right one column.
+
+- .. data:: CURSOR_PAGE_UP
+   :annotation: = 'cursor page up'
+   Default key: ``page up``; scrolls selection up one page.
+
+- .. data:: CURSOR_PAGE_DOWN
+   :annotation: = 'cursor page down'
+   Default key: ``page down``; scrolls selection down one page.
+
+- .. data:: CURSOR_MAX_LEFT
+   :annotation: = 'cursor max left'
+   Default key: ``home``; moves to leftmost column.
+
+- .. data:: CURSOR_MAX_RIGHT
+   :annotation: = 'cursor max right'
+   Default key: ``end``; moves to rightmost column.
+```
+```
+
+#### deprecated.rst
+
+**Title:** Deprecated Classes
+
+**Path:** `reference/deprecated.rst`
+
+**Content:**
+
+```text
+Deprecated Classes
+------------------
+
+.. currentmodule:: urwid
+
+.. autoclass:: AttrWrap
+
+.. autoclass:: MetaSuper
+
+```
+
+#### display_modules.rst
+
+**Title:** Display Modules
+
+**Path:** `reference/display_modules.rst`
+
+**Content:**
+
+```text
+Display Modules  
+=================
+
+.. currentmodule:: urwid
+
+.. autoclass:: BaseScreen
+
+Raw Display  
+-------------
+
+.. module:: urwid.display.raw
+
+.. autoclass:: Screen
+
+Curses Display  
+----------------
+
+.. module:: urwid.display.curses
+
+.. autoclass:: Screen
+
+Web Display  
+-----------
+
+.. module:: urwid.display.web
+
+.. autoclass:: Screen
+
+HTML Fragment  
+---------------
+
+.. module:: urwid.display.html_fragment
+
+.. autoclass:: HtmlGenerator
+
+.. autofunction:: screenshot_init
+
+.. autofunction:: screenshot_collect
+
+LCD Display  
+-----------
+
+.. module:: urwid.display.lcd
+
+.. autoclass:: LCDScreen
+
+.. autoclass:: CFLCDScreen
+
+.. autoclass:: CF635Screen
+
+.. autoclass:: KeyRepeatSimulator  # Input size limited per API constraints
+```
+
+#### exceptions.rst
+
+**Title:** Exceptions
+
+**Path:** `reference/exceptions.rst`
+
+**Content:**
+
+```text
+Exceptions
+==========
+
+.. currentmodule:: urwid
+
+.. autoexception:: ExitMainLoop
+
+.. autoexception:: WidgetError
+
+.. autoexception:: ListBoxError
+
+.. autoexception:: ColumnsError
+
+.. autoexception:: PileError
+
+.. autoexception:: GridFlowError
+
+.. autoexception:: BoxAdapterError
+
+.. autoexception:: OverlayError
+
+.. autoexception:: TextError
+
+.. autoexception:: EditError
+
+.. autoexception:: CanvasError
+
+```
+
+#### global_settings.rst
+
+**Title:** Global Settings
+
+**Path:** `reference/global_settings.rst`
+
+**Content:**
+
+```text
+Global Settings
+===============
+
+.. currentmodule:: urwid
+
+.. autofunction:: set_encoding
+
+.. autofunction:: get_encoding_mode
+
+.. autofunction:: supports_unicode
+
+
+```
+
+#### index.rst
+
+**Title:** Index
+
+**Path:** `reference/index.rst`
+
+**Content:**
+
+```text
+.. _urwid-reference:
+
+###############
+Urwid Reference
+###############
+
+.. toctree::
+
+   main_loop
+   widget
+   display_modules
+   list_walkers
+   signals
+   global_settings
+   attrspec
+   canvas
+   text_layout
+   command_map
+   constants
+   exceptions
+   meta
+   deprecated
+
+```
+
+#### list_walkers.rst
+
+**Title:** List Walker Classes
+
+**Path:** `reference/list_walkers.rst`
+
+**Content:**
+
+```text
+List Walker Classes
+===================
+
+.. currentmodule:: urwid
+
+ListWalker
+----------
+
+.. autoclass:: ListWalker
+
+List-like List Walkers
+----------------------
+
+.. autoclass:: SimpleFocusListWalker
+
+.. autoclass:: SimpleListWalker
+
+TreeWalker and Nodes
+--------------------
+
+.. autoclass:: TreeWalker
+
+.. autoclass:: TreeNode
+
+.. autoclass:: ParentNode
+
+```
+
+#### main_loop.rst
+
+**Title:** MainLoop and Event Loops
+
+**Path:** `reference/main_loop.rst`
+
+**Content:**
+
+```text
+MainLoop and Event Loops  
+========================  
+
+.. currentmodule:: urwid  
+
+**MainLoop**  
+.. autoclass:: MainLoop  
+
+**Event Loop Implementations**  
+- `SelectEventLoop`  
+- `AsyncioEventLoop`  
+- `TrioEventLoop`  
+- `GLibEventLoop`  
+- `TwistedEventLoop`  
+- `TornadoEventLoop`  
+- `ZMQEventLoop`  
+
+*Note: All classes support the same API signature and event loop interface; ZMQEventLoop enforces input size limits for API calls.*
+```
+
+#### meta.rst
+
+**Title:** Metaclasses
+
+**Path:** `reference/meta.rst`
+
+**Content:**
+
+```text
+Metaclasses
+===========
+
+.. currentmodule:: urwid
+
+.. autoclass:: WidgetMeta
+
+.. autoclass:: MetaSuper
+
+.. autoclass:: MetaSignals
+
+```
+
+#### signals.rst
+
+**Title:** Signal Functions
+
+**Path:** `reference/signals.rst`
+
+**Content:**
+
+```text
+Signal Functions  
+==================
+
+.. currentmodule:: urwid
+
+The :func:`urwid.\*_signal` functions utilize a shared `Signals` instance for managing signal registration and connections. Do not instantiate `Signals` manually.
+
+- :func:`connect_signal(obj, name, callback, user_arg=None, weak_args=None, user_args=None)`  
+  Connects a callback to a signal on `obj`.
+
+- :meth:`Signals.connect(obj, name, callback, user_arg=None, weak_args=None, user_args=None)`  
+  Registers a signal handler.
+
+- :func:`disconnect_signal_by_key(obj, name, key)`  
+  Removes a connected signal by its unique key.
+
+- :meth:`Signals.disconnect_by_key(obj, name, key)`  
+  Unregisters a signal using the provided key.
+
+- :func:`disconnect_signal(obj, name, callback, user_arg=None, weak_args=None, user_args=None)`  
+  Disconnects a specific callback from a signal.
+
+- :meth:`Signals.disconnect(obj, name, callback, user_arg=None, weak_args=None, user_args=None)`  
+  Removes a registered signal handler.
+
+- :func:`register_signal(sig_cls, signals)`  
+  Registers new signal names for `sig_cls`.
+
+- :meth:`Signals.register(sig_cls, signals)`  
+  Adds signal definitions to the registry.
+
+- :func:`emit_signal(obj, name, \*args)`  
+  Triggers a signal on `obj` with optional arguments.
+
+- :meth:`Signals.emit(obj, name, \*args)`  
+  Fires registered signals and invokes connected callbacks.
+```
+
+#### text_layout.rst
+
+**Title:** Text Layout Classes
+
+**Path:** `reference/text_layout.rst`
+
+**Content:**
+
+```text
+Text Layout Classes
+===================
+
+.. currentmodule:: urwid
+
+.. autoclass:: TextLayout
+
+.. autoclass:: StandardTextLayout
+
+```
+
+#### widget.rst
+
+**Title:** Widget Classes
+
+**Path:** `reference/widget.rst`
+
+**Content:**
+
+```text
+```rst
+.. _widget-classes:
+
+Widget Classes
+==============
+
+.. currentmodule:: urwid
+
+**Base Classes**
+----------------
+
+.. autoclass:: Widget
+   :private-members: _invalidate, _emit
+
+.. autoclass:: WidgetWrap
+
+.. autoclass:: WidgetDecoration
+
+.. autoclass:: WidgetContainerMixin
+
+**Basic Widgets**
+-----------------
+
+.. autoclass:: Text
+
+.. autoclass:: Edit
+
+.. autoclass:: IntEdit
+
+.. autoclass:: Button
+
+.. autoclass:: CheckBox
+
+.. autoclass:: RadioButton
+
+.. autoclass:: TreeWidget
+
+**Numerical Editing (urwid.numedit)**
+------------------------------------
+
+.. autoclass:: IntegerEdit
+
+.. autoclass:: FloatEdit
+
+**Decoration Widgets**
+----------------------
+
+.. autoclass:: SelectableIcon
+
+.. autoclass:: AttrMap
+
+.. autoclass:: Padding
+
+.. autoclass:: Filler
+
+.. autoclass:: Divider
+
+.. autoclass:: LineBox
+
+.. autoclass:: SolidFill
+
+.. autoclass:: PopUpLauncher
+
+.. autoclass:: PopUpTarget
+
+.. autoclass:: WidgetPlaceholder
+
+.. autoclass:: WidgetDisable
+
+**Container Widgets**
+---------------------
+
+.. autoclass:: Frame
+
+.. autoclass:: ListBox
+
+.. autoclass:: TreeListBox
+
+.. autoclass:: Columns
+
+.. autoclass:: Pile
+
+.. autoclass:: GridFlow
+
+.. autoclass:: BoxAdapter
+
+.. autoclass:: Overlay
+
+**Graphic Widgets**
+-------------------
+
+.. autoclass:: BarGraph
+
+.. autoclass:: GraphVScale
+
+.. autoclass:: ProgressBar
+
+.. autoclass:: BigText
+
+.. autofunction:: get_all_fonts
+
+.. autoclass:: Terminal
+
+**Scrollable Widgets**
+----------------------
+
+.. autoclass:: Scrollable
+
+.. autoclass:: ScrollBar
+```
+```
+
+### root
+
+#### changelog.rst
+
+**Title:** Changelog
+
+**Path:** `changelog.rst`
+
+**Content:**
+
+```text
+**Changelog**
+
+**Urwid 4.0.4** *(2026-07-13)*  
+- `urwid.Columns`: Recalculate `column_widths` only if pack widgets change (@penguinolog, #1178)  
+- Fix `IndexError` in `decompose_tagmarkup` when empty nested sublist exists (@gaoflow, #1172)  
+- Typing: Partially annotate examples and fix annotations (@penguinolog, #1173)  
+- `urwid.WidgetContainerMixin`: Return use protocol base class (@penguinolog, #1181)  
+*New contributor:* @gaoflow (#1172)  
+**Full Changelog:** https://github.com/urwid/urwid/compare/4.0.3...4.0.4
+
+**Urwid 4.0.3** *(2026-06-25)*  
+- Deprecate unused `content_delta` (@penguinolog, #1151)  
+- Fix `shard_body_row`: falsy `content_iter` raises `ValueError` (@penguinolog, #1162)  
+- Mass typing annotations fixes  
+**Full Changelog:** https://github.com/urwid/urwid/compare/4.0.2...4.0.3
+
+**Urwid 4.0.2** *(2026-06-02)*  
+- Initial typing support for `urwid` package (@penguinolog, #1144)  
+- Fix `ListBoxError` in `_keypress_page_down` when snapping to widget above top (@neutralinsomniac, #1133)  
+- Fix lazy import of display modules if `__package__` not defined (@penguinolog, #1136)  
+- Typing: Adjust types for `urwid.display`, `urwid.event_loop`, `vterm`, `numedit`, `graphics`, and `urwid.widget` (@penguinolog, #1138–#1142)  
+- Refactor `urwid.widget.scrollable` (@penguinolog, #1143)  
+- Web display: Use complex identifiers for security (@penguinolog, #1137)  
+*New contributor:* @neutralinsomniac (#1133)  
+**Full Changelog:** https://github.com/urwid/urwid/compare/4.0.1...4.0.2
+
+**Urwid 4.0.1** *(2026-05-26)*  
+- Fix three return type annotations (@evgunter, #1121)  
+- Web display: Use secure random session identifiers (@penguinolog, #1128)  
+- Add `SECURITY.md` (@jrwe, #1123)  
+*New contributors:* @evgunter (#1121), @jrwe (#1123)  
+**Full Changelog:** https://github.com/urwid/urwid/compare/4.0.0...4.0.1
+
+**Urwid 4.0.0** *(2026-03-30)*  
+- Remove deprecated protected methods (v4 removal) (@penguinolog, #1078)  
+- Remove deprecated public methods announced for v4 removal (@penguinolog, #1085)  
+- Deprecate `Filler.get_body` and `Filler.set_body` (@penguinolog, #1117)  
+- Announce deadline for deprecated APIs (@penguinolog, #1118)  
+- Fix stdin handling in closed state (@wilkpio, #1112)  
+*New contributor:* @wilkpio (#1112)  
+**Full Changelog:** https://github.com/urwid/urwid/compare/3.0.5...4.0.0
+
+**Urwid 3.0.5** *(2026-02-02)*  
+- Un-deprecate `user_arg` for signals (@penguinolog, #1092)  
+- Fix terminal scroll `TypeError` (@penguinolog, #1098)  
+- Fix emoji grapheme boundary handling (@jquast, #1100)  
+- Fix `Text.pack` line splitting mismatch with `Text.render` (@penguinolog, #1099)  
+*New contributor:* @jquast (#1100)  
+**Full Changelog:** https://github.com/urwid/urwid/compare/3.0.4...3.0.5
+
+**Urwid 3.0.4** *(2025-12-01)*  
+- Fix `CheckBox` deprecation warning: use `user_args` instead of `user_arg` (@sawdmn, #1079)  
+- Refactor lazy imports using official Python pattern (@penguinolog, #1077)  
+*New contributor:* @sawdmn (#1079)  
+**Full Changelog:** https://github.com/urwid/urwid/compare/3.0.3...3.0.4
+
+**Urwid 3.0.3** *(2025-09-15)*  
+- Fix buffer overflow on terminal size request in Python 3.14 (@meeuw, #1027)  
+- Guard against empty list on focus complete (@gryf, #1047)  
+- Add extra code type annotations (@penguinolog, #1037)  
+- Mark Windows support: Win10+ only (@penguinolog, #1038)  
+- Fix devcontainer to support actual requirements (no pinning) (@penguinolog, #1035)  
+*New contributors:* @meeuw (#1027), @gryf (#1047)
+
+**Urwid 3.0.2** *(2025-05-07)*  
+- Fix corner case: `Scrollbar` render for single row height (@penguinolog, #1021)
+
+**Urwid 3.0.1** *(2025-05-07)*  
+- Packaging: Drop `setup.py`, adjust requirements; fix metadata mislabeling (v3.0.0 as Python 3.7 compatible) (@penguinolog, #1018)  
+- Python 3.14 compatibility: Adjust `AsyncioEventLoop` (@penguinolog, #1019)
+
+**Urwid 3.0.0** *(2025-05-06)*  
+- Drop deprecated `__super` property (@penguinolog, #956)  
+- Drop deprecated `FlowWidget`, `BoxWidget`, `FixedWidget` widgets (@penguinolog, #955)  
+- Remove deprecated protected getters from `Canvas` and `AttrSpec` (@penguinolog, #958)  
+- Remove support for `bytes`-based fonts (@penguinolog, #961)  
+- Remove deprecated `TermScroller` (@penguinolog, #960)  
+- Remove deprecated protected getters from decoration widgets (@penguinolog, #960)  
+
+*Note: Final entry includes incomplete line "Limit input size for API calls" — likely truncated or malformed.*
+```
+
+#### index.rst
+
+**Title:** Urwid |release| Documentation
+
+**Path:** `index.rst`
+
+**Content:**
+
+```text
+=============================
+Urwid |release| Documentation
+=============================
+
+.. toctree::
+
+   examples/index
+   tutorial/index
+   manual/index
+   reference/index
+   changelog
+
+```
+
+#### llms.txt
+
+**Title:** llms.txt
+
+**Path:** `llms.txt`
+
+**Content:**
+
+```text
+# Error reading file
+```
+
+### tutorial
+
+#### index.rst
+
+**Title:** Minimal Application
+
+**Path:** `tutorial/index.rst`
+
+**Content:**
+
+```text
+```rst
+.. _urwid-tutorial:
+
+******************
+  Urwid Tutorial
+******************
+
+.. currentmodule:: urwid
+
+Minimal Application
+-------------------
+
+Displays ``Hello World`` in top-left corner; runs until *^C*.
+
+.. literalinclude:: minimal.py
+   :linenos:
+
+- `txt`: :class:`Text` (flow widget) wraps text to next line, sized by screen width.
+- `fill`: :class:`Filler` aligns Text to top, fills rows below with blanks; makes box widget.
+- :class:`MainLoop`: renders topmost (box) widget and handles input. Topmost must be a box widget. No input handling here → exit via *^C*.
+
+Global Input
+--------------
+
+Displays ``Hello World``, echoes each keypress, exits on *Q*.
+
+.. literalinclude:: input.py
+   :linenos:
+
+- :class:`MainLoop` accepts optional `unhandled_input`: called for unhandled keystrokes. Here, all keys pass to `show_or_exit`.
+- :exc:`ExitMainLoop`: cleanly exits `MainLoop.run()` when *Q* pressed. Other inputs update Text content.
+
+Display Attributes
+------------------
+
+Centers ``Hello World`` with distinct attributes for text, padding, and filler rows; waits keypress before exit.
+
+.. literalinclude:: urwid_attr.py
+   :linenos:
+
+- Palette: list of tuples:
+  1. Attribute name (str)
+  2. FG/BG settings for 16-color mode
+  3. BG for 16-color mode
+  4. Optional monochrome settings
+  5. Optional FG/BG for 88/256-color modes
+  6. Optional BG for 88/256-color modes
+- :class:`Text` created with `("banner", " Hello World ")`; uses (*attr*, *text*) tuples → text-markup format.
+- Multiple attributes: combine tuples in list (see :ref:`text-markup`).
+- :class:`AttrMap`: wraps Text with `'streak'`. Maps attribute to children; only unattributed areas (e.g., padding) get new attr.
+- Second :class:`AttrMap`: wraps Filler with `'bg'`.
+
+High Color Modes
+----------------
+
+Displays ``Hello World`` centered using 256-color mode; exits on *Q*.
+
+.. literalinclude:: highcolors.py
+   :linenos:
+
+- Palette defines only high-color FG/BG (ideal for 256-mode). Real apps should define all modes.
+- Underlying: :class:`MainLoop` uses `raw_display.Screen`; set terminal to 256-color via `set_terminal_properties()`.
+- Top-down widget construction: use placeholders when needed.
+- Change topmost widget via `MainLoop.widget = ...`.
+- Decoration widgets (e.g., :class:`AttrMap`) have `original_widget` for reassignment.
+- :class:`Divider`: creates blank lines, styled with :class:`AttrMap`.
+- Container widgets (e.g., :class:`Pile`) use `contents` as list of (*widget*, *options*) tuples; supports `append()`, `options()`.
+
+Question and Answer
+-------------------
+
+Asks for name → responds ``Nice to meet you, <name>.``
+
+.. literalinclude:: qa.py
+   :linenos:
+
+- :class:`Edit`: extends :class:`Text`; accepts input (cursor control via HOME/END/arrows).
+- Custom `QuestionBox` subclasses :class:`Filler`, overrides `keypress()`:
+  - All keys except *ENTER* → default `Filler.keypress` → child `Edit.keypress`.
+  - *ENTER*: replaces `original_widget` with :class:`Text`; no input handling.
+  - Remaining input → `unhandled_input` (`exit_on_q`) → exit on *Q*.
+- Pattern: customize decoration/container widgets for input; preferred over global `unhandled_input`.
+
+Signal Handlers
+---------------
+
+.. image:: sig1.png
+.. image:: sig2.png
+.. image:: sig3.png
+```
+
+## Embedded Code Examples
+
+### `minimal.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+txt = urwid.Text("Hello World")
+fill = urwid.Filler(txt, "top")
+loop = urwid.MainLoop(fill)
+loop.run()
+
+```
+
+### `input.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def show_or_exit(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+    txt.set_text(repr(key))
+
+
+txt = urwid.Text("Hello World")
+fill = urwid.Filler(txt, "top")
+loop = urwid.MainLoop(fill, unhandled_input=show_or_exit)
+loop.run()
+
+```
+
+### `urwid_attr.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+palette = [
+    ("banner", "black", "light gray"),
+    ("streak", "black", "dark red"),
+    ("bg", "black", "dark blue"),
+]
+
+txt = urwid.Text(("banner", " Hello World "), align="center")
+map1 = urwid.AttrMap(txt, "streak")
+fill = urwid.Filler(map1)
+map2 = urwid.AttrMap(fill, "bg")
+loop = urwid.MainLoop(map2, palette, unhandled_input=exit_on_q)
+loop.run()
+
+```
+
+### `highcolors.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key):
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+palette = [
+    ("banner", "", "", "", "#ffa", "#60d"),
+    ("streak", "", "", "", "g50", "#60a"),
+    ("inside", "", "", "", "g38", "#808"),
+    ("outside", "", "", "", "g27", "#a06"),
+    ("bg", "", "", "", "g7", "#d06"),
+]
+
+placeholder = urwid.SolidFill()
+loop = urwid.MainLoop(placeholder, palette, unhandled_input=exit_on_q)
+loop.screen.set_terminal_properties(colors=256)
+loop.widget = urwid.AttrMap(placeholder, "bg")
+loop.widget.original_widget = urwid.Filler(urwid.Pile([]))
+
+div = urwid.Divider()
+outside = urwid.AttrMap(div, "outside")
+inside = urwid.AttrMap(div, "inside")
+txt = urwid.Text(("banner", " Hello World "), align="center")
+streak = urwid.AttrMap(txt, "streak")
+pile = loop.widget.base_widget  # .base_widget skips the decorations
+for item in (outside, inside, streak, inside, outside):
+    pile.contents.append((item, pile.options()))
+
+loop.run()
+
+```
+
+### `qa.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+class QuestionBox(urwid.Filler):
+    def keypress(self, size, key: str) -> str | None:
+        if key != "enter":
+            return super().keypress(size, key)
+        self.original_widget = urwid.Text(
+            f"Nice to meet you,\n{edit.edit_text}.\n\nPress Q to exit.",
+        )
+        return None
+
+
+edit = urwid.Edit("What is your name?\n")
+fill = QuestionBox(edit)
+loop = urwid.MainLoop(fill, unhandled_input=exit_on_q)
+loop.run()
+
+```
+
+### `sig.py`
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+palette = [("I say", "default,bold", "default", "bold")]
+ask = urwid.Edit(("I say", "What is your name?\n"))
+reply = urwid.Text("")
+button_inst = urwid.Button("Exit")
+div = urwid.Divider()
+pile = urwid.Pile([ask, div, reply, div, button_inst])
+top = urwid.Filler(pile, valign="top")
+
+
+def on_ask_change(_edit: urwid.Edit, new_edit_text: str) -> None:
+    reply.set_text(("I say", f"Nice to meet you, {new_edit_text}"))
+
+
+def on_exit_clicked(_button: urwid.Button) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+urwid.connect_signal(ask, "change", on_ask_change)
+urwid.connect_signal(button_inst, "click", on_exit_clicked)
+
+urwid.MainLoop(top, palette).run()
+
+```
+
+### `multiple.py`
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def question():
+    return urwid.Pile([urwid.Edit(("I say", "What is your name?\n"))])
+
+
+def answer(name):
+    return urwid.Text(("I say", f"Nice to meet you, {name}\n"))
+
+
+class ConversationListBox(urwid.ListBox):
+    def __init__(self) -> None:
+        body = urwid.SimpleFocusListWalker([question()])
+        super().__init__(body)
+
+    def keypress(self, size: tuple[int, int], key: str) -> str | None:
+        key = super().keypress(size, key)
+        if key != "enter":
+            return key
+        name = self.focus[0].edit_text
+        if not name:
+            raise urwid.ExitMainLoop()
+        # replace or add response
+        self.focus.contents[1:] = [(answer(name), self.focus.options())]
+        pos = self.focus_position
+        # add a new question
+        self.body.insert(pos + 1, question())
+        self.focus_position = pos + 1
+        return None
+
+
+palette = [("I say", "default,bold", "default")]
+urwid.MainLoop(ConversationListBox(), palette).run()
+
+```
+
+### `smenu.py`
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Iterable
+
+choices = ["Chapman", "Cleese", "Gilliam", "Idle", "Jones", "Palin"]
+
+
+def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
+    body = [urwid.Text(title), urwid.Divider()]
+    for c in choices_:
+        button = urwid.Button(c)
+        urwid.connect_signal(button, "click", item_chosen, c)
+        body.append(urwid.AttrMap(button, None, focus_map="reversed"))
+    return urwid.ListBox(urwid.SimpleFocusListWalker(body))
+
+
+def item_chosen(button: urwid.Button, choice: str) -> None:
+    response = urwid.Text(["You chose ", choice, "\n"])
+    done = urwid.Button("Ok")
+    urwid.connect_signal(done, "click", exit_program)
+    main.original_widget = urwid.Filler(
+        urwid.Pile(
+            [
+                response,
+                urwid.AttrMap(done, None, focus_map="reversed"),
+            ]
+        )
+    )
+
+
+def exit_program(button: urwid.Button) -> None:
+    raise urwid.ExitMainLoop()
+
+
+main = urwid.Padding(menu("Pythons", choices), left=2, right=2)
+top = urwid.Overlay(
+    main,
+    urwid.SolidFill("\N{MEDIUM SHADE}"),
+    align=urwid.CENTER,
+    width=(urwid.RELATIVE, 60),
+    valign=urwid.MIDDLE,
+    height=(urwid.RELATIVE, 60),
+    min_width=20,
+    min_height=9,
+)
+urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
+
+```
+
+### `cmenu.py`
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, Iterable
+
+
+def menu_button(
+    caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    callback: Callable[[urwid.Button], typing.Any],
+) -> urwid.AttrMap:
+    button = urwid.Button(caption, on_press=callback)
+    return urwid.AttrMap(button, None, focus_map="reversed")
+
+
+def sub_menu(
+    caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    choices: Iterable[urwid.Widget],
+) -> urwid.Widget:
+    contents = menu(caption, choices)
+
+    def open_menu(button: urwid.Button) -> None:
+        return top.open_box(contents)
+
+    return menu_button([caption, "..."], open_menu)
+
+
+def menu(
+    title: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    choices: Iterable[urwid.Widget],
+) -> urwid.ListBox:
+    body = [urwid.Text(title), urwid.Divider(), *choices]
+    return urwid.ListBox(urwid.SimpleFocusListWalker(body))
+
+
+def item_chosen(button: urwid.Button) -> None:
+    response = urwid.Text(["You chose ", button.label, "\n"])
+    done = menu_button("Ok", exit_program)
+    top.open_box(urwid.Filler(urwid.Pile([response, done])))
+
+
+def exit_program(button: urwid.Button) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+menu_top = menu(
+    "Main Menu",
+    [
+        sub_menu(
+            "Applications",
+            [
+                sub_menu(
+                    "Accessories",
+                    [
+                        menu_button("Text Editor", item_chosen),
+                        menu_button("Terminal", item_chosen),
+                    ],
+                ),
+            ],
+        ),
+        sub_menu(
+            "System",
+            [
+                sub_menu(
+                    "Preferences",
+                    [menu_button("Appearance", item_chosen)],
+                ),
+                menu_button("Lock Screen", item_chosen),
+            ],
+        ),
+    ],
+)
+
+
+class CascadingBoxes(urwid.WidgetPlaceholder):
+    max_box_levels = 4
+
+    def __init__(self, box: urwid.Widget) -> None:
+        super().__init__(urwid.SolidFill("/"))
+        self.box_level = 0
+        self.open_box(box)
+
+    def open_box(self, box: urwid.Widget) -> None:
+        self.original_widget = urwid.Overlay(
+            urwid.LineBox(box),
+            self.original_widget,
+            align=urwid.CENTER,
+            width=(urwid.RELATIVE, 80),
+            valign=urwid.MIDDLE,
+            height=(urwid.RELATIVE, 80),
+            min_width=24,
+            min_height=8,
+            left=self.box_level * 3,
+            right=(self.max_box_levels - self.box_level - 1) * 3,
+            top=self.box_level * 2,
+            bottom=(self.max_box_levels - self.box_level - 1) * 2,
+        )
+        self.box_level += 1
+
+    def keypress(self, size, key: str) -> str | None:
+        if key == "esc" and self.box_level > 1:
+            self.original_widget = self.original_widget[0]
+            self.box_level -= 1
+            return None
+
+        return super().keypress(size, key)
+
+
+top = CascadingBoxes(menu_top)
+urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
+
+```
+
+### `hmenu.py`
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, Iterable
+
+
+class MenuButton(urwid.Button):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+        callback: Callable[[MenuButton], typing.Any],
+    ) -> None:
+        super().__init__("", on_press=callback)
+        self._w = urwid.AttrMap(
+            urwid.SelectableIcon(["  \N{BULLET} ", caption], 2),
+            None,
+            "selected",
+        )
+
+
+class SubMenu(urwid.WidgetWrap[MenuButton]):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str],
+        choices: Iterable[urwid.Widget],
+    ) -> None:
+        super().__init__(MenuButton([caption, "\N{HORIZONTAL ELLIPSIS}"], self.open_menu))
+        line = urwid.Divider("\N{LOWER ONE QUARTER BLOCK}")
+        listbox = urwid.ListBox(
+            urwid.SimpleFocusListWalker(
+                [
+                    urwid.AttrMap(urwid.Text(["\n  ", caption]), "heading"),
+                    urwid.AttrMap(line, "line"),
+                    urwid.Divider(),
+                    *choices,
+                    urwid.Divider(),
+                ]
+            )
+        )
+        self.menu = urwid.AttrMap(listbox, "options")
+
+    def open_menu(self, button: MenuButton) -> None:
+        top.open_box(self.menu)
+
+
+class Choice(urwid.WidgetWrap[MenuButton]):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    ) -> None:
+        super().__init__(MenuButton(caption, self.item_chosen))
+        self.caption = caption
+
+    def item_chosen(self, button: MenuButton) -> None:
+        response = urwid.Text(["  You chose ", self.caption, "\n"])
+        done = MenuButton("Ok", exit_program)
+        response_box = urwid.Filler(urwid.Pile([response, done]))
+        top.open_box(urwid.AttrMap(response_box, "options"))
+
+
+def exit_program(key):
+    raise urwid.ExitMainLoop()
+
+
+menu_top = SubMenu(
+    "Main Menu",
+    [
+        SubMenu(
+            "Applications",
+            [
+                SubMenu(
+                    "Accessories",
+                    [
+                        Choice("Text Editor"),
+                        Choice("Terminal"),
+                    ],
+                )
+            ],
+        ),
+        SubMenu(
+            "System",
+            [
+                SubMenu("Preferences", [Choice("Appearance")]),
+                Choice("Lock Screen"),
+            ],
+        ),
+    ],
+)
+
+palette = [
+    (None, "light gray", "black"),
+    ("heading", "black", "light gray"),
+    ("line", "black", "light gray"),
+    ("options", "dark gray", "black"),
+    ("focus heading", "white", "dark red"),
+    ("focus line", "black", "dark red"),
+    ("focus options", "black", "light gray"),
+    ("selected", "white", "dark blue"),
+]
+focus_map = {"heading": "focus heading", "options": "focus options", "line": "focus line"}
+
+
+class HorizontalBoxes(urwid.Columns):
+    def __init__(self) -> None:
+        super().__init__([], dividechars=1)
+
+    def open_box(self, box: urwid.Widget) -> None:
+        if self.contents:
+            del self.contents[self.focus_position + 1 :]
+        self.contents.append(
+            (
+                urwid.AttrMap(box, "options", focus_map),
+                self.options(urwid.GIVEN, 24),
+            )
+        )
+        self.focus_position = len(self.contents) - 1
+
+
+top = HorizontalBoxes()
+top.open_box(menu_top.menu)
+urwid.MainLoop(urwid.Filler(top, "middle", 10), palette).run()
+
+```
+
+### `adventure.py`
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, MutableSequence
+
+
+class ActionButton(urwid.Button):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+        callback: Callable[[ActionButton], typing.Any],
+    ) -> None:
+        super().__init__("", on_press=callback)
+        self._w = urwid.AttrMap(urwid.SelectableIcon(caption, 1), None, focus_map="reversed")
+
+
+class Place(urwid.WidgetWrap[ActionButton]):
+    def __init__(self, name: str, choices: MutableSequence[urwid.Widget]) -> None:
+        super().__init__(ActionButton([" > go to ", name], self.enter_place))
+        self.heading = urwid.Text(["\nLocation: ", name, "\n"])
+        self.choices = choices
+        # create links back to ourself
+        for child in choices:
+            getattr(child, "choices", []).insert(0, self)
+
+    def enter_place(self, button: ActionButton) -> None:
+        game.update_place(self)
+
+
+class Thing(urwid.WidgetWrap[ActionButton]):
+    def __init__(self, name: str) -> None:
+        super().__init__(ActionButton([" * take ", name], self.take_thing))
+        self.name = name
+
+    def take_thing(self, button: ActionButton) -> None:
+        self._w = urwid.Text(f" - {self.name} (taken)")
+        game.take_thing(self)
+
+
+def exit_program(button: ActionButton) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+map_top = Place(
+    "porch",
+    [
+        Place(
+            "kitchen",
+            [
+                Place("refrigerator", []),
+                Place("cupboard", [Thing("jug")]),
+            ],
+        ),
+        Place(
+            "garden",
+            [
+                Place(
+                    "tree",
+                    [
+                        Thing("lemon"),
+                        Thing("bird"),
+                    ],
+                ),
+            ],
+        ),
+        Place(
+            "street",
+            [
+                Place("store", [Thing("sugar")]),
+                Place(
+                    "lake",
+                    [Place("beach", [])],
+                ),
+            ],
+        ),
+    ],
+)
+
+
+class AdventureGame:
+    def __init__(self) -> None:
+        self.log = urwid.SimpleFocusListWalker([])
+        self.top = urwid.ListBox(self.log)
+        self.inventory = set()
+        self.update_place(map_top)
+
+    def update_place(self, place: Place) -> None:
+        if self.log:  # disable interaction with previous place
+            self.log[-1] = urwid.WidgetDisable(self.log[-1])
+        self.log.append(urwid.Pile([place.heading, *place.choices]))
+        self.top.focus_position = len(self.log) - 1
+        self.place = place
+
+    def take_thing(self, thing: Thing) -> None:
+        self.inventory.add(thing.name)
+        if self.inventory >= {"sugar", "lemon", "jug"}:
+            response = urwid.Text("You can make lemonade!\n")
+            done = ActionButton(" - Joy", exit_program)
+            self.log[:] = [response, done]
+        else:
+            self.update_place(self.place)
+
+
+game = AdventureGame()
+urwid.MainLoop(game.top, palette=[("reversed", "standout", "")]).run()
+
+```
+
+
+```
+
+## Code Snippets
+
+### examples
+
+#### bigtext.py
+
+**Path:** `examples/bigtext.py`
+
+**Code:**
+
+```python
+../../examples/bigtext.py
+```
+
+#### browse.py
+
+**Path:** `examples/browse.py`
+
+**Code:**
+
+```python
+#!/usr/bin/env python
+
+from __future__ import annotations
+
+import os
+
+import real_browse
+
+os.chdir("/usr/share/doc/python3")
+real_browse.main()
+
+```
+
+#### edit.py
+
+**Path:** `examples/edit.py`
+
+**Code:**
+
+```python
+#!/usr/bin/env python
+
+from __future__ import annotations
+
+import os
+import sys
+
+import real_edit
+
+real_edit.EditDisplay(os.path.join(os.path.dirname(sys.argv[0]), "edit_text.txt")).main()
+
+```
+
+#### graph.py
+
+**Path:** `examples/graph.py`
+
+**Code:**
+
+```python
+../../examples/graph.py
+```
+
+#### palette_test.py
+
+**Path:** `examples/palette_test.py`
+
+**Code:**
+
+```python
+../../examples/palette_test.py
+```
+
+#### pop_up.py
+
+**Path:** `examples/pop_up.py`
+
+**Code:**
+
+```python
+../../examples/pop_up.py
+```
+
+#### real_browse.py
+
+**Path:** `examples/real_browse.py`
+
+**Code:**
+
+```python
+../../examples/browse.py
+```
+
+#### real_edit.py
+
+**Path:** `examples/real_edit.py`
+
+**Code:**
+
+```python
+../../examples/edit.py
+```
+
+#### subproc.py
+
+**Path:** `examples/subproc.py`
+
+**Code:**
+
+```python
+../../examples/subproc.py
+```
+
+#### subproc2.py
+
+**Path:** `examples/subproc2.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import time
+
+time.sleep(1)
+
+print(
+    """factor: 1
+factor: 1000003
+factor: 2000029
+factor: 3000073
+factor: 4000159
+factor: 5000101"""
+)
+
+```
+
+#### tour.py
+
+**Path:** `examples/tour.py`
+
+**Code:**
+
+```python
+../../examples/tour.py
+```
+
+### manual
+
+#### bright_combinations.py
+
+**Path:** `manual/bright_combinations.py`
+
+**Code:**
+
+```python
+#!/usr/bin/env python
+
+from __future__ import annotations
+
+import sys
+
+import urwid
+
+RED_FGS = (
+    "black",
+    "light gray",
+    "white",
+    "light cyan",
+    "light red",
+    "light green",
+    "yellow",
+    "light magenta",
+)
+GREEN_FGS = (
+    "black",
+    "light gray",
+    "dark blue",
+    "white",
+    "light cyan",
+    "light red",
+    "light green",
+    "yellow",
+)
+BROWN_FGS = (
+    "black",
+    "dark blue",
+    "dark gray",
+    "white",
+    "light blue",
+    "light cyan",
+    "light red",
+    "light green",
+    "yellow",
+)
+MAGENTA_FGS = (
+    "black",
+    "light gray",
+    "dark blue",
+    "white",
+    "light cyan",
+    "light red",
+    "light green",
+    "yellow",
+    "light magenta",
+)
+
+BG_FGS = [
+    ("dark red", RED_FGS),
+    ("dark green", GREEN_FGS),
+    ("brown", BROWN_FGS),
+    ("dark magenta", MAGENTA_FGS),
+]
+
+body = urwid.SimpleFocusListWalker([])
+
+for bg, fgs in BG_FGS:
+    spec = urwid.AttrSpec(fgs[0], bg)
+
+    body.extend(
+        (
+            urwid.AttrMap(urwid.Divider(), spec),
+            urwid.AttrMap(
+                urwid.GridFlow(
+                    (urwid.AttrMap(urwid.Text(f"'{fg}' on '{bg}'"), urwid.AttrSpec(fg, bg)) for fg in fgs),
+                    35,
+                    0,
+                    0,
+                    urwid.LEFT,
+                ),
+                spec,
+            ),
+            urwid.AttrMap(urwid.Divider(), spec),
+        )
+    )
+
+try:
+    urwid.MainLoop(urwid.ListBox(body)).run()
+except KeyboardInterrupt:
+    sys.exit(0)
+
+```
+
+#### safe_combinations.py
+
+**Path:** `manual/safe_combinations.py`
+
+**Code:**
+
+```python
+#!/usr/bin/env python
+
+from __future__ import annotations
+
+import sys
+
+import urwid
+
+BLACK_FGS = (
+    "light gray",
+    "dark cyan",
+    "dark red",
+    "dark green",
+    "dark magenta",
+    "white",
+    "light blue",
+    "light cyan",
+    "light red",
+    "light green",
+    "yellow",
+    "light magenta",
+)
+GRAY_FGS = (
+    "black",
+    "dark blue",
+    "dark cyan",
+    "dark red",
+    "dark green",
+    "dark magenta",
+    "white",
+    "light red",
+    "yellow",
+    "light magenta",
+)
+BLUE_FGS = (
+    "light gray",
+    "dark cyan",
+    "white",
+    "light cyan",
+    "light red",
+    "light green",
+    "yellow",
+    "light magenta",
+)
+CYAN_FGS = (
+    "black",
+    "light gray",
+    "dark blue",
+    "white",
+    "light cyan",
+    "light green",
+    "yellow",
+)
+
+BG_FGS = [
+    ("black", BLACK_FGS),
+    ("light gray", GRAY_FGS),
+    ("dark blue", BLUE_FGS),
+    ("dark cyan", CYAN_FGS),
+]
+
+body = urwid.SimpleFocusListWalker([])
+
+for bg, fgs in BG_FGS:
+    spec = urwid.AttrSpec(fgs[0], bg)
+
+    body.extend(
+        (
+            urwid.AttrMap(urwid.Divider(), spec),
+            urwid.AttrMap(
+                urwid.GridFlow(
+                    (urwid.AttrMap(urwid.Text(f"'{fg}' on '{bg}'"), urwid.AttrSpec(fg, bg)) for fg in fgs),
+                    35,
+                    0,
+                    0,
+                    urwid.LEFT,
+                ),
+                spec,
+            ),
+            urwid.AttrMap(urwid.Divider(), spec),
+        )
+    )
+
+try:
+    urwid.MainLoop(urwid.ListBox(body)).run()
+except KeyboardInterrupt:
+    sys.exit(0)
+
+```
+
+#### wanat.py
+
+**Path:** `manual/wanat.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class Pudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW,))
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding], maxcol=maxcol)
+
+
+class BoxPudding(urwid.Widget):
+    _sizing = frozenset((urwid.BOX,))
+
+    def render(self, size: tuple[int, int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol, maxrow) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding] * maxrow, maxcol=maxcol)
+
+```
+
+#### wanat_multi.py
+
+**Path:** `manual/wanat_multi.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class MultiPudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW, urwid.BOX))
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int] | tuple[int, int], focus: bool = False) -> urwid.TextCanvas:
+        if len(size) == 1:
+            (maxcol,) = size
+            maxrow = 1
+        else:
+            (maxcol, maxrow) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding] * maxrow, maxcol=maxcol)
+
+```
+
+#### wcur1.py
+
+**Path:** `manual/wcur1.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class CursorPudding(urwid.Widget):
+    _sizing = frozenset(["flow"])
+    _selectable = True
+
+    def __init__(self):
+        super().__init__()
+        self.cursor_col = 0
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len("Pudding")
+        cursor = None
+        if focus:
+            cursor = self.get_cursor_coords(size)
+        return urwid.TextCanvas([b"Pudding" * num_pudding], [], cursor=cursor, maxcol=maxcol)
+
+    def get_cursor_coords(self, size: tuple[int]) -> tuple[int, int]:
+        (maxcol,) = size
+        col = min(self.cursor_col, maxcol - 1)
+        return col, 0
+
+    def keypress(self, size: tuple[int], key: str) -> str | None:
+        (maxcol,) = size
+        if key == "left":
+            col = self.cursor_col - 1
+        elif key == "right":
+            col = self.cursor_col + 1
+        else:
+            return key
+        self.cursor_x = max(0, min(maxcol - 1, col))
+        self._invalidate()
+        return None
+
+```
+
+#### wcur2.py
+
+**Path:** `manual/wcur2.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class Widget(urwid.ListBox):
+    def get_pref_col(self, size: tuple[int, int]) -> int:
+        return self.cursor_x
+
+    def move_cursor_to_coords(self, size: tuple[int, int], col: int, row: int) -> bool:
+        assert row == 0  # noqa: S101  # in examples we can use `assert`
+        self.cursor_x = col
+        return True
+
+```
+
+#### wmod.py
+
+**Path:** `manual/wmod.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class QuestionnaireItem(urwid.WidgetWrap[urwid.GridFlow]):
+    def __init__(self) -> None:
+        self.options: list[urwid.RadioButton] = []
+        unsure = urwid.RadioButton(self.options, "Unsure")
+        yes = urwid.RadioButton(self.options, "Yes")
+        no = urwid.RadioButton(self.options, "No")
+        display_widget = urwid.GridFlow([unsure, yes, no], 15, 3, 1, "left")
+        super().__init__(display_widget)
+
+    def get_state(self) -> str:
+        return next(o.label for o in self.options if o.state is True)
+
+```
+
+#### wsel.py
+
+**Path:** `manual/wsel.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class SelectablePudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW,))
+    _selectable = True
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.pudding = "pudding"
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len(self.pudding)
+        pudding = self.pudding
+        if focus:
+            pudding = pudding.upper()
+        return urwid.TextCanvas([pudding.encode("utf-8") * num_pudding], maxcol=maxcol)
+
+    def keypress(self, size: tuple[int], key: str) -> str | None:
+        if len(key) > 1:
+            return key
+
+        if key.lower() in self.pudding:
+            # remove letter from pudding
+            n = self.pudding.index(key.lower())
+            self.pudding = self.pudding[:n] + self.pudding[n + 1 :]
+            if not self.pudding:
+                self.pudding = "pudding"
+            self._invalidate()
+            return None
+
+        return key
+
+```
+
+### root
+
+#### conf.py
+
+**Path:** `conf.py`
+
+**Code:**
+
+```python
+#
+# Urwid documentation build configuration file, created by
+# sphinx-quickstart on Wed Nov 30 20:10:17 2011.
+#
+# This file is execfile()d with the current directory set to its containing dir.
+#
+# Note that not all possible configuration values are present in this
+# autogenerated file.
+#
+# All configuration values have a default; values that are commented out
+# serve to show the default.
+
+from __future__ import annotations
+
+import ast
+import os
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+# sys.path.insert(0, os.path.abspath('.'))
+
+# -- General configuration -----------------------------------------------------
+
+# If your documentation needs a minimal Sphinx version, state it here.
+# needs_sphinx = '1.0'
+
+# Add any Sphinx extension module names here, as strings. They can be extensions
+# coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.todo",
+    "sphinx.ext.coverage",
+    "sphinx.ext.githubpages",
+]
+
+# Add any paths that contain templates here, relative to this directory.
+templates_path = ["tools/templates"]
+
+# The suffix of source filenames.
+source_suffix = ".rst"
+
+# The encoding of source files.
+# source_encoding = 'utf-8-sig'
+
+# The master toctree document.
+master_doc = "index"
+
+# General information about the project.
+project = "Urwid"
+copyright = "2014, Ian Ward et al"  # noqa: A001  # sphinx magic
+
+# The version info for the project you're documenting, acts as replacement for
+# |version| and |release|, also used in various other places throughout the
+# built documents.
+FILE_PATH = os.path.dirname(__file__)
+VERSION_MODULE = os.path.abspath(os.path.join(FILE_PATH, "../urwid/version.py"))
+VERSION_VARS = {}
+
+
+with open(VERSION_MODULE, encoding="utf-8") as f:
+    parsed = ast.parse(f.read())
+    for node in parsed.body:
+        if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+            # Not variable define
+            continue
+
+        if node.value is None:
+            # Not a proper assign
+            continue
+
+        try:
+            value = ast.literal_eval(node.value)
+        except ValueError:
+            continue
+
+        if isinstance(node, ast.Assign):
+            VERSION_VARS.update(
+                {tgt.id: value for tgt in node.targets if isinstance(tgt, ast.Name) and isinstance(tgt.ctx, ast.Store)}
+            )
+        else:
+            VERSION_VARS[node.target.id] = value
+
+# The short X.Y version.
+version = ".".join(str(x) for x in VERSION_VARS["__version_tuple__"][:2])
+# The full version, including alpha/beta/rc tags.
+release = VERSION_VARS["__version__"]
+
+# The language for content autogenerated by Sphinx. Refer to documentation
+# for a list of supported languages.
+# language = None
+
+# There are two options for replacing |today|: either, you set today to some
+# non-false value, then it is used:
+# today = ''
+# Else, today_fmt is used as the format for a strftime call.
+# today_fmt = '%B %d, %Y'
+
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+exclude_patterns = ["_build"]
+
+# The reST default role (used for this markup: `text`) to use for all documents.
+# default_role = None
+
+# If true, '()' will be appended to :func: etc. cross-reference text.
+# add_function_parentheses = True
+
+# If true, the current module name will be prepended to all description
+# unit titles (such as .. function::).
+# add_module_names = True
+
+# If true, sectionauthor and moduleauthor directives will be shown in the
+# output. They are ignored by default.
+# show_authors = False
+
+# The name of the Pygments (syntax highlighting) style to use.
+pygments_style = "sphinx"
+
+# A list of ignored prefixes for module index sorting.
+# modindex_common_prefix = []
+
+
+# -- Options for HTML output ---------------------------------------------------
+
+# Generate CNAME
+html_baseurl = "https://urwid.org"
+
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+html_theme = "default"
+html_style = None  # make readthedocs really use the default theme
+
+# Theme options are theme-specific and customize the look and feel of a theme
+# further.  For a list of options available for each theme, see the
+# documentation.
+html_theme_options = {
+    "sidebarbgcolor": "#263193",
+    "sidebarbtncolor": "#263193",
+    "footerbgcolor": "#181035",
+    "relbarbgcolor": "#181035",
+    "sidebarlinkcolor": "#aabee8",
+    "linkcolor": "#263193",
+    "visitedlinkcolor": "#263193",
+    "headtextcolor": "#181035",
+    "headlinkcolor": "#181035",
+    "collapsiblesidebar": False,
+}
+
+# Add any paths that contain custom themes here, relative to this directory.
+# html_theme_path = []
+
+# The name for this set of Sphinx documents.  If None, it defaults to
+# "<project> v<release> documentation".
+html_title = f"Urwid {release}"
+
+# A shorter title for the navigation bar.  Default is the same as html_title.
+# html_short_title = None
+
+# The name of an image file (relative to this directory) to place at the top
+# of the sidebar.
+html_logo = "urwid-logo.png"
+
+# The name of an image file (within the static path) to use as favicon of the
+# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
+# pixels large.
+# html_favicon = None
+
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
+html_static_path = ["tools/static"]
+
+# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
+# using the given strftime format.
+# html_last_updated_fmt = '%b %d, %Y'
+
+# If true, SmartyPants will be used to convert quotes and dashes to
+# typographically correct entities.
+# html_use_smartypants = True
+
+# Custom sidebar templates, maps document names to template names.
+html_sidebars = {"index": ["indexsidebar.html"]}
+
+# Additional templates that should be rendered to pages, maps page names to
+# template names.
+html_additional_pages = {
+    "index": "indexcontent.html",
+}
+
+# If false, no module index is generated.
+html_domain_indices = False
+
+# If false, no index is generated.
+# html_use_index = True
+
+# If true, the index is split into individual pages for each letter.
+# html_split_index = False
+
+# If true, links to the reST sources are added to the pages.
+# html_show_sourcelink = True
+
+# If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
+# html_show_sphinx = True
+
+# If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
+# html_show_copyright = True
+
+# If true, an OpenSearch description file will be output, and all pages will
+# contain a <link> tag referring to it.  The value of this option must be the
+# base URL from which the finished HTML is served.
+# html_use_opensearch = ''
+
+# This is the file name suffix for HTML files (e.g. ".xhtml").
+# html_file_suffix = None
+
+# Output file base name for HTML help builder.
+htmlhelp_basename = "Urwiddoc"
+
+
+# -- Options for LaTeX output --------------------------------------------------
+
+latex_elements = {
+    # The paper size ('letterpaper' or 'a4paper').
+    # 'papersize': 'letterpaper',
+    # The font size ('10pt', '11pt' or '12pt').
+    # 'pointsize': '10pt',
+    # Additional stuff for the LaTeX preamble.
+    # 'preamble': '',
+}
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title, author, documentclass [howto/manual]).
+latex_documents = [
+    ("index", "Urwid.tex", "Urwid Documentation", "Ian Ward", "manual"),
+]
+
+# The name of an image file (relative to this directory) to place at the top of
+# the title page.
+# latex_logo = None
+
+# For "manual" documents, if this is true, then toplevel headings are parts,
+# not chapters.
+# latex_use_parts = False
+
+# If true, show page references after internal links.
+# latex_show_pagerefs = False
+
+# If true, show URL addresses after external links.
+# latex_show_urls = False
+
+# Documents to append as an appendix to all manuals.
+# latex_appendices = []
+
+# If false, no module index is generated.
+# latex_domain_indices = True
+
+
+# -- Options for manual page output --------------------------------------------
+
+# One entry per manual page. List of tuples
+# (source start file, name, description, authors, manual section).
+man_pages = [("index", "urwid", "Urwid Documentation", ["Ian Ward"], 1)]
+
+# If true, show URL addresses after external links.
+# man_show_urls = False
+
+
+# -- Options for Texinfo output ------------------------------------------------
+
+# Grouping the document tree into Texinfo files. List of tuples
+# (source start file, target name, title, author,
+#  dir menu entry, description, category)
+texinfo_documents = [
+    ("index", "Urwid", "Urwid Documentation", "Ian Ward", "Urwid", "One line description of project.", "Miscellaneous"),
+]
+
+# Documents to append as an appendix to all manuals.
+# texinfo_appendices = []
+
+# If false, no module index is generated.
+# texinfo_domain_indices = True
+
+# How to display URL addresses: 'footnote', 'no', or 'inline'.
+# texinfo_show_urls = 'footnote'
+
+
+# -- Options for Epub output ---------------------------------------------------
+
+# Bibliographic Dublin Core info.
+epub_title = "Urwid"
+epub_author = "Ian Ward"
+epub_publisher = "Ian Ward"
+epub_copyright = "2014, Ian Ward et al"
+
+# The language of the text. It defaults to the language option
+# or en if the language is not set.
+# epub_language = ''
+
+# The scheme of the identifier. Typical schemes are ISBN or URL.
+# epub_scheme = ''
+
+# The unique identifier of the text. This can be a ISBN number
+# or the project homepage.
+# epub_identifier = ''
+
+# A unique identification for the text.
+# epub_uid = ''
+
+# A tuple containing the cover image and cover page html template filenames.
+# epub_cover = ()
+
+# HTML files that should be inserted before the pages created by sphinx.
+# The format is a list of tuples containing the path and title.
+# epub_pre_files = []
+
+# HTML files shat should be inserted after the pages created by sphinx.
+# The format is a list of tuples containing the path and title.
+# epub_post_files = []
+
+# A list of files that should not be packed into the epub file.
+# epub_exclude_files = []
+
+# The depth of the table of contents in toc.ncx.
+# epub_tocdepth = 3
+
+# Allow duplicate toc entries.
+# epub_tocdup = True
+
+autoclass_content = "both"
+
+autodoc_member_order = "alphabetical"
+
+autodoc_default_options = {"members": True}
+
+```
+
+### tools
+
+#### compile_pngs.sh
+
+**Path:** `tools/compile_pngs.sh`
+
+**Code:**
+
+```bash
+#!/bin/bash -e
+
+# args: scripts to capture
+
+DISPLAYNUM=5
+SCREENSHOTS=`dirname $0`/screenshots.sh
+
+XVFB=$(which Xvfb)
+if [ -n $XVFB ]; then
+	Xvfb :$DISPLAYNUM -screen 0 1024x768x24 &
+	XVFBPID=$!
+	DISPLAY=:$DISPLAYNUM # this still doesn't work
+	trap "kill $XVFBPID" EXIT
+fi
+
+for script in $@; do
+	echo "doing $script"
+	if [ -f "${script}.xdotool" ]; then
+		"$SCREENSHOTS" "$script" < "${script}.xdotool"
+	fi
+done
+
+```
+
+#### screenshots.sh
+
+**Path:** `tools/screenshots.sh`
+
+**Code:**
+
+```bash
+#!/bin/bash
+
+# $1: python script to run
+# urxvt, xdotool and import are required to run this script
+
+CLASSNAME=$(head -c 6 /dev/urandom | base64 | tr -cd [:alnum:])
+PYTHON=python
+
+urxvt -bg gray90 -b 0 +sb -fn '-misc-fixed-medium-*-*-*-*-140-*-*-*-*-*-*' \
+	-fb '-misc-fixed-bold-*-*-*-*-140-*-*-*-*-*-*' \
+	-name "$CLASSNAME" -e "$PYTHON" "$1" &
+RXVTPID=$!
+until RXVTWINDOWID=$(xdotool search --classname "$CLASSNAME"); do
+	sleep 0.1
+done
+export RXVTWINDOWID
+image=${1%.py}
+
+c=1
+while read -r line; do
+	# the echo trick is needed to expand RXVTWINDOWID variable
+	echo $line | xdotool -
+	echo "sending $line"
+	import -window "$RXVTWINDOWID" "${image}$c.png"
+	(( c++ ))
+done
+
+kill $RXVTPID
+
+```
+
+### tutorial
+
+#### adventure.py
+
+**Path:** `tutorial/adventure.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, MutableSequence
+
+
+class ActionButton(urwid.Button):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+        callback: Callable[[ActionButton], typing.Any],
+    ) -> None:
+        super().__init__("", on_press=callback)
+        self._w = urwid.AttrMap(urwid.SelectableIcon(caption, 1), None, focus_map="reversed")
+
+
+class Place(urwid.WidgetWrap[ActionButton]):
+    def __init__(self, name: str, choices: MutableSequence[urwid.Widget]) -> None:
+        super().__init__(ActionButton([" > go to ", name], self.enter_place))
+        self.heading = urwid.Text(["\nLocation: ", name, "\n"])
+        self.choices = choices
+        # create links back to ourself
+        for child in choices:
+            getattr(child, "choices", []).insert(0, self)
+
+    def enter_place(self, button: ActionButton) -> None:
+        game.update_place(self)
+
+
+class Thing(urwid.WidgetWrap[ActionButton]):
+    def __init__(self, name: str) -> None:
+        super().__init__(ActionButton([" * take ", name], self.take_thing))
+        self.name = name
+
+    def take_thing(self, button: ActionButton) -> None:
+        self._w = urwid.Text(f" - {self.name} (taken)")
+        game.take_thing(self)
+
+
+def exit_program(button: ActionButton) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+map_top = Place(
+    "porch",
+    [
+        Place(
+            "kitchen",
+            [
+                Place("refrigerator", []),
+                Place("cupboard", [Thing("jug")]),
+            ],
+        ),
+        Place(
+            "garden",
+            [
+                Place(
+                    "tree",
+                    [
+                        Thing("lemon"),
+                        Thing("bird"),
+                    ],
+                ),
+            ],
+        ),
+        Place(
+            "street",
+            [
+                Place("store", [Thing("sugar")]),
+                Place(
+                    "lake",
+                    [Place("beach", [])],
+                ),
+            ],
+        ),
+    ],
+)
+
+
+class AdventureGame:
+    def __init__(self) -> None:
+        self.log = urwid.SimpleFocusListWalker([])
+        self.top = urwid.ListBox(self.log)
+        self.inventory = set()
+        self.update_place(map_top)
+
+    def update_place(self, place: Place) -> None:
+        if self.log:  # disable interaction with previous place
+            self.log[-1] = urwid.WidgetDisable(self.log[-1])
+        self.log.append(urwid.Pile([place.heading, *place.choices]))
+        self.top.focus_position = len(self.log) - 1
+        self.place = place
+
+    def take_thing(self, thing: Thing) -> None:
+        self.inventory.add(thing.name)
+        if self.inventory >= {"sugar", "lemon", "jug"}:
+            response = urwid.Text("You can make lemonade!\n")
+            done = ActionButton(" - Joy", exit_program)
+            self.log[:] = [response, done]
+        else:
+            self.update_place(self.place)
+
+
+game = AdventureGame()
+urwid.MainLoop(game.top, palette=[("reversed", "standout", "")]).run()
+
+```
+
+#### cmenu.py
+
+**Path:** `tutorial/cmenu.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, Iterable
+
+
+def menu_button(
+    caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    callback: Callable[[urwid.Button], typing.Any],
+) -> urwid.AttrMap:
+    button = urwid.Button(caption, on_press=callback)
+    return urwid.AttrMap(button, None, focus_map="reversed")
+
+
+def sub_menu(
+    caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    choices: Iterable[urwid.Widget],
+) -> urwid.Widget:
+    contents = menu(caption, choices)
+
+    def open_menu(button: urwid.Button) -> None:
+        return top.open_box(contents)
+
+    return menu_button([caption, "..."], open_menu)
+
+
+def menu(
+    title: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    choices: Iterable[urwid.Widget],
+) -> urwid.ListBox:
+    body = [urwid.Text(title), urwid.Divider(), *choices]
+    return urwid.ListBox(urwid.SimpleFocusListWalker(body))
+
+
+def item_chosen(button: urwid.Button) -> None:
+    response = urwid.Text(["You chose ", button.label, "\n"])
+    done = menu_button("Ok", exit_program)
+    top.open_box(urwid.Filler(urwid.Pile([response, done])))
+
+
+def exit_program(button: urwid.Button) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+menu_top = menu(
+    "Main Menu",
+    [
+        sub_menu(
+            "Applications",
+            [
+                sub_menu(
+                    "Accessories",
+                    [
+                        menu_button("Text Editor", item_chosen),
+                        menu_button("Terminal", item_chosen),
+                    ],
+                ),
+            ],
+        ),
+        sub_menu(
+            "System",
+            [
+                sub_menu(
+                    "Preferences",
+                    [menu_button("Appearance", item_chosen)],
+                ),
+                menu_button("Lock Screen", item_chosen),
+            ],
+        ),
+    ],
+)
+
+
+class CascadingBoxes(urwid.WidgetPlaceholder):
+    max_box_levels = 4
+
+    def __init__(self, box: urwid.Widget) -> None:
+        super().__init__(urwid.SolidFill("/"))
+        self.box_level = 0
+        self.open_box(box)
+
+    def open_box(self, box: urwid.Widget) -> None:
+        self.original_widget = urwid.Overlay(
+            urwid.LineBox(box),
+            self.original_widget,
+            align=urwid.CENTER,
+            width=(urwid.RELATIVE, 80),
+            valign=urwid.MIDDLE,
+            height=(urwid.RELATIVE, 80),
+            min_width=24,
+            min_height=8,
+            left=self.box_level * 3,
+            right=(self.max_box_levels - self.box_level - 1) * 3,
+            top=self.box_level * 2,
+            bottom=(self.max_box_levels - self.box_level - 1) * 2,
+        )
+        self.box_level += 1
+
+    def keypress(self, size, key: str) -> str | None:
+        if key == "esc" and self.box_level > 1:
+            self.original_widget = self.original_widget[0]
+            self.box_level -= 1
+            return None
+
+        return super().keypress(size, key)
+
+
+top = CascadingBoxes(menu_top)
+urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
+
+```
+
+#### highcolors.py
+
+**Path:** `tutorial/highcolors.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key):
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+palette = [
+    ("banner", "", "", "", "#ffa", "#60d"),
+    ("streak", "", "", "", "g50", "#60a"),
+    ("inside", "", "", "", "g38", "#808"),
+    ("outside", "", "", "", "g27", "#a06"),
+    ("bg", "", "", "", "g7", "#d06"),
+]
+
+placeholder = urwid.SolidFill()
+loop = urwid.MainLoop(placeholder, palette, unhandled_input=exit_on_q)
+loop.screen.set_terminal_properties(colors=256)
+loop.widget = urwid.AttrMap(placeholder, "bg")
+loop.widget.original_widget = urwid.Filler(urwid.Pile([]))
+
+div = urwid.Divider()
+outside = urwid.AttrMap(div, "outside")
+inside = urwid.AttrMap(div, "inside")
+txt = urwid.Text(("banner", " Hello World "), align="center")
+streak = urwid.AttrMap(txt, "streak")
+pile = loop.widget.base_widget  # .base_widget skips the decorations
+for item in (outside, inside, streak, inside, outside):
+    pile.contents.append((item, pile.options()))
+
+loop.run()
+
+```
+
+#### hmenu.py
+
+**Path:** `tutorial/hmenu.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, Iterable
+
+
+class MenuButton(urwid.Button):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+        callback: Callable[[MenuButton], typing.Any],
+    ) -> None:
+        super().__init__("", on_press=callback)
+        self._w = urwid.AttrMap(
+            urwid.SelectableIcon(["  \N{BULLET} ", caption], 2),
+            None,
+            "selected",
+        )
+
+
+class SubMenu(urwid.WidgetWrap[MenuButton]):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str],
+        choices: Iterable[urwid.Widget],
+    ) -> None:
+        super().__init__(MenuButton([caption, "\N{HORIZONTAL ELLIPSIS}"], self.open_menu))
+        line = urwid.Divider("\N{LOWER ONE QUARTER BLOCK}")
+        listbox = urwid.ListBox(
+            urwid.SimpleFocusListWalker(
+                [
+                    urwid.AttrMap(urwid.Text(["\n  ", caption]), "heading"),
+                    urwid.AttrMap(line, "line"),
+                    urwid.Divider(),
+                    *choices,
+                    urwid.Divider(),
+                ]
+            )
+        )
+        self.menu = urwid.AttrMap(listbox, "options")
+
+    def open_menu(self, button: MenuButton) -> None:
+        top.open_box(self.menu)
+
+
+class Choice(urwid.WidgetWrap[MenuButton]):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    ) -> None:
+        super().__init__(MenuButton(caption, self.item_chosen))
+        self.caption = caption
+
+    def item_chosen(self, button: MenuButton) -> None:
+        response = urwid.Text(["  You chose ", self.caption, "\n"])
+        done = MenuButton("Ok", exit_program)
+        response_box = urwid.Filler(urwid.Pile([response, done]))
+        top.open_box(urwid.AttrMap(response_box, "options"))
+
+
+def exit_program(key):
+    raise urwid.ExitMainLoop()
+
+
+menu_top = SubMenu(
+    "Main Menu",
+    [
+        SubMenu(
+            "Applications",
+            [
+                SubMenu(
+                    "Accessories",
+                    [
+                        Choice("Text Editor"),
+                        Choice("Terminal"),
+                    ],
+                )
+            ],
+        ),
+        SubMenu(
+            "System",
+            [
+                SubMenu("Preferences", [Choice("Appearance")]),
+                Choice("Lock Screen"),
+            ],
+        ),
+    ],
+)
+
+palette = [
+    (None, "light gray", "black"),
+    ("heading", "black", "light gray"),
+    ("line", "black", "light gray"),
+    ("options", "dark gray", "black"),
+    ("focus heading", "white", "dark red"),
+    ("focus line", "black", "dark red"),
+    ("focus options", "black", "light gray"),
+    ("selected", "white", "dark blue"),
+]
+focus_map = {"heading": "focus heading", "options": "focus options", "line": "focus line"}
+
+
+class HorizontalBoxes(urwid.Columns):
+    def __init__(self) -> None:
+        super().__init__([], dividechars=1)
+
+    def open_box(self, box: urwid.Widget) -> None:
+        if self.contents:
+            del self.contents[self.focus_position + 1 :]
+        self.contents.append(
+            (
+                urwid.AttrMap(box, "options", focus_map),
+                self.options(urwid.GIVEN, 24),
+            )
+        )
+        self.focus_position = len(self.contents) - 1
+
+
+top = HorizontalBoxes()
+top.open_box(menu_top.menu)
+urwid.MainLoop(urwid.Filler(top, "middle", 10), palette).run()
+
+```
+
+#### input.py
+
+**Path:** `tutorial/input.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def show_or_exit(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+    txt.set_text(repr(key))
+
+
+txt = urwid.Text("Hello World")
+fill = urwid.Filler(txt, "top")
+loop = urwid.MainLoop(fill, unhandled_input=show_or_exit)
+loop.run()
+
+```
+
+#### minimal.py
+
+**Path:** `tutorial/minimal.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+txt = urwid.Text("Hello World")
+fill = urwid.Filler(txt, "top")
+loop = urwid.MainLoop(fill)
+loop.run()
+
+```
+
+#### multiple.py
+
+**Path:** `tutorial/multiple.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def question():
+    return urwid.Pile([urwid.Edit(("I say", "What is your name?\n"))])
+
+
+def answer(name):
+    return urwid.Text(("I say", f"Nice to meet you, {name}\n"))
+
+
+class ConversationListBox(urwid.ListBox):
+    def __init__(self) -> None:
+        body = urwid.SimpleFocusListWalker([question()])
+        super().__init__(body)
+
+    def keypress(self, size: tuple[int, int], key: str) -> str | None:
+        key = super().keypress(size, key)
+        if key != "enter":
+            return key
+        name = self.focus[0].edit_text
+        if not name:
+            raise urwid.ExitMainLoop()
+        # replace or add response
+        self.focus.contents[1:] = [(answer(name), self.focus.options())]
+        pos = self.focus_position
+        # add a new question
+        self.body.insert(pos + 1, question())
+        self.focus_position = pos + 1
+        return None
+
+
+palette = [("I say", "default,bold", "default")]
+urwid.MainLoop(ConversationListBox(), palette).run()
+
+```
+
+#### qa.py
+
+**Path:** `tutorial/qa.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+class QuestionBox(urwid.Filler):
+    def keypress(self, size, key: str) -> str | None:
+        if key != "enter":
+            return super().keypress(size, key)
+        self.original_widget = urwid.Text(
+            f"Nice to meet you,\n{edit.edit_text}.\n\nPress Q to exit.",
+        )
+        return None
+
+
+edit = urwid.Edit("What is your name?\n")
+fill = QuestionBox(edit)
+loop = urwid.MainLoop(fill, unhandled_input=exit_on_q)
+loop.run()
+
+```
+
+#### sig.py
+
+**Path:** `tutorial/sig.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+palette = [("I say", "default,bold", "default", "bold")]
+ask = urwid.Edit(("I say", "What is your name?\n"))
+reply = urwid.Text("")
+button_inst = urwid.Button("Exit")
+div = urwid.Divider()
+pile = urwid.Pile([ask, div, reply, div, button_inst])
+top = urwid.Filler(pile, valign="top")
+
+
+def on_ask_change(_edit: urwid.Edit, new_edit_text: str) -> None:
+    reply.set_text(("I say", f"Nice to meet you, {new_edit_text}"))
+
+
+def on_exit_clicked(_button: urwid.Button) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+urwid.connect_signal(ask, "change", on_ask_change)
+urwid.connect_signal(button_inst, "click", on_exit_clicked)
+
+urwid.MainLoop(top, palette).run()
+
+```
+
+#### smenu.py
+
+**Path:** `tutorial/smenu.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Iterable
+
+choices = ["Chapman", "Cleese", "Gilliam", "Idle", "Jones", "Palin"]
+
+
+def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
+    body = [urwid.Text(title), urwid.Divider()]
+    for c in choices_:
+        button = urwid.Button(c)
+        urwid.connect_signal(button, "click", item_chosen, c)
+        body.append(urwid.AttrMap(button, None, focus_map="reversed"))
+    return urwid.ListBox(urwid.SimpleFocusListWalker(body))
+
+
+def item_chosen(button: urwid.Button, choice: str) -> None:
+    response = urwid.Text(["You chose ", choice, "\n"])
+    done = urwid.Button("Ok")
+    urwid.connect_signal(done, "click", exit_program)
+    main.original_widget = urwid.Filler(
+        urwid.Pile(
+            [
+                response,
+                urwid.AttrMap(done, None, focus_map="reversed"),
+            ]
+        )
+    )
+
+
+def exit_program(button: urwid.Button) -> None:
+    raise urwid.ExitMainLoop()
+
+
+main = urwid.Padding(menu("Pythons", choices), left=2, right=2)
+top = urwid.Overlay(
+    main,
+    urwid.SolidFill("\N{MEDIUM SHADE}"),
+    align=urwid.CENTER,
+    width=(urwid.RELATIVE, 60),
+    valign=urwid.MIDDLE,
+    height=(urwid.RELATIVE, 60),
+    min_width=20,
+    min_height=9,
+)
+urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
+
+```
+
+#### urwid_attr.py
+
+**Path:** `tutorial/urwid_attr.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+palette = [
+    ("banner", "black", "light gray"),
+    ("streak", "black", "dark red"),
+    ("bg", "black", "dark blue"),
+]
+
+txt = urwid.Text(("banner", " Hello World "), align="center")
+map1 = urwid.AttrMap(txt, "streak")
+fill = urwid.Filler(map1)
+map2 = urwid.AttrMap(fill, "bg")
+loop = urwid.MainLoop(map2, palette, unhandled_input=exit_on_q)
+loop.run()
+
+```
+
+## Embedded Code Examples
+
+#### Embedded in `manual/widgets.rst`
+
+**Source file:** `wmod.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class QuestionnaireItem(urwid.WidgetWrap[urwid.GridFlow]):
+    def __init__(self) -> None:
+        self.options: list[urwid.RadioButton] = []
+        unsure = urwid.RadioButton(self.options, "Unsure")
+        yes = urwid.RadioButton(self.options, "Yes")
+        no = urwid.RadioButton(self.options, "No")
+        display_widget = urwid.GridFlow([unsure, yes, no], 15, 3, 1, "left")
+        super().__init__(display_widget)
+
+    def get_state(self) -> str:
+        return next(o.label for o in self.options if o.state is True)
+
+```
+
+#### Embedded in `manual/widgets.rst`
+
+**Source file:** `wanat.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class Pudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW,))
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding], maxcol=maxcol)
+
+
+class BoxPudding(urwid.Widget):
+    _sizing = frozenset((urwid.BOX,))
+
+    def render(self, size: tuple[int, int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol, maxrow) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding] * maxrow, maxcol=maxcol)
+
+```
+
+#### Embedded in `manual/widgets.rst`
+
+**Source file:** `wanat_multi.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class MultiPudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW, urwid.BOX))
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int] | tuple[int, int], focus: bool = False) -> urwid.TextCanvas:
+        if len(size) == 1:
+            (maxcol,) = size
+            maxrow = 1
+        else:
+            (maxcol, maxrow) = size
+        num_pudding = maxcol // len("Pudding")
+        return urwid.TextCanvas([b"Pudding" * num_pudding] * maxrow, maxcol=maxcol)
+
+```
+
+#### Embedded in `manual/widgets.rst`
+
+**Source file:** `wsel.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class SelectablePudding(urwid.Widget):
+    _sizing = frozenset((urwid.FLOW,))
+    _selectable = True
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.pudding = "pudding"
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len(self.pudding)
+        pudding = self.pudding
+        if focus:
+            pudding = pudding.upper()
+        return urwid.TextCanvas([pudding.encode("utf-8") * num_pudding], maxcol=maxcol)
+
+    def keypress(self, size: tuple[int], key: str) -> str | None:
+        if len(key) > 1:
+            return key
+
+        if key.lower() in self.pudding:
+            # remove letter from pudding
+            n = self.pudding.index(key.lower())
+            self.pudding = self.pudding[:n] + self.pudding[n + 1 :]
+            if not self.pudding:
+                self.pudding = "pudding"
+            self._invalidate()
+            return None
+
+        return key
+
+```
+
+#### Embedded in `manual/widgets.rst`
+
+**Source file:** `wcur1.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class CursorPudding(urwid.Widget):
+    _sizing = frozenset(["flow"])
+    _selectable = True
+
+    def __init__(self):
+        super().__init__()
+        self.cursor_col = 0
+
+    def rows(self, size: tuple[int], focus: bool = False) -> int:
+        return 1
+
+    def render(self, size: tuple[int], focus: bool = False) -> urwid.TextCanvas:
+        (maxcol,) = size
+        num_pudding = maxcol // len("Pudding")
+        cursor = None
+        if focus:
+            cursor = self.get_cursor_coords(size)
+        return urwid.TextCanvas([b"Pudding" * num_pudding], [], cursor=cursor, maxcol=maxcol)
+
+    def get_cursor_coords(self, size: tuple[int]) -> tuple[int, int]:
+        (maxcol,) = size
+        col = min(self.cursor_col, maxcol - 1)
+        return col, 0
+
+    def keypress(self, size: tuple[int], key: str) -> str | None:
+        (maxcol,) = size
+        if key == "left":
+            col = self.cursor_col - 1
+        elif key == "right":
+            col = self.cursor_col + 1
+        else:
+            return key
+        self.cursor_x = max(0, min(maxcol - 1, col))
+        self._invalidate()
+        return None
+
+```
+
+#### Embedded in `manual/widgets.rst`
+
+**Source file:** `wcur2.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+class Widget(urwid.ListBox):
+    def get_pref_col(self, size: tuple[int, int]) -> int:
+        return self.cursor_x
+
+    def move_cursor_to_coords(self, size: tuple[int, int], col: int, row: int) -> bool:
+        assert row == 0  # noqa: S101  # in examples we can use `assert`
+        self.cursor_x = col
+        return True
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `minimal.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+txt = urwid.Text("Hello World")
+fill = urwid.Filler(txt, "top")
+loop = urwid.MainLoop(fill)
+loop.run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `input.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def show_or_exit(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+    txt.set_text(repr(key))
+
+
+txt = urwid.Text("Hello World")
+fill = urwid.Filler(txt, "top")
+loop = urwid.MainLoop(fill, unhandled_input=show_or_exit)
+loop.run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `urwid_attr.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+palette = [
+    ("banner", "black", "light gray"),
+    ("streak", "black", "dark red"),
+    ("bg", "black", "dark blue"),
+]
+
+txt = urwid.Text(("banner", " Hello World "), align="center")
+map1 = urwid.AttrMap(txt, "streak")
+fill = urwid.Filler(map1)
+map2 = urwid.AttrMap(fill, "bg")
+loop = urwid.MainLoop(map2, palette, unhandled_input=exit_on_q)
+loop.run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `highcolors.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key):
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+palette = [
+    ("banner", "", "", "", "#ffa", "#60d"),
+    ("streak", "", "", "", "g50", "#60a"),
+    ("inside", "", "", "", "g38", "#808"),
+    ("outside", "", "", "", "g27", "#a06"),
+    ("bg", "", "", "", "g7", "#d06"),
+]
+
+placeholder = urwid.SolidFill()
+loop = urwid.MainLoop(placeholder, palette, unhandled_input=exit_on_q)
+loop.screen.set_terminal_properties(colors=256)
+loop.widget = urwid.AttrMap(placeholder, "bg")
+loop.widget.original_widget = urwid.Filler(urwid.Pile([]))
+
+div = urwid.Divider()
+outside = urwid.AttrMap(div, "outside")
+inside = urwid.AttrMap(div, "inside")
+txt = urwid.Text(("banner", " Hello World "), align="center")
+streak = urwid.AttrMap(txt, "streak")
+pile = loop.widget.base_widget  # .base_widget skips the decorations
+for item in (outside, inside, streak, inside, outside):
+    pile.contents.append((item, pile.options()))
+
+loop.run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `qa.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def exit_on_q(key: str) -> None:
+    if key in {"q", "Q"}:
+        raise urwid.ExitMainLoop()
+
+
+class QuestionBox(urwid.Filler):
+    def keypress(self, size, key: str) -> str | None:
+        if key != "enter":
+            return super().keypress(size, key)
+        self.original_widget = urwid.Text(
+            f"Nice to meet you,\n{edit.edit_text}.\n\nPress Q to exit.",
+        )
+        return None
+
+
+edit = urwid.Edit("What is your name?\n")
+fill = QuestionBox(edit)
+loop = urwid.MainLoop(fill, unhandled_input=exit_on_q)
+loop.run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `sig.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+palette = [("I say", "default,bold", "default", "bold")]
+ask = urwid.Edit(("I say", "What is your name?\n"))
+reply = urwid.Text("")
+button_inst = urwid.Button("Exit")
+div = urwid.Divider()
+pile = urwid.Pile([ask, div, reply, div, button_inst])
+top = urwid.Filler(pile, valign="top")
+
+
+def on_ask_change(_edit: urwid.Edit, new_edit_text: str) -> None:
+    reply.set_text(("I say", f"Nice to meet you, {new_edit_text}"))
+
+
+def on_exit_clicked(_button: urwid.Button) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+urwid.connect_signal(ask, "change", on_ask_change)
+urwid.connect_signal(button_inst, "click", on_exit_clicked)
+
+urwid.MainLoop(top, palette).run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `multiple.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import urwid
+
+
+def question():
+    return urwid.Pile([urwid.Edit(("I say", "What is your name?\n"))])
+
+
+def answer(name):
+    return urwid.Text(("I say", f"Nice to meet you, {name}\n"))
+
+
+class ConversationListBox(urwid.ListBox):
+    def __init__(self) -> None:
+        body = urwid.SimpleFocusListWalker([question()])
+        super().__init__(body)
+
+    def keypress(self, size: tuple[int, int], key: str) -> str | None:
+        key = super().keypress(size, key)
+        if key != "enter":
+            return key
+        name = self.focus[0].edit_text
+        if not name:
+            raise urwid.ExitMainLoop()
+        # replace or add response
+        self.focus.contents[1:] = [(answer(name), self.focus.options())]
+        pos = self.focus_position
+        # add a new question
+        self.body.insert(pos + 1, question())
+        self.focus_position = pos + 1
+        return None
+
+
+palette = [("I say", "default,bold", "default")]
+urwid.MainLoop(ConversationListBox(), palette).run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `smenu.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Iterable
+
+choices = ["Chapman", "Cleese", "Gilliam", "Idle", "Jones", "Palin"]
+
+
+def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
+    body = [urwid.Text(title), urwid.Divider()]
+    for c in choices_:
+        button = urwid.Button(c)
+        urwid.connect_signal(button, "click", item_chosen, c)
+        body.append(urwid.AttrMap(button, None, focus_map="reversed"))
+    return urwid.ListBox(urwid.SimpleFocusListWalker(body))
+
+
+def item_chosen(button: urwid.Button, choice: str) -> None:
+    response = urwid.Text(["You chose ", choice, "\n"])
+    done = urwid.Button("Ok")
+    urwid.connect_signal(done, "click", exit_program)
+    main.original_widget = urwid.Filler(
+        urwid.Pile(
+            [
+                response,
+                urwid.AttrMap(done, None, focus_map="reversed"),
+            ]
+        )
+    )
+
+
+def exit_program(button: urwid.Button) -> None:
+    raise urwid.ExitMainLoop()
+
+
+main = urwid.Padding(menu("Pythons", choices), left=2, right=2)
+top = urwid.Overlay(
+    main,
+    urwid.SolidFill("\N{MEDIUM SHADE}"),
+    align=urwid.CENTER,
+    width=(urwid.RELATIVE, 60),
+    valign=urwid.MIDDLE,
+    height=(urwid.RELATIVE, 60),
+    min_width=20,
+    min_height=9,
+)
+urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `cmenu.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, Iterable
+
+
+def menu_button(
+    caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    callback: Callable[[urwid.Button], typing.Any],
+) -> urwid.AttrMap:
+    button = urwid.Button(caption, on_press=callback)
+    return urwid.AttrMap(button, None, focus_map="reversed")
+
+
+def sub_menu(
+    caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    choices: Iterable[urwid.Widget],
+) -> urwid.Widget:
+    contents = menu(caption, choices)
+
+    def open_menu(button: urwid.Button) -> None:
+        return top.open_box(contents)
+
+    return menu_button([caption, "..."], open_menu)
+
+
+def menu(
+    title: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    choices: Iterable[urwid.Widget],
+) -> urwid.ListBox:
+    body = [urwid.Text(title), urwid.Divider(), *choices]
+    return urwid.ListBox(urwid.SimpleFocusListWalker(body))
+
+
+def item_chosen(button: urwid.Button) -> None:
+    response = urwid.Text(["You chose ", button.label, "\n"])
+    done = menu_button("Ok", exit_program)
+    top.open_box(urwid.Filler(urwid.Pile([response, done])))
+
+
+def exit_program(button: urwid.Button) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+menu_top = menu(
+    "Main Menu",
+    [
+        sub_menu(
+            "Applications",
+            [
+                sub_menu(
+                    "Accessories",
+                    [
+                        menu_button("Text Editor", item_chosen),
+                        menu_button("Terminal", item_chosen),
+                    ],
+                ),
+            ],
+        ),
+        sub_menu(
+            "System",
+            [
+                sub_menu(
+                    "Preferences",
+                    [menu_button("Appearance", item_chosen)],
+                ),
+                menu_button("Lock Screen", item_chosen),
+            ],
+        ),
+    ],
+)
+
+
+class CascadingBoxes(urwid.WidgetPlaceholder):
+    max_box_levels = 4
+
+    def __init__(self, box: urwid.Widget) -> None:
+        super().__init__(urwid.SolidFill("/"))
+        self.box_level = 0
+        self.open_box(box)
+
+    def open_box(self, box: urwid.Widget) -> None:
+        self.original_widget = urwid.Overlay(
+            urwid.LineBox(box),
+            self.original_widget,
+            align=urwid.CENTER,
+            width=(urwid.RELATIVE, 80),
+            valign=urwid.MIDDLE,
+            height=(urwid.RELATIVE, 80),
+            min_width=24,
+            min_height=8,
+            left=self.box_level * 3,
+            right=(self.max_box_levels - self.box_level - 1) * 3,
+            top=self.box_level * 2,
+            bottom=(self.max_box_levels - self.box_level - 1) * 2,
+        )
+        self.box_level += 1
+
+    def keypress(self, size, key: str) -> str | None:
+        if key == "esc" and self.box_level > 1:
+            self.original_widget = self.original_widget[0]
+            self.box_level -= 1
+            return None
+
+        return super().keypress(size, key)
+
+
+top = CascadingBoxes(menu_top)
+urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `hmenu.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, Iterable
+
+
+class MenuButton(urwid.Button):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+        callback: Callable[[MenuButton], typing.Any],
+    ) -> None:
+        super().__init__("", on_press=callback)
+        self._w = urwid.AttrMap(
+            urwid.SelectableIcon(["  \N{BULLET} ", caption], 2),
+            None,
+            "selected",
+        )
+
+
+class SubMenu(urwid.WidgetWrap[MenuButton]):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str],
+        choices: Iterable[urwid.Widget],
+    ) -> None:
+        super().__init__(MenuButton([caption, "\N{HORIZONTAL ELLIPSIS}"], self.open_menu))
+        line = urwid.Divider("\N{LOWER ONE QUARTER BLOCK}")
+        listbox = urwid.ListBox(
+            urwid.SimpleFocusListWalker(
+                [
+                    urwid.AttrMap(urwid.Text(["\n  ", caption]), "heading"),
+                    urwid.AttrMap(line, "line"),
+                    urwid.Divider(),
+                    *choices,
+                    urwid.Divider(),
+                ]
+            )
+        )
+        self.menu = urwid.AttrMap(listbox, "options")
+
+    def open_menu(self, button: MenuButton) -> None:
+        top.open_box(self.menu)
+
+
+class Choice(urwid.WidgetWrap[MenuButton]):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+    ) -> None:
+        super().__init__(MenuButton(caption, self.item_chosen))
+        self.caption = caption
+
+    def item_chosen(self, button: MenuButton) -> None:
+        response = urwid.Text(["  You chose ", self.caption, "\n"])
+        done = MenuButton("Ok", exit_program)
+        response_box = urwid.Filler(urwid.Pile([response, done]))
+        top.open_box(urwid.AttrMap(response_box, "options"))
+
+
+def exit_program(key):
+    raise urwid.ExitMainLoop()
+
+
+menu_top = SubMenu(
+    "Main Menu",
+    [
+        SubMenu(
+            "Applications",
+            [
+                SubMenu(
+                    "Accessories",
+                    [
+                        Choice("Text Editor"),
+                        Choice("Terminal"),
+                    ],
+                )
+            ],
+        ),
+        SubMenu(
+            "System",
+            [
+                SubMenu("Preferences", [Choice("Appearance")]),
+                Choice("Lock Screen"),
+            ],
+        ),
+    ],
+)
+
+palette = [
+    (None, "light gray", "black"),
+    ("heading", "black", "light gray"),
+    ("line", "black", "light gray"),
+    ("options", "dark gray", "black"),
+    ("focus heading", "white", "dark red"),
+    ("focus line", "black", "dark red"),
+    ("focus options", "black", "light gray"),
+    ("selected", "white", "dark blue"),
+]
+focus_map = {"heading": "focus heading", "options": "focus options", "line": "focus line"}
+
+
+class HorizontalBoxes(urwid.Columns):
+    def __init__(self) -> None:
+        super().__init__([], dividechars=1)
+
+    def open_box(self, box: urwid.Widget) -> None:
+        if self.contents:
+            del self.contents[self.focus_position + 1 :]
+        self.contents.append(
+            (
+                urwid.AttrMap(box, "options", focus_map),
+                self.options(urwid.GIVEN, 24),
+            )
+        )
+        self.focus_position = len(self.contents) - 1
+
+
+top = HorizontalBoxes()
+top.open_box(menu_top.menu)
+urwid.MainLoop(urwid.Filler(top, "middle", 10), palette).run()
+
+```
+
+#### Embedded in `tutorial/index.rst`
+
+**Source file:** `adventure.py`
+
+**Code:**
+
+```python
+from __future__ import annotations
+
+import typing
+
+import urwid
+
+if typing.TYPE_CHECKING:
+    from collections.abc import Callable, Hashable, MutableSequence
+
+
+class ActionButton(urwid.Button):
+    def __init__(
+        self,
+        caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
+        callback: Callable[[ActionButton], typing.Any],
+    ) -> None:
+        super().__init__("", on_press=callback)
+        self._w = urwid.AttrMap(urwid.SelectableIcon(caption, 1), None, focus_map="reversed")
+
+
+class Place(urwid.WidgetWrap[ActionButton]):
+    def __init__(self, name: str, choices: MutableSequence[urwid.Widget]) -> None:
+        super().__init__(ActionButton([" > go to ", name], self.enter_place))
+        self.heading = urwid.Text(["\nLocation: ", name, "\n"])
+        self.choices = choices
+        # create links back to ourself
+        for child in choices:
+            getattr(child, "choices", []).insert(0, self)
+
+    def enter_place(self, button: ActionButton) -> None:
+        game.update_place(self)
+
+
+class Thing(urwid.WidgetWrap[ActionButton]):
+    def __init__(self, name: str) -> None:
+        super().__init__(ActionButton([" * take ", name], self.take_thing))
+        self.name = name
+
+    def take_thing(self, button: ActionButton) -> None:
+        self._w = urwid.Text(f" - {self.name} (taken)")
+        game.take_thing(self)
+
+
+def exit_program(button: ActionButton) -> typing.NoReturn:
+    raise urwid.ExitMainLoop()
+
+
+map_top = Place(
+    "porch",
+    [
+        Place(
+            "kitchen",
+            [
+                Place("refrigerator", []),
+                Place("cupboard", [Thing("jug")]),
+            ],
+        ),
+        Place(
+            "garden",
+            [
+                Place(
+                    "tree",
+                    [
+                        Thing("lemon"),
+                        Thing("bird"),
+                    ],
+                ),
+            ],
+        ),
+        Place(
+            "street",
+            [
+                Place("store", [Thing("sugar")]),
+                Place(
+                    "lake",
+                    [Place("beach", [])],
+                ),
+            ],
+        ),
+    ],
+)
+
+
+class AdventureGame:
+    def __init__(self) -> None:
+        self.log = urwid.SimpleFocusListWalker([])
+        self.top = urwid.ListBox(self.log)
+        self.inventory = set()
+        self.update_place(map_top)
+
+    def update_place(self, place: Place) -> None:
+        if self.log:  # disable interaction with previous place
+            self.log[-1] = urwid.WidgetDisable(self.log[-1])
+        self.log.append(urwid.Pile([place.heading, *place.choices]))
+        self.top.focus_position = len(self.log) - 1
+        self.place = place
+
+    def take_thing(self, thing: Thing) -> None:
+        self.inventory.add(thing.name)
+        if self.inventory >= {"sugar", "lemon", "jug"}:
+            response = urwid.Text("You can make lemonade!\n")
+            done = ActionButton(" - Joy", exit_program)
+            self.log[:] = [response, done]
+        else:
+            self.update_place(self.place)
+
+
+game = AdventureGame()
+urwid.MainLoop(game.top, palette=[("reversed", "standout", "")]).run()
+
+```
