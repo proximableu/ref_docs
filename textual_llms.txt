@@ -47,7 +47,6 @@ Or you can ignore it, and Textual will automatically await the work before handl
 
     You are unlikely to need to explicitly create these objects yourself.
 
-
 ::: textual.await_complete
 
 ```
@@ -190,7 +189,6 @@ title: "textual.constants"
 title: "textual.containers"
 ---
 
-
 ::: textual.containers
 
 ```
@@ -224,7 +222,6 @@ title: "textual.content"
 ---
 title: "textual.coordinate"
 ---
-
 
 ::: textual.coordinate
 
@@ -277,7 +274,6 @@ title: "textual.errors"
 title: "textual.events"
 ---
 
-
 ::: textual.events
 
 ```
@@ -294,7 +290,6 @@ title: "textual.events"
 ---
 title: "textual.filter"
 ---
-
 
 ::: textual.filter
 
@@ -313,7 +308,6 @@ title: "textual.filter"
 title: "textual.fuzzy"
 ---
 
-
 ::: textual.fuzzy
 
 ```
@@ -330,7 +324,6 @@ title: "textual.fuzzy"
 ---
 title: "textual.geometry"
 ---
-
 
 ::: textual.geometry
 
@@ -400,7 +393,6 @@ If you are new to Textual, you may want to read the [tutorial](./../tutorial.md)
 title: "textual.layout"
 ---
 
-
 ::: textual.layout
 
 ```
@@ -418,7 +410,6 @@ title: "textual.layout"
 title: "textual.lazy"
 ---
 
-
 ::: textual.lazy
 
 ```
@@ -435,7 +426,6 @@ title: "textual.lazy"
 ---
 title: "textual"
 ---
-
 
 ::: textual
 
@@ -469,7 +459,6 @@ title: "textual.logging"
 ---
 title: "textual.map_geometry"
 ---
-
 
 A data structure returned by [screen.find_widget][textual.screen.Screen.find_widget].
 
@@ -634,7 +623,6 @@ A collection of Rich renderables which may be returned from a widget's [`render(
 title: "textual.screen"
 ---
 
-
 ::: textual.screen
 
 ```
@@ -651,7 +639,6 @@ title: "textual.screen"
 ---
 title: "textual.scroll_view"
 ---
-
 
 ::: textual.scroll_view
 
@@ -704,7 +691,6 @@ title: "textual.signal"
 title: "textual.strip"
 ---
 
-
 ::: textual.strip
 
 ```
@@ -739,7 +725,6 @@ title: "textual.style"
 title: "textual.suggester"
 ---
 
-
 ::: textual.suggester
 
 ```
@@ -756,8 +741,6 @@ title: "textual.suggester"
 ---
 title: "textual.system_commands"
 ---
-
-
 
 ::: textual.system_commands
 
@@ -793,7 +776,6 @@ title: "textual.timer"
 title: "textual.types"
 ---
 
-
 ::: textual.types
 
 ```
@@ -810,7 +792,6 @@ title: "textual.types"
 ---
 title: "textual.validation"
 ---
-
 
 ::: textual.validation
 
@@ -829,7 +810,6 @@ title: "textual.validation"
 title: "textual.walk"
 ---
 
-
 ::: textual.walk
 
 ```
@@ -846,7 +826,6 @@ title: "textual.walk"
 ---
 title: "textual.widget"
 ---
-
 
 ::: textual.widget
     options:
@@ -868,7 +847,6 @@ title: "textual.widget"
 ---
 title: "textual.work"
 ---
-
 
 ::: textual.work
 
@@ -920,7 +898,6 @@ title: "textual.worker_manager"
 
 ```text
 # Textual Blog
-
 
 ```
 
@@ -1127,7 +1104,6 @@ SYSTEM = """Formulate all responses as if you where the sentient AI named Mother
 class Prompt(Markdown):
     pass
 
-
 class Response(Markdown):
     BORDER_TITLE = "Mother"
 
@@ -1153,7 +1129,7 @@ class MotherApp(App):
         background: $success 10%;   
         color: $text;             
         margin: 1;      
-        margin-left: 8; 
+        margin-left: 8;
         padding: 1 2 0 2;
     }
     """
@@ -1238,7 +1214,6 @@ uv run mother.py
 
 ```
 
-
 ```
 
 #### await-me-maybe.md
@@ -1277,13 +1252,11 @@ A technique by Simon Willison: a callback may be either sync or async. The `awai
 import asyncio
 import inspect
 
-
 def plain_old_function():
     return "Plain old function"
 
 async def async_function():
     return "Async function"
-
 
 async def await_me_maybe(callback):
     result = callback()
@@ -1359,20 +1332,17 @@ Join the [Discord server](https://discord.gg/Enf6Z3qhVr) to discuss with Textual
 import asyncio
 import inspect
 
-
 def plain_old_function():
     return "Plain old function"
 
 async def async_function():
     return "Async function"
 
-
 async def await_me_maybe(callback):
     result = callback()
     if inspect.isawaitable(result):
         return await result
     return result
-
 
 async def run_framework():
     print(
@@ -1381,7 +1351,6 @@ async def run_framework():
     print(
         await await_me_maybe(async_function)
     )
-
 
 if __name__ == "__main__":
     asyncio.run(run_framework())
@@ -1436,7 +1405,6 @@ class AwaitMount:
         return await_mount().__await__()
 
 ```
-
 
 ```
 
@@ -1513,7 +1481,6 @@ $ pipx install textual-keys
 
 ```
 
-
 ```
 
 #### better-sleep-on-windows.md
@@ -1588,9 +1555,7 @@ async def sleep(sleep_for: float) -> None:
     """    
     await get_running_loop().run_in_executor(None, time_sleep, sleep_for)
 
-
 ```
-
 
 ```
 
@@ -1709,7 +1674,6 @@ Scrollbar corner tasks remain questionable—two characters per task—but are r
 from asyncio import create_task, wait, run
 from time import process_time as time
 
-
 async def time_tasks(count=100) -> float:
     """Time creating and destroying tasks."""
 
@@ -1723,14 +1687,12 @@ async def time_tasks(count=100) -> float:
     elapsed = time() - start
     return elapsed
 
-
 for count in range(100_000, 1000_000 + 1, 100_000):
     create_time = run(time_tasks(count))
     create_per_second = 1 / (create_time / count)
     print(f"{count:,} tasks \t {create_per_second:0,.0f} tasks per/s")
 
 ```
-
 
 ```
 
@@ -1898,7 +1860,6 @@ Another example: inline code editor (see video):
     from textual.app import App, ComposeResult
     from textual.widgets import TextArea
 
-
     class InlineApp(App):
         CSS = """
         TextArea {
@@ -1909,7 +1870,6 @@ Another example: inline code editor (see video):
 
         def compose(self) -> ComposeResult:
             yield TextArea(language="python")
-
 
     if __name__ == "__main__":
         InlineApp().run(inline=True)
@@ -2203,7 +2163,6 @@ class Main( Screen ):
 
 ```
 
-
 ```
 
 #### placeholder-pr.md
@@ -2444,7 +2403,6 @@ class Placeholder(Static):
 
 ```
 
-
 ```
 
 #### puppies-and-cake.md
@@ -2679,7 +2637,6 @@ with self.app.batch_update():
 
 ```
 
-
 ```
 
 #### release0-14-0.md
@@ -2776,7 +2733,6 @@ class MyWidget(Widget):
             self.item_index = item_index
             super().__init__(sender)
 
-
 ```
 
 ### `inline_python`
@@ -2790,9 +2746,7 @@ class MyWidget(Widget):
             self.item_index = item_index
             super().__init__()
 
-
 ```
-
 
 ```
 
@@ -2904,7 +2858,6 @@ def compose(self) -> ComposeResult:
         yield Markdown(PAUL)
 
 ```
-
 
 ```
 
@@ -3167,7 +3120,6 @@ Discuss updates and ask questions on the [Discord server](https://discord.gg/Enf
 
 ```
 
-
 ```
 
 #### release0-27-0.md
@@ -3345,7 +3297,6 @@ def on_mount(self) -> None:
 
 ```
 
-
 ```
 
 #### release0-38-0.md
@@ -3455,7 +3406,6 @@ MyWidget:dark Label {
 
 ```
 
-
 ```
 
 #### release0-4-0.md
@@ -3527,9 +3477,7 @@ self.mount(Static("Password is incorrect"), after="Dialog Input.-error")
 tweet = self.query_one("Tweet")
 self.mount(Static("Consider switching to Mastodon"), after=tweet)
 
-
 ```
-
 
 ```
 
@@ -3674,7 +3622,6 @@ Focus on pain points identified during internal dog-fooding (see [DevLog](https:
     
 ```
 
-
 ```
 
 #### release0.37.0.md
@@ -3777,7 +3724,6 @@ class ColorApp(App):
     COMMANDS = App.COMMANDS | {ColorCommands}
 
 ```
-
 
 ```
 
@@ -3890,7 +3836,6 @@ All API signatures, class hierarchies, types, and technical terms preserved.
 
 ```
 
-
 ```
 
 #### remote-memray.md
@@ -3950,7 +3895,6 @@ pipx install textual-web
 textual-web -r "memray run --live -m http.server"
 
 ```
-
 
 ```
 
@@ -4137,7 +4081,6 @@ For community support: [Join the Rich/Textual Discord](https://discord.gg/Enf6Z3
 
 ```
 
-
 ```
 
 #### smooth-scrolling.md
@@ -4241,7 +4184,6 @@ from rich.progress import Progress, BarColumn
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class IndeterminateProgress(Static):
     def __init__(self):
         super().__init__("")
@@ -4254,11 +4196,9 @@ class IndeterminateProgress(Static):
     def update_progress_bar(self) -> None:
         self.update(self._bar)
 
-
 class MyApp(App):
     def compose(self) -> ComposeResult:
         yield IndeterminateProgress()
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -4335,7 +4275,6 @@ class IntervalUpdater(Static):
         self.update(self._renderable_object)
 
 ```
-
 
 ```
 
@@ -4496,7 +4435,6 @@ HSL(h=0.3246187363834423, s=0.8843930635838151, l=0.33921568627450976)
 
 ```
 
-
 ```
 
 #### text-area-learnings.md
@@ -4634,7 +4572,6 @@ Benchmark 1: python sandbox/darren/make_tuples.py
 
 ```
 
-
 ```
 
 #### textual-plotext.md
@@ -4744,7 +4681,6 @@ if __name__ == "__main__":
     ScatterApp().run()
 
 ```
-
 
 ```
 
@@ -5060,7 +4996,6 @@ with open("access.log", "rb") as log_file:
 
 ```
 
-
 ```
 
 ### css_types
@@ -5130,7 +5065,6 @@ widget.styles.rule = type_value_2
 widget.styles.rule = type_value_3
 
 ```
-
 
 ```
 
@@ -5204,7 +5138,6 @@ widget.styles.border = ("heavy", "red")
 widget.styles.border_bottom = ("solid", "blue")
 
 ```
-
 
 ```
 
@@ -5352,7 +5285,6 @@ color = Color.parse("#A8F")
 
 ```
 
-
 ```
 
 #### hatch.md
@@ -5412,7 +5344,6 @@ widget.styles.hatch = ("cross", "red")
 
 ```
 
-
 ```
 
 #### horizontal.md
@@ -5468,7 +5399,6 @@ widget.styles.align_horizontal = "right"
 widget.styles.align_horizontal = "right"
 
 ```
-
 
 ```
 
@@ -5550,7 +5480,6 @@ widget.styles.offset = (10, -20)
 
 ```
 
-
 ```
 
 #### keyline.md
@@ -5611,7 +5540,6 @@ widget.styles.keyline = ("thin", "green")
 
 ```
 
-
 ```
 
 #### name.md
@@ -5666,7 +5594,6 @@ Screen {
 widget.styles.layers = "onlyLetters Letters-and-hiphens _lead-under letters-1-digit"
 
 ```
-
 
 ```
 
@@ -5732,7 +5659,6 @@ widget.styles.opacity = 0.5       # Numbers can have a decimal part
 
 ```
 
-
 ```
 
 #### overflow.md
@@ -5788,7 +5714,6 @@ widget.styles.overflow_y = "hidden"
 widget.styles.overflow_y = "hidden"  # Don't overflow
 
 ```
-
 
 ```
 
@@ -5856,7 +5781,6 @@ widget.styles.color = "red 70%"
 widget.styles.offset = ("-30%", "12.5%")
 
 ```
-
 
 ```
 
@@ -5936,7 +5860,6 @@ widget.styles.pointer = "pointer"  # Show a pointing hand cursor
 
 ```
 
-
 ```
 
 #### position.md
@@ -5995,7 +5918,6 @@ widget.styles.position = "absolute"
 widget.styles.offset = (10, 5)
 
 ```
-
 
 ```
 
@@ -6110,7 +6032,6 @@ widget.styles.height = "1fr"   # proportional size of 1
 
 ```
 
-
 ```
 
 #### text_align.md
@@ -6168,7 +6089,6 @@ Label {
 widget.styles.text_align = "justify"
 
 ```
-
 
 ```
 
@@ -6247,7 +6167,6 @@ widget.styles.text_style = "strike bold italic reverse
 
 ```
 
-
 ```
 
 #### vertical.md
@@ -6303,7 +6222,6 @@ widget.styles.align_vertical = "top"
 widget.styles.align_vertical = "top"
 
 ```
-
 
 ```
 
@@ -7410,7 +7328,6 @@ Button {
     
 ```
 
-
 ```
 
 #### actions.md
@@ -7583,7 +7500,6 @@ textual easing
 
 ```
 
-
 ```
 
 #### app.md
@@ -7684,7 +7600,6 @@ Example:
 from textual.app import App
 from textual.widgets import Button, Welcome
 
-
 class WelcomeApp(App):
     def on_key(self) -> None:
         self.mount(Welcome())
@@ -7723,7 +7638,6 @@ if __name__ == "__main__":
     sys.exit(app.return_code or 0)
 
 ```
-
 
 ```
 
@@ -7822,8 +7736,7 @@ Define commands per screen by adding a `COMMANDS` class var to your [`Screen`](t
 
 Set `ENABLE_COMMAND_PALETTE = False` in your `App` class to disable it globally.
 
-> # Limit input size for API calls
-
+# Limit input size for API calls
 ## Embedded Code Examples
 
 ### `inline_python`
@@ -7841,7 +7754,6 @@ class NewPaletteBindingApp(App):
     COMMAND_PALETTE_BINDING = "ctrl+backslash"
 
 ```
-
 
 ```
 
@@ -8025,7 +7937,6 @@ class WelcomeWidget(Widget):
 return Content.from_markup("hello [bold]$name[/bold]!", name=name)
 
 ```
-
 
 ```
 
@@ -8242,7 +8153,6 @@ MyWidget {
 textual colors
 
 ```
-
 
 ```
 
@@ -8562,19 +8472,16 @@ logging.basicConfig(
     handlers=[TextualHandler()],
 )
 
-
 class LogApp(App):
     """Using logging with Textual."""
 
     def on_mount(self) -> None:
         logging.debug("Logged via TextualHandler")
 
-
 if __name__ == "__main__":
     LogApp().run()
 
 ```
-
 
 ```
 
@@ -8623,7 +8530,7 @@ Example: With "No" button focused:
 2. Event bubbles to `Container.on_key`
 3. Then to `App.on_key`
 
-Bubbling stops at the root (`App`). 
+Bubbling stops at the root (`App`).
 
 ### Stopping Bubbles
 
@@ -8730,7 +8637,6 @@ def home_tab(self) -> None:
         self.app.bell()
 
 ```
-
 
 ```
 
@@ -8850,7 +8756,6 @@ The [Footer](../widgets/footer.md) widget auto-detects and displays available bi
     ]
 
 ```
-
 
 ```
 
@@ -9096,7 +9001,6 @@ widget.styles.layout = "vertical"
     
 ```
 
-
 ```
 
 #### queries.md
@@ -9322,7 +9226,6 @@ for widget in self.query("Button"):
     widget.add_class("disabled")
 
 ```
-
 
 ```
 
@@ -9596,7 +9499,6 @@ class MyWidget(Widget):
     --8<-- "docs/examples/guide/reactivity/world_clock01.tcss"
     
 ```
-
 
 ```
 
@@ -9924,7 +9826,6 @@ textual borders
 
 ```
 
-
 ```
 
 #### testing.md
@@ -10130,7 +10031,6 @@ def test_calculator_hover_number(snap_compare):
 
 ```
 
-
 ```
 
 #### widgets.md
@@ -10324,7 +10224,6 @@ def on_click(self):
 
 ```
 
-
 ```
 
 #### workers.md
@@ -10512,7 +10411,6 @@ For help, see [help](../help.md).
 
 ```
 
-
 ```
 
 #### design-a-layout.md
@@ -10654,7 +10552,6 @@ For help: [Get Support](../help.md)
     
 ```
 
-
 ```
 
 #### index.md
@@ -10785,7 +10682,6 @@ dependencies = ["textual==0.47.1"]
 ```
 
 `dependencies` lists required packages (e.g., `textual==0.47.1`). Version pinning ensures reproducibility.
-
 ## Virtual Environments
 
 Use virtual environments to isolate dependencies per project. Create one with:
@@ -10888,7 +10784,6 @@ python -m textual_calculator.calculator
 ```
 from textual_calculator.calculator import CalculatorApp
 
-
 def calculator():
     app = CalculatorApp()
     app.run()
@@ -10944,7 +10839,6 @@ calculator
 pipx install textual_calculator
 
 ```
-
 
 ```
 
@@ -11010,7 +10904,6 @@ We’re here to [help](../help.md)!
     --8<-- "docs/examples/how-to/render_compose.py"
     
 ```
-
 
 ```
 
@@ -11222,7 +11115,6 @@ class MyContainer(Widget):
     """    
 
 ```
-
 
 ```
 
@@ -11511,7 +11403,6 @@ Greetings("Well hello", "there").run()
 
 ```
 
-
 ```
 
 #### getting_started.md
@@ -11650,7 +11541,6 @@ cd textual/examples/
 python code_browser.py ../
 
 ```
-
 
 ```
 
@@ -11801,7 +11691,6 @@ Examples from [examples/ directory](https://github.com/Textualize/textual/tree/m
     --8<-- "examples/calculator.tcss"
     
 ```
-
 
 ```
 
@@ -12204,7 +12093,6 @@ Button {
 
 ```
 
-
 ```
 
 #### widget_gallery.md
@@ -12512,7 +12400,6 @@ The following example clarifies the distinction between [`border`](../styles/bor
     
 ```
 
-
 ```
 
 #### see_also_border.md
@@ -12689,7 +12576,6 @@ widget.styles.property_name_variant = value4
 
 ```
 
-
 ```
 
 #### align.md
@@ -12826,7 +12712,6 @@ widget.styles.align_horizontal = "right"
 widget.styles.align_vertical = "middle"
 
 ```
-
 
 ```
 
@@ -12984,7 +12869,6 @@ widget.styles.background = Color(120, 60, 100)
 
 ```
 
-
 ```
 
 #### background_tint.md
@@ -13089,10 +12973,8 @@ MyWidget:focus {
 /* 10% backgrouhnd tint */
 background-tint: blue 10%;
 
-
 /* 20% RGB color */
 background-tint: rgb(100, 120, 200, 0.2);
-
 
 ```
 
@@ -13107,7 +12989,6 @@ from textual.color import Color
 widget.styles.background_tint = Color(120, 60, 100, 0.5)
 
 ```
-
 
 ```
 
@@ -13261,7 +13142,6 @@ widget.styles.border_left = ("outer", "red")
 
 ```
 
-
 ```
 
 #### border_subtitle_align.md
@@ -13369,7 +13249,6 @@ widget.styles.border_subtitle_align = "right"
 
 ```
 
-
 ```
 
 #### border_subtitle_background.md
@@ -13416,7 +13295,6 @@ border-subtitle-background: blue;
 widget.styles.border_subtitle_background = "blue"
 
 ```
-
 
 ```
 
@@ -13469,7 +13347,6 @@ border-subtitle-color: red;
 widget.styles.border_subtitle_color = "red"
 
 ```
-
 
 ```
 
@@ -13527,7 +13404,6 @@ border-subtitle-style: bold underline;
 widget.styles.border_subtitle_style = "bold underline"
 
 ```
-
 
 ```
 
@@ -13631,7 +13507,6 @@ widget.styles.border_title_align = "right"
 
 ```
 
-
 ```
 
 #### border_title_background.md
@@ -13677,7 +13552,6 @@ border-title-background: blue;
 widget.styles.border_title_background = "blue"
 
 ```
-
 
 ```
 
@@ -13730,7 +13604,6 @@ border-title-color: red;
 widget.styles.border_title_color = "red"
 
 ```
-
 
 ```
 
@@ -13788,7 +13661,6 @@ border-title-style: bold underline;
 widget.styles.border_title_style = "bold underline"
 
 ```
-
 
 ```
 
@@ -13894,7 +13766,6 @@ widget.box_sizing = "border-box"
 widget.box_sizing = "content-box"
 
 ```
-
 
 ```
 
@@ -14029,7 +13900,6 @@ from textual.color import Color
 widget.styles.color = Color.parse("pink")
 
 ```
-
 
 ```
 
@@ -14171,7 +14041,6 @@ widget.styles.content_align_vertical = "middle"
 
 ```
 
-
 ```
 
 #### display.md
@@ -14299,7 +14168,6 @@ widget.display = True
 
 ```
 
-
 ```
 
 #### dock.md
@@ -14410,7 +14278,6 @@ widget.styles.dock = "top"     # Dock    top.
 
 ```
 
-
 ```
 
 #### column_span.md
@@ -14491,7 +14358,6 @@ column-span: 3;
 widget.styles.column_span = 3
 
 ```
-
 
 ```
 
@@ -14592,7 +14458,6 @@ grid.styles.grid_columns = "1fr 2fr"
 
 ```
 
-
 ```
 
 #### grid_gutter.md
@@ -14691,7 +14556,6 @@ widget.styles.grid_gutter_horizontal = "2"
 
 ```
 
-
 ```
 
 #### grid_rows.md
@@ -14789,7 +14653,6 @@ grid.styles.grid_rows = "1fr 2fr"
 
 ```
 
-
 ```
 
 #### grid_size.md
@@ -14882,7 +14745,6 @@ widget.styles.grid_size_columns = 6
 
 ```
 
-
 ```
 
 #### index.md
@@ -14958,7 +14820,6 @@ Demonstrates all styles. `grid-size: 3 4;` sets a 3×4 grid. The magenta cell sp
     --8<-- "docs/examples/styles/grid.tcss"
     
 ```
-
 
 ```
 
@@ -15038,7 +14899,6 @@ row-span: 3
 widget.styles.row_span = 3
 
 ```
-
 
 ```
 
@@ -15142,7 +15002,6 @@ widget.styles.hatch = ("right", "rgba(0,255,0,128)")
 widget.styles.hatch = ("T", "blue")
 
 ```
-
 
 ```
 
@@ -15279,7 +15138,6 @@ self.styles.height = "auto"
 
 ```
 
-
 ```
 
 #### index.md
@@ -15356,7 +15214,7 @@ keyline: [<a href="../../css_types/keyline">&lt;keyline&gt;</a>] [<a href="../..
 
 === "keyline.tcss"
 
-    ```css 
+    ```css
     --8<-- "docs/examples/styles/keyline.tcss"
     ```
 
@@ -15417,7 +15275,6 @@ keyline: thin green;
 widget.styles.keyline = ("thin", "green")
 
 ```
-
 
 ```
 
@@ -15510,7 +15367,6 @@ widget.styles.layer = "below"
 
 ```
 
-
 ```
 
 #### layers.md
@@ -15600,7 +15456,6 @@ layers: below above;
 widget.style.layers = ("below", "above")
 
 ```
-
 
 ```
 
@@ -15692,7 +15547,6 @@ widget.styles.layout = "horizontal"
 
 ```
 
-
 ```
 
 #### index.md
@@ -15769,7 +15623,6 @@ See each property’s reference for value semantics.
     --8<-- "docs/examples/styles/links.tcss"
     
 ```
-
 
 ```
 
@@ -15860,7 +15713,6 @@ widget.styles.link_background = "$accent"
 widget.styles.link_background = Color(100, 30, 173)
 
 ```
-
 
 ```
 
@@ -15962,7 +15814,6 @@ widget.styles.link_background_hover = Color(100, 30, 173)
 
 ```
 
-
 ```
 
 #### link_color.md
@@ -16052,7 +15903,6 @@ widget.styles.link_color = "$accent"
 widget.styles.link_color = Color(100, 30, 173)
 
 ```
-
 
 ```
 
@@ -16149,7 +15999,6 @@ widget.styles.link_color_hover = Color(100, 30, 173)
 
 ```
 
-
 ```
 
 #### link_style.md
@@ -16237,7 +16086,6 @@ widget.styles.link_style = "bold"
 widget.styles.link_style = "bold italic reverse"
 
 ```
-
 
 ```
 
@@ -16332,7 +16180,6 @@ widget.styles.link_style_hover = "bold"
 widget.styles.link_style_hover = "bold italic reverse"
 
 ```
-
 
 ```
 
@@ -16489,7 +16336,6 @@ widget.styles.margin = (1, 2, 3, 4)
 
 ```
 
-
 ```
 
 #### max_height.md
@@ -16589,7 +16435,6 @@ widget.styles.max_height = 10
 widget.styles.max_height = "25vh"
 
 ```
-
 
 ```
 
@@ -16691,7 +16536,6 @@ widget.styles.max_width = "25vw"
 
 ```
 
-
 ```
 
 #### min_height.md
@@ -16792,7 +16636,6 @@ widget.styles.min_height = "25vh"
 
 ```
 
-
 ```
 
 #### min_width.md
@@ -16892,7 +16735,6 @@ widget.styles.min_width = 10
 widget.styles.min_width = "25vw"
 
 ```
-
 
 ```
 
@@ -16996,7 +16838,6 @@ widget.styles.offset = (2, 4)
 
 ```
 
-
 ```
 
 #### opacity.md
@@ -17084,7 +16925,6 @@ opacity: 50%;
 widget.styles.opacity = "50%"
 
 ```
-
 
 ```
 
@@ -17227,7 +17067,6 @@ widget.outline_left = ("outer", "red")
 
 ```
 
-
 ```
 
 #### overflow.md
@@ -17343,7 +17182,6 @@ widget.styles.overflow_y = "hidden"
 widget.styles.overflow_x = "scroll"
 
 ```
-
 
 ```
 
@@ -17493,7 +17331,6 @@ widget.styles.padding = (1, 2, 3, 4)
 
 ```
 
-
 ```
 
 #### pointer.md
@@ -17594,7 +17431,6 @@ widget.styles.pointer = "crosshair"
 
 ```
 
-
 ```
 
 #### position.md
@@ -17690,7 +17526,6 @@ widget.styles.position = "absolute"
 
 ```
 
-
 ```
 
 #### index.md
@@ -17766,7 +17601,6 @@ Two panels with oversized text. Right panel uses custom scrollbars; left shows d
     --8<-- "docs/examples/styles/scrollbars.tcss"
     
 ```
-
 
 ```
 
@@ -17855,7 +17689,6 @@ widget.styles.scrollbar_background = "blue"
 
 ```
 
-
 ```
 
 #### scrollbar_background_active.md
@@ -17942,7 +17775,6 @@ widget.styles.scrollbar_background_active = "red"
 
 ```
 
-
 ```
 
 #### scrollbar_background_hover.md
@@ -18028,7 +17860,6 @@ scrollbar-background-hover: purple;
 widget.styles.scrollbar_background_hover = "purple"
 
 ```
-
 
 ```
 
@@ -18117,7 +17948,6 @@ widget.styles.scrollbar_color = "cyan"
 
 ```
 
-
 ```
 
 #### scrollbar_color_active.md
@@ -18204,7 +18034,6 @@ widget.styles.scrollbar_color_active = "yellow"
 
 ```
 
-
 ```
 
 #### scrollbar_color_hover.md
@@ -18289,7 +18118,6 @@ widget.styles.scrollbar_color_hover = "pink"
 
 ```
 
-
 ```
 
 #### scrollbar_corner_color.md
@@ -18371,7 +18199,6 @@ scrollbar-corner-color: white;
 widget.styles.scrollbar_corner_color = "white"
 
 ```
-
 
 ```
 
@@ -18458,7 +18285,6 @@ self.styles.scrollbar_gutter = "auto"    # Don't reserve space for a vertical sc
 self.styles.scrollbar_gutter = "stable"  # Reserve space for a vertical scrollbar.
 
 ```
-
 
 ```
 
@@ -18597,7 +18423,6 @@ widget.styles.scrollbar_size_vertical = 4
 
 ```
 
-
 ```
 
 #### scrollbar_visibility.md
@@ -18688,7 +18513,6 @@ widget.styles.scrollbar_visibility = "visible";
 widget.styles.scrollbar_visibility = "hidden";
 
 ```
-
 
 ```
 
@@ -18784,7 +18608,6 @@ widget.styles.text_align = "right"
 
 ```
 
-
 ```
 
 #### text_opacity.md
@@ -18878,7 +18701,6 @@ widget.styles.text_opacity = "50%"
 
 ```
 
-
 ```
 
 #### text_overflow.md
@@ -18963,7 +18785,7 @@ widget.styles.text_overflow = "ellipsis"
 
 ```
 #widget {
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
 ```
@@ -18971,10 +18793,9 @@ widget.styles.text_overflow = "ellipsis"
 ### `inline_py`
 
 ```
-widget.styles.text_overflow = "ellipsis" 
+widget.styles.text_overflow = "ellipsis"
 
 ```
-
 
 ```
 
@@ -19069,7 +18890,6 @@ widget.styles.text_style = "italic"
 
 ```
 
-
 ```
 
 #### text_wrap.md
@@ -19163,7 +18983,6 @@ widget.styles.text_wrap = "wrap"
 widget.styles.text_wrap = "nowrap"
 
 ```
-
 
 ```
 
@@ -19263,7 +19082,6 @@ widget.styles.tint = Color.parse("red").with_alpha(0.2);
 widget.styles.tint = "rgba(0, 200, 0, 0.3)"
 
 ```
-
 
 ```
 
@@ -19419,7 +19237,6 @@ widget.visible = True
 
 ```
 
-
 ```
 
 #### width.md
@@ -19555,7 +19372,6 @@ widget.styles.width = "auto"
 
 ```
 
-
 ```
 
 ### widgets
@@ -19641,7 +19457,6 @@ Widget description.
     
 ```
 
-
 ```
 
 #### button.md
@@ -19723,7 +19538,6 @@ Spacing is not due to padding. Default styling includes borders and `min-width: 
     
 ```
 
-
 ```
 
 #### checkbox.md
@@ -19797,7 +19611,6 @@ A simple checkbox widget storing a boolean value.
     --8<-- "docs/examples/widgets/checkbox.tcss"
     
 ```
-
 
 ```
 
@@ -19970,7 +19783,6 @@ def compose(self) -> ComposeResult:
     --8<-- "docs/examples/widgets/collapsible_custom_symbol.py"
     
 ```
-
 
 ```
 
@@ -20221,7 +20033,6 @@ table.remove_column(column_key)
     
 ```
 
-
 ```
 
 #### digits.md
@@ -20308,7 +20119,6 @@ None.
     
 ```
 
-
 ```
 
 #### directory_tree.md
@@ -20385,7 +20195,6 @@ Inherits bindings from [Tree.BINDINGS][textual.widgets.Tree.BINDINGS].
 
 ```
 
-
 ```
 
 #### footer.md
@@ -20455,7 +20264,6 @@ None.
     --8<-- "docs/examples/widgets/footer.py"
     
 ```
-
 
 ```
 
@@ -20532,7 +20340,6 @@ None
     --8<-- "docs/examples/widgets/header_app_title.py"
     
 ```
-
 
 ```
 
@@ -20676,7 +20483,6 @@ input = Input(validate_on=["submitted"])
 
 ```
 
-
 ```
 
 #### label.md
@@ -20725,7 +20531,6 @@ None.
 
 ---
 
-
 ::: textual.widgets.Label
     options:
       heading_level: 2
@@ -20738,7 +20543,6 @@ None.
     --8<-- "docs/examples/widgets/label.py"
     
 ```
-
 
 ```
 
@@ -20808,7 +20612,6 @@ None defined.
     
 ```
 
-
 ```
 
 #### list_item.md
@@ -20871,7 +20674,6 @@ None.
     --8<-- "docs/examples/widgets/list_view.py"
     
 ```
-
 
 ```
 
@@ -20946,7 +20748,6 @@ None.
     --8<-- "docs/examples/widgets/list_view.tcss"
     
 ```
-
 
 ```
 
@@ -21027,7 +20828,6 @@ LoadingIndicator {
 
 ```
 
-
 ```
 
 #### log.md
@@ -21093,7 +20893,6 @@ None.
     --8<-- "docs/examples/widgets/log.py"
     
 ```
-
 
 ```
 
@@ -21474,7 +21273,6 @@ None.
 
 ---
 
-
 ::: textual.widgets.Placeholder
     options:
       heading_level: 2
@@ -21494,7 +21292,6 @@ None.
     --8<-- "docs/examples/widgets/placeholder.tcss"
     
 ```
-
 
 ```
 
@@ -21554,7 +21351,6 @@ None
     --8<-- "docs/examples/widgets/pretty.py"
     
 ```
-
 
 ```
 
@@ -21677,7 +21473,6 @@ None
     
 ```
 
-
 ```
 
 #### radiobutton.md
@@ -21755,7 +21550,6 @@ A focusable, non-container radio button storing a `bool` value. Best used within
     --8<-- "docs/examples/widgets/radio_button.tcss"
     
 ```
-
 
 ```
 
@@ -21859,7 +21653,6 @@ None.
     
 ```
 
-
 ```
 
 #### rich_log.md
@@ -21923,7 +21716,6 @@ None.
     --8<-- "docs/examples/widgets/rich_log.py"
     
 ```
-
 
 ```
 
@@ -22029,7 +21821,6 @@ None.
     --8<-- "docs/examples/widgets/vertical_rules.tcss"
     
 ```
-
 
 ```
 
@@ -22194,7 +21985,6 @@ my_select: Select[int] =  Select(options)
     
 ```
 
-
 ```
 
 #### selection_list.md
@@ -22306,7 +22096,6 @@ selections = [("First", 1), ("Second", 2)]
 my_selection_list: SelectionList[int] =  SelectionList(*selections)
 
 ```
-
 
 ```
 
@@ -22445,7 +22234,6 @@ No bindings defined.
     
 ```
 
-
 ```
 
 #### static.md
@@ -22503,7 +22291,6 @@ None
     --8<-- "docs/examples/widgets/static.py"
     
 ```
-
 
 ```
 
@@ -22586,7 +22373,6 @@ A focusable switch widget that stores a boolean value.
     --8<-- "docs/examples/widgets/switch.tcss"
     
 ```
-
 
 ```
 
@@ -22818,7 +22604,6 @@ def compose(self) -> ComposeResult:
     
 ```
 
-
 ```
 
 #### tabs.md
@@ -22937,7 +22722,6 @@ def compose(self) -> ComposeResult:
     --8<-- "docs/examples/widgets/tabs.py"
     
 ```
-
 
 ```
 
@@ -23227,7 +23011,6 @@ java_language = get_language("java")
 
 ```
 
-
 ```
 
 #### toast.md
@@ -23372,7 +23155,6 @@ Toast.-information .toast--title {
     text-style: italic;
 }
 
-
 ```
 
 ### `inline_python`
@@ -23381,7 +23163,6 @@ Toast.-information .toast--title {
     --8<-- "docs/examples/widgets/toast.py"
     
 ```
-
 
 ```
 
@@ -23461,7 +23242,6 @@ Tree widgets have a `root` attribute of type [TreeNode][textual.widgets.tree.Tre
     
 ```
 
-
 ```
 
 ## Code Snippets
@@ -23485,10 +23265,8 @@ f = open("foo.txt", "w")
 inspect(f, console=c)
 c.save_svg("inspect1.svg")
 
-
 inspect(f, console=c, methods=True)
 c.save_svg("inspect2.svg")
-
 
 inspect(f, console=c, methods=True, help=True)
 c.save_svg("inspect3.svg")
@@ -23511,7 +23289,6 @@ from textual.containers import Grid, VerticalScroll
 from textual.widget import Widget
 from textual.widgets import Footer, Label
 
-
 class ColourChanger(Widget):  # (1)!
     def on_click(self) -> None:
         self.styles.background = Color(
@@ -23519,7 +23296,6 @@ class ColourChanger(Widget):  # (1)!
             randint(1, 255),
             randint(1, 255),
         )
-
 
 class MyApp(App[None]):
     BINDINGS = [("l", "load", "Load data")]  # (2)!
@@ -23539,7 +23315,6 @@ class MyApp(App[None]):
     def action_load(self) -> None:  # (3)!
         time.sleep(5)  # (4)!
         self.query_one("#log").mount(Label("Data loaded ✅"))
-
 
 MyApp().run()
 
@@ -23562,7 +23337,6 @@ from textual.containers import Grid, VerticalScroll
 from textual.widget import Widget
 from textual.widgets import Footer, Label
 
-
 class ColourChanger(Widget):
     def on_click(self) -> None:
         self.styles.background = Color(
@@ -23570,7 +23344,6 @@ class ColourChanger(Widget):
             randint(1, 255),
             randint(1, 255),
         )
-
 
 class MyApp(App[None]):
     BINDINGS = [("l", "load", "Load data")]
@@ -23594,7 +23367,6 @@ class MyApp(App[None]):
         time.sleep(5)
         self.query_one("#log").mount(Label("Data loaded ✅"))
 
-
 MyApp().run()
 
 ```
@@ -23615,7 +23387,6 @@ from textual.containers import Grid, VerticalScroll
 from textual.widget import Widget
 from textual.widgets import Footer, Label
 
-
 class ColourChanger(Widget):
     def on_click(self) -> None:
         self.styles.background = Color(
@@ -23623,7 +23394,6 @@ class ColourChanger(Widget):
             randint(1, 255),
             randint(1, 255),
         )
-
 
 class MyApp(App[None]):
     BINDINGS = [("l", "load", "Load data")]
@@ -23648,7 +23418,6 @@ class MyApp(App[None]):
         await asyncio.sleep(5)  # (2)!
         self.query_one("#log").mount(Label("Data loaded ✅"))  # (3)!
 
-
 MyApp().run()
 
 ```
@@ -23664,7 +23433,6 @@ MyApp().run()
 ```python
 from textual.app import App
 from textual import events
-
 
 class EventApp(App):
 
@@ -23688,7 +23456,6 @@ class EventApp(App):
         if event.key.isdecimal():
             self.screen.styles.background = self.COLORS[int(event.key)]
 
-
 if __name__ == "__main__":
     app = EventApp()
     app.run()
@@ -23705,7 +23472,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Label, Button
 
-
 class QuestionApp(App[str]):
     def compose(self) -> ComposeResult:
         yield Label("Do you love Textual?")
@@ -23714,7 +23480,6 @@ class QuestionApp(App[str]):
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         self.exit(event.button.id)
-
 
 if __name__ == "__main__":
     app = QuestionApp()
@@ -23733,7 +23498,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Button, Label
 
-
 class QuestionApp(App[str]):
     CSS_PATH = "question02.tcss"
 
@@ -23744,7 +23508,6 @@ class QuestionApp(App[str]):
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         self.exit(event.button.id)
-
 
 if __name__ == "__main__":
     app = QuestionApp()
@@ -23762,7 +23525,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Label, Button
-
 
 class QuestionApp(App[str]):
     CSS = """
@@ -23793,7 +23555,6 @@ class QuestionApp(App[str]):
     def on_button_pressed(self, event: Button.Pressed) -> None:
         self.exit(event.button.id)
 
-
 if __name__ == "__main__":
     app = QuestionApp()
     reply = app.run()
@@ -23811,7 +23572,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Button, Header, Label
 
-
 class MyApp(App[str]):
     CSS_PATH = "question02.tcss"
     TITLE = "A Question App"
@@ -23825,7 +23585,6 @@ class MyApp(App[str]):
 
     def on_button_pressed(self, event: Button.Pressed) -> None:
         self.exit(event.button.id)
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -23845,7 +23604,6 @@ from textual.app import App, ComposeResult
 from textual.events import Key
 from textual.widgets import Button, Header, Label
 
-
 class MyApp(App[str]):
     CSS_PATH = "question02.tcss"
     TITLE = "A Question App"
@@ -23864,7 +23622,6 @@ class MyApp(App[str]):
         self.title = event.key
         self.sub_title = f"You just pressed {event.key}!"
 
-
 if __name__ == "__main__":
     app = MyApp()
     reply = app.run()
@@ -23881,7 +23638,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 
-
 class MyApp(App):
     pass
 
@@ -23896,10 +23652,8 @@ class MyApp(App):
 ```python
 from textual.app import App
 
-
 class MyApp(App):
     pass
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -23920,7 +23674,6 @@ from textual import on
 from textual.app import App, ComposeResult
 from textual.widgets import Button
 
-
 class SuspendingApp(App[None]):
 
     def compose(self) -> ComposeResult:
@@ -23930,7 +23683,6 @@ class SuspendingApp(App[None]):
     def run_external_editor(self) -> None:
         with self.suspend():  # (1)!
             system("vim")
-
 
 if __name__ == "__main__":
     SuspendingApp().run()
@@ -23948,14 +23700,12 @@ from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.widgets import Label
 
-
 class SuspendKeysApp(App[None]):
 
     BINDINGS = [Binding("ctrl+z", "suspend_process")]
 
     def compose(self) -> ComposeResult:
         yield Label("Press Ctrl+Z to suspend!")
-
 
 if __name__ == "__main__":
     SuspendKeysApp().run()
@@ -23972,14 +23722,12 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Welcome
 
-
 class WelcomeApp(App):
     def compose(self) -> ComposeResult:
         yield Welcome()
 
     def on_button_pressed(self) -> None:
         self.exit()
-
 
 if __name__ == "__main__":
     app = WelcomeApp()
@@ -23997,14 +23745,12 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Welcome
 
-
 class WelcomeApp(App):
     def on_key(self) -> None:
         self.mount(Welcome())
 
     def on_button_pressed(self) -> None:
         self.exit()
-
 
 if __name__ == "__main__":
     app = WelcomeApp()
@@ -24022,12 +23768,10 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Button, Welcome
 
-
 class WelcomeApp(App):
     def on_key(self) -> None:
         self.mount(Welcome())
         self.query_one(Button).label = "YES!"
-
 
 if __name__ == "__main__":
     app = WelcomeApp()
@@ -24045,12 +23789,10 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Button, Welcome
 
-
 class WelcomeApp(App):
     async def on_key(self) -> None:
         await self.mount(Welcome())
         self.query_one(Button).label = "YES!"
-
 
 if __name__ == "__main__":
     app = WelcomeApp()
@@ -24069,7 +23811,6 @@ from textual.app import App, ComposeResult
 from textual.color import Color
 from textual.message import Message
 from textual.widgets import Static
-
 
 class ColorButton(Static):
     """A color button."""
@@ -24098,7 +23839,6 @@ class ColorButton(Static):
     def render(self) -> str:
         return str(self.color)
 
-
 class ColorApp(App):
     def compose(self) -> ComposeResult:
         yield ColorButton(Color.parse("#008080"))
@@ -24108,7 +23848,6 @@ class ColorApp(App):
 
     def on_color_button_selected(self, message: ColorButton.Selected) -> None:
         self.screen.styles.animate("background", message.color, duration=0.5)
-
 
 if __name__ == "__main__":
     app = ColorApp()
@@ -24135,7 +23874,6 @@ from rich.json import JSON
 from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll
 from textual.widgets import Input, Static
-
 
 class DictionaryApp(App):
     """Searches a dictionary API as-you-type."""
@@ -24164,7 +23902,6 @@ class DictionaryApp(App):
         if word == self.query_one(Input).value:
             self.query_one("#results", Static).update(JSON(results))
 
-
 if __name__ == "__main__":
     app = DictionaryApp()
     app.run()
@@ -24180,7 +23917,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Button
-
 
 class OnDecoratorApp(App):
     CSS_PATH = "on_decorator.tcss"
@@ -24202,7 +23938,6 @@ class OnDecoratorApp(App):
         elif event.button.id == "quit":
             self.exit()
 
-
 if __name__ == "__main__":
     app = OnDecoratorApp()
     app.run()
@@ -24219,7 +23954,6 @@ if __name__ == "__main__":
 from textual import on
 from textual.app import App, ComposeResult
 from textual.widgets import Button
-
 
 class OnDecoratorApp(App):
     CSS_PATH = "on_decorator.tcss"
@@ -24247,7 +23981,6 @@ class OnDecoratorApp(App):
         """Called when the quit button is pressed."""
         self.exit()
 
-
 if __name__ == "__main__":
     app = OnDecoratorApp()
     app.run()
@@ -24263,7 +23996,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Button, Input
-
 
 class PreventApp(App):
     """Demonstrates `prevent` context manager."""
@@ -24281,7 +24013,6 @@ class PreventApp(App):
     def on_input_changed(self) -> None:
         """Called as the user types."""
         self.bell()  # (2)!
-
 
 if __name__ == "__main__":
     app = PreventApp()
@@ -24305,11 +24036,9 @@ from textual_dev.renderables import DevConsoleHeader
 from textual.app import App
 from textual.widgets import Static
 
-
 class ConsoleApp(App):
     def compose(self):
         yield Static(DevConsoleHeader())
-
 
 app = ConsoleApp()
 
@@ -24325,7 +24054,6 @@ app = ConsoleApp()
 from textual.app import App
 from textual import events
 
-
 class ActionsApp(App):
     def action_set_background(self, color: str) -> None:
         self.screen.styles.background = color
@@ -24333,7 +24061,6 @@ class ActionsApp(App):
     def on_key(self, event: events.Key) -> None:
         if event.key == "r":
             self.action_set_background("red")
-
 
 if __name__ == "__main__":
     app = ActionsApp()
@@ -24351,7 +24078,6 @@ if __name__ == "__main__":
 from textual import events
 from textual.app import App
 
-
 class ActionsApp(App):
     def action_set_background(self, color: str) -> None:
         self.screen.styles.background = color
@@ -24359,7 +24085,6 @@ class ActionsApp(App):
     async def on_key(self, event: events.Key) -> None:
         if event.key == "r":
             await self.run_action("set_background('red')")
-
 
 if __name__ == "__main__":
     app = ActionsApp()
@@ -24384,14 +24109,12 @@ TEXT = """
 [@click=app.set_background('blue')]Blue[/]
 """
 
-
 class ActionsApp(App):
     def compose(self) -> ComposeResult:
         yield Static(TEXT)
 
     def action_set_background(self, color: str) -> None:
         self.screen.styles.background = color
-
 
 if __name__ == "__main__":
     app = ActionsApp()
@@ -24416,7 +24139,6 @@ TEXT = """
 [@click=app.set_background('blue')]Blue[/]
 """
 
-
 class ActionsApp(App):
     BINDINGS = [
         ("r", "set_background('red')", "Red"),
@@ -24429,7 +24151,6 @@ class ActionsApp(App):
 
     def action_set_background(self, color: str) -> None:
         self.screen.styles.background = color
-
 
 if __name__ == "__main__":
     app = ActionsApp()
@@ -24454,11 +24175,9 @@ TEXT = """
 [@click=set_background('yellow')]Yellow[/]
 """
 
-
 class ColorSwitcher(Static):
     def action_set_background(self, color: str) -> None:
         self.styles.background = color
-
 
 class ActionsApp(App):
     CSS_PATH = "actions05.tcss"
@@ -24474,7 +24193,6 @@ class ActionsApp(App):
 
     def action_set_background(self, color: str) -> None:
         self.screen.styles.background = color
-
 
 if __name__ == "__main__":
     app = ActionsApp()
@@ -24495,7 +24213,6 @@ from textual.reactive import reactive
 from textual.widgets import Footer, Placeholder
 
 PAGES_COUNT = 5
-
 
 class PagesApp(App):
     BINDINGS = [
@@ -24533,7 +24250,6 @@ class PagesApp(App):
             return False
         return True
 
-
 if __name__ == "__main__":
     app = PagesApp()
     app.run()
@@ -24553,7 +24269,6 @@ from textual.reactive import reactive
 from textual.widgets import Footer, Placeholder
 
 PAGES_COUNT = 5
-
 
 class PagesApp(App):
     BINDINGS = [
@@ -24587,7 +24302,6 @@ class PagesApp(App):
             return None  # (3)!
         return True
 
-
 if __name__ == "__main__":
     app = PagesApp()
     app.run()
@@ -24604,7 +24318,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class AnimationApp(App):
     def compose(self) -> ComposeResult:
         self.box = Static("Hello, World!")
@@ -24615,7 +24328,6 @@ class AnimationApp(App):
 
     def on_mount(self):
         self.box.styles.animate("opacity", value=0.0, duration=2.0)
-
 
 if __name__ == "__main__":
     app = AnimationApp()
@@ -24636,7 +24348,6 @@ from textual.widgets import Static
 
 ease = EASING[DEFAULT_EASING]
 
-
 class AnimationApp(App):
     def compose(self) -> ComposeResult:
         self.box = Static("Hello, World!")
@@ -24653,7 +24364,6 @@ class AnimationApp(App):
 
     def key_3(self):
         self.box.styles.opacity = 1 - ease(0.75)
-
 
 if __name__ == "__main__":
     app = AnimationApp()
@@ -24673,14 +24383,12 @@ from typing import Iterable
 from textual.app import App, SystemCommand
 from textual.screen import Screen
 
-
 class BellCommandApp(App):
     """An app with a 'bell' command."""
 
     def get_system_commands(self, screen: Screen) -> Iterable[SystemCommand]:
         yield from super().get_system_commands(screen)  # (1)!
         yield SystemCommand("Bell", "Ring the bell", self.bell)  # (2)!
-
 
 if __name__ == "__main__":
     app = BellCommandApp()
@@ -24704,7 +24412,6 @@ from textual.app import App, ComposeResult
 from textual.command import Hit, Hits, Provider
 from textual.containers import VerticalScroll
 from textual.widgets import Static
-
 
 class PythonFileCommands(Provider):
     """A command provider to open a Python file in the current working directory."""
@@ -24736,7 +24443,6 @@ class PythonFileCommands(Provider):
                     help="Open this file in the viewer",
                 )
 
-
 class ViewerApp(App):
     """Demonstrate a command source."""
 
@@ -24759,7 +24465,6 @@ class ViewerApp(App):
         )
         self.query_one("#code", Static).update(syntax)
 
-
 if __name__ == "__main__":
     app = ViewerApp()
     app.run()
@@ -24779,7 +24484,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Container
 from textual.widget import Widget
 from textual.widgets import Input, Label, Switch
-
 
 class BitSwitch(Widget):
     """A Switch with a numeric label above it."""
@@ -24804,7 +24508,6 @@ class BitSwitch(Widget):
         yield Label(str(self.bit))
         yield Switch()
 
-
 class ByteInput(Widget):
     """A compound widget with 8 switches."""
 
@@ -24823,7 +24526,6 @@ class ByteInput(Widget):
     def compose(self) -> ComposeResult:
         for bit in reversed(range(8)):
             yield BitSwitch(bit)
-
 
 class ByteEditor(Widget):
     DEFAULT_CSS = """
@@ -24845,11 +24547,9 @@ class ByteEditor(Widget):
         with Container():
             yield ByteInput()
 
-
 class ByteInputApp(App):
     def compose(self) -> ComposeResult:
         yield ByteEditor()
-
 
 if __name__ == "__main__":
     app = ByteInputApp()
@@ -24872,7 +24572,6 @@ from textual.message import Message
 from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Input, Label, Switch
-
 
 class BitSwitch(Widget):
     """A Switch with a numeric label above it."""
@@ -24913,7 +24612,6 @@ class BitSwitch(Widget):
         self.value = event.value  # (4)!
         self.post_message(self.BitChanged(self.bit, event.value))
 
-
 class ByteInput(Widget):
     """A compound widget with 8 switches."""
 
@@ -24932,7 +24630,6 @@ class ByteInput(Widget):
     def compose(self) -> ComposeResult:
         for bit in reversed(range(8)):
             yield BitSwitch(bit)
-
 
 class ByteEditor(Widget):
     DEFAULT_CSS = """
@@ -24961,11 +24658,9 @@ class ByteEditor(Widget):
             value |= switch.value << switch.bit
         self.query_one(Input).value = str(value)
 
-
 class ByteInputApp(App):
     def compose(self) -> ComposeResult:
         yield ByteEditor()
-
 
 if __name__ == "__main__":
     app = ByteInputApp()
@@ -24989,7 +24684,6 @@ from textual.message import Message
 from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Input, Label, Switch
-
 
 class BitSwitch(Widget):
     """A Switch with a numeric label above it."""
@@ -25034,7 +24728,6 @@ class BitSwitch(Widget):
         self.value = event.value
         self.post_message(self.BitChanged(self.bit, event.value))
 
-
 class ByteInput(Widget):
     """A compound widget with 8 switches."""
 
@@ -25053,7 +24746,6 @@ class ByteInput(Widget):
     def compose(self) -> ComposeResult:
         for bit in reversed(range(8)):
             yield BitSwitch(bit)
-
 
 class ByteEditor(Widget):
     DEFAULT_CSS = """
@@ -25101,11 +24793,9 @@ class ByteEditor(Widget):
             with switch.prevent(BitSwitch.BitChanged):  # (5)!
                 switch.value = bool(value & (1 << switch.bit))  # (6)!
 
-
 class ByteInputApp(App):
     def compose(self) -> ComposeResult:
         yield ByteEditor()
-
 
 if __name__ == "__main__":
     app = ByteInputApp()
@@ -25123,7 +24813,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widget import Widget
 from textual.widgets import Input, Label
-
 
 class InputWithLabel(Widget):
     """An input with a label."""
@@ -25151,7 +24840,6 @@ class InputWithLabel(Widget):
         yield Label(self.input_label)
         yield Input()
 
-
 class CompoundApp(App):
     CSS = """
     Screen {
@@ -25167,7 +24855,6 @@ class CompoundApp(App):
         yield InputWithLabel("First Name")
         yield InputWithLabel("Last Name")
         yield InputWithLabel("Email")
-
 
 if __name__ == "__main__":
     app = CompoundApp()
@@ -25198,7 +24885,6 @@ Tags will be left in the output.
 
 """
 
-
 class ContentApp(App):
     CSS = """
     Screen {
@@ -25213,7 +24899,6 @@ class ContentApp(App):
     def compose(self) -> ComposeResult:
         yield Static(TEXT1, id="text1")
         yield Static(TEXT2, id="text2", markup=False)  # (1)!
-
 
 if __name__ == "__main__":
     app = ContentApp()
@@ -25249,7 +24934,6 @@ from textual.app import App, ComposeResult, RenderResult
 from textual.reactive import reactive
 from textual.widget import Widget
 
-
 class CodeView(Widget):
     """Widget to display Python code."""
 
@@ -25264,7 +24948,6 @@ class CodeView(Widget):
         syntax = Syntax(self.code, "python", line_numbers=True, indent_guides=True)
         return syntax
 
-
 class CodeApp(App):
     """App to demonstrate Rich renderables in Textual."""
 
@@ -25274,7 +24957,6 @@ class CodeApp(App):
         code_view = CodeView()
         code_view.code = code
         yield code_view
-
 
 if __name__ == "__main__":
     app = CodeApp()
@@ -25293,7 +24975,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Static
 
-
 class NestingDemo(App):
     """App that doesn't have nested CSS."""
 
@@ -25303,7 +24984,6 @@ class NestingDemo(App):
         with Horizontal(id="questions"):
             yield Static("Yes", classes="button affirmative")
             yield Static("No", classes="button negative")
-
 
 if __name__ == "__main__":
     app = NestingDemo()
@@ -25322,7 +25002,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Static
 
-
 class NestingDemo(App):
     """App with nested CSS."""
 
@@ -25332,7 +25011,6 @@ class NestingDemo(App):
         with Horizontal(id="questions"):
             yield Static("Yes", classes="button affirmative")
             yield Static("No", classes="button negative")
-
 
 if __name__ == "__main__":
     app = NestingDemo()
@@ -25349,10 +25027,8 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 
-
 class ExampleApp(App):
     pass
-
 
 if __name__ == "__main__":
     app = ExampleApp()
@@ -25370,12 +25046,10 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer
 
-
 class ExampleApp(App):
     def compose(self) -> ComposeResult:
         yield Header()
         yield Footer()
-
 
 if __name__ == "__main__":
     app = ExampleApp()
@@ -25396,7 +25070,6 @@ from textual.widgets import Button, Footer, Header, Static
 
 QUESTION = "Do you want to learn about Textual CSS?"
 
-
 class ExampleApp(App):
     def compose(self) -> ComposeResult:
         yield Header()
@@ -25410,7 +25083,6 @@ class ExampleApp(App):
             ),
             id="dialog",
         )
-
 
 if __name__ == "__main__":
     app = ExampleApp()
@@ -25431,7 +25103,6 @@ from textual.widgets import Button, Footer, Header, Static
 
 QUESTION = "Do you want to learn about Textual CSS?"
 
-
 class ExampleApp(App):
     CSS_PATH = "dom4.tcss"
 
@@ -25447,7 +25118,6 @@ class ExampleApp(App):
             ),
             id="dialog",
         )
-
 
 if __name__ == "__main__":
     app = ExampleApp()
@@ -25466,10 +25136,8 @@ from textual.app import App, ComposeResult
 from textual.color import Color
 from textual.widgets import Footer, Static
 
-
 class Bar(Static):
     pass
-
 
 class BindingApp(App):
     CSS_PATH = "binding01.tcss"
@@ -25488,7 +25156,6 @@ class BindingApp(App):
         self.mount(bar)
         self.call_after_refresh(self.screen.scroll_end, animate=False)
 
-
 if __name__ == "__main__":
     app = BindingApp()
     app.run()
@@ -25506,7 +25173,6 @@ from textual import events
 from textual.app import App, ComposeResult
 from textual.widgets import RichLog
 
-
 class InputApp(App):
     """App to display key events."""
 
@@ -25515,7 +25181,6 @@ class InputApp(App):
 
     def on_key(self, event: events.Key) -> None:
         self.query_one(RichLog).write(event)
-
 
 if __name__ == "__main__":
     app = InputApp()
@@ -25534,7 +25199,6 @@ from textual import events
 from textual.app import App, ComposeResult
 from textual.widgets import RichLog
 
-
 class InputApp(App):
     """App to display key events."""
 
@@ -25546,7 +25210,6 @@ class InputApp(App):
 
     def key_space(self) -> None:
         self.bell()
-
 
 if __name__ == "__main__":
     app = InputApp()
@@ -25565,11 +25228,9 @@ from textual import events
 from textual.app import App, ComposeResult
 from textual.widgets import RichLog
 
-
 class KeyLogger(RichLog):
     def on_key(self, event: events.Key) -> None:
         self.write(event)
-
 
 class InputApp(App):
     """App to display key events."""
@@ -25581,7 +25242,6 @@ class InputApp(App):
         yield KeyLogger()
         yield KeyLogger()
         yield KeyLogger()
-
 
 if __name__ == "__main__":
     app = InputApp()
@@ -25600,10 +25260,8 @@ from textual import events
 from textual.app import App, ComposeResult
 from textual.widgets import RichLog, Static
 
-
 class Ball(Static):
     pass
-
 
 class MouseApp(App):
     CSS_PATH = "mouse01.tcss"
@@ -25615,7 +25273,6 @@ class MouseApp(App):
     def on_mouse_move(self, event: events.MouseMove) -> None:
         self.screen.query_one(RichLog).write(event)
         self.query_one(Ball).offset = event.screen_offset - (8, 2)
-
 
 if __name__ == "__main__":
     app = MouseApp()
@@ -25633,7 +25290,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.containers import Container, Horizontal, VerticalScroll
 from textual.widgets import Header, Static
-
 
 class CombiningLayoutsExample(App):
     CSS_PATH = "combining_layouts.tcss"
@@ -25655,7 +25311,6 @@ class CombiningLayoutsExample(App):
                 yield Static("is")
                 yield Static("using")
                 yield Static("grid layout!", id="bottom-right-final")
-
 
 if __name__ == "__main__":
     app = CombiningLayoutsExample()
@@ -25680,14 +25335,12 @@ Docked widgets will not scroll out of view, making them ideal for sticky headers
 
 """
 
-
 class DockLayoutExample(App):
     CSS_PATH = "dock_layout1_sidebar.tcss"
 
     def compose(self) -> ComposeResult:
         yield Static("Sidebar", id="sidebar")
         yield Static(TEXT * 10, id="body")
-
 
 if __name__ == "__main__":
     app = DockLayoutExample()
@@ -25712,7 +25365,6 @@ Docked widgets will not scroll out of view, making them ideal for sticky headers
 
 """
 
-
 class DockLayoutExample(App):
     CSS_PATH = "dock_layout2_sidebar.tcss"
 
@@ -25720,7 +25372,6 @@ class DockLayoutExample(App):
         yield Static("Sidebar2", id="another-sidebar")
         yield Static("Sidebar1", id="sidebar")
         yield Static(TEXT * 10, id="body")
-
 
 app = DockLayoutExample()
 if __name__ == "__main__":
@@ -25745,7 +25396,6 @@ Docked widgets will not scroll out of view, making them ideal for sticky headers
 
 """
 
-
 class DockLayoutExample(App):
     CSS_PATH = "dock_layout3_sidebar_header.tcss"
 
@@ -25753,7 +25403,6 @@ class DockLayoutExample(App):
         yield Header(id="header")
         yield Static("Sidebar1", id="sidebar")
         yield Static(TEXT * 10, id="body")
-
 
 if __name__ == "__main__":
     app = DockLayoutExample()
@@ -25771,7 +25420,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class GridLayoutExample(App):
     CSS_PATH = "grid_layout1.tcss"
 
@@ -25782,7 +25430,6 @@ class GridLayoutExample(App):
         yield Static("Four", classes="box")
         yield Static("Five", classes="box")
         yield Static("Six", classes="box")
-
 
 if __name__ == "__main__":
     app = GridLayoutExample()
@@ -25800,7 +25447,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class GridLayoutExample(App):
     CSS_PATH = "grid_layout2.tcss"
 
@@ -25812,7 +25458,6 @@ class GridLayoutExample(App):
         yield Static("Five", classes="box")
         yield Static("Six", classes="box")
         yield Static("Seven", classes="box")
-
 
 if __name__ == "__main__":
     app = GridLayoutExample()
@@ -25830,7 +25475,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class GridLayoutExample(App):
     CSS_PATH = "grid_layout3_row_col_adjust.tcss"
 
@@ -25841,7 +25485,6 @@ class GridLayoutExample(App):
         yield Static("Four", classes="box")
         yield Static("Five", classes="box")
         yield Static("Six", classes="box")
-
 
 if __name__ == "__main__":
     app = GridLayoutExample()
@@ -25859,7 +25502,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class GridLayoutExample(App):
     CSS_PATH = "grid_layout4_row_col_adjust.tcss"
 
@@ -25870,7 +25512,6 @@ class GridLayoutExample(App):
         yield Static("Four", classes="box")
         yield Static("Five", classes="box")
         yield Static("Six", classes="box")
-
 
 if __name__ == "__main__":
     app = GridLayoutExample()
@@ -25888,7 +25529,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class GridLayoutExample(App):
     CSS_PATH = "grid_layout5_col_span.tcss"
 
@@ -25899,7 +25539,6 @@ class GridLayoutExample(App):
         yield Static("Four", classes="box")
         yield Static("Five", classes="box")
         yield Static("Six", classes="box")
-
 
 if __name__ == "__main__":
     app = GridLayoutExample()
@@ -25917,7 +25556,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class GridLayoutExample(App):
     CSS_PATH = "grid_layout6_row_span.tcss"
 
@@ -25928,7 +25566,6 @@ class GridLayoutExample(App):
         yield Static("Four", classes="box")
         yield Static("Five", classes="box")
         yield Static("Six", classes="box")
-
 
 app = GridLayoutExample()
 if __name__ == "__main__":
@@ -25946,7 +25583,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class GridLayoutExample(App):
     CSS_PATH = "grid_layout7_gutter.tcss"
 
@@ -25957,7 +25593,6 @@ class GridLayoutExample(App):
         yield Static("Four", classes="box")
         yield Static("Five", classes="box")
         yield Static("Six", classes="box")
-
 
 if __name__ == "__main__":
     app = GridLayoutExample()
@@ -25975,7 +25610,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class GridLayoutExample(App):
     CSS_PATH = "grid_layout_auto.tcss"
 
@@ -25986,7 +25620,6 @@ class GridLayoutExample(App):
         yield Static("Four", classes="box")
         yield Static("Five", classes="box")
         yield Static("Six", classes="box")
-
 
 if __name__ == "__main__":
     app = GridLayoutExample()
@@ -26004,7 +25637,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class HorizontalLayoutExample(App):
     CSS_PATH = "horizontal_layout.tcss"
 
@@ -26012,7 +25644,6 @@ class HorizontalLayoutExample(App):
         yield Static("One", classes="box")
         yield Static("Two", classes="box")
         yield Static("Three", classes="box")
-
 
 if __name__ == "__main__":
     app = HorizontalLayoutExample()
@@ -26030,7 +25661,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class HorizontalLayoutExample(App):
     CSS_PATH = "horizontal_layout_overflow.tcss"
 
@@ -26038,7 +25668,6 @@ class HorizontalLayoutExample(App):
         yield Static("One", classes="box")
         yield Static("Two", classes="box")
         yield Static("Three", classes="box")
-
 
 if __name__ == "__main__":
     app = HorizontalLayoutExample()
@@ -26056,14 +25685,12 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class LayersExample(App):
     CSS_PATH = "layers.tcss"
 
     def compose(self) -> ComposeResult:
         yield Static("box1 (layer = above)", id="box1")
         yield Static("box2 (layer = below)", id="box2")
-
 
 if __name__ == "__main__":
     app = LayersExample()
@@ -26082,7 +25709,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal, Vertical
 from textual.widgets import Static
 
-
 class UtilityContainersExample(App):
     CSS_PATH = "utility_containers.tcss"
 
@@ -26099,7 +25725,6 @@ class UtilityContainersExample(App):
                 classes="column",
             ),
         )
-
 
 if __name__ == "__main__":
     app = UtilityContainersExample()
@@ -26118,7 +25743,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal, Vertical
 from textual.widgets import Static
 
-
 class UtilityContainersExample(App):
     CSS_PATH = "utility_containers.tcss"
 
@@ -26130,7 +25754,6 @@ class UtilityContainersExample(App):
             with Vertical(classes="column"):
                 yield Static("Three")
                 yield Static("Four")
-
 
 if __name__ == "__main__":
     app = UtilityContainersExample()
@@ -26148,7 +25771,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class VerticalLayoutExample(App):
     CSS_PATH = "vertical_layout.tcss"
 
@@ -26156,7 +25778,6 @@ class VerticalLayoutExample(App):
         yield Static("One", classes="box")
         yield Static("Two", classes="box")
         yield Static("Three", classes="box")
-
 
 if __name__ == "__main__":
     app = VerticalLayoutExample()
@@ -26174,7 +25795,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class VerticalLayoutScrolledExample(App):
     CSS_PATH = "vertical_layout_scrolled.tcss"
 
@@ -26182,7 +25802,6 @@ class VerticalLayoutScrolledExample(App):
         yield Static("One", classes="box")
         yield Static("Two", classes="box")
         yield Static("Three", classes="box")
-
 
 if __name__ == "__main__":
     app = VerticalLayoutScrolledExample()
@@ -26202,7 +25821,6 @@ from textual.color import Color
 from textual.containers import Horizontal
 from textual.reactive import reactive
 from textual.widgets import Input, Static
-
 
 class ComputedApp(App):
     CSS_PATH = "computed01.tcss"
@@ -26240,7 +25858,6 @@ class ComputedApp(App):
             else:
                 self.blue = component
 
-
 if __name__ == "__main__":
     app = ComputedApp()
     app.run()
@@ -26259,7 +25876,6 @@ from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Button, Label, ProgressBar
 
-
 class Counter(Widget):
     DEFAULT_CSS = "Counter { height: auto; }"
     counter = reactive(0)  # (1)!
@@ -26274,7 +25890,6 @@ class Counter(Widget):
     def watch_counter(self, counter_value: int):
         self.query_one(Label).update(str(counter_value))
 
-
 class WatchApp(App[None]):
     def compose(self) -> ComposeResult:
         yield Counter()
@@ -26285,7 +25900,6 @@ class WatchApp(App[None]):
             self.query_one(ProgressBar).update(progress=counter_value)
 
         self.watch(self.query_one(Counter), "counter", update_progress)  # (3)!
-
 
 if __name__ == "__main__":
     WatchApp().run()
@@ -26304,7 +25918,6 @@ from datetime import datetime
 from textual.app import App, ComposeResult
 from textual.reactive import reactive
 from textual.widgets import Digits
-
 
 class Clock(App):
 
@@ -26327,7 +25940,6 @@ class Clock(App):
     def on_mount(self) -> None:
         self.set_interval(1, self.update_time)  # (2)!
 
-
 if __name__ == "__main__":
     app = Clock()
     app.run()
@@ -26347,7 +25959,6 @@ from textual.app import App, ComposeResult
 from textual.reactive import reactive
 from textual.widgets import Digits
 
-
 class Clock(App):
 
     CSS = """
@@ -26365,7 +25976,6 @@ class Clock(App):
 
     def on_mount(self) -> None:
         self.set_interval(1, self.update_time)
-
 
 if __name__ == "__main__":
     app = Clock()
@@ -26385,7 +25995,6 @@ from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Input
 
-
 class Name(Widget):
     """Generates a greeting."""
 
@@ -26393,7 +26002,6 @@ class Name(Widget):
 
     def render(self) -> str:
         return f"Hello, {self.who}!"
-
 
 class WatchApp(App):
     CSS_PATH = "refresh01.tcss"
@@ -26404,7 +26012,6 @@ class WatchApp(App):
 
     def on_input_changed(self, event: Input.Changed) -> None:
         self.query_one(Name).who = event.value
-
 
 if __name__ == "__main__":
     app = WatchApp()
@@ -26424,7 +26031,6 @@ from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Input
 
-
 class Name(Widget):
     """Generates a greeting."""
 
@@ -26432,7 +26038,6 @@ class Name(Widget):
 
     def render(self) -> str:
         return f"Hello, {self.who}!"
-
 
 class WatchApp(App):
     CSS_PATH = "refresh02.tcss"
@@ -26443,7 +26048,6 @@ class WatchApp(App):
 
     def on_input_changed(self, event: Input.Changed) -> None:
         self.query_one(Name).who = event.value
-
 
 if __name__ == "__main__":
     app = WatchApp()
@@ -26463,7 +26067,6 @@ from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Input, Label
 
-
 class Name(Widget):
     """Generates a greeting."""
 
@@ -26471,7 +26074,6 @@ class Name(Widget):
 
     def compose(self) -> ComposeResult:  # (2)!
         yield Label(f"Hello, {self.who}!")
-
 
 class WatchApp(App):
     CSS_PATH = "refresh02.tcss"
@@ -26482,7 +26084,6 @@ class WatchApp(App):
 
     def on_input_changed(self, event: Input.Changed) -> None:
         self.query_one(Name).who = event.value
-
 
 if __name__ == "__main__":
     app = WatchApp()
@@ -26510,7 +26111,6 @@ GREETINGS = [
     "안녕하세요",
     "Hello",
 ]
-
 
 class Greeter(Horizontal):
     """Display a greeting and a name."""
@@ -26542,7 +26142,6 @@ class Greeter(Horizontal):
     def watch_who(self, who: str) -> None:
         self.query_one("#who", Label).update(who)
 
-
 class NameApp(App):
 
     CSS = """
@@ -26559,7 +26158,6 @@ class NameApp(App):
     def action_greeting(self) -> None:
         self.greeting_no = (self.greeting_no + 1) % len(GREETINGS)
         self.query_one(Greeter).greeting = GREETINGS[self.greeting_no]
-
 
 if __name__ == "__main__":
     app = NameApp()
@@ -26587,7 +26185,6 @@ GREETINGS = [
     "안녕하세요",
     "Hello",
 ]
-
 
 class Greeter(Horizontal):
     """Display a greeting and a name."""
@@ -26619,7 +26216,6 @@ class Greeter(Horizontal):
     def watch_who(self, who: str) -> None:
         self.query_one("#who", Label).update(who)
 
-
 class NameApp(App):
 
     CSS = """
@@ -26636,7 +26232,6 @@ class NameApp(App):
     def action_greeting(self) -> None:
         self.greeting_no = (self.greeting_no + 1) % len(GREETINGS)
         self.query_one(Greeter).greeting = GREETINGS[self.greeting_no]
-
 
 if __name__ == "__main__":
     app = NameApp()
@@ -26655,7 +26250,6 @@ from textual.app import App, ComposeResult
 from textual.reactive import reactive
 from textual.widgets import Input, Label
 
-
 class MultiGreet(App):
     names: reactive[list[str]] = reactive(list, recompose=True)  # (1)!
 
@@ -26667,7 +26261,6 @@ class MultiGreet(App):
     def on_input_submitted(self, event: Input.Changed) -> None:
         self.names.append(event.value)
         self.mutate_reactive(MultiGreet.names)  # (2)!
-
 
 if __name__ == "__main__":
     app = MultiGreet()
@@ -26686,7 +26279,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.reactive import reactive
 from textual.widgets import Button, RichLog
-
 
 class ValidateApp(App):
     CSS_PATH = "validate01.tcss"
@@ -26716,7 +26308,6 @@ class ValidateApp(App):
             self.count -= 1
         self.query_one(RichLog).write(f"count = {self.count}")
 
-
 if __name__ == "__main__":
     app = ValidateApp()
     app.run()
@@ -26735,7 +26326,6 @@ from textual.color import Color, ColorParseError
 from textual.containers import Grid
 from textual.reactive import reactive
 from textual.widgets import Input, Static
-
 
 class WatchApp(App):
     CSS_PATH = "watch01.tcss"
@@ -26759,7 +26349,6 @@ class WatchApp(App):
             self.query_one(Input).value = ""
             self.color = input_color  # (3)!
 
-
 if __name__ == "__main__":
     app = WatchApp()
     app.run()
@@ -26782,7 +26371,6 @@ from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Digits, Label
 
-
 class WorldClock(Widget):
 
     time: reactive[datetime] = reactive(datetime.now)
@@ -26798,7 +26386,6 @@ class WorldClock(Widget):
     def watch_time(self, time: datetime) -> None:
         localized_time = time.astimezone(timezone(self.timezone))
         self.query_one(Digits).update(localized_time.strftime("%H:%M:%S"))
-
 
 class WorldClockApp(App):
     CSS_PATH = "world_clock01.tcss"
@@ -26820,7 +26407,6 @@ class WorldClockApp(App):
     def on_mount(self) -> None:
         self.update_time()
         self.set_interval(1, self.update_time)
-
 
 if __name__ == "__main__":
     app = WorldClockApp()
@@ -26844,7 +26430,6 @@ from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Digits, Label
 
-
 class WorldClock(Widget):
 
     time: reactive[datetime] = reactive(datetime.now)
@@ -26860,7 +26445,6 @@ class WorldClock(Widget):
     def watch_time(self, time: datetime) -> None:
         localized_time = time.astimezone(timezone(self.timezone))
         self.query_one(Digits).update(localized_time.strftime("%H:%M:%S"))
-
 
 class WorldClockApp(App):
     CSS_PATH = "world_clock01.tcss"
@@ -26878,7 +26462,6 @@ class WorldClockApp(App):
     def on_mount(self) -> None:
         self.update_time()
         self.set_interval(1, self.update_time)
-
 
 if __name__ == "__main__":
     WorldClockApp().run()
@@ -26901,7 +26484,6 @@ from textual.reactive import reactive
 from textual.widget import Widget
 from textual.widgets import Digits, Label
 
-
 class WorldClock(Widget):
 
     clock_time: reactive[datetime] = reactive(datetime.now)
@@ -26917,7 +26499,6 @@ class WorldClock(Widget):
     def watch_clock_time(self, time: datetime) -> None:
         localized_time = time.astimezone(timezone(self.timezone))
         self.query_one(Digits).update(localized_time.strftime("%H:%M:%S"))
-
 
 class WorldClockApp(App):
     CSS_PATH = "world_clock01.tcss"
@@ -26937,7 +26518,6 @@ class WorldClockApp(App):
     def on_mount(self) -> None:
         self.update_time()
         self.set_interval(1, self.update_time)
-
 
 if __name__ == "__main__":
     WorldClockApp().run()
@@ -26964,7 +26544,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class QuitScreen(Screen):
     """Screen with a dialog to quit."""
 
@@ -26982,7 +26561,6 @@ class QuitScreen(Screen):
         else:
             self.app.pop_screen()
 
-
 class ModalApp(App):
     """An app with a modal dialog."""
 
@@ -26996,7 +26574,6 @@ class ModalApp(App):
 
     def action_request_quit(self) -> None:
         self.push_screen(QuitScreen())
-
 
 if __name__ == "__main__":
     app = ModalApp()
@@ -27024,7 +26601,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class QuitScreen(ModalScreen):
     """Screen with a dialog to quit."""
 
@@ -27042,7 +26618,6 @@ class QuitScreen(ModalScreen):
         else:
             self.app.pop_screen()
 
-
 class ModalApp(App):
     """An app with a modal dialog."""
 
@@ -27057,7 +26632,6 @@ class ModalApp(App):
     def action_request_quit(self) -> None:
         """Action to display the quit dialog."""
         self.push_screen(QuitScreen())
-
 
 if __name__ == "__main__":
     app = ModalApp()
@@ -27085,7 +26659,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class QuitScreen(ModalScreen[bool]):  # (1)!
     """Screen with a dialog to quit."""
 
@@ -27102,7 +26675,6 @@ class QuitScreen(ModalScreen[bool]):  # (1)!
             self.dismiss(True)
         else:
             self.dismiss(False)
-
 
 class ModalApp(App):
     """An app with a modal dialog."""
@@ -27125,7 +26697,6 @@ class ModalApp(App):
 
         self.push_screen(QuitScreen(), check_quit)
 
-
 if __name__ == "__main__":
     app = ModalApp()
     app.run()
@@ -27143,24 +26714,20 @@ from textual.app import App, ComposeResult
 from textual.screen import Screen
 from textual.widgets import Footer, Placeholder
 
-
 class DashboardScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Placeholder("Dashboard Screen")
         yield Footer()
-
 
 class SettingsScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Placeholder("Settings Screen")
         yield Footer()
 
-
 class HelpScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Placeholder("Help Screen")
         yield Footer()
-
 
 class ModesApp(App):
     BINDINGS = [
@@ -27176,7 +26743,6 @@ class ModesApp(App):
 
     def on_mount(self) -> None:
         self.switch_mode("dashboard")  # (3)!
-
 
 if __name__ == "__main__":
     app = ModesApp()
@@ -27195,7 +26761,6 @@ from textual import on, work
 from textual.app import App, ComposeResult
 from textual.screen import Screen
 from textual.widgets import Button, Label
-
 
 class QuestionScreen(Screen[bool]):
     """Screen with a parameter."""
@@ -27217,7 +26782,6 @@ class QuestionScreen(Screen[bool]):
     def handle_no(self) -> None:
         self.dismiss(False)  # (2)!
 
-
 class QuestionsApp(App):
     """Demonstrates wait_for_dismiss"""
 
@@ -27231,7 +26795,6 @@ class QuestionsApp(App):
             self.notify("Good answer!")
         else:
             self.notify(":-(", severity="error")
-
 
 if __name__ == "__main__":
     app = QuestionsApp()
@@ -27261,7 +26824,6 @@ you will lose any unsaved information in all open applications.
 Error: 0E : 016F : BFF9B3D4
 """
 
-
 class BSOD(Screen):
     BINDINGS = [("escape", "app.pop_screen", "Pop screen")]
 
@@ -27270,12 +26832,10 @@ class BSOD(Screen):
         yield Static(ERROR_TEXT)
         yield Static("Press any key to continue [blink]_[/]", id="any-key")
 
-
 class BSODApp(App):
     CSS_PATH = "screen01.tcss"
     SCREENS = {"bsod": BSOD}
     BINDINGS = [("b", "push_screen('bsod')", "BSOD")]
-
 
 if __name__ == "__main__":
     app = BSODApp()
@@ -27305,7 +26865,6 @@ you will lose any unsaved information in all open applications.
 Error: 0E : 016F : BFF9B3D4
 """
 
-
 class BSOD(Screen):
     BINDINGS = [("escape", "app.pop_screen", "Pop screen")]
 
@@ -27314,14 +26873,12 @@ class BSOD(Screen):
         yield Static(ERROR_TEXT)
         yield Static("Press any key to continue [blink]_[/]", id="any-key")
 
-
 class BSODApp(App):
     CSS_PATH = "screen02.tcss"
     BINDINGS = [("b", "push_screen('bsod')", "BSOD")]
 
     def on_mount(self) -> None:
         self.install_screen(BSOD(), name="bsod")
-
 
 if __name__ == "__main__":
     app = BSODApp()
@@ -27341,7 +26898,6 @@ from datetime import datetime
 from textual.app import App
 from textual.widget import Widget
 
-
 class Clock(Widget):
     """A clock app."""
 
@@ -27357,11 +26913,9 @@ class Clock(Widget):
     def render(self):
         return datetime.now().strftime("%c")
 
-
 class ClockApp(App):
     def compose(self):
         yield Clock()
-
 
 if __name__ == "__main__":
     app = ClockApp()
@@ -27387,7 +26941,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class BorderApp(App):
     def compose(self) -> ComposeResult:
         self.widget = Label(TEXT)
@@ -27397,7 +26950,6 @@ class BorderApp(App):
         self.widget.styles.background = "darkblue"
         self.widget.styles.width = "50%"
         self.widget.styles.border = ("heavy", "yellow")
-
 
 if __name__ == "__main__":
     app = BorderApp()
@@ -27423,7 +26975,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class BorderTitleApp(App[None]):
     def compose(self) -> ComposeResult:
         self.widget = Static(TEXT)
@@ -27436,7 +26987,6 @@ class BorderTitleApp(App[None]):
         self.widget.border_title = "Litany Against Fear"
         self.widget.border_subtitle = "by Frank Herbert, in “Dune”"
         self.widget.styles.border_title_align = "center"
-
 
 if __name__ == "__main__":
     app = BorderTitleApp()
@@ -27454,7 +27004,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27462,7 +27011,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class BoxSizing(App):
     def compose(self) -> ComposeResult:
@@ -27484,7 +27032,6 @@ class BoxSizing(App):
         self.widget2.styles.padding = 1
         self.widget2.styles.box_sizing = "content-box"
 
-
 if __name__ == "__main__":
     app = BoxSizing()
     app.run()
@@ -27501,7 +27048,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class WidgetApp(App):
     def compose(self) -> ComposeResult:
         self.widget = Static("Textual")
@@ -27510,7 +27056,6 @@ class WidgetApp(App):
     def on_mount(self) -> None:
         self.widget.styles.background = "darkblue"
         self.widget.styles.border = ("heavy", "white")
-
 
 if __name__ == "__main__":
     app = WidgetApp()
@@ -27529,7 +27074,6 @@ from textual.app import App, ComposeResult
 from textual.color import Color
 from textual.widgets import Static
 
-
 class ColorApp(App):
     def compose(self) -> ComposeResult:
         self.widget1 = Static("Textual One")
@@ -27544,7 +27088,6 @@ class ColorApp(App):
         self.widget2.styles.background = "hsl(150,42.9%,49.4%)"
         self.widget2.styles.color = "blue"
         self.widget3.styles.background = Color(191, 78, 96)
-
 
 if __name__ == "__main__":
     app = ColorApp()
@@ -27563,7 +27106,6 @@ from textual.app import App, ComposeResult
 from textual.color import Color
 from textual.widgets import Static
 
-
 class ColorApp(App):
     def compose(self) -> ComposeResult:
         self.widgets = [Static("") for n in range(10)]
@@ -27574,7 +27116,6 @@ class ColorApp(App):
             alpha = index * 0.1
             widget.update(f"alpha={alpha:.1f}")
             widget.styles.background = Color(191, 78, 96, a=alpha)
-
 
 if __name__ == "__main__":
     app = ColorApp()
@@ -27592,7 +27133,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27600,7 +27140,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class DimensionsApp(App):
     def compose(self) -> ComposeResult:
@@ -27611,7 +27150,6 @@ class DimensionsApp(App):
         self.widget.styles.background = "purple"
         self.widget.styles.width = 30
         self.widget.styles.height = 10
-
 
 if __name__ == "__main__":
     app = DimensionsApp()
@@ -27629,7 +27167,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27637,7 +27174,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class DimensionsApp(App):
     def compose(self) -> ComposeResult:
@@ -27648,7 +27184,6 @@ class DimensionsApp(App):
         self.widget.styles.background = "purple"
         self.widget.styles.width = 30
         self.widget.styles.height = "auto"
-
 
 if __name__ == "__main__":
     app = DimensionsApp()
@@ -27666,7 +27201,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27674,7 +27208,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class DimensionsApp(App):
     def compose(self) -> ComposeResult:
@@ -27685,7 +27218,6 @@ class DimensionsApp(App):
         self.widget.styles.background = "purple"
         self.widget.styles.width = "50%"
         self.widget.styles.height = "80%"
-
 
 if __name__ == "__main__":
     app = DimensionsApp()
@@ -27703,7 +27235,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27711,7 +27242,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class DimensionsApp(App):
     def compose(self) -> ComposeResult:
@@ -27725,7 +27255,6 @@ class DimensionsApp(App):
         self.widget2.styles.background = "darkgreen"
         self.widget1.styles.height = "2fr"
         self.widget2.styles.height = "1fr"
-
 
 if __name__ == "__main__":
     app = DimensionsApp()
@@ -27743,7 +27272,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27751,7 +27279,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class MarginApp(App):
     def compose(self) -> ComposeResult:
@@ -27767,7 +27294,6 @@ class MarginApp(App):
         self.widget2.styles.border = ("heavy", "white")
         self.widget1.styles.margin = 2
         self.widget2.styles.margin = 2
-
 
 if __name__ == "__main__":
     app = MarginApp()
@@ -27785,7 +27311,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27793,7 +27318,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class OutlineApp(App):
     def compose(self) -> ComposeResult:
@@ -27804,7 +27328,6 @@ class OutlineApp(App):
         self.widget.styles.background = "darkblue"
         self.widget.styles.width = "50%"
         self.widget.styles.outline = ("heavy", "yellow")
-
 
 if __name__ == "__main__":
     app = OutlineApp()
@@ -27822,7 +27345,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27830,7 +27352,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class PaddingApp(App):
     def compose(self) -> ComposeResult:
@@ -27841,7 +27362,6 @@ class PaddingApp(App):
         self.widget.styles.background = "purple"
         self.widget.styles.width = 30
         self.widget.styles.padding = 2
-
 
 if __name__ == "__main__":
     app = PaddingApp()
@@ -27859,7 +27379,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 TEXT = """I must not fear.
 Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
@@ -27867,7 +27386,6 @@ I will face my fear.
 I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
-
 
 class PaddingApp(App):
     def compose(self) -> ComposeResult:
@@ -27878,7 +27396,6 @@ class PaddingApp(App):
         self.widget.styles.background = "purple"
         self.widget.styles.width = 30
         self.widget.styles.padding = (2, 4)
-
 
 if __name__ == "__main__":
     app = PaddingApp()
@@ -27895,12 +27412,10 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 
-
 class ScreenApp(App):
     def on_mount(self) -> None:
         self.screen.styles.background = "darkblue"
         self.screen.styles.border = ("heavy", "white")
-
 
 if __name__ == "__main__":
     app = ScreenApp()
@@ -27918,7 +27433,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class WidgetApp(App):
     def compose(self) -> ComposeResult:
         self.widget = Static("Textual")
@@ -27927,7 +27441,6 @@ class WidgetApp(App):
     def on_mount(self) -> None:
         self.widget.styles.background = "darkblue"
         self.widget.styles.border = ("heavy", "white")
-
 
 if __name__ == "__main__":
     app = WidgetApp()
@@ -27946,7 +27459,6 @@ from textual import on
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Button, Footer
-
 
 class RGBApp(App):
     CSS = """
@@ -27980,7 +27492,6 @@ class RGBApp(App):
     def action_switch_color(self, color: str) -> None:
         self.screen.styles.background = color
 
-
 if __name__ == "__main__":
     app = RGBApp()
     app.run()
@@ -27997,7 +27508,6 @@ if __name__ == "__main__":
 from rgb import RGBApp
 
 from textual.color import Color
-
 
 async def test_keys():  # (1)!
     """Test pressing keys has the desired result."""
@@ -28019,7 +27529,6 @@ async def test_keys():  # (1)!
         await pilot.press("x")
         # No binding (so no change to the color)
         assert app.screen.styles.background == Color.parse("blue")
-
 
 async def test_buttons():
     """Test pressing keys has the desired result."""
@@ -28053,7 +27562,6 @@ from textual.app import App, ComposeResult
 from textual.strip import Strip
 from textual.widget import Widget
 
-
 class CheckerBoard(Widget):
     """Render an 8x8 checkerboard."""
 
@@ -28078,13 +27586,11 @@ class CheckerBoard(Widget):
         strip = Strip(segments, 8 * 8)
         return strip
 
-
 class BoardApp(App):
     """A simple app to show our widget."""
 
     def compose(self) -> ComposeResult:
         yield CheckerBoard()
-
 
 if __name__ == "__main__":
     app = BoardApp()
@@ -28104,7 +27610,6 @@ from rich.segment import Segment
 from textual.app import App, ComposeResult
 from textual.strip import Strip
 from textual.widget import Widget
-
 
 class CheckerBoard(Widget):
     """Render an 8x8 checkerboard."""
@@ -28143,13 +27648,11 @@ class CheckerBoard(Widget):
         strip = Strip(segments, 8 * 8)
         return strip
 
-
 class BoardApp(App):
     """A simple app to show our widget."""
 
     def compose(self) -> ComposeResult:
         yield CheckerBoard()
-
 
 if __name__ == "__main__":
     app = BoardApp()
@@ -28172,7 +27675,6 @@ from textual.strip import Strip
 from textual.scroll_view import ScrollView
 
 from rich.segment import Segment
-
 
 class CheckerBoard(ScrollView):
     COMPONENT_CLASSES = {
@@ -28219,11 +27721,9 @@ class CheckerBoard(ScrollView):
         strip = strip.crop(scroll_x, scroll_x + self.size.width)
         return strip
 
-
 class BoardApp(App):
     def compose(self) -> ComposeResult:
         yield CheckerBoard(100)
-
 
 if __name__ == "__main__":
     app = BoardApp()
@@ -28249,7 +27749,6 @@ from textual.scroll_view import ScrollView
 
 from rich.segment import Segment
 from rich.style import Style
-
 
 class CheckerBoard(ScrollView):
     COMPONENT_CLASSES = {
@@ -28335,11 +27834,9 @@ class CheckerBoard(ScrollView):
         strip = strip.crop(scroll_x, scroll_x + self.size.width)
         return strip
 
-
 class BoardApp(App):
     def compose(self) -> ComposeResult:
         yield CheckerBoard(100)
-
 
 if __name__ == "__main__":
     app = BoardApp()
@@ -28358,7 +27855,6 @@ from textual.app import App, ComposeResult, RenderResult
 from textual.reactive import reactive
 from textual.widgets import Footer, Static
 
-
 class Counter(Static, can_focus=True):  # (1)!
     """A counter that can be incremented and decremented by pressing keys."""
 
@@ -28366,7 +27862,6 @@ class Counter(Static, can_focus=True):  # (1)!
 
     def render(self) -> RenderResult:
         return f"Count: {self.count}"
-
 
 class CounterApp(App[None]):
     CSS_PATH = "counter.tcss"
@@ -28376,7 +27871,6 @@ class CounterApp(App[None]):
         yield Counter()
         yield Counter()
         yield Footer()
-
 
 if __name__ == "__main__":
     app = CounterApp()
@@ -28395,7 +27889,6 @@ from textual.app import App, ComposeResult, RenderResult
 from textual.reactive import reactive
 from textual.widgets import Footer, Static
 
-
 class Counter(Static, can_focus=True):
     """A counter that can be incremented and decremented by pressing keys."""
 
@@ -28412,7 +27905,6 @@ class Counter(Static, can_focus=True):
     def action_change_count(self, amount: int) -> None:  # (2)!
         self.count += amount
 
-
 class CounterApp(App[None]):
     CSS_PATH = "counter.tcss"
 
@@ -28421,7 +27913,6 @@ class CounterApp(App[None]):
         yield Counter()
         yield Counter()
         yield Footer()
-
 
 if __name__ == "__main__":
     app = CounterApp()
@@ -28441,7 +27932,6 @@ from rich.table import Table
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class FizzBuzz(Static):
     def on_mount(self) -> None:
         table = Table("Number", "Fizz?", "Buzz?")
@@ -28455,13 +27945,11 @@ class FizzBuzz(Static):
             )
         self.update(table)
 
-
 class FizzBuzzApp(App):
     CSS_PATH = "fizzbuzz01.tcss"
 
     def compose(self) -> ComposeResult:
         yield FizzBuzz()
-
 
 if __name__ == "__main__":
     app = FizzBuzzApp()
@@ -28482,7 +27970,6 @@ from textual.app import App, ComposeResult
 from textual.geometry import Size
 from textual.widgets import Static
 
-
 class FizzBuzz(Static):
     def on_mount(self) -> None:
         table = Table("Number", "Fizz?", "Buzz?", expand=True)
@@ -28500,13 +27987,11 @@ class FizzBuzz(Static):
         """Force content width size."""
         return 50
 
-
 class FizzBuzzApp(App):
     CSS_PATH = "fizzbuzz02.tcss"
 
     def compose(self) -> ComposeResult:
         yield FizzBuzz()
-
 
 if __name__ == "__main__":
     app = FizzBuzzApp()
@@ -28524,18 +28009,15 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult, RenderResult
 from textual.widget import Widget
 
-
 class Hello(Widget):
     """Display a greeting."""
 
     def render(self) -> RenderResult:
         return "Hello, [b]World[/b]!"
 
-
 class CustomApp(App):
     def compose(self) -> ComposeResult:
         yield Hello()
-
 
 if __name__ == "__main__":
     app = CustomApp()
@@ -28553,20 +28035,17 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult, RenderResult
 from textual.widget import Widget
 
-
 class Hello(Widget):
     """Display a greeting."""
 
     def render(self) -> RenderResult:
         return "Hello, [b]World[/b]!"
 
-
 class CustomApp(App):
     CSS_PATH = "hello02.tcss"
 
     def compose(self) -> ComposeResult:
         yield Hello()
-
 
 if __name__ == "__main__":
     app = CustomApp()
@@ -28602,7 +28081,6 @@ hellos = cycle(
     ]
 )
 
-
 class Hello(Static):
     """Display a greeting."""
 
@@ -28617,13 +28095,11 @@ class Hello(Static):
         hello = next(hellos)
         self.update(f"{hello}, [b]World[/b]!")
 
-
 class CustomApp(App):
     CSS_PATH = "hello03.tcss"
 
     def compose(self) -> ComposeResult:
         yield Hello()
-
 
 if __name__ == "__main__":
     app = CustomApp()
@@ -28659,7 +28135,6 @@ hellos = cycle(
     ]
 )
 
-
 class Hello(Static):
     """Display a greeting."""
 
@@ -28685,13 +28160,11 @@ class Hello(Static):
         hello = next(hellos)
         self.update(f"{hello}, [b]World[/b]!")
 
-
 class CustomApp(App):
     CSS_PATH = "hello04.tcss"
 
     def compose(self) -> ComposeResult:
         yield Hello()
-
 
 if __name__ == "__main__":
     app = CustomApp()
@@ -28727,7 +28200,6 @@ hellos = cycle(
     ]
 )
 
-
 class Hello(Static):
     """Display a greeting."""
 
@@ -28739,13 +28211,11 @@ class Hello(Static):
         hello = next(hellos)
         self.update(f"[@click='next_word']{hello}[/], [b]World[/b]!")
 
-
 class CustomApp(App):
     CSS_PATH = "hello05.tcss"
 
     def compose(self) -> ComposeResult:
         yield Hello()
-
 
 if __name__ == "__main__":
     app = CustomApp()
@@ -28781,7 +28251,6 @@ hellos = cycle(
     ]
 )
 
-
 class Hello(Static):
     """Display a greeting."""
 
@@ -28796,13 +28265,11 @@ class Hello(Static):
         hello = next(hellos)
         self.update(f"[@click='next_word']{hello}[/], [b]World[/b]!")
 
-
 class CustomApp(App):
     CSS_PATH = "hello05.tcss"
 
     def compose(self) -> ComposeResult:
         yield Hello()
-
 
 if __name__ == "__main__":
     app = CustomApp()
@@ -28837,7 +28304,6 @@ ROWS = [
     (10, "Darren Burns", "Scotland", 51.84),
 ]
 
-
 class DataApp(App):
     CSS = """
     Screen {
@@ -28867,7 +28333,6 @@ class DataApp(App):
         data_table.add_rows(ROWS[1:])
         data_table.loading = False  # (3)!
 
-
 if __name__ == "__main__":
     app = DataApp()
     app.run()
@@ -28889,7 +28354,6 @@ Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
 I will face my fear."""
 
-
 class TooltipApp(App):
     CSS = """
     Screen {
@@ -28902,7 +28366,6 @@ class TooltipApp(App):
 
     def on_mount(self) -> None:
         self.query_one(Button).tooltip = TEXT
-
 
 if __name__ == "__main__":
     app = TooltipApp()
@@ -28925,7 +28388,6 @@ Fear is the mind-killer.
 Fear is the little-death that brings total obliteration.
 I will face my fear."""
 
-
 class TooltipApp(App):
     CSS = """
     Screen {
@@ -28943,7 +28405,6 @@ class TooltipApp(App):
 
     def on_mount(self) -> None:
         self.query_one(Button).tooltip = TEXT
-
 
 if __name__ == "__main__":
     app = TooltipApp()
@@ -28964,7 +28425,6 @@ from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll
 from textual.widgets import Input, Static
-
 
 class WeatherApp(App):
     """App to display the current weather."""
@@ -28994,7 +28454,6 @@ class WeatherApp(App):
             # No city, so just blank out the weather
             weather_widget.update("")
 
-
 if __name__ == "__main__":
     app = WeatherApp()
     app.run()
@@ -29014,7 +28473,6 @@ from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll
 from textual.widgets import Input, Static
-
 
 class WeatherApp(App):
     """App to display the current weather."""
@@ -29044,7 +28502,6 @@ class WeatherApp(App):
             # No city, so just blank out the weather
             weather_widget.update("")
 
-
 if __name__ == "__main__":
     app = WeatherApp()
     app.run()
@@ -29065,7 +28522,6 @@ from textual import work
 from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll
 from textual.widgets import Input, Static
-
 
 class WeatherApp(App):
     """App to display the current weather."""
@@ -29096,7 +28552,6 @@ class WeatherApp(App):
             # No city, so just blank out the weather
             weather_widget.update("")
 
-
 if __name__ == "__main__":
     app = WeatherApp()
     app.run()
@@ -29118,7 +28573,6 @@ from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll
 from textual.widgets import Input, Static
 from textual.worker import Worker
-
 
 class WeatherApp(App):
     """App to display the current weather."""
@@ -29153,7 +28607,6 @@ class WeatherApp(App):
         """Called when the worker state changes."""
         self.log(event)
 
-
 if __name__ == "__main__":
     app = WeatherApp()
     app.run()
@@ -29177,7 +28630,6 @@ from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll
 from textual.widgets import Input, Static
 from textual.worker import Worker, get_current_worker
-
 
 class WeatherApp(App):
     """App to display the current weather."""
@@ -29216,7 +28668,6 @@ class WeatherApp(App):
         """Called when the worker state changes."""
         self.log(event)
 
-
 if __name__ == "__main__":
     app = WeatherApp()
     app.run()
@@ -29233,7 +28684,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class CenterApp(App):
     """How to center things."""
 
@@ -29245,7 +28695,6 @@ class CenterApp(App):
 
     def compose(self) -> ComposeResult:
         yield Static("Hello, World!")
-
 
 if __name__ == "__main__":
     app = CenterApp()
@@ -29262,7 +28711,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Static
-
 
 class CenterApp(App):
     """How to center things."""
@@ -29281,7 +28729,6 @@ class CenterApp(App):
     def compose(self) -> ComposeResult:
         yield Static("Hello, World!", id="hello")
 
-
 if __name__ == "__main__":
     app = CenterApp()
     app.run()
@@ -29297,7 +28744,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Static
-
 
 class CenterApp(App):
     """How to center things."""
@@ -29317,7 +28763,6 @@ class CenterApp(App):
     def compose(self) -> ComposeResult:
         yield Static("Hello, World!", id="hello")
 
-
 if __name__ == "__main__":
     app = CenterApp()
     app.run()
@@ -29335,7 +28780,6 @@ from textual.app import App, ComposeResult
 from textual.widgets import Static
 
 QUOTE = "Could not find you in Seattle and no terminal is in operation at your classified address."
-
 
 class CenterApp(App):
     """How to center things."""
@@ -29355,7 +28799,6 @@ class CenterApp(App):
     def compose(self) -> ComposeResult:
         yield Static(QUOTE, id="hello")
 
-
 if __name__ == "__main__":
     app = CenterApp()
     app.run()
@@ -29373,7 +28816,6 @@ from textual.app import App, ComposeResult
 from textual.widgets import Static
 
 QUOTE = "Could not find you in Seattle and no terminal is in operation at your classified address."
-
 
 class CenterApp(App):
     """How to center things."""
@@ -29394,7 +28836,6 @@ class CenterApp(App):
     def compose(self) -> ComposeResult:
         yield Static(QUOTE, id="hello")
 
-
 if __name__ == "__main__":
     app = CenterApp()
     app.run()
@@ -29412,7 +28853,6 @@ from textual.app import App, ComposeResult
 from textual.widgets import Static
 
 QUOTE = "Could not find you in Seattle and no terminal is in operation at your classified address."
-
 
 class CenterApp(App):
     """How to center things."""
@@ -29434,7 +28874,6 @@ class CenterApp(App):
     def compose(self) -> ComposeResult:
         yield Static(QUOTE, id="hello")
 
-
 if __name__ == "__main__":
     app = CenterApp()
     app.run()
@@ -29452,7 +28891,6 @@ from textual.app import App, ComposeResult
 from textual.widgets import Static
 
 QUOTE = "Could not find you in Seattle and no terminal is in operation at your classified address."
-
 
 class CenterApp(App):
     """How to center things."""
@@ -29475,7 +28913,6 @@ class CenterApp(App):
     def compose(self) -> ComposeResult:
         yield Static(QUOTE, id="hello")
 
-
 if __name__ == "__main__":
     app = CenterApp()
     app.run()
@@ -29492,7 +28929,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class CenterApp(App):
     """How to center things."""
 
@@ -29507,7 +28943,6 @@ class CenterApp(App):
     def compose(self) -> ComposeResult:
         yield Static("How about a nice game", classes="words")
         yield Static("of chess?", classes="words")
-
 
 if __name__ == "__main__":
     app = CenterApp()
@@ -29524,7 +28959,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Static
-
 
 class CenterApp(App):
     """How to center things."""
@@ -29545,7 +28979,6 @@ class CenterApp(App):
         yield Static("How about a nice game", classes="words")
         yield Static("of chess?", classes="words")
 
-
 if __name__ == "__main__":
     app = CenterApp()
     app.run()
@@ -29562,7 +28995,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.containers import Center
 from textual.widgets import Static
-
 
 class CenterApp(App):
     """How to center things."""
@@ -29585,7 +29017,6 @@ class CenterApp(App):
         with Center():
             yield Static("of chess?", classes="words")
 
-
 if __name__ == "__main__":
     app = CenterApp()
     app.run()
@@ -29603,7 +29034,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29614,7 +29044,6 @@ class Box(Placeholder):
     }
     """
 
-
 class ContainerApp(App):
     """Simple app to play with containers."""
 
@@ -29623,7 +29052,6 @@ class ContainerApp(App):
             yield Box()  # (2)!
             yield Box()
             yield Box()
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -29642,7 +29070,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Vertical
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29653,7 +29080,6 @@ class Box(Placeholder):
     }
     """
 
-
 class ContainerApp(App):
     """Simple app to play with containers."""
 
@@ -29662,7 +29088,6 @@ class ContainerApp(App):
             yield Box()
             yield Box()
             yield Box()
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -29681,7 +29106,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29691,7 +29115,6 @@ class Box(Placeholder):
         height: 8;        
     }
     """
-
 
 class ContainerApp(App):
     """Simple app to play with containers."""
@@ -29707,7 +29130,6 @@ class ContainerApp(App):
             yield Box()
             yield Box()
             yield Box()
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -29726,7 +29148,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29736,7 +29157,6 @@ class Box(Placeholder):
         height: 8;        
     }
     """
-
 
 class ContainerApp(App):
     """Simple app to play with containers."""
@@ -29756,7 +29176,6 @@ class ContainerApp(App):
             yield Box()
             yield Box()
             yield Box()
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -29775,7 +29194,6 @@ from textual.app import App, ComposeResult
 from textual.containers import HorizontalGroup
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29785,7 +29203,6 @@ class Box(Placeholder):
         height: 8;        
     }
     """
-
 
 class ContainerApp(App):
     """Simple app to play with containers."""
@@ -29805,7 +29222,6 @@ class ContainerApp(App):
             yield Box()
             yield Box()
             yield Box()
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -29824,7 +29240,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29834,7 +29249,6 @@ class Box(Placeholder):
         height: 8;        
     }
     """
-
 
 class ContainerApp(App):
     """Simple app to play with containers."""
@@ -29849,7 +29263,6 @@ class ContainerApp(App):
         with Horizontal(classes="with-border"):
             for n in range(10):
                 yield Box(label=f"Box {n+1}")
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -29868,7 +29281,6 @@ from textual.app import App, ComposeResult
 from textual.containers import HorizontalScroll
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29878,7 +29290,6 @@ class Box(Placeholder):
         height: 8;        
     }
     """
-
 
 class ContainerApp(App):
     """Simple app to play with containers."""
@@ -29893,7 +29304,6 @@ class ContainerApp(App):
         with HorizontalScroll(classes="with-border"):
             for n in range(10):
                 yield Box(label=f"Box {n+1}")
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -29912,7 +29322,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Center, Right
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29922,7 +29331,6 @@ class Box(Placeholder):
         height: 5;        
     }
     """
-
 
 class ContainerApp(App):
     """Simple app to play with containers."""
@@ -29939,7 +29347,6 @@ class ContainerApp(App):
             yield Box("Box 2")
         with Right(classes="with-border"):  # (3)!
             yield Box("Box 3")
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -29958,7 +29365,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Middle
 from textual.widgets import Placeholder
 
-
 class Box(Placeholder):
     """Example widget."""
 
@@ -29968,7 +29374,6 @@ class Box(Placeholder):
         height: 5;        
     }
     """
-
 
 class ContainerApp(App):
     """Simple app to play with containers."""
@@ -29984,7 +29389,6 @@ class ContainerApp(App):
             yield Box("Box 1.")
             yield Box("Box 2.")
             yield Box("Box 3.")
-
 
 if __name__ == "__main__":
     app = ContainerApp()
@@ -30003,7 +29407,6 @@ from datetime import datetime
 
 from textual.app import App, ComposeResult
 from textual.widgets import Digits
-
 
 class ClockApp(App):
     CSS = """
@@ -30026,7 +29429,6 @@ class ClockApp(App):
         clock = datetime.now().time()
         self.query_one(Digits).update(f"{clock:%T}")
 
-
 if __name__ == "__main__":
     app = ClockApp()
     app.run(inline=True)  #  (1)!
@@ -30044,7 +29446,6 @@ from datetime import datetime
 
 from textual.app import App, ComposeResult
 from textual.widgets import Digits
-
 
 class ClockApp(App):
     CSS = """
@@ -30074,7 +29475,6 @@ class ClockApp(App):
         clock = datetime.now().time()
         self.query_one(Digits).update(f"{clock:%T}")
 
-
 if __name__ == "__main__":
     app = ClockApp()
     app.run(inline=True)
@@ -30093,7 +29493,6 @@ from textual.containers import HorizontalScroll, VerticalScroll
 from textual.screen import Screen
 from textual.widgets import Placeholder
 
-
 class Header(Placeholder):
     DEFAULT_CSS = """
     Header {
@@ -30101,7 +29500,6 @@ class Header(Placeholder):
         dock: top;
     }
     """
-
 
 class Footer(Placeholder):
     DEFAULT_CSS = """
@@ -30111,7 +29509,6 @@ class Footer(Placeholder):
     }
     """
 
-
 class Tweet(Placeholder):
     DEFAULT_CSS = """
     Tweet {
@@ -30120,7 +29517,6 @@ class Tweet(Placeholder):
         border: tall $background;
     }
     """
-
 
 class Column(VerticalScroll):
     DEFAULT_CSS = """
@@ -30135,7 +29531,6 @@ class Column(VerticalScroll):
         for tweet_no in range(1, 20):
             yield Tweet(id=f"Tweet{tweet_no}")
 
-
 class TweetScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header(id="Header")
@@ -30146,13 +29541,11 @@ class TweetScreen(Screen):
             yield Column()
             yield Column()
 
-
 class LayoutApp(App):
     CSS_PATH = "layout.tcss"
 
     def on_ready(self) -> None:
         self.push_screen(TweetScreen())
-
 
 if __name__ == "__main__":
     app = LayoutApp()
@@ -30171,25 +29564,20 @@ from textual.app import App, ComposeResult
 from textual.screen import Screen
 from textual.widgets import Placeholder
 
-
 class Header(Placeholder):  # (1)!
     pass
 
-
 class Footer(Placeholder):  # (2)!
     pass
-
 
 class TweetScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header(id="Header")  # (3)!
         yield Footer(id="Footer")  # (4)!
 
-
 class LayoutApp(App):
     def on_mount(self) -> None:
         self.push_screen(TweetScreen())
-
 
 if __name__ == "__main__":
     app = LayoutApp()
@@ -30208,7 +29596,6 @@ from textual.app import App, ComposeResult
 from textual.screen import Screen
 from textual.widgets import Placeholder
 
-
 class Header(Placeholder):
     DEFAULT_CSS = """
     Header {
@@ -30216,7 +29603,6 @@ class Header(Placeholder):
         dock: top;
     }
     """
-
 
 class Footer(Placeholder):
     DEFAULT_CSS = """
@@ -30226,17 +29612,14 @@ class Footer(Placeholder):
     }
     """
 
-
 class TweetScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header(id="Header")
         yield Footer(id="Footer")
 
-
 class LayoutApp(App):
     def on_ready(self) -> None:
         self.push_screen(TweetScreen())
-
 
 if __name__ == "__main__":
     app = LayoutApp()
@@ -30255,7 +29638,6 @@ from textual.app import App, ComposeResult
 from textual.screen import Screen
 from textual.widgets import Placeholder
 
-
 class Header(Placeholder):
     DEFAULT_CSS = """
     Header {
@@ -30264,7 +29646,6 @@ class Header(Placeholder):
     }
     """
 
-
 class Footer(Placeholder):
     DEFAULT_CSS = """
     Footer {
@@ -30272,7 +29653,6 @@ class Footer(Placeholder):
         dock: bottom;
     }
     """
-
 
 class ColumnsContainer(Placeholder):
     DEFAULT_CSS = """
@@ -30283,18 +29663,15 @@ class ColumnsContainer(Placeholder):
     }
     """  # (1)!
 
-
 class TweetScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header(id="Header")
         yield Footer(id="Footer")
         yield ColumnsContainer(id="Columns")
 
-
 class LayoutApp(App):
     def on_ready(self) -> None:
         self.push_screen(TweetScreen())
-
 
 if __name__ == "__main__":
     app = LayoutApp()
@@ -30314,7 +29691,6 @@ from textual.containers import HorizontalScroll
 from textual.screen import Screen
 from textual.widgets import Placeholder
 
-
 class Header(Placeholder):
     DEFAULT_CSS = """
     Header {
@@ -30322,7 +29698,6 @@ class Header(Placeholder):
         dock: top;
     }
     """
-
 
 class Footer(Placeholder):
     DEFAULT_CSS = """
@@ -30332,18 +29707,15 @@ class Footer(Placeholder):
     }
     """
 
-
 class TweetScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header(id="Header")
         yield Footer(id="Footer")
         yield HorizontalScroll()  # (1)!
 
-
 class LayoutApp(App):
     def on_ready(self) -> None:
         self.push_screen(TweetScreen())
-
 
 if __name__ == "__main__":
     app = LayoutApp()
@@ -30363,7 +29735,6 @@ from textual.containers import HorizontalScroll, VerticalScroll
 from textual.screen import Screen
 from textual.widgets import Placeholder
 
-
 class Header(Placeholder):
     DEFAULT_CSS = """
     Header {
@@ -30371,7 +29742,6 @@ class Header(Placeholder):
         dock: top;
     }
     """
-
 
 class Footer(Placeholder):
     DEFAULT_CSS = """
@@ -30381,16 +29751,13 @@ class Footer(Placeholder):
     }
     """
 
-
 class Tweet(Placeholder):
     pass
-
 
 class Column(VerticalScroll):
     def compose(self) -> ComposeResult:
         for tweet_no in range(1, 20):
             yield Tweet(id=f"Tweet{tweet_no}")
-
 
 class TweetScreen(Screen):
     def compose(self) -> ComposeResult:
@@ -30402,11 +29769,9 @@ class TweetScreen(Screen):
             yield Column()
             yield Column()
 
-
 class LayoutApp(App):
     def on_ready(self) -> None:
         self.push_screen(TweetScreen())
-
 
 if __name__ == "__main__":
     app = LayoutApp()
@@ -30426,7 +29791,6 @@ from textual.containers import HorizontalScroll, VerticalScroll
 from textual.screen import Screen
 from textual.widgets import Placeholder
 
-
 class Header(Placeholder):
     DEFAULT_CSS = """
     Header {
@@ -30434,7 +29798,6 @@ class Header(Placeholder):
         dock: top;
     }
     """
-
 
 class Footer(Placeholder):
     DEFAULT_CSS = """
@@ -30444,7 +29807,6 @@ class Footer(Placeholder):
     }
     """
 
-
 class Tweet(Placeholder):
     DEFAULT_CSS = """
     Tweet {
@@ -30453,7 +29815,6 @@ class Tweet(Placeholder):
         border: tall $background;
     }
     """
-
 
 class Column(VerticalScroll):
     DEFAULT_CSS = """
@@ -30468,7 +29829,6 @@ class Column(VerticalScroll):
         for tweet_no in range(1, 20):
             yield Tweet(id=f"Tweet{tweet_no}")
 
-
 class TweetScreen(Screen):
     def compose(self) -> ComposeResult:
         yield Header(id="Header")
@@ -30479,11 +29839,9 @@ class TweetScreen(Screen):
             yield Column()
             yield Column()
 
-
 class LayoutApp(App):
     def on_ready(self) -> None:
         self.push_screen(TweetScreen())
-
 
 if __name__ == "__main__":
     app = LayoutApp()
@@ -30521,7 +29879,6 @@ COLORS = [
 ]
 STOPS = [(i / (len(COLORS) - 1), color) for i, color in enumerate(COLORS)]
 
-
 class Splash(Container):
     """Custom widget that extends Container."""
 
@@ -30544,13 +29901,11 @@ class Splash(Container):
     def render(self) -> RenderResult:
         return LinearGradient(time() * 90, STOPS)  # (3)!
 
-
 class SplashApp(App):
     """Simple app to show our custom widget."""
 
     def compose(self) -> ComposeResult:
         yield Splash()
-
 
 if __name__ == "__main__":
     app = SplashApp()
@@ -30568,14 +29923,12 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class AlignApp(App):
     CSS_PATH = "align.tcss"
 
     def compose(self):
         yield Label("Vertical alignment with [b]Textual[/]", classes="box")
         yield Label("Take note, browsers.", classes="box")
-
 
 if __name__ == "__main__":
     app = AlignApp()
@@ -30594,7 +29947,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Container
 from textual.widgets import Label
 
-
 class AlignAllApp(App):
     """App that illustrates all alignments."""
 
@@ -30611,7 +29963,6 @@ class AlignAllApp(App):
         yield Container(Label("center bottom"), id="center-bottom")
         yield Container(Label("right bottom"), id="right-bottom")
 
-
 if __name__ == "__main__":
     AlignAllApp().run()
 
@@ -30627,7 +29978,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class BackgroundApp(App):
     CSS_PATH = "background.tcss"
 
@@ -30635,7 +29985,6 @@ class BackgroundApp(App):
         yield Label("Widget 1", id="static1")
         yield Label("Widget 2", id="static2")
         yield Label("Widget 3", id="static3")
-
 
 if __name__ == "__main__":
     app = BackgroundApp()
@@ -30654,7 +30003,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Vertical
 from textual.widgets import Label
 
-
 class BackgroundTintApp(App):
     CSS_PATH = "background_tint.tcss"
 
@@ -30669,7 +30017,6 @@ class BackgroundTintApp(App):
             yield Label("75%")
         with Vertical(id="tint5"):
             yield Label("100%")
-
 
 if __name__ == "__main__":
     app = BackgroundTintApp()
@@ -30686,7 +30033,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Static
-
 
 class BackgroundTransparencyApp(App):
     """Simple app to exemplify different transparency settings."""
@@ -30705,7 +30051,6 @@ class BackgroundTransparencyApp(App):
         yield Static("90%", id="t90")
         yield Static("100%", id="t100")
 
-
 if __name__ == "__main__":
     app = BackgroundTransparencyApp()
     app.run()
@@ -30722,7 +30067,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class BorderApp(App):
     CSS_PATH = "border.tcss"
 
@@ -30730,7 +30074,6 @@ class BorderApp(App):
         yield Label("My border is solid red", id="label1")
         yield Label("My border is dashed green", id="label2")
         yield Label("My border is tall blue", id="label3")
-
 
 if __name__ == "__main__":
     app = BorderApp()
@@ -30748,7 +30091,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Label
-
 
 class AllBordersApp(App):
     CSS_PATH = "border_all.tcss"
@@ -30773,7 +30115,6 @@ class AllBordersApp(App):
             Label("wide", id="wide"),
         )
 
-
 if __name__ == "__main__":
     app = AllBordersApp()
     app.run()
@@ -30791,7 +30132,6 @@ from textual.app import App
 from textual.containers import Container, Grid
 from textual.widgets import Label
 
-
 def make_label_container(  # (11)!
     text: str, id: str, border_title: str, border_subtitle: str
 ) -> Container:
@@ -30799,7 +30139,6 @@ def make_label_container(  # (11)!
     lbl.border_title = border_title
     lbl.border_subtitle = border_subtitle
     return Container(lbl)
-
 
 class BorderSubTitleAlignAll(App[None]):
     CSS_PATH = "border_sub_title_align_all.tcss"
@@ -30858,7 +30197,6 @@ class BorderSubTitleAlignAll(App[None]):
                 "Subtitle, but really loooooooooong!",
             )
 
-
 if __name__ == "__main__":
     app = BorderSubTitleAlignAll()
     app.run()
@@ -30874,7 +30212,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 from textual.widgets import Label
-
 
 class BorderSubtitleAlignApp(App):
     CSS_PATH = "border_subtitle_align.tcss"
@@ -30892,7 +30229,6 @@ class BorderSubtitleAlignApp(App):
         lbl.border_subtitle = "Right >"
         yield lbl
 
-
 if __name__ == "__main__":
     app = BorderSubtitleAlignApp()
     app.run()
@@ -30908,7 +30244,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 from textual.widgets import Label
-
 
 class BorderTitleAlignApp(App):
     CSS_PATH = "border_title_align.tcss"
@@ -30926,7 +30261,6 @@ class BorderTitleAlignApp(App):
         lbl.border_title = "Right >"
         yield lbl
 
-
 if __name__ == "__main__":
     app = BorderTitleAlignApp()
     app.run()
@@ -30943,7 +30277,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Label
 
-
 class BorderTitleApp(App):
     CSS_PATH = "border_title_colors.tcss"
 
@@ -30954,7 +30287,6 @@ class BorderTitleApp(App):
         label = self.query_one(Label)
         label.border_title = "Textual Rocks"
         label.border_subtitle = "Textual Rocks"
-
 
 if __name__ == "__main__":
     app = BorderTitleApp()
@@ -30972,14 +30304,12 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Static
 
-
 class BoxSizingApp(App):
     CSS_PATH = "box_sizing.tcss"
 
     def compose(self):
         yield Static("I'm using border-box!", id="static1")
         yield Static("I'm using content-box!", id="static2")
-
 
 if __name__ == "__main__":
     app = BoxSizingApp()
@@ -30997,7 +30327,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class ColorApp(App):
     CSS_PATH = "color.tcss"
 
@@ -31005,7 +30334,6 @@ class ColorApp(App):
         yield Label("I'm red!", id="label1")
         yield Label("I'm rgb(0, 255, 0)!", id="label2")
         yield Label("I'm hsl(240, 100%, 50%)!", id="label3")
-
 
 if __name__ == "__main__":
     app = ColorApp()
@@ -31023,7 +30351,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class ColorApp(App):
     CSS_PATH = "color_auto.tcss"
 
@@ -31033,7 +30360,6 @@ class ColorApp(App):
         yield Label("The quick brown fox jumps over the lazy dog!", id="lbl3")
         yield Label("The quick brown fox jumps over the lazy dog!", id="lbl4")
         yield Label("The quick brown fox jumps over the lazy dog!", id="lbl5")
-
 
 if __name__ == "__main__":
     app = ColorApp()
@@ -31052,7 +30378,6 @@ from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Placeholder
 
-
 class MyApp(App):
     CSS_PATH = "column_span.tcss"
 
@@ -31066,7 +30391,6 @@ class MyApp(App):
             Placeholder(id="p6"),
             Placeholder(id="p7"),
         )
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -31084,7 +30408,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class ContentAlignApp(App):
     CSS_PATH = "content_align.tcss"
 
@@ -31092,7 +30415,6 @@ class ContentAlignApp(App):
         yield Label("With [i]content-align[/] you can...", id="box1")
         yield Label("...[b]Easily align content[/]...", id="box2")
         yield Label("...Horizontally [i]and[/] vertically!", id="box3")
-
 
 if __name__ == "__main__":
     app = ContentAlignApp()
@@ -31110,7 +30432,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class AllContentAlignApp(App):
     CSS_PATH = "content_align_all.tcss"
 
@@ -31124,7 +30445,6 @@ class AllContentAlignApp(App):
         yield Label("left bottom", id="left-bottom")
         yield Label("center bottom", id="center-bottom")
         yield Label("right bottom", id="right-bottom")
-
 
 if __name__ == "__main__":
     app = AllContentAlignApp()
@@ -31142,7 +30462,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Static
 
-
 class DisplayApp(App):
     CSS_PATH = "display.tcss"
 
@@ -31150,7 +30469,6 @@ class DisplayApp(App):
         yield Static("Widget 1")
         yield Static("Widget 2", classes="remove")
         yield Static("Widget 3")
-
 
 if __name__ == "__main__":
     app = DisplayApp()
@@ -31169,7 +30487,6 @@ from textual.app import App
 from textual.containers import Container
 from textual.widgets import Label
 
-
 class DockAllApp(App):
     CSS_PATH = "dock_all.tcss"
 
@@ -31181,7 +30498,6 @@ class DockAllApp(App):
             Container(Label("bottom"), id="bottom"),
             id="big_container",
         )
-
 
 if __name__ == "__main__":
     app = DockAllApp()
@@ -31199,7 +30515,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Static
 
-
 class GridApp(App):
     CSS_PATH = "grid.tcss"
 
@@ -31211,7 +30526,6 @@ class GridApp(App):
         yield Static("Grid cell 5", id="static5")
         yield Static("Grid cell 6", id="static6")
         yield Static("Grid cell 7", id="static7")
-
 
 if __name__ == "__main__":
     app = GridApp()
@@ -31230,7 +30544,6 @@ from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Label
 
-
 class MyApp(App):
     CSS_PATH = "grid_columns.tcss"
 
@@ -31247,7 +30560,6 @@ class MyApp(App):
             Label("1fr"),
             Label("width = 16"),
         )
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -31266,7 +30578,6 @@ from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Label
 
-
 class MyApp(App):
     CSS_PATH = "grid_gutter.tcss"
 
@@ -31281,7 +30592,6 @@ class MyApp(App):
             Label("7"),
             Label("8"),
         )
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -31300,7 +30610,6 @@ from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Label
 
-
 class MyApp(App):
     CSS_PATH = "grid_rows.tcss"
 
@@ -31317,7 +30626,6 @@ class MyApp(App):
             Label("height = 6"),
             Label("height = 6"),
         )
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -31336,7 +30644,6 @@ from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Label
 
-
 class MyApp(App):
     CSS_PATH = "grid_size_both.tcss"
 
@@ -31348,7 +30655,6 @@ class MyApp(App):
             Label("4"),
             Label("5"),
         )
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -31367,7 +30673,6 @@ from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Label
 
-
 class MyApp(App):
     CSS_PATH = "grid_size_columns.tcss"
 
@@ -31379,7 +30684,6 @@ class MyApp(App):
             Label("4"),
             Label("5"),
         )
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -31400,7 +30704,6 @@ from textual.widgets import Static
 
 HATCHES = ("cross", "horizontal", "custom", "left", "right")
 
-
 class HatchApp(App):
     CSS_PATH = "hatch.tcss"
 
@@ -31411,7 +30714,6 @@ class HatchApp(App):
                 static.border_title = hatch
                 with Vertical():
                     yield static
-
 
 if __name__ == "__main__":
     app = HatchApp()
@@ -31429,13 +30731,11 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widget import Widget
 
-
 class HeightApp(App):
     CSS_PATH = "height.tcss"
 
     def compose(self):
         yield Widget()
-
 
 if __name__ == "__main__":
     app = HeightApp()
@@ -31454,12 +30754,10 @@ from textual.app import App
 from textual.containers import VerticalScroll
 from textual.widgets import Label, Placeholder, Static
 
-
 class Ruler(Static):
     def compose(self):
         ruler_text = "·\n·\n·\n·\n•\n" * 100
         yield Label(ruler_text)
-
 
 class HeightComparisonApp(App):
     CSS_PATH = "height_comparison.tcss"
@@ -31478,7 +30776,6 @@ class HeightComparisonApp(App):
         )
         yield Ruler()
 
-
 if __name__ == "__main__":
     app = HeightComparisonApp()
     app.run()
@@ -31496,7 +30793,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Grid
 from textual.widgets import Placeholder
 
-
 class KeylineApp(App):
     CSS_PATH = "keyline.tcss"
 
@@ -31507,7 +30803,6 @@ class KeylineApp(App):
             yield Placeholder()
             yield Placeholder(classes="hidden")
             yield Placeholder(id="baz")
-
 
 if __name__ == "__main__":
     KeylineApp().run()
@@ -31525,7 +30820,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Placeholder
 
-
 class KeylineApp(App):
     CSS_PATH = "keyline_horizontal.tcss"
 
@@ -31534,7 +30828,6 @@ class KeylineApp(App):
             yield Placeholder()
             yield Placeholder()
             yield Placeholder()
-
 
 if __name__ == "__main__":
     app = KeylineApp()
@@ -31553,7 +30846,6 @@ from textual.app import App
 from textual.containers import Container
 from textual.widgets import Label
 
-
 class LayoutApp(App):
     CSS_PATH = "layout.tcss"
 
@@ -31571,7 +30863,6 @@ class LayoutApp(App):
             id="horizontal-layout",
         )
 
-
 if __name__ == "__main__":
     app = LayoutApp()
     app.run()
@@ -31587,7 +30878,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 from textual.widgets import Label
-
 
 class LinkBackgroundApp(App):
     CSS_PATH = "link_background.tcss"
@@ -31610,7 +30900,6 @@ class LinkBackgroundApp(App):
             id="lbl4",  # (4)!
         )
 
-
 if __name__ == "__main__":
     app = LinkBackgroundApp()
     app.run()
@@ -31626,7 +30915,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 from textual.widgets import Label
-
 
 class LinkHoverBackgroundApp(App):
     CSS_PATH = "link_background_hover.tcss"
@@ -31649,7 +30937,6 @@ class LinkHoverBackgroundApp(App):
             id="lbl4",  # (4)!
         )
 
-
 if __name__ == "__main__":
     app = LinkHoverBackgroundApp()
     app.run()
@@ -31665,7 +30952,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 from textual.widgets import Label
-
 
 class LinkColorApp(App):
     CSS_PATH = "link_color.tcss"
@@ -31688,7 +30974,6 @@ class LinkColorApp(App):
             id="lbl4",  # (4)!
         )
 
-
 if __name__ == "__main__":
     app = LinkColorApp()
     app.run()
@@ -31704,7 +30989,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 from textual.widgets import Label
-
 
 class LinkHoverColorApp(App):
     CSS_PATH = "link_color_hover.tcss"
@@ -31727,7 +31011,6 @@ class LinkHoverColorApp(App):
             id="lbl4",  # (4)!
         )
 
-
 if __name__ == "__main__":
     app = LinkHoverColorApp()
     app.run()
@@ -31743,7 +31026,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 from textual.widgets import Label
-
 
 class LinkStyleApp(App):
     CSS_PATH = "link_style.tcss"
@@ -31766,7 +31048,6 @@ class LinkStyleApp(App):
             id="lbl4",  # (4)!
         )
 
-
 if __name__ == "__main__":
     app = LinkStyleApp()
     app.run()
@@ -31782,7 +31063,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App
 from textual.widgets import Label
-
 
 class LinkHoverStyleApp(App):
     CSS_PATH = "link_style_hover.tcss"
@@ -31805,7 +31085,6 @@ class LinkHoverStyleApp(App):
             id="lbl4",  # (4)!
         )
 
-
 if __name__ == "__main__":
     app = LinkHoverStyleApp()
     app.run()
@@ -31826,14 +31105,12 @@ TEXT = """\
 Here is a [@click='app.bell']link[/] which you can click!
 """
 
-
 class LinksApp(App):
     CSS_PATH = "links.tcss"
 
     def compose(self) -> ComposeResult:
         yield Static(TEXT)
         yield Static(TEXT, id="custom")
-
 
 if __name__ == "__main__":
     app = LinksApp()
@@ -31859,13 +31136,11 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class MarginApp(App):
     CSS_PATH = "margin.tcss"
 
     def compose(self):
         yield Label(TEXT)
-
 
 if __name__ == "__main__":
     app = MarginApp()
@@ -31884,7 +31159,6 @@ from textual.app import App
 from textual.containers import Container, Grid
 from textual.widgets import Placeholder
 
-
 class MarginAllApp(App):
     CSS_PATH = "margin_all.tcss"
 
@@ -31899,7 +31173,6 @@ class MarginAllApp(App):
             Container(Placeholder("margin-bottom: 4", id="p7"), classes="bordered"),
             Container(Placeholder("margin-left: 3", id="p8"), classes="bordered"),
         )
-
 
 if __name__ == "__main__":
     app = MarginAllApp()
@@ -31918,7 +31191,6 @@ from textual.app import App
 from textual.containers import Horizontal
 from textual.widgets import Placeholder
 
-
 class MaxHeightApp(App):
     CSS_PATH = "max_height.tcss"
 
@@ -31929,7 +31201,6 @@ class MaxHeightApp(App):
             Placeholder("max-height: 50%", id="p3"),
             Placeholder("max-height: 10", id="p4"),
         )
-
 
 if __name__ == "__main__":
     app = MaxHeightApp()
@@ -31948,7 +31219,6 @@ from textual.app import App
 from textual.containers import VerticalScroll
 from textual.widgets import Placeholder
 
-
 class MaxWidthApp(App):
     CSS_PATH = "max_width.tcss"
 
@@ -31959,7 +31229,6 @@ class MaxWidthApp(App):
             Placeholder("max-width: 50%", id="p3"),
             Placeholder("max-width: 30", id="p4"),
         )
-
 
 if __name__ == "__main__":
     app = MaxWidthApp()
@@ -31978,7 +31247,6 @@ from textual.app import App
 from textual.containers import Horizontal
 from textual.widgets import Placeholder
 
-
 class MinHeightApp(App):
     CSS_PATH = "min_height.tcss"
 
@@ -31989,7 +31257,6 @@ class MinHeightApp(App):
             Placeholder("min-height: 30", id="p3"),
             Placeholder("min-height: 40w", id="p4"),
         )
-
 
 if __name__ == "__main__":
     app = MinHeightApp()
@@ -32008,7 +31275,6 @@ from textual.app import App
 from textual.containers import VerticalScroll
 from textual.widgets import Placeholder
 
-
 class MinWidthApp(App):
     CSS_PATH = "min_width.tcss"
 
@@ -32019,7 +31285,6 @@ class MinWidthApp(App):
             Placeholder("min-width: 100", id="p3"),
             Placeholder("min-width: 400h", id="p4"),
         )
-
 
 if __name__ == "__main__":
     app = MinWidthApp()
@@ -32037,7 +31302,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class OffsetApp(App):
     CSS_PATH = "offset.tcss"
 
@@ -32045,7 +31309,6 @@ class OffsetApp(App):
         yield Label("Paul (offset 8 2)", classes="paul")
         yield Label("Duncan (offset 4 10)", classes="duncan")
         yield Label("Chani (offset 0 -3)", classes="chani")
-
 
 if __name__ == "__main__":
     app = OffsetApp()
@@ -32063,7 +31326,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class OpacityApp(App):
     CSS_PATH = "opacity.tcss"
 
@@ -32073,7 +31335,6 @@ class OpacityApp(App):
         yield Label("opacity: 50%", id="half-opacity")
         yield Label("opacity: 75%", id="three-quarter-opacity")
         yield Label("opacity: 100%", id="full-opacity")
-
 
 if __name__ == "__main__":
     app = OpacityApp()
@@ -32099,13 +31360,11 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class OutlineApp(App):
     CSS_PATH = "outline.tcss"
 
     def compose(self):
         yield Label(TEXT)
-
 
 if __name__ == "__main__":
     app = OutlineApp()
@@ -32123,7 +31382,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Label
-
 
 class AllOutlinesApp(App):
     CSS_PATH = "outline_all.tcss"
@@ -32146,7 +31404,6 @@ class AllOutlinesApp(App):
             Label("vkey", id="vkey"),
             Label("wide", id="wide"),
         )
-
 
 if __name__ == "__main__":
     app = AllOutlinesApp()
@@ -32172,7 +31429,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class OutlineBorderApp(App):
     CSS_PATH = "outline_vs_border.tcss"
 
@@ -32180,7 +31436,6 @@ class OutlineBorderApp(App):
         yield Label(TEXT, classes="outline")
         yield Label(TEXT, classes="border")
         yield Label(TEXT, classes="outline border")
-
 
 if __name__ == "__main__":
     app = OutlineBorderApp()
@@ -32207,7 +31462,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class OverflowApp(App):
     CSS_PATH = "overflow.tcss"
 
@@ -32216,7 +31470,6 @@ class OverflowApp(App):
             VerticalScroll(Static(TEXT), Static(TEXT), Static(TEXT), id="left"),
             VerticalScroll(Static(TEXT), Static(TEXT), Static(TEXT), id="right"),
         )
-
 
 if __name__ == "__main__":
     app = OverflowApp()
@@ -32242,13 +31495,11 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class PaddingApp(App):
     CSS_PATH = "padding.tcss"
 
     def compose(self):
         yield Label(TEXT)
-
 
 if __name__ == "__main__":
     app = PaddingApp()
@@ -32267,7 +31518,6 @@ from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Placeholder
 
-
 class PaddingAllApp(App):
     CSS_PATH = "padding_all.tcss"
 
@@ -32282,7 +31532,6 @@ class PaddingAllApp(App):
             Placeholder("padding-bottom: 4", id="p7"),
             Placeholder("padding-left: 3", id="p8"),
         )
-
 
 if __name__ == "__main__":
     app = PaddingAllApp()
@@ -32300,14 +31549,12 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Label
 
-
 class PositionApp(App):
     CSS_PATH = "position.tcss"
 
     def compose(self) -> ComposeResult:
         yield Label("Absolute", id="label1")
         yield Label("Relative", id="label2")
-
 
 if __name__ == "__main__":
     app = PositionApp()
@@ -32326,7 +31573,6 @@ from textual.app import App
 from textual.containers import Grid
 from textual.widgets import Placeholder
 
-
 class MyApp(App):
     CSS_PATH = "row_span.tcss"
 
@@ -32340,7 +31586,6 @@ class MyApp(App):
             Placeholder(id="p6"),
             Placeholder(id="p7"),
         )
-
 
 if __name__ == "__main__":
     app = MyApp()
@@ -32367,13 +31612,11 @@ And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain.
 """
 
-
 class ScrollbarCornerColorApp(App):
     CSS_PATH = "scrollbar_corner_color.tcss"
 
     def compose(self):
         yield Label(TEXT.replace("\n", " ") + "\n" + TEXT * 10)
-
 
 if __name__ == "__main__":
     app = ScrollbarCornerColorApp()
@@ -32399,13 +31642,11 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class ScrollbarGutterApp(App):
     CSS_PATH = "scrollbar_gutter.tcss"
 
     def compose(self):
         yield Static(TEXT, id="text-box")
-
 
 if __name__ == "__main__":
     app = ScrollbarGutterApp()
@@ -32433,13 +31674,11 @@ And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain.
 """
 
-
 class ScrollbarApp(App):
     CSS_PATH = "scrollbar_size.tcss"
 
     def compose(self):
         yield ScrollableContainer(Label(TEXT * 5), classes="panel")
-
 
 if __name__ == "__main__":
     app = ScrollbarApp()
@@ -32467,7 +31706,6 @@ And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain.
 """
 
-
 class ScrollbarApp(App):
     CSS_PATH = "scrollbar_size2.tcss"
 
@@ -32477,7 +31715,6 @@ class ScrollbarApp(App):
             ScrollableContainer(Label(TEXT * 5), id="v2"),
             ScrollableContainer(Label(TEXT * 5), id="v3"),
         )
-
 
 if __name__ == "__main__":
     app = ScrollbarApp()
@@ -32505,7 +31742,6 @@ And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain.
 """
 
-
 class ScrollbarApp(App):
     CSS_PATH = "scrollbar_visibility.tcss"
 
@@ -32514,7 +31750,6 @@ class ScrollbarApp(App):
             VerticalScroll(Label(TEXT * 10), classes="left"),
             VerticalScroll(Label(TEXT * 10), classes="right"),
         )
-
 
 if __name__ == "__main__":
     app = ScrollbarApp()
@@ -32542,7 +31777,6 @@ And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain.
 """
 
-
 class ScrollbarApp(App):
     CSS_PATH = "scrollbars.tcss"
 
@@ -32551,7 +31785,6 @@ class ScrollbarApp(App):
             ScrollableContainer(Label(TEXT * 10)),
             ScrollableContainer(Label(TEXT * 10), classes="right"),
         )
-
 
 if __name__ == "__main__":
     app = ScrollbarApp()
@@ -32578,13 +31811,11 @@ And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain.
 """
 
-
 class Scrollbar2App(App):
     CSS_PATH = "scrollbars2.tcss"
 
     def compose(self):
         yield Label(TEXT * 10)
-
 
 if __name__ == "__main__":
     app = Scrollbar2App()
@@ -32609,7 +31840,6 @@ TEXT = (
     "me and through me."
 )
 
-
 class TextAlign(App):
     CSS_PATH = "text_align.tcss"
 
@@ -32620,7 +31850,6 @@ class TextAlign(App):
             Label("[b]Right aligned[/]\n" + TEXT, id="three"),
             Label("[b]Justified[/]\n" + TEXT, id="four"),
         )
-
 
 if __name__ == "__main__":
     app = TextAlign()
@@ -32638,7 +31867,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class TextOpacityApp(App):
     CSS_PATH = "text_opacity.tcss"
 
@@ -32648,7 +31876,6 @@ class TextOpacityApp(App):
         yield Label("text-opacity: 50%", id="half-opacity")
         yield Label("text-opacity: 75%", id="three-quarter-opacity")
         yield Label("text-opacity: 100%", id="full-opacity")
-
 
 if __name__ == "__main__":
     app = TextOpacityApp()
@@ -32668,7 +31895,6 @@ from textual.widgets import Static
 
 TEXT = """I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear."""
 
-
 class WrapApp(App):
     CSS_PATH = "text_overflow.tcss"
 
@@ -32676,7 +31902,6 @@ class WrapApp(App):
         yield Static(TEXT, id="static1")
         yield Static(TEXT, id="static2")
         yield Static(TEXT, id="static3")
-
 
 if __name__ == "__main__":
     app = WrapApp()
@@ -32702,7 +31927,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class TextStyleApp(App):
     CSS_PATH = "text_style.tcss"
 
@@ -32710,7 +31934,6 @@ class TextStyleApp(App):
         yield Label(TEXT, id="lbl1")
         yield Label(TEXT, id="lbl2")
         yield Label(TEXT, id="lbl3")
-
 
 if __name__ == "__main__":
     app = TextStyleApp()
@@ -32737,7 +31960,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class AllTextStyleApp(App):
     CSS_PATH = "text_style_all.tcss"
 
@@ -32752,7 +31974,6 @@ class AllTextStyleApp(App):
             Label("bold italic\n" + TEXT, id="lbl7"),
             Label("reverse strike\n" + TEXT, id="lbl8"),
         )
-
 
 if __name__ == "__main__":
     app = AllTextStyleApp()
@@ -32772,14 +31993,12 @@ from textual.widgets import Static
 
 TEXT = """I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration. I will face my fear."""
 
-
 class WrapApp(App):
     CSS_PATH = "text_wrap.tcss"
 
     def compose(self) -> ComposeResult:
         yield Static(TEXT, id="static1")
         yield Static(TEXT, id="static2")
-
 
 if __name__ == "__main__":
     app = WrapApp()
@@ -32798,7 +32017,6 @@ from textual.app import App
 from textual.color import Color
 from textual.widgets import Label
 
-
 class TintApp(App):
     CSS_PATH = "tint.tcss"
 
@@ -32808,7 +32026,6 @@ class TintApp(App):
             widget = Label(f"tint: green {tint_alpha}%;")
             widget.styles.tint = color.with_alpha(tint_alpha / 100)  # (1)!
             yield widget
-
 
 if __name__ == "__main__":
     app = TintApp()
@@ -32826,7 +32043,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widgets import Label
 
-
 class VisibilityApp(App):
     CSS_PATH = "visibility.tcss"
 
@@ -32834,7 +32050,6 @@ class VisibilityApp(App):
         yield Label("Widget 1")
         yield Label("Widget 2", classes="invisible")
         yield Label("Widget 3")
-
 
 if __name__ == "__main__":
     app = VisibilityApp()
@@ -32852,7 +32067,6 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.containers import Horizontal, VerticalScroll
 from textual.widgets import Placeholder
-
 
 class VisibilityContainersApp(App):
     CSS_PATH = "visibility_containers.tcss"
@@ -32879,7 +32093,6 @@ class VisibilityContainersApp(App):
             ),
         )
 
-
 if __name__ == "__main__":
     app = VisibilityContainersApp()
     app.run()
@@ -32896,13 +32109,11 @@ if __name__ == "__main__":
 from textual.app import App
 from textual.widget import Widget
 
-
 class WidthApp(App):
     CSS_PATH = "width.tcss"
 
     def compose(self):
         yield Widget()
-
 
 if __name__ == "__main__":
     app = WidthApp()
@@ -32921,12 +32132,10 @@ from textual.app import App
 from textual.containers import Horizontal
 from textual.widgets import Label, Placeholder, Static
 
-
 class Ruler(Static):
     def compose(self):
         ruler_text = "····•" * 100
         yield Label(ruler_text)
-
 
 class WidthComparisonApp(App):
     CSS_PATH = "width_comparison.tcss"
@@ -32944,7 +32153,6 @@ class WidthComparisonApp(App):
             Placeholder(id="fr3"),
         )
         yield Ruler()
-
 
 if __name__ == "__main__":
     app = WidthComparisonApp()
@@ -32964,14 +32172,12 @@ from textual.widgets import Label
 
 COLORS = ("primary", "secondary", "accent", "warning", "error", "success")
 
-
 class ColoredText(App[None]):
     CSS = "\n".join(f".text-{color} {{color: $text-{color};}}" for color in COLORS)
 
     def compose(self) -> ComposeResult:
         for color in COLORS:
             yield Label(f"$text-{color}", classes=f"text-{color}")
-
 
 app = ColoredText()
 if __name__ == "__main__":
@@ -32991,7 +32197,6 @@ from textual.widgets import Label
 
 COLORS = ("primary", "secondary", "accent", "warning", "error", "success")
 
-
 class MutedBackgrounds(App[None]):
     CSS = "\n".join(
         f".text-{color} {{padding: 0 1; color: $text-{color}; background: ${color}-muted;}}"
@@ -33001,7 +32206,6 @@ class MutedBackgrounds(App[None]):
     def compose(self) -> ComposeResult:
         for color in COLORS:
             yield Label(f"$text-{color} on ${color}-muted", classes=f"text-{color}")
-
 
 app = MutedBackgrounds()
 if __name__ == "__main__":
@@ -33022,7 +32226,6 @@ from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.containers import Horizontal, Vertical
 from textual.widgets import Footer, Header, Input, Label, SelectionList
-
 
 class TodoList(App[None]):
     CSS = """
@@ -33108,7 +32311,6 @@ Screen {
     def action_cycle_theme(self) -> None:
         self.theme = next(self.THEMES)
 
-
 app = TodoList()
 if __name__ == "__main__":
     app.run()
@@ -33128,7 +32330,6 @@ from textual.app import App, ComposeResult
 from textual.containers import HorizontalGroup, VerticalScroll
 from textual.reactive import reactive
 from textual.widgets import Button, Digits, Footer, Header
-
 
 class TimeDisplay(Digits):
     """A widget to display elapsed time."""
@@ -33167,7 +32368,6 @@ class TimeDisplay(Digits):
         self.total = 0
         self.time = 0
 
-
 class Stopwatch(HorizontalGroup):
     """A stopwatch widget."""
 
@@ -33190,7 +32390,6 @@ class Stopwatch(HorizontalGroup):
         yield Button("Stop", id="stop", variant="error")
         yield Button("Reset", id="reset")
         yield TimeDisplay()
-
 
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
@@ -33227,7 +32426,6 @@ class StopwatchApp(App):
             "textual-dark" if self.theme == "textual-light" else "textual-light"
         )
 
-
 if __name__ == "__main__":
     app = StopwatchApp()
     app.run()
@@ -33244,7 +32442,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Footer, Header
 
-
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
 
@@ -33260,7 +32457,6 @@ class StopwatchApp(App):
         self.theme = (
             "textual-dark" if self.theme == "textual-light" else "textual-light"
         )
-
 
 if __name__ == "__main__":
     app = StopwatchApp()
@@ -33279,10 +32475,8 @@ from textual.app import App, ComposeResult
 from textual.containers import HorizontalGroup, VerticalScroll
 from textual.widgets import Button, Digits, Footer, Header
 
-
 class TimeDisplay(Digits):
     """A widget to display elapsed time."""
-
 
 class Stopwatch(HorizontalGroup):
     """A stopwatch widget."""
@@ -33293,7 +32487,6 @@ class Stopwatch(HorizontalGroup):
         yield Button("Stop", id="stop", variant="error")
         yield Button("Reset", id="reset")
         yield TimeDisplay("00:00:00.00")
-
 
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
@@ -33312,7 +32505,6 @@ class StopwatchApp(App):
             "textual-dark" if self.theme == "textual-light" else "textual-light"
         )
 
-
 if __name__ == "__main__":
     app = StopwatchApp()
     app.run()
@@ -33330,10 +32522,8 @@ from textual.app import App, ComposeResult
 from textual.containers import HorizontalGroup, VerticalScroll
 from textual.widgets import Button, Digits, Footer, Header
 
-
 class TimeDisplay(Digits):
     """A widget to display elapsed time."""
-
 
 class Stopwatch(HorizontalGroup):
     """A stopwatch widget."""
@@ -33344,7 +32534,6 @@ class Stopwatch(HorizontalGroup):
         yield Button("Stop", id="stop", variant="error")
         yield Button("Reset", id="reset")
         yield TimeDisplay("00:00:00.00")
-
 
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
@@ -33364,7 +32553,6 @@ class StopwatchApp(App):
             "textual-dark" if self.theme == "textual-light" else "textual-light"
         )
 
-
 if __name__ == "__main__":
     app = StopwatchApp()
     app.run()
@@ -33382,10 +32570,8 @@ from textual.app import App, ComposeResult
 from textual.containers import HorizontalGroup, VerticalScroll
 from textual.widgets import Button, Digits, Footer, Header
 
-
 class TimeDisplay(Digits):
     """A widget to display elapsed time."""
-
 
 class Stopwatch(HorizontalGroup):
     """A stopwatch widget."""
@@ -33404,7 +32590,6 @@ class Stopwatch(HorizontalGroup):
         yield Button("Reset", id="reset")
         yield TimeDisplay("00:00:00.00")
 
-
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
 
@@ -33422,7 +32607,6 @@ class StopwatchApp(App):
         self.theme = (
             "textual-dark" if self.theme == "textual-light" else "textual-light"
         )
-
 
 if __name__ == "__main__":
     app = StopwatchApp()
@@ -33444,7 +32628,6 @@ from textual.containers import HorizontalGroup, VerticalScroll
 from textual.reactive import reactive
 from textual.widgets import Button, Digits, Footer, Header
 
-
 class TimeDisplay(Digits):
     """A widget to display elapsed time."""
 
@@ -33465,7 +32648,6 @@ class TimeDisplay(Digits):
         hours, minutes = divmod(minutes, 60)
         self.update(f"{hours:02,.0f}:{minutes:02.0f}:{seconds:05.2f}")
 
-
 class Stopwatch(HorizontalGroup):
     """A stopwatch widget."""
 
@@ -33482,7 +32664,6 @@ class Stopwatch(HorizontalGroup):
         yield Button("Stop", id="stop", variant="error")
         yield Button("Reset", id="reset")
         yield TimeDisplay()
-
 
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
@@ -33501,7 +32682,6 @@ class StopwatchApp(App):
         self.theme = (
             "textual-dark" if self.theme == "textual-light" else "textual-light"
         )
-
 
 if __name__ == "__main__":
     app = StopwatchApp()
@@ -33522,7 +32702,6 @@ from textual.app import App, ComposeResult
 from textual.containers import HorizontalGroup, VerticalScroll
 from textual.reactive import reactive
 from textual.widgets import Button, Digits, Footer, Header
-
 
 class TimeDisplay(Digits):
     """A widget to display elapsed time."""
@@ -33561,7 +32740,6 @@ class TimeDisplay(Digits):
         self.total = 0
         self.time = 0
 
-
 class Stopwatch(HorizontalGroup):
     """A stopwatch widget."""
 
@@ -33585,7 +32763,6 @@ class Stopwatch(HorizontalGroup):
         yield Button("Reset", id="reset")
         yield TimeDisplay()
 
-
 class StopwatchApp(App):
     """A Textual app to manage stopwatches."""
 
@@ -33604,7 +32781,6 @@ class StopwatchApp(App):
             "textual-dark" if self.theme == "textual-light" else "textual-light"
         )
 
-
 if __name__ == "__main__":
     app = StopwatchApp()
     app.run()
@@ -33621,7 +32797,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, VerticalScroll
 from textual.widgets import Button, Static
-
 
 class ButtonsApp(App[str]):
     CSS_PATH = "button.tcss"
@@ -33665,7 +32840,6 @@ class ButtonsApp(App[str]):
     def on_button_pressed(self, event: Button.Pressed) -> None:
         self.exit(str(event.button))
 
-
 if __name__ == "__main__":
     app = ButtonsApp()
     print(app.run())
@@ -33682,7 +32856,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.containers import VerticalScroll
 from textual.widgets import Checkbox
-
 
 class CheckboxApp(App[None]):
     CSS_PATH = "checkbox.tcss"
@@ -33701,7 +32874,6 @@ class CheckboxApp(App[None]):
     def on_mount(self):
         self.query_one("#initial_focus", Checkbox).focus()
 
-
 if __name__ == "__main__":
     CheckboxApp().run()
 
@@ -33718,7 +32890,6 @@ from datetime import datetime
 
 from textual.app import App, ComposeResult
 from textual.widgets import Digits
-
 
 class ClockApp(App):
     CSS = """
@@ -33740,7 +32911,6 @@ class ClockApp(App):
     def update_clock(self) -> None:
         clock = datetime.now().time()
         self.query_one(Digits).update(f"{clock:%T}")
-
 
 if __name__ == "__main__":
     app = ClockApp()
@@ -33775,7 +32945,6 @@ PAUL = """
 Son of Leto and Jessica.
 """
 
-
 class CollapsibleApp(App[None]):
     """An example of collapsible container."""
 
@@ -33797,7 +32966,6 @@ class CollapsibleApp(App[None]):
         for child in self.walk_children(Collapsible):
             child.collapsed = collapse
 
-
 if __name__ == "__main__":
     app = CollapsibleApp()
     app.run()
@@ -33815,7 +32983,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Collapsible, Label
 
-
 class CollapsibleApp(App[None]):
     def compose(self) -> ComposeResult:
         with Horizontal():
@@ -33831,7 +32998,6 @@ class CollapsibleApp(App[None]):
                 collapsed=False,
             ):
                 yield Label("Hello, world.")
-
 
 if __name__ == "__main__":
     app = CollapsibleApp()
@@ -33849,13 +33015,11 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Collapsible, Label
 
-
 class CollapsibleApp(App[None]):
     def compose(self) -> ComposeResult:
         with Collapsible(collapsed=False):
             with Collapsible():
                 yield Label("Hello, world.")
-
 
 if __name__ == "__main__":
     app = CollapsibleApp()
@@ -33898,7 +33062,6 @@ comedic genre films directed by Edgar Wright.
 | Mint | 2013-07-19 | Edgar Wright |
 """
 
-
 class ContentSwitcherApp(App[None]):
     CSS_PATH = "content_switcher.tcss"
 
@@ -33932,7 +33095,6 @@ class ContentSwitcherApp(App[None]):
             ]
         )
 
-
 if __name__ == "__main__":
     ContentSwitcherApp().run()
 
@@ -33961,7 +33123,6 @@ ROWS = [
     (10, "Darren Burns", "Scotland", 51.84),
 ]
 
-
 class TableApp(App):
     def compose(self) -> ComposeResult:
         yield DataTable()
@@ -33970,7 +33131,6 @@ class TableApp(App):
         table = self.query_one(DataTable)
         table.add_columns(*ROWS[0])
         table.add_rows(ROWS[1:])
-
 
 app = TableApp()
 if __name__ == "__main__":
@@ -34005,7 +33165,6 @@ ROWS = [
 
 cursors = cycle(["column", "row", "cell", "none"])
 
-
 class TableApp(App):
     def compose(self) -> ComposeResult:
         yield DataTable()
@@ -34020,7 +33179,6 @@ class TableApp(App):
     def key_c(self):
         table = self.query_one(DataTable)
         table.cursor_type = next(cursors)
-
 
 app = TableApp()
 if __name__ == "__main__":
@@ -34038,7 +33196,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import DataTable
 
-
 class TableApp(App):
     CSS = "DataTable {height: 1fr}"
 
@@ -34055,7 +33212,6 @@ class TableApp(App):
         table.fixed_columns = 1
         table.cursor_type = "row"
         table.zebra_stripes = True
-
 
 app = TableApp()
 if __name__ == "__main__":
@@ -34088,7 +33244,6 @@ ROWS = [
     (10, "Darren Burns", "Scotland", 51.84),
 ]
 
-
 class TableApp(App):
     def compose(self) -> ComposeResult:
         yield DataTable()
@@ -34099,7 +33254,6 @@ class TableApp(App):
         for number, row in enumerate(ROWS[1:], start=1):
             label = Text(str(number), style="#B0FC38 italic")
             table.add_row(*row, label=label)
-
 
 app = TableApp()
 if __name__ == "__main__":
@@ -34132,7 +33286,6 @@ ROWS = [
     (10, "Darren Burns", "Scotland", 51.84),
 ]
 
-
 class TableApp(App):
     def compose(self) -> ComposeResult:
         yield DataTable()
@@ -34146,7 +33299,6 @@ class TableApp(App):
                 Text(str(cell), style="italic #03AC13", justify="right") for cell in row
             ]
             table.add_row(*styled_row)
-
 
 app = TableApp()
 if __name__ == "__main__":
@@ -34178,7 +33330,6 @@ ROWS = [
     (1, "Aleksandr Sadovnikov", Text("Russia", style="italic"), 51.84, 50.85),
     (10, "Darren Burns", Text("Scotland", style="italic"), 51.84, 51.55),
 ]
-
 
 class TableApp(App):
     BINDINGS = [
@@ -34249,7 +33400,6 @@ class TableApp(App):
         table = self.query_one(DataTable)
         table.sort("swimmer", "lane", reverse=self.sort_reverse("columns"))
 
-
 app = TableApp()
 if __name__ == "__main__":
     app.run()
@@ -34266,7 +33416,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Digits
 
-
 class DigitApp(App):
     CSS = """
     Screen {
@@ -34280,7 +33429,6 @@ class DigitApp(App):
 
     def compose(self) -> ComposeResult:
         yield Digits("3.141,592,653,5897", id="pi")
-
 
 if __name__ == "__main__":
     app = DigitApp()
@@ -34298,11 +33446,9 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import DirectoryTree
 
-
 class DirectoryTreeApp(App):
     def compose(self) -> ComposeResult:
         yield DirectoryTree("./")
-
 
 if __name__ == "__main__":
     app = DirectoryTreeApp()
@@ -34323,16 +33469,13 @@ from typing import Iterable
 from textual.app import App, ComposeResult
 from textual.widgets import DirectoryTree
 
-
 class FilteredDirectoryTree(DirectoryTree):
     def filter_paths(self, paths: Iterable[Path]) -> Iterable[Path]:
         return [path for path in paths if not path.name.startswith(".")]
 
-
 class DirectoryTreeApp(App):
     def compose(self) -> ComposeResult:
         yield FilteredDirectoryTree("./")
-
 
 if __name__ == "__main__":
     app = DirectoryTreeApp()
@@ -34351,7 +33494,6 @@ from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.widgets import Footer
 
-
 class FooterApp(App):
     BINDINGS = [
         Binding(key="q", action="quit", description="Quit the app"),
@@ -34367,7 +33509,6 @@ class FooterApp(App):
 
     def compose(self) -> ComposeResult:
         yield Footer()
-
 
 if __name__ == "__main__":
     app = FooterApp()
@@ -34385,11 +33526,9 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Header
 
-
 class HeaderApp(App):
     def compose(self) -> ComposeResult:
         yield Header()
-
 
 if __name__ == "__main__":
     app = HeaderApp()
@@ -34407,7 +33546,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Header
 
-
 class HeaderApp(App):
     def compose(self) -> ComposeResult:
         yield Header()
@@ -34415,7 +33553,6 @@ class HeaderApp(App):
     def on_mount(self) -> None:
         self.title = "Header Application"
         self.sub_title = "With title and sub-title"
-
 
 if __name__ == "__main__":
     app = HeaderApp()
@@ -34433,7 +33570,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.containers import Vertical
 from textual.widgets import Label, Rule
-
 
 class HorizontalRulesApp(App):
     CSS_PATH = "horizontal_rules.tcss"
@@ -34453,7 +33589,6 @@ class HorizontalRulesApp(App):
             yield Label("ascii")
             yield Rule(line_style="ascii")
 
-
 if __name__ == "__main__":
     app = HorizontalRulesApp()
     app.run()
@@ -34470,12 +33605,10 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Input
 
-
 class InputApp(App):
     def compose(self) -> ComposeResult:
         yield Input(placeholder="First Name")
         yield Input(placeholder="Last Name")
-
 
 if __name__ == "__main__":
     app = InputApp()
@@ -34493,12 +33626,10 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Input
 
-
 class InputApp(App):
     def compose(self) -> ComposeResult:
         yield Input(placeholder="An integer", type="integer")
         yield Input(placeholder="A number", type="number")
-
 
 if __name__ == "__main__":
     app = InputApp()
@@ -34517,7 +33648,6 @@ from textual import on
 from textual.app import App, ComposeResult
 from textual.validation import Function, Number, ValidationResult, Validator
 from textual.widgets import Input, Label, Pretty
-
 
 class InputApp(App):
     # (6)!
@@ -34559,13 +33689,11 @@ class InputApp(App):
         else:
             self.query_one(Pretty).update([])
 
-
 def is_even(value: str) -> bool:
     try:
         return int(value) % 2 == 0
     except ValueError:
         return False
-
 
 # A custom validator
 class Palindrome(Validator):  # (5)!
@@ -34579,7 +33707,6 @@ class Palindrome(Validator):  # (5)!
     @staticmethod
     def is_palindrome(value: str) -> bool:
         return value == value[::-1]
-
 
 app = InputApp()
 
@@ -34598,11 +33725,9 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Label
 
-
 class LabelApp(App):
     def compose(self) -> ComposeResult:
         yield Label("Hello, world!")
-
 
 if __name__ == "__main__":
     app = LabelApp()
@@ -34620,7 +33745,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Link
 
-
 class LabelApp(App):
     AUTO_FOCUS = None
     CSS = """
@@ -34635,7 +33759,6 @@ class LabelApp(App):
             url="https://textualize.io",
             tooltip="Click me",
         )
-
 
 if __name__ == "__main__":
     app = LabelApp()
@@ -34653,7 +33776,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Footer, Label, ListItem, ListView
 
-
 class ListViewExample(App):
     CSS_PATH = "list_view.tcss"
 
@@ -34664,7 +33786,6 @@ class ListViewExample(App):
             ListItem(Label("Three")),
         )
         yield Footer()
-
 
 if __name__ == "__main__":
     app = ListViewExample()
@@ -34682,11 +33803,9 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import LoadingIndicator
 
-
 class LoadingApp(App):
     def compose(self) -> ComposeResult:
         yield LoadingIndicator()
-
 
 if __name__ == "__main__":
     app = LoadingApp()
@@ -34712,7 +33831,6 @@ I will permit it to pass over me and through me.
 And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain."""
 
-
 class LogApp(App):
     """An app with a simple log."""
 
@@ -34724,7 +33842,6 @@ class LogApp(App):
         log.write_line("Hello, World!")
         for _ in range(10):
             log.write_line(TEXT)
-
 
 if __name__ == "__main__":
     app = LogApp()
@@ -34788,14 +33905,12 @@ def loop_last(values: Iterable[T]) -> Iterable[Tuple[bool, T]]:
 
 """
 
-
 class MarkdownExampleApp(App):
 
     def compose(self) -> ComposeResult:
         markdown = Markdown(EXAMPLE_MARKDOWN)
         markdown.code_indent_guides = False
         yield markdown
-
 
 if __name__ == "__main__":
     app = MarkdownExampleApp()
@@ -34817,7 +33932,6 @@ EXAMPLE_MARKDOWN = """\
 # Markdown Viewer
 
 This is an example of Textual's `MarkdownViewer` widget.
-
 
 ## Features
 
@@ -34841,7 +33955,6 @@ Tables are displayed in a DataTable widget.
 | `zebra_stripes` | `bool` | `False` | Display alternating colors on rows |
 | `header_height` | `int`  | `1`     | Height of header row               |
 | `show_cursor`   | `bool` | `True`  | Show a cell cursor                 |
-
 
 ## Code Blocks
 
@@ -34869,13 +33982,11 @@ And when it has gone past, I will turn the inner eye to see its path.
 Where the fear has gone there will be nothing. Only I will remain.
 """
 
-
 class MarkdownExampleApp(App):
     def compose(self) -> ComposeResult:
         markdown_viewer = MarkdownViewer(EXAMPLE_MARKDOWN, show_table_of_contents=True)
         markdown_viewer.code_indent_guides = False
         yield markdown_viewer
-
 
 if __name__ == "__main__":
     app = MarkdownExampleApp()
@@ -34892,7 +34003,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Label, MaskedInput
-
 
 class MaskedInputApp(App):
     # (1)!
@@ -34917,7 +34027,6 @@ class MaskedInputApp(App):
             template="9999-9999-9999-9999;0",  # (2)!
         )
 
-
 app = MaskedInputApp()
 
 if __name__ == "__main__":
@@ -34935,7 +34044,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Footer, Header, OptionList
 from textual.widgets.option_list import Option
-
 
 class OptionListApp(App[None]):
     CSS_PATH = "option_list.tcss"
@@ -34965,7 +34073,6 @@ class OptionListApp(App[None]):
         )
         yield Footer()
 
-
 if __name__ == "__main__":
     OptionListApp().run()
 
@@ -34980,7 +34087,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Footer, Header, OptionList
-
 
 class OptionListApp(App[None]):
     CSS_PATH = "option_list.tcss"
@@ -35002,7 +34108,6 @@ class OptionListApp(App[None]):
             "Virgon",
         )
         yield Footer()
-
 
 if __name__ == "__main__":
     OptionListApp().run()
@@ -35038,7 +34143,6 @@ COLONIES: tuple[tuple[str, str, str, str], ...] = (
     ("Virgon", "Hestia", "4.3 Billion", "Boskirk"),
 )
 
-
 class OptionListApp(App[None]):
     CSS_PATH = "option_list.tcss"
 
@@ -35056,7 +34160,6 @@ class OptionListApp(App[None]):
         yield OptionList(*[self.colony(*row) for row in COLONIES])
         yield Footer()
 
-
 if __name__ == "__main__":
     OptionListApp().run()
 
@@ -35072,7 +34175,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.containers import Container, Horizontal, VerticalScroll
 from textual.widgets import Placeholder
-
 
 class PlaceholderApp(App):
     CSS_PATH = "placeholder.tcss"
@@ -35103,7 +34205,6 @@ class PlaceholderApp(App):
             id="content",
         )
 
-
 if __name__ == "__main__":
     app = PlaceholderApp()
     app.run()
@@ -35131,11 +34232,9 @@ DATA = {
     ],
 }
 
-
 class PrettyExample(App):
     def compose(self) -> ComposeResult:
         yield Pretty(DATA)
-
 
 app = PrettyExample()
 
@@ -35154,7 +34253,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.containers import Center, VerticalScroll
 from textual.widgets import Button, Header, Input, Label, ProgressBar
-
 
 class FundingProgressApp(App[None]):
     CSS_PATH = "progress_bar.tcss"
@@ -35188,7 +34286,6 @@ class FundingProgressApp(App[None]):
         self.query_one(VerticalScroll).mount(Label(f"Donation for ${value} received!"))
         self.query_one(Input).value = ""
 
-
 if __name__ == "__main__":
     FundingProgressApp().run()
 
@@ -35205,7 +34302,6 @@ from textual.app import App, ComposeResult
 from textual.color import Gradient
 from textual.containers import Center, Middle
 from textual.widgets import ProgressBar
-
 
 class ProgressApp(App[None]):
     """Progress bar with a rainbow gradient."""
@@ -35232,7 +34328,6 @@ class ProgressApp(App[None]):
     def on_mount(self) -> None:
         self.query_one(ProgressBar).update(progress=70)
 
-
 if __name__ == "__main__":
     ProgressApp().run()
 
@@ -35249,7 +34344,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Center, Middle
 from textual.timer import Timer
 from textual.widgets import Footer, ProgressBar
-
 
 class IndeterminateProgressBar(App[None]):
     BINDINGS = [("s", "start", "Start")]
@@ -35276,7 +34370,6 @@ class IndeterminateProgressBar(App[None]):
         self.query_one(ProgressBar).update(total=100)
         self.progress_timer.resume()
 
-
 if __name__ == "__main__":
     IndeterminateProgressBar().run()
 
@@ -35294,7 +34387,6 @@ from textual.clock import MockClock
 from textual.containers import Center, Middle
 from textual.timer import Timer
 from textual.widgets import Footer, ProgressBar
-
 
 class IndeterminateProgressBar(App[None]):
     BINDINGS = [("s", "start", "Start")]
@@ -35338,7 +34430,6 @@ class IndeterminateProgressBar(App[None]):
         self.refresh()
         self.query_one(ProgressBar).update(total=100, progress=100)
 
-
 if __name__ == "__main__":
     IndeterminateProgressBar().run()
 
@@ -35355,7 +34446,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Center, Middle
 from textual.timer import Timer
 from textual.widgets import Footer, ProgressBar
-
 
 class StyledProgressBar(App[None]):
     BINDINGS = [("s", "start", "Start")]
@@ -35383,7 +34473,6 @@ class StyledProgressBar(App[None]):
         self.query_one(ProgressBar).update(total=100)
         self.progress_timer.resume()
 
-
 if __name__ == "__main__":
     StyledProgressBar().run()
 
@@ -35401,7 +34490,6 @@ from textual.clock import MockClock
 from textual.containers import Center, Middle
 from textual.timer import Timer
 from textual.widgets import Footer, ProgressBar
-
 
 class StyledProgressBar(App[None]):
     BINDINGS = [("s", "start", "Start")]
@@ -35445,7 +34533,6 @@ class StyledProgressBar(App[None]):
     def key_u(self) -> None:
         self.query_one(ProgressBar).update(total=100, progress=100)
 
-
 if __name__ == "__main__":
     StyledProgressBar().run()
 
@@ -35462,7 +34549,6 @@ from rich.text import Text
 
 from textual.app import App, ComposeResult
 from textual.widgets import RadioButton, RadioSet
-
 
 class RadioChoicesApp(App[None]):
     CSS_PATH = "radio_button.tcss"
@@ -35486,7 +34572,6 @@ class RadioChoicesApp(App[None]):
     def on_mount(self) -> None:
         self.query_one(RadioSet).focus()
 
-
 if __name__ == "__main__":
     RadioChoicesApp().run()
 
@@ -35504,7 +34589,6 @@ from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import RadioButton, RadioSet
-
 
 class RadioChoicesApp(App[None]):
     CSS_PATH = "radio_set.tcss"
@@ -35542,7 +34626,6 @@ class RadioChoicesApp(App[None]):
     def on_mount(self) -> None:
         self.query_one("#focus_me").focus()
 
-
 if __name__ == "__main__":
     RadioChoicesApp().run()
 
@@ -35560,7 +34643,6 @@ from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, VerticalScroll
 from textual.widgets import Label, RadioButton, RadioSet
-
 
 class RadioSetChangedApp(App[None]):
     CSS_PATH = "radio_set_changed.tcss"
@@ -35598,7 +34680,6 @@ class RadioSetChangedApp(App[None]):
             f"Pressed button index: {event.radio_set.pressed_index}"
         )
 
-
 if __name__ == "__main__":
     RadioSetChangedApp().run()
 
@@ -35631,7 +34712,6 @@ CSV = """lane,swimmer,country,time
 7,Tom Shields,United States,51.73
 1,Aleksandr Sadovnikov,Russia,51.84"""
 
-
 CODE = '''\
 def loop_first_last(values: Iterable[T]) -> Iterable[tuple[bool, bool, T]]:
     """Iterate and generate a tuple with a flag for first and last value."""
@@ -35647,7 +34727,6 @@ def loop_first_last(values: Iterable[T]) -> Iterable[tuple[bool, bool, T]]:
         previous_value = value
     yield first, True, previous_value\
 '''
-
 
 class RichLogApp(App):
     def compose(self) -> ComposeResult:
@@ -35672,7 +34751,6 @@ class RichLogApp(App):
         text_log = self.query_one(RichLog)
         text_log.write(event)
 
-
 if __name__ == "__main__":
     app = RichLogApp()
     app.run()
@@ -35696,7 +34774,6 @@ Fear is the little-death that brings total obliteration.
 I will face my fear.
 I will permit it to pass over me and through me.""".splitlines()
 
-
 class SelectApp(App):
     CSS_PATH = "select.tcss"
 
@@ -35707,7 +34784,6 @@ class SelectApp(App):
     @on(Select.Changed)
     def select_changed(self, event: Select.Changed) -> None:
         self.title = str(event.value)
-
 
 if __name__ == "__main__":
     app = SelectApp()
@@ -35732,7 +34808,6 @@ Fear is the little-death that brings total obliteration.
 I will face my fear.
 I will permit it to pass over me and through me.""".splitlines()
 
-
 class SelectApp(App):
     CSS_PATH = "select.tcss"
 
@@ -35743,7 +34818,6 @@ class SelectApp(App):
     @on(Select.Changed)
     def select_changed(self, event: Select.Changed) -> None:
         self.title = str(event.value)
-
 
 if __name__ == "__main__":
     app = SelectApp()
@@ -35775,7 +34849,6 @@ Like a diamond in the sky.
 Twinkle, twinkle, little star,
 How I wonder what you are!""".splitlines()
 
-
 class SelectApp(App):
     CSS_PATH = "select.tcss"
 
@@ -35791,7 +34864,6 @@ class SelectApp(App):
 
     def action_swap(self) -> None:
         self.query_one(Select).set_options(zip(ALTERNATE_LINES, ALTERNATE_LINES))
-
 
 if __name__ == "__main__":
     app = SelectApp()
@@ -35812,7 +34884,6 @@ from textual.containers import Horizontal
 from textual.events import Mount
 from textual.widgets import Footer, Header, Pretty, SelectionList
 from textual.widgets.selection_list import Selection
-
 
 class SelectionListApp(App[None]):
     CSS_PATH = "selection_list_selected.tcss"
@@ -35843,7 +34914,6 @@ class SelectionListApp(App[None]):
     def update_selected_view(self) -> None:
         self.query_one(Pretty).update(self.query_one(SelectionList).selected)
 
-
 if __name__ == "__main__":
     SelectionListApp().run()
 
@@ -35859,7 +34929,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Footer, Header, SelectionList
 from textual.widgets.selection_list import Selection
-
 
 class SelectionListApp(App[None]):
     CSS_PATH = "selection_list.tcss"
@@ -35882,7 +34951,6 @@ class SelectionListApp(App[None]):
     def on_mount(self) -> None:
         self.query_one(SelectionList).border_title = "Shall we play some games?"
 
-
 if __name__ == "__main__":
     SelectionListApp().run()
 
@@ -35897,7 +34965,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Footer, Header, SelectionList
-
 
 class SelectionListApp(App[None]):
     CSS_PATH = "selection_list.tcss"
@@ -35920,7 +34987,6 @@ class SelectionListApp(App[None]):
     def on_mount(self) -> None:
         self.query_one(SelectionList).border_title = "Shall we play some games?"
 
-
 if __name__ == "__main__":
     SelectionListApp().run()
 
@@ -35942,7 +35008,6 @@ from textual.widgets import Sparkline
 random.seed(73)
 data = [random.expovariate(1 / 3) for _ in range(1000)]
 
-
 class SparklineSummaryFunctionApp(App[None]):
     CSS_PATH = "sparkline.tcss"
 
@@ -35950,7 +35015,6 @@ class SparklineSummaryFunctionApp(App[None]):
         yield Sparkline(data, summary_function=max)  # (1)!
         yield Sparkline(data, summary_function=mean)  # (2)!
         yield Sparkline(data, summary_function=min)  # (3)!
-
 
 app = SparklineSummaryFunctionApp()
 if __name__ == "__main__":
@@ -35970,7 +35034,6 @@ from textual.widgets import Sparkline
 
 data = [1, 2, 2, 1, 1, 4, 3, 1, 1, 8, 8, 2]  # (1)!
 
-
 class SparklineBasicApp(App[None]):
     CSS_PATH = "sparkline_basic.tcss"
 
@@ -35979,7 +35042,6 @@ class SparklineBasicApp(App[None]):
             data,  # (3)!
             summary_function=max,  # (4)!
         )
-
 
 app = SparklineBasicApp()
 if __name__ == "__main__":
@@ -35999,7 +35061,6 @@ from math import sin
 from textual.app import App, ComposeResult
 from textual.widgets import Sparkline
 
-
 class SparklineColorsApp(App[None]):
     CSS_PATH = "sparkline_colors.tcss"
 
@@ -36015,7 +35076,6 @@ class SparklineColorsApp(App[None]):
         yield Sparkline(nums, summary_function=max, id="egt")
         yield Sparkline(nums, summary_function=max, id="nnt")
         yield Sparkline(nums, summary_function=max, id="tnt")
-
 
 app = SparklineColorsApp()
 if __name__ == "__main__":
@@ -36033,11 +35093,9 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Static
 
-
 class StaticApp(App):
     def compose(self) -> ComposeResult:
         yield Static("Hello, world!")
-
 
 if __name__ == "__main__":
     app = StaticApp()
@@ -36055,7 +35113,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Static, Switch
-
 
 class SwitchApp(App):
     def compose(self) -> ComposeResult:
@@ -36082,7 +35139,6 @@ class SwitchApp(App):
             Switch(id="custom-design"),
             classes="container",
         )
-
 
 app = SwitchApp(css_path="switch.tcss")
 if __name__ == "__main__":
@@ -36118,7 +35174,6 @@ PAUL = """
 Son of Leto and Jessica.
 """
 
-
 class TabbedApp(App):
     """An example of tabbed content."""
 
@@ -36150,7 +35205,6 @@ class TabbedApp(App):
         """Switch to a new tab."""
         self.get_child_by_type(TabbedContent).active = tab
 
-
 if __name__ == "__main__":
     app = TabbedApp()
     app.run()
@@ -36166,7 +35220,6 @@ if __name__ == "__main__":
 ```python
 from textual.app import App, ComposeResult
 from textual.widgets import Label, TabbedContent, TabPane
-
 
 class ColorTabsApp(App):
     CSS = """
@@ -36185,7 +35238,6 @@ class ColorTabsApp(App):
                 yield Label("Red!")
             with TabPane("Green", id="green"):
                 yield Label("Green!")
-
 
 if __name__ == "__main__":
     ColorTabsApp().run()
@@ -36212,7 +35264,6 @@ NAMES = [
     "Chani",
     "Silgar",
 ]
-
 
 class TabsApp(App):
     """Demonstrates the Tabs widget."""
@@ -36277,7 +35328,6 @@ class TabsApp(App):
         """Clear the tabs."""
         self.query_one(Tabs).clear()
 
-
 if __name__ == "__main__":
     app = TabsApp()
     app.run()
@@ -36308,7 +35358,6 @@ class HelloWorld {
 }
 """
 
-
 class TextAreaCustomLanguage(App):
     def compose(self) -> ComposeResult:
         text_area = TextArea.code_editor(text=java_code)
@@ -36320,7 +35369,6 @@ class TextAreaCustomLanguage(App):
         # Switch to Java
         text_area.language = "java"
         yield text_area
-
 
 app = TextAreaCustomLanguage()
 if __name__ == "__main__":
@@ -36364,7 +35412,6 @@ MY_THEME = TextAreaTheme(
     },
 )
 
-
 class TextAreaCustomThemes(App):
     def compose(self) -> ComposeResult:
         text_area = TextArea(TEXT, language="python")
@@ -36372,7 +35419,6 @@ class TextAreaCustomThemes(App):
         text_area.register_theme(MY_THEME)
         text_area.theme = "my_cool_theme"
         yield text_area
-
 
 app = TextAreaCustomThemes()
 if __name__ == "__main__":
@@ -36398,11 +35444,9 @@ def goodbye(name):
     print("goodbye" + name)
 """
 
-
 class TextAreaExample(App):
     def compose(self) -> ComposeResult:
         yield TextArea.code_editor(TEXT, language="python")
-
 
 app = TextAreaExample()
 if __name__ == "__main__":
@@ -36421,7 +35465,6 @@ from textual import events
 from textual.app import App, ComposeResult
 from textual.widgets import TextArea
 
-
 class ExtendedTextArea(TextArea):
     """A subclass of TextArea with parenthesis-closing functionality."""
 
@@ -36431,11 +35474,9 @@ class ExtendedTextArea(TextArea):
             self.move_cursor_relative(columns=-1)
             event.prevent_default()
 
-
 class TextAreaKeyPressHook(App):
     def compose(self) -> ComposeResult:
         yield ExtendedTextArea.code_editor(language="python")
-
 
 app = TextAreaKeyPressHook()
 if __name__ == "__main__":
@@ -36462,13 +35503,11 @@ def goodbye(name):
     print("goodbye" + name)
 """
 
-
 class TextAreaSelection(App):
     def compose(self) -> ComposeResult:
         text_area = TextArea.code_editor(TEXT, language="python")
         text_area.selection = Selection(start=(0, 0), end=(2, 0))  # (1)!
         yield text_area
-
 
 app = TextAreaSelection()
 if __name__ == "__main__":
@@ -36484,7 +35523,6 @@ if __name__ == "__main__":
 
 ```python
 from textual.app import App
-
 
 class ToastApp(App[None]):
     def on_mount(self) -> None:
@@ -36506,7 +35544,6 @@ class ToastApp(App[None]):
         # Show an information notification, but without any sort of title.
         self.notify("It's against my programming to impersonate a deity.", title="")
 
-
 if __name__ == "__main__":
     ToastApp().run()
 
@@ -36522,7 +35559,6 @@ if __name__ == "__main__":
 from textual.app import App, ComposeResult
 from textual.widgets import Tree
 
-
 class TreeApp(App):
     def compose(self) -> ComposeResult:
         tree: Tree[str] = Tree("Dune")
@@ -36532,7 +35568,6 @@ class TreeApp(App):
         characters.add_leaf("Jessica")
         characters.add_leaf("Chani")
         yield tree
-
 
 if __name__ == "__main__":
     app = TreeApp()
@@ -36551,7 +35586,6 @@ from textual.app import App, ComposeResult
 from textual.containers import Horizontal
 from textual.widgets import Label, Rule
 
-
 class VerticalRulesApp(App):
     CSS_PATH = "vertical_rules.tcss"
 
@@ -36569,7 +35603,6 @@ class VerticalRulesApp(App):
             yield Rule(orientation="vertical", line_style="double")
             yield Label("ascii")
             yield Rule(orientation="vertical", line_style="ascii")
-
 
 if __name__ == "__main__":
     app = VerticalRulesApp()
@@ -36736,7 +35769,6 @@ SYSTEM = """Formulate all responses as if you where the sentient AI named Mother
 class Prompt(Markdown):
     pass
 
-
 class Response(Markdown):
     BORDER_TITLE = "Mother"
 
@@ -36766,7 +35798,7 @@ class MotherApp(App):
         background: $success 10%;   
         color: $text;             
         margin: 1;      
-        margin-left: 8; 
+        margin-left: 8;
         padding: 1 2 0 2;
     }
     """
@@ -36893,20 +35925,17 @@ uv run mother.py
 import asyncio
 import inspect
 
-
 def plain_old_function():
     return "Plain old function"
 
 async def async_function():
     return "Async function"
 
-
 async def await_me_maybe(callback):
     result = callback()
     if inspect.isawaitable(result):
         return await result
     return result
-
 
 async def run_framework():
     print(
@@ -36915,7 +35944,6 @@ async def run_framework():
     print(
         await await_me_maybe(async_function)
     )
-
 
 if __name__ == "__main__":
     asyncio.run(run_framework())
@@ -37014,7 +36042,6 @@ async def sleep(sleep_for: float) -> None:
     """    
     await get_running_loop().run_in_executor(None, time_sleep, sleep_for)
 
-
 ```
 
 #### Embedded in `blog/posts/creating-tasks-overhead.md`
@@ -37026,7 +36053,6 @@ async def sleep(sleep_for: float) -> None:
 ```
 from asyncio import create_task, wait, run
 from time import process_time as time
-
 
 async def time_tasks(count=100) -> float:
     """Time creating and destroying tasks."""
@@ -37040,7 +36066,6 @@ async def time_tasks(count=100) -> float:
     await wait(tasks)
     elapsed = time() - start
     return elapsed
-
 
 for count in range(100_000, 1000_000 + 1, 100_000):
     create_time = run(time_tasks(count))
@@ -37402,7 +36427,6 @@ class MyWidget(Widget):
             self.item_index = item_index
             super().__init__(sender)
 
-
 ```
 
 #### Embedded in `blog/posts/release0-14-0.md`
@@ -37419,7 +36443,6 @@ class MyWidget(Widget):
         def __init__(self, item_index:int) -> None:
             self.item_index = item_index
             super().__init__()
-
 
 ```
 
@@ -37556,7 +36579,6 @@ self.mount(Static("Password is incorrect"), after="Dialog Input.-error")
 # Mount after a specific widget
 tweet = self.query_one("Tweet")
 self.mount(Static("Consider switching to Mastodon"), after=tweet)
-
 
 ```
 
@@ -39400,13 +38422,11 @@ logging.basicConfig(
     handlers=[TextualHandler()],
 )
 
-
 class LogApp(App):
     """Using logging with Textual."""
 
     def on_mount(self) -> None:
         logging.debug("Logged via TextualHandler")
-
 
 if __name__ == "__main__":
     LogApp().run()
@@ -40430,7 +39450,6 @@ python -m textual_calculator.calculator
 ```
 from textual_calculator.calculator import CalculatorApp
 
-
 def calculator():
     app = CalculatorApp()
     app.run()
@@ -40875,10 +39894,8 @@ MyWidget:focus {
 /* 10% backgrouhnd tint */
 background-tint: blue 10%;
 
-
 /* 20% RGB color */
 background-tint: rgb(100, 120, 200, 0.2);
-
 
 ```
 
@@ -43171,7 +42188,7 @@ widget.styles.text_opacity = "50%"
 
 ```
 #widget {
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
 ```
@@ -43183,7 +42200,7 @@ widget.styles.text_opacity = "50%"
 **Code:**
 
 ```
-widget.styles.text_overflow = "ellipsis" 
+widget.styles.text_overflow = "ellipsis"
 
 ```
 
@@ -44804,7 +43821,6 @@ Toast.-error {
 Toast.-information .toast--title {
     text-style: italic;
 }
-
 
 ```
 

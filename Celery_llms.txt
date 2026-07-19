@@ -1,0 +1,140 @@
+```markdown
+# Celery
+
+> Distributed task queue used for asynchronous payload processing and background job execution. In this architecture, it uses Redis 7 as both the message broker and the result backend. 
+
+Official Documentation: https://docs.celeryq.dev/
+
+## Core Architecture & Serialization Rules
+
+Celery workers operate in isolated system processes. They communicate with the main application strictly through serialized messages passed via Redis.
+
+1. **Primitive Data Serialization Only:** Never pass complex objects, database sessions, HTTP clients, or SQLAlchemy ORM model instances across the message broker. Pass only primitive data types (integers, strings, floats, lists, dicts).
+2. **Independent Worker Lifecycles:** Workers must instantiate their own resources. If a task requires database access, it must spin up its own localized SQLAlchemy session, pull fresh rows using the passed unique identifier (Primary Key), and close the session cleanly upon completion.
+
+---
+
+## The Cross-Paradigm Pattern (FastAPI Async ➡️ Celery Sync)
+
+Celery natively runs tasks in a **synchronous** execution pool. Because the surrounding stack (FastAPI, SQLAlchemy 2.0, Httpx) is heavily **asynchronous**, any async coroutines executed inside a Celery worker must be explicitly driven via an `asyncio` event loop wrapper.
+
+### 1. Application & Worker Configuration (`celery_app.py`)
+```python
+import asyncio
+from celery import Celery
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
+
+# 1. Initialize Celery Application Instance with Redis 7
+celery_app = Celery(
+    "rag_tasks", 
+    broker="redis://localhost:6379/0", 
+    backend="redis://localhost:6379/1"
+)
+celery_app.conf.task_serializer = "json"
+celery_app.conf.result_serializer = "json"
+celery_app.conf.accept_content = ["json"]
+
+# 2. Re-initialize isolated Async Engine for the worker process space
+DB_URL = "postgresql+asyncpg://user:pass@localhost:5432/mydb"
+worker_engine = create_async_engine(DB_URL)
+worker_session = async_sessionmaker(bind=worker_engine, expire_on_commit=False)
+
+def async_task_wrapper(coro):
+    """Helper macro to drive async routines inside synchronous worker execution threads."""
+    def wrapper(*args, **kwargs):
+        return asyncio.run(coro(*args, **kwargs))
+    return wrapper
+
+```
+
+### 2. Defining Tasks (`tasks.py`)
+
+```python
+from .celery_app import celery_app, async_task_wrapper, worker_session
+from .models import DocumentChunk
+
+# The true async logic payload
+async def _process_document_ingestion(chunk_id: int):
+    async with worker_session() as session:
+        # Worker has its own isolated DB connection
+        chunk = await session.get(DocumentChunk, chunk_id)
+        if not chunk:
+            return {"error": "Chunk not found"}
+        
+        # ... perform long-running embedding/LLM tasks ...
+        chunk.status = "processed"
+        await session.commit()
+        return {"status": "success", "chunk_id": chunk_id}
+
+# Bind the worker endpoint to Celery via the synchronous runner wrapper
+@celery_app.task(name="tasks.process_document_ingestion")
+@async_task_wrapper
+async def process_document_ingestion(chunk_id: int):
+    return await _process_document_ingestion(chunk_id)
+
+```
+
+### 3. Triggering Tasks from FastAPI (`api.py`)
+
+```python
+from fastapi import APIRouter
+from .tasks import process_document_ingestion
+
+router = APIRouter()
+
+@router.post("/ingest/{chunk_id}")
+async def trigger_ingestion(chunk_id: int):
+    # Execute background task via .delay()
+    # ✅ CORRECT: Pass the unique scalar integer ID, NOT the whole ORM instance
+    task = process_document_ingestion.delay(chunk_id)
+    
+    return {
+        "status": "Queued",
+        "task_id": task.id
+    }
+
+```
+
+---
+
+## Task Execution & Retrieval Methods
+
+* **`task.delay(arg1, arg2)`**: The standard shortcut to push a task to the queue.
+* **`task.apply_async(args=[arg1, arg2], countdown=60)`**: Advanced execution allowing parameters like delayed execution (`countdown`), specific routing queues (`queue="high_priority"`), or expiration times (`expires=120`).
+* **`AsyncResult(task_id, app=celery_app)`**: Used to check the status of a pending task using its UUID.
+
+```python
+from celery.result import AsyncResult
+from .celery_app import celery_app
+
+@router.get("/task/{task_id}")
+async def get_task_status(task_id: str):
+    result = AsyncResult(task_id, app=celery_app)
+    return {
+        "task_id": task_id,
+        "status": result.status, # PENDING, STARTED, SUCCESS, FAILURE
+        "result": result.result if result.ready() else None
+    }
+
+```
+
+---
+
+## Critical Execution Traps & Antipatterns
+
+* ❌ **Antipattern:** Passing an instantiated ORM model or Pydantic model directly to the worker: `process_document.delay(user_record)`. Redis will fail to serialize the Python object into JSON.
+* ✅ **Modern Alternative:** Pass only the primary key or a raw `.model_dump()` dictionary: `process_document.delay(user_record.id)`.
+
+
+* ❌ **Antipattern:** Writing a raw async task without an entrypoint driver: `@celery_app.task async def my_task()`. This causes Celery to drop the coroutine directly into the queue without ever scheduling or awaiting its execution inside an active event loop, resulting in a silent freeze.
+* ✅ **Modern Alternative:** Always wrap the async function inside a synchronous `asyncio.run()` caller shell.
+
+
+* ❌ **Antipattern:** Passing the FastAPI `AsyncSession` into the task payload.
+* ✅ **Modern Alternative:** Let the worker import its own `sessionmaker` and open a fresh database connection block.
+
+
+
+```
+
+```

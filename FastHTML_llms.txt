@@ -6,8 +6,6 @@
 - Use `serve()` for running uvicorn (`if __name__ == "__main__"` is not needed since it's automatic)
 - When a title is needed with a response, use `Titled`; note that that already wraps children in `Container`, and already includes both the meta title as well as the H1 element.<docs><doc title="FastHTML concise guide" desc="A brief overview of idiomatic FastHTML apps"># Concise reference
 
-
-
 ## About FastHTML
 
 ``` python
@@ -97,7 +95,7 @@ This example shows key aspects of how FTs handle attributes:
 
 ``` python
 Label(
-    "Choose an option", 
+    "Choose an option",
     Select(
         Option("one", value="1", selected=True),  # True renders just the attribute name
         Option("two", value=2, selected=False),   # Non-string values are converted to strings. False omits the attribute entirely
@@ -159,9 +157,9 @@ generate parts of your JS or JSON like this:
 
 ``` python
 # In future snippets this import will not be shown, but is required
-from fasthtml.common import * 
+from fasthtml.common import *
 app,rt = fast_app(hdrs=[Script(src="https://cdn.plot.ly/plotly-2.32.0.min.js")])
-# `index` is a special function name which maps to the `/` route. 
+# `index` is a special function name which maps to the `/` route.
 @rt
 def index():
     data = {'somedata':'fill me in…'}
@@ -213,7 +211,7 @@ async def serve_static_file(fname:str, ext:str): return FileResponse(f'public/{f
 
 app, rt = fast_app(hdrs=(MarkdownJS(), HighlightJS(langs=['python', 'javascript'])))
 @rt
-def index(): 
+def index():
     return Titled("Example",
                   Div("*markdown* here", cls="marked"),
                   Pre(Code("def foo(): pass")))
@@ -369,8 +367,8 @@ def profile(req, sess, user_id: int=None):
     visits = sess.setdefault('visit_count', 0) + 1
     sess['visit_count'] = visits
     user = get_user(user_id or sess.get('user_id'))
-    return Titled(f"Profile: {user.name}", 
-                  P(f"Visits: {visits}"), 
+    return Titled(f"Profile: {user.name}",
+                  P(f"Visits: {visits}"),
                   P(f"IP: {ip}"),
                   Button("Logout", hx_post=logout))
 ```
@@ -999,7 +997,6 @@ All other attributes available in htmx.
 
 </div>
 
-
 ## Configuration Reference {#config}
 
 Htmx has some configuration options that can be accessed either programmatically or declaratively.  They are
@@ -1045,7 +1042,6 @@ listed below:
 | `htmx.config.allowNestedOobSwaps`      | defaults to `true`, whether to process OOB swaps on elements that are nested within the main response element. See [Nested OOB Swaps](@/attributes/hx-swap-oob.md#nested-oob-swaps). |
 | `htmx.config.historyRestoreAsHxRequest`| defaults to `true`, Whether to treat history cache miss full page reload requests as a "HX-Request" by returning this response header. This should always be disabled when using HX-Request header to optionally return partial responses                                                                                                         |
 
-
 </div>
 
 You can set them directly in javascript, or you can use a `meta` tag:
@@ -1053,7 +1049,6 @@ You can set them directly in javascript, or you can use a `meta` tag:
 ```html
 <meta name="htmx-config" content='{"defaultSwapStyle":"outerHTML"}'>
 ```</doc><doc title="Starlette quick guide" desc="A quick overview of some Starlette features useful to FastHTML devs."># 🌟 Starlette Quick Manual
-
 
 2020-02-09
 
@@ -1108,9 +1103,9 @@ return Response(content, status_code=200, headers=headers)
 from starlette.responses import RedirectResponse
 
 async handler(request):
-    # Customize status_code: 
-    #   301: permanent redirect 
-    #   302: temporary redirect 
+    # Customize status_code:
+    #   301: permanent redirect
+    #   302: temporary redirect
     #   303: see others
     #   307: temporary redirect (default)
     return RedirectResponse(url=url, status_code=303)
@@ -1134,21 +1129,21 @@ async handler(request):
 
 ```
 {
-    'host': 'example.com:8080', 
-    'connection': 'keep-alive', 
-    'cache-control': 'max-age=0', 
-    'sec-ch-ua': 'Google Chrome 80', 
-    'dnt': '1', 
-    'upgrade-insecure-requests': '1', 
+    'host': 'example.com:8080',
+    'connection': 'keep-alive',
+    'cache-control': 'max-age=0',
+    'sec-ch-ua': 'Google Chrome 80',
+    'dnt': '1',
+    'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) ...',
-    'sec-fetch-dest': 'document', 
-    'accept': 'text/html,image/apng,*/*;q=0.8;v=b3;q=0.9', 
-    'sec-origin-policy': '0', 
-    'sec-fetch-site': 'none', 
-    'sec-fetch-mode': 'navigate', 
-    'sec-fetch-user': '?1', 
-    'accept-encoding': 'gzip, deflate, br', 
-    'accept-language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7,zh-TW;q=0.6', 
+    'sec-fetch-dest': 'document',
+    'accept': 'text/html,image/apng,*/*;q=0.8;v=b3;q=0.9',
+    'sec-origin-policy': '0',
+    'sec-fetch-site': 'none',
+    'sec-fetch-mode': 'navigate',
+    'sec-fetch-user': '?1',
+    'accept-encoding': 'gzip, deflate, br',
+    'accept-language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7,zh-TW;q=0.6',
     'cookie': 'session=eyJhZG1pbl91c2_KiQ...'
 }
 
@@ -1173,26 +1168,26 @@ async handler(request):
 
 ```
 {
-    'type': 'http', 
-    'http_version': '1.1', 
-    'server': ('127.0.0.1', 9092), 
-    'client': ('127.0.0.1', 53102), 
-    'scheme': 'https', 
-    'method': 'GET', 
-    'root_path': '', 
-    'path': '/', 
-    'raw_path': b'/', 
-    'query_string': b'kw=hello', 
+    'type': 'http',
+    'http_version': '1.1',
+    'server': ('127.0.0.1', 9092),
+    'client': ('127.0.0.1', 53102),
+    'scheme': 'https',
+    'method': 'GET',
+    'root_path': '',
+    'path': '/',
+    'raw_path': b'/',
+    'query_string': b'kw=hello',
     'headers': [
-        (b'host', b'example.com:8080'), 
-        (b'connection', b'keep-alive'), 
-        (b'cache-control', b'max-age=0'), 
+        (b'host', b'example.com:8080'),
+        (b'connection', b'keep-alive'),
+        (b'cache-control', b'max-age=0'),
         ...
-    ], 
-    'app': <starlette.applications.Starlette object at 0x1081bd650>, 
-    'session': {'uid': '57ba03ea7333f72a25f837cf'}, 
-    'router': <starlette.routing.Router object at 0x1081bd6d0>, 
-    'endpoint': <class 'app.index.Index'>, 
+    ],
+    'app': <starlette.applications.Starlette object at 0x1081bd650>,
+    'session': {'uid': '57ba03ea7333f72a25f837cf'},
+    'router': <starlette.routing.Router object at 0x1081bd6d0>,
+    'endpoint': <class 'app.index.Index'>,
     'path_params': {}
 }
 
@@ -1508,7 +1503,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     - `def ws(self, path, conn, disconn, name, middleware)`
         Add a websocket route at `path`
 
-
 - `def cookie(key, value, max_age, expires, path, domain, secure, httponly, samesite)`
     Create a 'set-cookie' `HttpHeader`
 
@@ -1783,7 +1777,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     - `def A(self, rx, ry, x_axis_rotation, large_arc_flag, sweep_flag, x, y)`
         Elliptical Arc.
 
-
 - `def SvgOob(*args, **kwargs)`
     Wraps an SVG shape as required for an HTMX OOB swap
 
@@ -1880,7 +1873,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
 - `class ThemeRadii(Enum)`
     Members: none, sm, md, lg
 
-
 - `class ThemeShadows`
 
 - `class ThemeFont`
@@ -1895,13 +1887,11 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     - `local_headers(self, mode, static_dir, icons, daisy, highlightjs, katex, apex_charts, radii, shadows, font)`
         Create headers using local files downloaded from CDNs
 
-
 ## monsterui.daisy
 
 - `class AlertT(Enum)`
     Alert styles from DaisyUI
     Members: info, success, warning, error
-
 
 - `def Alert(*c, **kwargs)`
     Alert informs users about important events.
@@ -1910,11 +1900,9 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Options for Steps
     Members: vertical, horizonal
 
-
 - `class StepT(Enum)`
     Step styles for LiStep
     Members: primary, secondary, accent, info, success, warning, error, neutral
-
 
 - `def Steps(*li, **kwargs)`
     Creates a steps container
@@ -1925,7 +1913,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
 - `class LoadingT(Enum)`
     Members: spinner, dots, ring, ball, bars, infinity, xs, sm, md, lg
 
-
 - `def Loading(cls, htmx_indicator, **kwargs)`
     Creates a loading animation component
 
@@ -1933,11 +1920,9 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Horizontal position for Toast
     Members: start, center, end
 
-
 - `class ToastVT(Enum)`
     Vertical position for Toast
     Members: top, middle, bottom
-
 
 ## monsterui.foundations
 
@@ -1947,7 +1932,7 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Converts input types into strings that can be passed to FT components
 
 - `class VEnum(Enum)`
-    Members: 
+    Members:
 
     - `__str__(self)`
     - `__add__(self, other)`
@@ -1959,11 +1944,9 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Text Styles from https://franken-ui.dev/docs/text
     Members: paragraph, lead, meta, gray, italic, xs, sm, lg, xl, light, normal, medium, bold, extrabold, muted, primary, secondary, success, warning, error, info, left, right, center, justify, start, end, top, middle, bottom, truncate, break_, nowrap, underline, highlight
 
-
 - `class TextPresets(Enum)`
     Common Typography Presets
     Members: muted_sm, muted_lg, bold_sm, bold_lg, md_weight_sm, md_weight_muted
-
 
 - `def CodeSpan(*c, **kwargs)`
     A CodeSpan with Styling
@@ -2089,7 +2072,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Options for styling Buttons
     Members: default, ghost, primary, secondary, destructive, text, link, xs, sm, lg, xl, icon
 
-
 - `def Button(*c, **kwargs)`
     Button with Styling (defaults to `submit` for form submission)
 
@@ -2097,10 +2079,8 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Max width container sizes from https://franken-ui.dev/docs/container
     Members: xs, sm, lg, xl, expand
 
-
 - `class BackgroundT(Enum)`
     Members: muted, primary, secondary, default
-
 
 - `def Container(*c, **kwargs)`
     Div to be used as a container that often wraps large sections or a page of content
@@ -2111,7 +2091,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
 - `class DividerT(Enum)`
     Divider Styles from https://franken-ui.dev/docs/divider
     Members: icon, sm, vertical
-
 
 - `def Divider(*c, **kwargs)`
     Divider with default styling and margin
@@ -2131,7 +2110,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
 - `class SectionT(Enum)`
     Section styles from https://franken-ui.dev/docs/section
     Members: default, muted, primary, secondary, xs, sm, lg, xl, remove_vertical
-
 
 - `def Section(*c, **kwargs)`
     Section with styling and margins
@@ -2175,7 +2153,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
 - `class LabelT(Enum)`
     Members: primary, secondary, destructive
 
-
 - `def Label(*c, **kwargs)`
     FrankenUI labels, which look like pills
 
@@ -2210,11 +2187,9 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Link styles from https://franken-ui.dev/docs/link
     Members: muted, text, reset, primary, classic
 
-
 - `class ListT(Enum)`
     List styles using Tailwind CSS
     Members: disc, circle, square, decimal, hyphen, bullet, divider, striped
-
 
 - `def ModalContainer(*c, **kwargs)`
     Creates a modal container that components go in
@@ -2262,7 +2237,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Flexbox modifiers using Tailwind CSS
     Members: block, inline, left, center, right, between, around, stretch, top, middle, bottom, row, row_reverse, column, column_reverse, nowrap, wrap, wrap_reverse
 
-
 - `def Grid(*div, **kwargs)`
     Creates a responsive grid layout with smart defaults based on content
 
@@ -2287,7 +2261,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
 - `class NavT(Enum)`
     Members: default, primary, secondary
 
-
 - `def NavContainer(*li, **kwargs)`
     Creates a navigation container (useful for creating a sidebar navigation).  A Nav is a list (NavBar is something different)
 
@@ -2308,7 +2281,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
 
 - `class ScrollspyT(Enum)`
     Members: underline, bold
-
 
 - `def NavBar(*c)`
     Creates a responsive navigation bar with mobile menu support
@@ -2335,7 +2307,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
     Card styles from UIkit
     Members: default, primary, secondary, destructive, hover
 
-
 - `def CardTitle(*c, **kwargs)`
     Creates a card title
 
@@ -2356,7 +2327,6 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
 
 - `class TableT(Enum)`
     Members: divider, striped, hover, sm, lg, justify, middle, responsive
-
 
 - `def Table(*c, **kwargs)`
     Creates a table

@@ -1,0 +1,191 @@
+```markdown
+# SQLAlchemy 2.0
+
+> Modern, type-safe Python SQL Toolkit and Object Relational Mapper (ORM). SQLAlchemy 2.0 enforces a fully unified Core-and-ORM query paradigm (`select()` replacing `session.query()`) and native PEP 484 static typing integration.
+
+Official Documentation: https://docs.sqlalchemy.org
+
+## Modern Declarative Model Configuration
+
+SQLAlchemy 2.0 uses a class-based approach utilizing `DeclarativeBase`, native Python typing annotations via `Mapped[]`, and the `mapped_column()` directive to configure relational schemas.
+
+```python
+from datetime import datetime, timezone
+from typing import List, Optional
+from sqlalchemy import String, ForeignKey
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+
+# 1. Define the explicit base class
+class Base(DeclarativeBase):
+    pass
+
+# 2. Configure Models using 2.0 typing styles
+class User(Base):
+    __tablename__ = "users"
+    
+    # Primitive types infer column definitions automatically (e.g., int -> INTEGER, non-nullable)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    
+    # Optional[] type modifier dictates nullability automatically (nullable=True)
+    middle_name: Mapped[Optional[str]]
+    
+    # Overwrite inferred types or add constraints inside mapped_column()
+    email: Mapped[str] = mapped_column(String(255), unique=True, index=True)
+    
+    # Dynamic defaults should prefer callables
+    created_at: Mapped[datetime] = mapped_column(default=lambda: datetime.now(timezone.utc))
+    
+    # 1-to-Many Relationship Link
+    posts: Mapped[List["Post"]] = relationship(back_populates="author", cascade="all, delete-orphan")
+
+class Post(Base):
+    __tablename__ = "posts"
+    
+    id: Mapped[int] = mapped_column(primary_key=True)
+    title: Mapped[str] = mapped_column(String(100))
+    content: Mapped[str]
+    
+    # Foreign Key Mapping
+    author_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    
+    # Many-to-1 Relationship Link
+    author: Mapped["User"] = relationship(back_populates="posts")
+
+```
+
+---
+
+## Unified Execution Interface (Core & ORM)
+
+SQLAlchemy 2.0 removes `session.query()`. All queries execute via standalone expressions passed directly to the execution layer.
+
+### Primary Reading Strategies
+
+* **`session.scalars()`**: Safely extracts the first column elements from a query row result. Use this for standard ORM model retrievals.
+* **`session.execute()`**: Returns a generic database row cursor result mapping. Use this for multi-column selections, aggregate expressions, or raw data execution.
+* **`session.get()`**: Highly optimized shortcut explicitly designed for fetching an entity by its Primary Key identity. Hits the local session identity map before querying the database.
+
+---
+
+## Production Database Sessions: Async Workflow
+
+To avoid blocking code contexts inside asynchronous environments (like FastAPI workloads), use the `asyncio` engine layout alongside the `asyncpg` driver for PostgreSQL.
+
+### Scaffolding Connection Modules
+
+```python
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+
+DATABASE_URL = "postgresql+asyncpg://user:password@localhost:5432/mydb"
+
+# Construct Async Execution Engine
+engine = create_async_engine(
+    DATABASE_URL,
+    echo=False,              # Disable noisy log emissions in production
+    pool_size=20,            # Set connection pool thresholds
+    max_overflow=10
+)
+
+# Build Thread-Safe Async Session Factory
+async_session = async_sessionmaker(
+    bind=engine,
+    class_=AsyncSession,
+    expire_on_commit=False   # CRITICAL: Prevents lazy-loading errors on committed objects
+)
+
+```
+
+---
+
+## Complete Modern CRUD Reference (Async Example)
+
+### Create (Insert)
+
+```python
+async def create_new_post(user_id: int, title: str, content: str) -> Post:
+    async with async_session() as session:
+        async with session.begin(): # Manages automatic commit/rollback context
+            new_post = Post(author_id=user_id, title=title, content=content)
+            session.add(new_post)
+        
+        # Session auto-flushes and commits here.
+        # Refresh is only needed to populate server-generated values (e.g., auto-increment ids)
+        await session.refresh(new_post)
+        return new_post
+
+```
+
+### Read (Select)
+
+```python
+from sqlalchemy import select
+
+async def get_user_posts(user_id: int) -> list[Post]:
+    async with async_session() as session:
+        # Build statements using standalone select() constructs
+        stmt = select(Post).where(Post.author_id == user_id).order_by(Post.id.desc())
+        
+        # Extract individual ORM models cleanly using .scalars().all()
+        result = await session.scalars(stmt)
+        return list(result.all())
+
+```
+
+### Update
+
+```python
+from sqlalchemy import update
+
+# Strategy A: ORM Tracking (Best for single record manipulation)
+async def update_post_content_orm(post_id: int, new_content: str) -> Optional[Post]:
+    async with async_session() as session:
+        async with session.begin():
+            post = await session.get(Post, post_id)
+            if post:
+                post.content = new_content  # Mutating changes are auto-tracked
+            return post
+
+# Strategy B: Bulk Execution (Best for high performance / multi-row alterations)
+async def bulk_update_status(user_id: int) -> int:
+    async with async_session() as session:
+        async with session.begin():
+            stmt = update(Post).where(Post.author_id == user_id).values(content="Archived.")
+            result = await session.execute(stmt)
+            return result.rowcount  # Returns number of affected records
+
+```
+
+### Delete
+
+```python
+from sqlalchemy import delete
+
+async def remove_post(post_id: int) -> bool:
+    async with async_session() as session:
+        async with session.begin():
+            stmt = delete(Post).where(Post.id == post_id)
+            result = await session.execute(stmt)
+            return result.rowcount > 0
+
+```
+
+---
+
+## Critical Execution Traps & Antipatterns
+
+* ❌ **Antipattern:** Using `session.query(User).filter_by(...)`
+* ✅ **Modern Alternative:** `session.scalars(select(User).filter_by(...))`
+
+
+* ❌ **Antipattern:** Setting `expire_on_commit=True` in an asynchronous initialization block. This causes the application layer to block on subsequent attribute references because it attempts to lazily call synchronous data network connections inside asynchronous templates.
+* ✅ **Modern Alternative:** Always explicit pass `expire_on_commit=False` into your session manager when writing async Python applications.
+
+
+* ❌ **Antipattern:** Explicitly joining via manual foreign key equivalence constraints: `select(Post).join(User, Post.author_id == User.id)`.
+* ✅ **Modern Alternative:** Leverage configured relationship maps directly: `select(Post).join(Post.author)`.
+
+
+
+```
+
+```

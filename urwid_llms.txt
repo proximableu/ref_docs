@@ -476,8 +476,6 @@ Device-specific Unicode mappings also needed (e.g., LCD display with non-standar
    displayattributes
    canvascache
 
-
-
 ```
 
 #### mainloop.rst
@@ -997,7 +995,6 @@ from __future__ import annotations
 
 import urwid
 
-
 class QuestionnaireItem(urwid.WidgetWrap[urwid.GridFlow]):
     def __init__(self) -> None:
         self.options: list[urwid.RadioButton] = []
@@ -1019,7 +1016,6 @@ from __future__ import annotations
 
 import urwid
 
-
 class Pudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW,))
 
@@ -1030,7 +1026,6 @@ class Pudding(urwid.Widget):
         (maxcol,) = size
         num_pudding = maxcol // len("Pudding")
         return urwid.TextCanvas([b"Pudding" * num_pudding], maxcol=maxcol)
-
 
 class BoxPudding(urwid.Widget):
     _sizing = frozenset((urwid.BOX,))
@@ -1048,7 +1043,6 @@ class BoxPudding(urwid.Widget):
 from __future__ import annotations
 
 import urwid
-
 
 class MultiPudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW, urwid.BOX))
@@ -1073,7 +1067,6 @@ class MultiPudding(urwid.Widget):
 from __future__ import annotations
 
 import urwid
-
 
 class SelectablePudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW,))
@@ -1117,7 +1110,6 @@ class SelectablePudding(urwid.Widget):
 from __future__ import annotations
 
 import urwid
-
 
 class CursorPudding(urwid.Widget):
     _sizing = frozenset(["flow"])
@@ -1164,7 +1156,6 @@ from __future__ import annotations
 
 import urwid
 
-
 class Widget(urwid.ListBox):
     def get_pref_col(self, size: tuple[int, int]) -> int:
         return self.cursor_x
@@ -1175,7 +1166,6 @@ class Widget(urwid.ListBox):
         return True
 
 ```
-
 
 ```
 
@@ -1590,7 +1580,6 @@ Global Settings
 .. autofunction:: get_encoding_mode
 
 .. autofunction:: supports_unicode
-
 
 ```
 
@@ -2157,12 +2146,10 @@ from __future__ import annotations
 
 import urwid
 
-
 def show_or_exit(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
     txt.set_text(repr(key))
-
 
 txt = urwid.Text("Hello World")
 fill = urwid.Filler(txt, "top")
@@ -2178,11 +2165,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 palette = [
     ("banner", "black", "light gray"),
@@ -2206,11 +2191,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key):
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 palette = [
     ("banner", "", "", "", "#ffa", "#60d"),
@@ -2246,11 +2229,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 class QuestionBox(urwid.Filler):
     def keypress(self, size, key: str) -> str | None:
@@ -2260,7 +2241,6 @@ class QuestionBox(urwid.Filler):
             f"Nice to meet you,\n{edit.edit_text}.\n\nPress Q to exit.",
         )
         return None
-
 
 edit = urwid.Edit("What is your name?\n")
 fill = QuestionBox(edit)
@@ -2286,14 +2266,11 @@ div = urwid.Divider()
 pile = urwid.Pile([ask, div, reply, div, button_inst])
 top = urwid.Filler(pile, valign="top")
 
-
 def on_ask_change(_edit: urwid.Edit, new_edit_text: str) -> None:
     reply.set_text(("I say", f"Nice to meet you, {new_edit_text}"))
 
-
 def on_exit_clicked(_button: urwid.Button) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 urwid.connect_signal(ask, "change", on_ask_change)
 urwid.connect_signal(button_inst, "click", on_exit_clicked)
@@ -2309,14 +2286,11 @@ from __future__ import annotations
 
 import urwid
 
-
 def question():
     return urwid.Pile([urwid.Edit(("I say", "What is your name?\n"))])
 
-
 def answer(name):
     return urwid.Text(("I say", f"Nice to meet you, {name}\n"))
-
 
 class ConversationListBox(urwid.ListBox):
     def __init__(self) -> None:
@@ -2338,7 +2312,6 @@ class ConversationListBox(urwid.ListBox):
         self.focus_position = pos + 1
         return None
 
-
 palette = [("I say", "default,bold", "default")]
 urwid.MainLoop(ConversationListBox(), palette).run()
 
@@ -2358,7 +2331,6 @@ if typing.TYPE_CHECKING:
 
 choices = ["Chapman", "Cleese", "Gilliam", "Idle", "Jones", "Palin"]
 
-
 def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
     body = [urwid.Text(title), urwid.Divider()]
     for c in choices_:
@@ -2366,7 +2338,6 @@ def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
         urwid.connect_signal(button, "click", item_chosen, c)
         body.append(urwid.AttrMap(button, None, focus_map="reversed"))
     return urwid.ListBox(urwid.SimpleFocusListWalker(body))
-
 
 def item_chosen(button: urwid.Button, choice: str) -> None:
     response = urwid.Text(["You chose ", choice, "\n"])
@@ -2381,10 +2352,8 @@ def item_chosen(button: urwid.Button, choice: str) -> None:
         )
     )
 
-
 def exit_program(button: urwid.Button) -> None:
     raise urwid.ExitMainLoop()
-
 
 main = urwid.Padding(menu("Pythons", choices), left=2, right=2)
 top = urwid.Overlay(
@@ -2413,14 +2382,12 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, Iterable
 
-
 def menu_button(
     caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
     callback: Callable[[urwid.Button], typing.Any],
 ) -> urwid.AttrMap:
     button = urwid.Button(caption, on_press=callback)
     return urwid.AttrMap(button, None, focus_map="reversed")
-
 
 def sub_menu(
     caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
@@ -2433,7 +2400,6 @@ def sub_menu(
 
     return menu_button([caption, "..."], open_menu)
 
-
 def menu(
     title: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
     choices: Iterable[urwid.Widget],
@@ -2441,16 +2407,13 @@ def menu(
     body = [urwid.Text(title), urwid.Divider(), *choices]
     return urwid.ListBox(urwid.SimpleFocusListWalker(body))
 
-
 def item_chosen(button: urwid.Button) -> None:
     response = urwid.Text(["You chose ", button.label, "\n"])
     done = menu_button("Ok", exit_program)
     top.open_box(urwid.Filler(urwid.Pile([response, done])))
 
-
 def exit_program(button: urwid.Button) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 menu_top = menu(
     "Main Menu",
@@ -2479,7 +2442,6 @@ menu_top = menu(
         ),
     ],
 )
-
 
 class CascadingBoxes(urwid.WidgetPlaceholder):
     max_box_levels = 4
@@ -2514,7 +2476,6 @@ class CascadingBoxes(urwid.WidgetPlaceholder):
 
         return super().keypress(size, key)
 
-
 top = CascadingBoxes(menu_top)
 urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
 
@@ -2532,7 +2493,6 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, Iterable
 
-
 class MenuButton(urwid.Button):
     def __init__(
         self,
@@ -2545,7 +2505,6 @@ class MenuButton(urwid.Button):
             None,
             "selected",
         )
-
 
 class SubMenu(urwid.WidgetWrap[MenuButton]):
     def __init__(
@@ -2571,7 +2530,6 @@ class SubMenu(urwid.WidgetWrap[MenuButton]):
     def open_menu(self, button: MenuButton) -> None:
         top.open_box(self.menu)
 
-
 class Choice(urwid.WidgetWrap[MenuButton]):
     def __init__(
         self,
@@ -2586,10 +2544,8 @@ class Choice(urwid.WidgetWrap[MenuButton]):
         response_box = urwid.Filler(urwid.Pile([response, done]))
         top.open_box(urwid.AttrMap(response_box, "options"))
 
-
 def exit_program(key):
     raise urwid.ExitMainLoop()
-
 
 menu_top = SubMenu(
     "Main Menu",
@@ -2628,7 +2584,6 @@ palette = [
 ]
 focus_map = {"heading": "focus heading", "options": "focus options", "line": "focus line"}
 
-
 class HorizontalBoxes(urwid.Columns):
     def __init__(self) -> None:
         super().__init__([], dividechars=1)
@@ -2643,7 +2598,6 @@ class HorizontalBoxes(urwid.Columns):
             )
         )
         self.focus_position = len(self.contents) - 1
-
 
 top = HorizontalBoxes()
 top.open_box(menu_top.menu)
@@ -2663,7 +2617,6 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, MutableSequence
 
-
 class ActionButton(urwid.Button):
     def __init__(
         self,
@@ -2672,7 +2625,6 @@ class ActionButton(urwid.Button):
     ) -> None:
         super().__init__("", on_press=callback)
         self._w = urwid.AttrMap(urwid.SelectableIcon(caption, 1), None, focus_map="reversed")
-
 
 class Place(urwid.WidgetWrap[ActionButton]):
     def __init__(self, name: str, choices: MutableSequence[urwid.Widget]) -> None:
@@ -2686,7 +2638,6 @@ class Place(urwid.WidgetWrap[ActionButton]):
     def enter_place(self, button: ActionButton) -> None:
         game.update_place(self)
 
-
 class Thing(urwid.WidgetWrap[ActionButton]):
     def __init__(self, name: str) -> None:
         super().__init__(ActionButton([" * take ", name], self.take_thing))
@@ -2696,10 +2647,8 @@ class Thing(urwid.WidgetWrap[ActionButton]):
         self._w = urwid.Text(f" - {self.name} (taken)")
         game.take_thing(self)
 
-
 def exit_program(button: ActionButton) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 map_top = Place(
     "porch",
@@ -2736,7 +2685,6 @@ map_top = Place(
     ],
 )
 
-
 class AdventureGame:
     def __init__(self) -> None:
         self.log = urwid.SimpleFocusListWalker([])
@@ -2760,12 +2708,10 @@ class AdventureGame:
         else:
             self.update_place(self.place)
 
-
 game = AdventureGame()
 urwid.MainLoop(game.top, palette=[("reversed", "standout", "")]).run()
 
 ```
-
 
 ```
 
@@ -3121,7 +3067,6 @@ from __future__ import annotations
 
 import urwid
 
-
 class Pudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW,))
 
@@ -3132,7 +3077,6 @@ class Pudding(urwid.Widget):
         (maxcol,) = size
         num_pudding = maxcol // len("Pudding")
         return urwid.TextCanvas([b"Pudding" * num_pudding], maxcol=maxcol)
-
 
 class BoxPudding(urwid.Widget):
     _sizing = frozenset((urwid.BOX,))
@@ -3154,7 +3098,6 @@ class BoxPudding(urwid.Widget):
 from __future__ import annotations
 
 import urwid
-
 
 class MultiPudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW, urwid.BOX))
@@ -3183,7 +3126,6 @@ class MultiPudding(urwid.Widget):
 from __future__ import annotations
 
 import urwid
-
 
 class CursorPudding(urwid.Widget):
     _sizing = frozenset(["flow"])
@@ -3234,7 +3176,6 @@ from __future__ import annotations
 
 import urwid
 
-
 class Widget(urwid.ListBox):
     def get_pref_col(self, size: tuple[int, int]) -> int:
         return self.cursor_x
@@ -3256,7 +3197,6 @@ class Widget(urwid.ListBox):
 from __future__ import annotations
 
 import urwid
-
 
 class QuestionnaireItem(urwid.WidgetWrap[urwid.GridFlow]):
     def __init__(self) -> None:
@@ -3282,7 +3222,6 @@ class QuestionnaireItem(urwid.WidgetWrap[urwid.GridFlow]):
 from __future__ import annotations
 
 import urwid
-
 
 class SelectablePudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW,))
@@ -3388,7 +3327,6 @@ FILE_PATH = os.path.dirname(__file__)
 VERSION_MODULE = os.path.abspath(os.path.join(FILE_PATH, "../urwid/version.py"))
 VERSION_VARS = {}
 
-
 with open(VERSION_MODULE, encoding="utf-8") as f:
     parsed = ast.parse(f.read())
     for node in parsed.body:
@@ -3450,7 +3388,6 @@ pygments_style = "sphinx"
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []
-
 
 # -- Options for HTML output ---------------------------------------------------
 
@@ -3548,7 +3485,6 @@ html_domain_indices = False
 # Output file base name for HTML help builder.
 htmlhelp_basename = "Urwiddoc"
 
-
 # -- Options for LaTeX output --------------------------------------------------
 
 latex_elements = {
@@ -3586,7 +3522,6 @@ latex_documents = [
 # If false, no module index is generated.
 # latex_domain_indices = True
 
-
 # -- Options for manual page output --------------------------------------------
 
 # One entry per manual page. List of tuples
@@ -3595,7 +3530,6 @@ man_pages = [("index", "urwid", "Urwid Documentation", ["Ian Ward"], 1)]
 
 # If true, show URL addresses after external links.
 # man_show_urls = False
-
 
 # -- Options for Texinfo output ------------------------------------------------
 
@@ -3614,7 +3548,6 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 # texinfo_show_urls = 'footnote'
-
 
 # -- Options for Epub output ---------------------------------------------------
 
@@ -3755,7 +3688,6 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, MutableSequence
 
-
 class ActionButton(urwid.Button):
     def __init__(
         self,
@@ -3764,7 +3696,6 @@ class ActionButton(urwid.Button):
     ) -> None:
         super().__init__("", on_press=callback)
         self._w = urwid.AttrMap(urwid.SelectableIcon(caption, 1), None, focus_map="reversed")
-
 
 class Place(urwid.WidgetWrap[ActionButton]):
     def __init__(self, name: str, choices: MutableSequence[urwid.Widget]) -> None:
@@ -3778,7 +3709,6 @@ class Place(urwid.WidgetWrap[ActionButton]):
     def enter_place(self, button: ActionButton) -> None:
         game.update_place(self)
 
-
 class Thing(urwid.WidgetWrap[ActionButton]):
     def __init__(self, name: str) -> None:
         super().__init__(ActionButton([" * take ", name], self.take_thing))
@@ -3788,10 +3718,8 @@ class Thing(urwid.WidgetWrap[ActionButton]):
         self._w = urwid.Text(f" - {self.name} (taken)")
         game.take_thing(self)
 
-
 def exit_program(button: ActionButton) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 map_top = Place(
     "porch",
@@ -3828,7 +3756,6 @@ map_top = Place(
     ],
 )
 
-
 class AdventureGame:
     def __init__(self) -> None:
         self.log = urwid.SimpleFocusListWalker([])
@@ -3852,7 +3779,6 @@ class AdventureGame:
         else:
             self.update_place(self.place)
 
-
 game = AdventureGame()
 urwid.MainLoop(game.top, palette=[("reversed", "standout", "")]).run()
 
@@ -3874,14 +3800,12 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, Iterable
 
-
 def menu_button(
     caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
     callback: Callable[[urwid.Button], typing.Any],
 ) -> urwid.AttrMap:
     button = urwid.Button(caption, on_press=callback)
     return urwid.AttrMap(button, None, focus_map="reversed")
-
 
 def sub_menu(
     caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
@@ -3894,7 +3818,6 @@ def sub_menu(
 
     return menu_button([caption, "..."], open_menu)
 
-
 def menu(
     title: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
     choices: Iterable[urwid.Widget],
@@ -3902,16 +3825,13 @@ def menu(
     body = [urwid.Text(title), urwid.Divider(), *choices]
     return urwid.ListBox(urwid.SimpleFocusListWalker(body))
 
-
 def item_chosen(button: urwid.Button) -> None:
     response = urwid.Text(["You chose ", button.label, "\n"])
     done = menu_button("Ok", exit_program)
     top.open_box(urwid.Filler(urwid.Pile([response, done])))
 
-
 def exit_program(button: urwid.Button) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 menu_top = menu(
     "Main Menu",
@@ -3940,7 +3860,6 @@ menu_top = menu(
         ),
     ],
 )
-
 
 class CascadingBoxes(urwid.WidgetPlaceholder):
     max_box_levels = 4
@@ -3975,7 +3894,6 @@ class CascadingBoxes(urwid.WidgetPlaceholder):
 
         return super().keypress(size, key)
 
-
 top = CascadingBoxes(menu_top)
 urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
 
@@ -3992,11 +3910,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key):
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 palette = [
     ("banner", "", "", "", "#ffa", "#60d"),
@@ -4041,7 +3957,6 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, Iterable
 
-
 class MenuButton(urwid.Button):
     def __init__(
         self,
@@ -4054,7 +3969,6 @@ class MenuButton(urwid.Button):
             None,
             "selected",
         )
-
 
 class SubMenu(urwid.WidgetWrap[MenuButton]):
     def __init__(
@@ -4080,7 +3994,6 @@ class SubMenu(urwid.WidgetWrap[MenuButton]):
     def open_menu(self, button: MenuButton) -> None:
         top.open_box(self.menu)
 
-
 class Choice(urwid.WidgetWrap[MenuButton]):
     def __init__(
         self,
@@ -4095,10 +4008,8 @@ class Choice(urwid.WidgetWrap[MenuButton]):
         response_box = urwid.Filler(urwid.Pile([response, done]))
         top.open_box(urwid.AttrMap(response_box, "options"))
 
-
 def exit_program(key):
     raise urwid.ExitMainLoop()
-
 
 menu_top = SubMenu(
     "Main Menu",
@@ -4137,7 +4048,6 @@ palette = [
 ]
 focus_map = {"heading": "focus heading", "options": "focus options", "line": "focus line"}
 
-
 class HorizontalBoxes(urwid.Columns):
     def __init__(self) -> None:
         super().__init__([], dividechars=1)
@@ -4152,7 +4062,6 @@ class HorizontalBoxes(urwid.Columns):
             )
         )
         self.focus_position = len(self.contents) - 1
-
 
 top = HorizontalBoxes()
 top.open_box(menu_top.menu)
@@ -4171,12 +4080,10 @@ from __future__ import annotations
 
 import urwid
 
-
 def show_or_exit(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
     txt.set_text(repr(key))
-
 
 txt = urwid.Text("Hello World")
 fill = urwid.Filler(txt, "top")
@@ -4214,14 +4121,11 @@ from __future__ import annotations
 
 import urwid
 
-
 def question():
     return urwid.Pile([urwid.Edit(("I say", "What is your name?\n"))])
 
-
 def answer(name):
     return urwid.Text(("I say", f"Nice to meet you, {name}\n"))
-
 
 class ConversationListBox(urwid.ListBox):
     def __init__(self) -> None:
@@ -4243,7 +4147,6 @@ class ConversationListBox(urwid.ListBox):
         self.focus_position = pos + 1
         return None
 
-
 palette = [("I say", "default,bold", "default")]
 urwid.MainLoop(ConversationListBox(), palette).run()
 
@@ -4260,11 +4163,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 class QuestionBox(urwid.Filler):
     def keypress(self, size, key: str) -> str | None:
@@ -4274,7 +4175,6 @@ class QuestionBox(urwid.Filler):
             f"Nice to meet you,\n{edit.edit_text}.\n\nPress Q to exit.",
         )
         return None
-
 
 edit = urwid.Edit("What is your name?\n")
 fill = QuestionBox(edit)
@@ -4304,14 +4204,11 @@ div = urwid.Divider()
 pile = urwid.Pile([ask, div, reply, div, button_inst])
 top = urwid.Filler(pile, valign="top")
 
-
 def on_ask_change(_edit: urwid.Edit, new_edit_text: str) -> None:
     reply.set_text(("I say", f"Nice to meet you, {new_edit_text}"))
 
-
 def on_exit_clicked(_button: urwid.Button) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 urwid.connect_signal(ask, "change", on_ask_change)
 urwid.connect_signal(button_inst, "click", on_exit_clicked)
@@ -4338,7 +4235,6 @@ if typing.TYPE_CHECKING:
 
 choices = ["Chapman", "Cleese", "Gilliam", "Idle", "Jones", "Palin"]
 
-
 def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
     body = [urwid.Text(title), urwid.Divider()]
     for c in choices_:
@@ -4346,7 +4242,6 @@ def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
         urwid.connect_signal(button, "click", item_chosen, c)
         body.append(urwid.AttrMap(button, None, focus_map="reversed"))
     return urwid.ListBox(urwid.SimpleFocusListWalker(body))
-
 
 def item_chosen(button: urwid.Button, choice: str) -> None:
     response = urwid.Text(["You chose ", choice, "\n"])
@@ -4361,10 +4256,8 @@ def item_chosen(button: urwid.Button, choice: str) -> None:
         )
     )
 
-
 def exit_program(button: urwid.Button) -> None:
     raise urwid.ExitMainLoop()
-
 
 main = urwid.Padding(menu("Pythons", choices), left=2, right=2)
 top = urwid.Overlay(
@@ -4392,11 +4285,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 palette = [
     ("banner", "black", "light gray"),
@@ -4426,7 +4317,6 @@ from __future__ import annotations
 
 import urwid
 
-
 class QuestionnaireItem(urwid.WidgetWrap[urwid.GridFlow]):
     def __init__(self) -> None:
         self.options: list[urwid.RadioButton] = []
@@ -4452,7 +4342,6 @@ from __future__ import annotations
 
 import urwid
 
-
 class Pudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW,))
 
@@ -4463,7 +4352,6 @@ class Pudding(urwid.Widget):
         (maxcol,) = size
         num_pudding = maxcol // len("Pudding")
         return urwid.TextCanvas([b"Pudding" * num_pudding], maxcol=maxcol)
-
 
 class BoxPudding(urwid.Widget):
     _sizing = frozenset((urwid.BOX,))
@@ -4485,7 +4373,6 @@ class BoxPudding(urwid.Widget):
 from __future__ import annotations
 
 import urwid
-
 
 class MultiPudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW, urwid.BOX))
@@ -4514,7 +4401,6 @@ class MultiPudding(urwid.Widget):
 from __future__ import annotations
 
 import urwid
-
 
 class SelectablePudding(urwid.Widget):
     _sizing = frozenset((urwid.FLOW,))
@@ -4562,7 +4448,6 @@ class SelectablePudding(urwid.Widget):
 from __future__ import annotations
 
 import urwid
-
 
 class CursorPudding(urwid.Widget):
     _sizing = frozenset(["flow"])
@@ -4613,7 +4498,6 @@ from __future__ import annotations
 
 import urwid
 
-
 class Widget(urwid.ListBox):
     def get_pref_col(self, size: tuple[int, int]) -> int:
         return self.cursor_x
@@ -4654,12 +4538,10 @@ from __future__ import annotations
 
 import urwid
 
-
 def show_or_exit(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
     txt.set_text(repr(key))
-
 
 txt = urwid.Text("Hello World")
 fill = urwid.Filler(txt, "top")
@@ -4679,11 +4561,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 palette = [
     ("banner", "black", "light gray"),
@@ -4711,11 +4591,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key):
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 palette = [
     ("banner", "", "", "", "#ffa", "#60d"),
@@ -4755,11 +4633,9 @@ from __future__ import annotations
 
 import urwid
 
-
 def exit_on_q(key: str) -> None:
     if key in {"q", "Q"}:
         raise urwid.ExitMainLoop()
-
 
 class QuestionBox(urwid.Filler):
     def keypress(self, size, key: str) -> str | None:
@@ -4769,7 +4645,6 @@ class QuestionBox(urwid.Filler):
             f"Nice to meet you,\n{edit.edit_text}.\n\nPress Q to exit.",
         )
         return None
-
 
 edit = urwid.Edit("What is your name?\n")
 fill = QuestionBox(edit)
@@ -4799,14 +4674,11 @@ div = urwid.Divider()
 pile = urwid.Pile([ask, div, reply, div, button_inst])
 top = urwid.Filler(pile, valign="top")
 
-
 def on_ask_change(_edit: urwid.Edit, new_edit_text: str) -> None:
     reply.set_text(("I say", f"Nice to meet you, {new_edit_text}"))
 
-
 def on_exit_clicked(_button: urwid.Button) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 urwid.connect_signal(ask, "change", on_ask_change)
 urwid.connect_signal(button_inst, "click", on_exit_clicked)
@@ -4826,14 +4698,11 @@ from __future__ import annotations
 
 import urwid
 
-
 def question():
     return urwid.Pile([urwid.Edit(("I say", "What is your name?\n"))])
 
-
 def answer(name):
     return urwid.Text(("I say", f"Nice to meet you, {name}\n"))
-
 
 class ConversationListBox(urwid.ListBox):
     def __init__(self) -> None:
@@ -4854,7 +4723,6 @@ class ConversationListBox(urwid.ListBox):
         self.body.insert(pos + 1, question())
         self.focus_position = pos + 1
         return None
-
 
 palette = [("I say", "default,bold", "default")]
 urwid.MainLoop(ConversationListBox(), palette).run()
@@ -4879,7 +4747,6 @@ if typing.TYPE_CHECKING:
 
 choices = ["Chapman", "Cleese", "Gilliam", "Idle", "Jones", "Palin"]
 
-
 def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
     body = [urwid.Text(title), urwid.Divider()]
     for c in choices_:
@@ -4887,7 +4754,6 @@ def menu(title: str, choices_: Iterable[str]) -> urwid.ListBox:
         urwid.connect_signal(button, "click", item_chosen, c)
         body.append(urwid.AttrMap(button, None, focus_map="reversed"))
     return urwid.ListBox(urwid.SimpleFocusListWalker(body))
-
 
 def item_chosen(button: urwid.Button, choice: str) -> None:
     response = urwid.Text(["You chose ", choice, "\n"])
@@ -4902,10 +4768,8 @@ def item_chosen(button: urwid.Button, choice: str) -> None:
         )
     )
 
-
 def exit_program(button: urwid.Button) -> None:
     raise urwid.ExitMainLoop()
-
 
 main = urwid.Padding(menu("Pythons", choices), left=2, right=2)
 top = urwid.Overlay(
@@ -4938,14 +4802,12 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, Iterable
 
-
 def menu_button(
     caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
     callback: Callable[[urwid.Button], typing.Any],
 ) -> urwid.AttrMap:
     button = urwid.Button(caption, on_press=callback)
     return urwid.AttrMap(button, None, focus_map="reversed")
-
 
 def sub_menu(
     caption: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
@@ -4958,7 +4820,6 @@ def sub_menu(
 
     return menu_button([caption, "..."], open_menu)
 
-
 def menu(
     title: str | tuple[Hashable, str] | list[str | tuple[Hashable, str]],
     choices: Iterable[urwid.Widget],
@@ -4966,16 +4827,13 @@ def menu(
     body = [urwid.Text(title), urwid.Divider(), *choices]
     return urwid.ListBox(urwid.SimpleFocusListWalker(body))
 
-
 def item_chosen(button: urwid.Button) -> None:
     response = urwid.Text(["You chose ", button.label, "\n"])
     done = menu_button("Ok", exit_program)
     top.open_box(urwid.Filler(urwid.Pile([response, done])))
 
-
 def exit_program(button: urwid.Button) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 menu_top = menu(
     "Main Menu",
@@ -5004,7 +4862,6 @@ menu_top = menu(
         ),
     ],
 )
-
 
 class CascadingBoxes(urwid.WidgetPlaceholder):
     max_box_levels = 4
@@ -5039,7 +4896,6 @@ class CascadingBoxes(urwid.WidgetPlaceholder):
 
         return super().keypress(size, key)
 
-
 top = CascadingBoxes(menu_top)
 urwid.MainLoop(top, palette=[("reversed", "standout", "")]).run()
 
@@ -5061,7 +4917,6 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, Iterable
 
-
 class MenuButton(urwid.Button):
     def __init__(
         self,
@@ -5074,7 +4929,6 @@ class MenuButton(urwid.Button):
             None,
             "selected",
         )
-
 
 class SubMenu(urwid.WidgetWrap[MenuButton]):
     def __init__(
@@ -5100,7 +4954,6 @@ class SubMenu(urwid.WidgetWrap[MenuButton]):
     def open_menu(self, button: MenuButton) -> None:
         top.open_box(self.menu)
 
-
 class Choice(urwid.WidgetWrap[MenuButton]):
     def __init__(
         self,
@@ -5115,10 +4968,8 @@ class Choice(urwid.WidgetWrap[MenuButton]):
         response_box = urwid.Filler(urwid.Pile([response, done]))
         top.open_box(urwid.AttrMap(response_box, "options"))
 
-
 def exit_program(key):
     raise urwid.ExitMainLoop()
-
 
 menu_top = SubMenu(
     "Main Menu",
@@ -5157,7 +5008,6 @@ palette = [
 ]
 focus_map = {"heading": "focus heading", "options": "focus options", "line": "focus line"}
 
-
 class HorizontalBoxes(urwid.Columns):
     def __init__(self) -> None:
         super().__init__([], dividechars=1)
@@ -5172,7 +5022,6 @@ class HorizontalBoxes(urwid.Columns):
             )
         )
         self.focus_position = len(self.contents) - 1
-
 
 top = HorizontalBoxes()
 top.open_box(menu_top.menu)
@@ -5196,7 +5045,6 @@ import urwid
 if typing.TYPE_CHECKING:
     from collections.abc import Callable, Hashable, MutableSequence
 
-
 class ActionButton(urwid.Button):
     def __init__(
         self,
@@ -5205,7 +5053,6 @@ class ActionButton(urwid.Button):
     ) -> None:
         super().__init__("", on_press=callback)
         self._w = urwid.AttrMap(urwid.SelectableIcon(caption, 1), None, focus_map="reversed")
-
 
 class Place(urwid.WidgetWrap[ActionButton]):
     def __init__(self, name: str, choices: MutableSequence[urwid.Widget]) -> None:
@@ -5219,7 +5066,6 @@ class Place(urwid.WidgetWrap[ActionButton]):
     def enter_place(self, button: ActionButton) -> None:
         game.update_place(self)
 
-
 class Thing(urwid.WidgetWrap[ActionButton]):
     def __init__(self, name: str) -> None:
         super().__init__(ActionButton([" * take ", name], self.take_thing))
@@ -5229,10 +5075,8 @@ class Thing(urwid.WidgetWrap[ActionButton]):
         self._w = urwid.Text(f" - {self.name} (taken)")
         game.take_thing(self)
 
-
 def exit_program(button: ActionButton) -> typing.NoReturn:
     raise urwid.ExitMainLoop()
-
 
 map_top = Place(
     "porch",
@@ -5269,7 +5113,6 @@ map_top = Place(
     ],
 )
 
-
 class AdventureGame:
     def __init__(self) -> None:
         self.log = urwid.SimpleFocusListWalker([])
@@ -5292,7 +5135,6 @@ class AdventureGame:
             self.log[:] = [response, done]
         else:
             self.update_place(self.place)
-
 
 game = AdventureGame()
 urwid.MainLoop(game.top, palette=[("reversed", "standout", "")]).run()

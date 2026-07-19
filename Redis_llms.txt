@@ -1,0 +1,145 @@
+```markdown
+# Redis 7
+
+> High-performance, single-threaded in-memory key-value data structure store used as a database, cache, message broker, and streaming engine. Redis 7 introduces native Redis Functions, sharded pub/sub, ACL v2 selectors, and widespread listpack performance upgrades.
+
+Official Documentation: https://redis.io/docs/latest/
+
+## Core Data Structures & Time Complexities
+
+Every key in Redis maps to an optimized internal data structure. In Redis 7, legacy structures like `ziplist` are replaced by `listpack` across hashes, lists, and sorted sets to mitigate memory vulnerabilities and minimize allocations.
+
+| Data Type | Primary Use Case | Key Commands | Time Complexity |
+| :--- | :--- | :--- | :--- |
+| **Strings** | Caching, binary objects, counters | `SET`, `GET`, `INCRBY`, `MGET`, `GETDEL` | O(1) |
+| **Hashes** | Representing objects / flat records | `HSET`, `HGET`, `HGETALL`, `HDEL` | O(1) per field, O(N) for all fields |
+| **Lists** | Queue/Stack, timeline workflows | `LPUSH`, `RPUSH`, `LPOP`, `RPOP`, `LRANGE` | O(1) push/pop, O(N) index lookups |
+| **Sets** | Unique collections, intersections | `SADD`, `SISMEMBER`, `SINTER`, `SREM` | O(1) access, O(N) for multi-sets |
+| **Sorted Sets** | Leaderboards, priority queues | `ZADD`, `ZRANGE`, `ZREVRANK`, `ZREMRANGEBYSCORE` | O(log(N)) per element |
+| **Streams** | Append-only event logs, consumers | `XADD`, `XREAD`, `XREADGROUP`, `XACK` | O(1) append, O(log(N)) random lookups |
+
+---
+
+## Redis 7 Programmability: Redis Functions
+
+Redis Functions (introduced in 7.0) supersede ephemeral `EVAL` Lua scripts. Functions are **persistent, modular server-side libraries** loaded directly into the database engine, replicated to replicas automatically, and persisted in RDB/AOF snapshots.
+
+### Loading a Lua Library
+Libraries are declared with the `#!lua name=<library_name>` header flag.
+```lua
+#!lua name=my_utils
+redis.register_function('hset_ttl', function(keys, args)
+    local key = keys[1]
+    local field = args[1]
+    local val = args[2]
+    local ttl = tonumber(args[3])
+    
+    redis.call('HSET', key, field, val)
+    redis.call('EXPIRE', key, ttl)
+    return "OK"
+end)
+
+```
+
+### Server Execution Context
+
+* **Loading via CLI:** `redis-cli -x FUNCTION LOAD < my_utils.lua`
+* **Executing via Client:** Invoke using `FCALL` (or `FCALL_RO` for read-only actions on replicas).
+```redis
+FCALL hset_ttl 1 user:1000 username "alice" 3600
+
+```
+
+
+*(Syntax: `FCALL function_name numkeys key [key ...] arg [arg ...]`)*
+
+---
+
+## Redis 7 Cluster & Security Architecture
+
+### Sharded Pub/Sub
+
+Prior to Redis 7, standard Pub/Sub (`PUBLISH`/`SUBSCRIBE`) broadcasted messages to *every* node in a cluster, creating heavy network overhead. Redis 7 introduces **Sharded Pub/Sub**, binding channels directly to the cluster's internal hash slots.
+
+* **Publish:** `SPUBLISH channel_name message`
+* **Subscribe:** `SSUBSCRIBE channel_name`
+* *Rule:* Messages are localized strictly to the node running the hash slot mapped from `channel_name`. Clients must connect to the specific node handling that slot to receive events.
+
+### ACL v2 (Access Control Lists)
+
+Redis 7 extends ACL control via **Selectors**, which allow an engine user account to have granular permission sets tied to explicit prefixes or key patterns.
+
+* **Simulation Check:** Evaluate permission layers without changing states using `ACL DRYRUN`.
+```redis
+ACL DRYRUN web_worker GET sensitive_key
+
+```
+
+
+
+---
+
+## Production Configurations & Memory Optimization
+
+### Persistence Management
+
+Configure `/etc/redis/redis.conf` to balance memory execution speed with durability:
+
+* **RDB Snapshotting:** Asynchronous background snapshot writes (`BGSAVE`).
+```ini
+save 900 1      # Save after 900s if at least 1 key changed
+save 300 10     # Save after 300s if at least 10 keys changed
+
+```
+
+
+* **AOF (Append-Only File):** Logs every write command sequentially.
+```ini
+appendonly yes
+appendfsync everysec  # High performance with max 1-second data loss window
+
+```
+
+
+
+### Maxmemory Eviction Policies
+
+When physical limits are hit, specify how Redis targets candidate keys for deletion:
+
+* `volatile-lru` / `allkeys-lru`: Evicts keys using the Least Recently Used algorithm.
+* `volatile-lfu` / `allkeys-lfu`: Evicts keys using the Least Frequently Used counter.
+* `volatile-ttl`: Destroys candidate keys matching the lowest remaining Time-To-Live metric.
+* `noeviction`: (Default) Returns system execution errors across incoming write operations when memory allocation limits fail.
+
+---
+
+## Core CLI Cheat Sheet
+
+### Atomic Operations & Keyspaces
+
+* `SET key value EX 3600 NX` : Sets a string *only if it does not exist* (`NX`) with a 1-hour expiration window (`EX`).
+* `GETDEL key` : Reads a string value from a key and atomically purges it from memory space.
+* `SCAN cursor [MATCH pattern] [COUNT count]` : State-safe, incremental cursor scan to traverse keyspace without blocking the single-threaded loop (never use `KEYS *` in production).
+
+### Pipeline Execution (Batch Tasks)
+
+To bypass network Round Trip Time (RTT), pipeline sequences together inside transaction contexts:
+
+```redis
+MULTI
+HSET invoice:101 status "paid"
+EXPIRE invoice:101 86400
+EXEC
+
+```
+
+*(Note: Unlike SQL transactions, `MULTI/EXEC` guarantees atomicity of execution sequence, but does not roll back previously successful commands if one middle statement fails syntax validation.)*
+
+### Telemetry & Metrics Analysis
+
+* `INFO memory` : Prints real-time RAM metrics (`used_memory_human`, `mem_fragmentation_ratio`).
+* `SLOWLOG GET 10` : Extracts the top 10 execution profiles running beyond the `slowlog-log-slower-than` microsecond threshold.
+
+```
+
+```

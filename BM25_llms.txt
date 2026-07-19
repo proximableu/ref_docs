@@ -1,0 +1,116 @@
+```markdown
+# Rank-BM25
+
+> Simple, lightweight Python collection of BM25 algorithms for document ranking and lexical search. Frequently deployed alongside dense vector databases to enable high-accuracy hybrid RAG retrieval architectures.
+
+Official Repository: https://github.com/dorianbrown/rank_bm25
+
+## Available BM25 Variants
+
+| Algorithm Class | Intended Use Case | Default Hyperparameters |
+| :--- | :--- | :--- |
+| **`BM25Okapi`** | Standard BM25 implementation. Best for general text retrieval tasks across evenly distributed corpora. | `k1=1.5`, `b=0.75`, `epsilon=0.25` |
+| **`BM25L`** | Tailored for long documents. Corrects BM25's natural penalty on document length by adding a constant delta parameter to term frequencies. | `k1=1.5`, `b=0.75`, `delta=0.5` |
+| **`BM25Plus`** | Mitigates the heavy document length bias where very long records are penalised disproportionately. Sets a minimum floor value for term frequency normalization. | `k1=1.5`, `b=0.75`, `delta=1.0` |
+
+## Core APIs & Working Mechanics
+
+The `rank_bm25` package **does not perform any internal text preprocessing** (e.g., lowercasing, stopword removal, stemming, or splitting). It operates strictly on pre-tokenized inputs.
+
+### Key API Methods
+- `get_scores(tokenized_query)`: Compares your processed query against the corpus and returns a flat NumPy array of float relevance scores mapping exactly to the input document index layout.
+- `get_top_n(tokenized_query, corpus, n)`: Directly returns the top `n` matching text entities or objects from the raw document collection.
+
+---
+
+## Production Patterns & Scaffolding
+
+### Standard Retrieval Scaffolding with Custom Pipeline
+```python
+import re
+from rank_bm25 import BM25Okapi
+
+# Raw document strings
+raw_documents = [
+    "PostgreSQL supports high-dimensional similarity search using the pgvector extension.",
+    "Docker Compose orchestrates multi-container application workloads cleanly.",
+    "Redis 7 introduces sharded pub/sub routing patterns and native engine functions."
+]
+
+def preprocess_text(text: str) -> list[str]:
+    """Applies strict tokenization, uniform lowercasing, and strips syntax punctuation."""
+    text = text.lower()
+    tokens = re.findall(r'\b\w+\b', text)
+    # Optional: Strip out common language stopwords here if necessary
+    return tokens
+
+# 1. Construct the tokenized dataset architecture
+tokenized_corpus = [preprocess_text(doc) for doc in raw_documents]
+
+# 2. Instantiate and fit the model index
+bm25 = BM25Okapi(tokenized_corpus, k1=1.5, b=0.75)
+
+# 3. Process incoming user inputs using the identical pipeline match constraints
+user_query = "Tell me about vector metrics inside Postgres"
+tokenized_query = preprocess_text(user_query)
+
+# 4. Fetch the highest matching document results
+top_docs = bm25.get_top_n(tokenized_query, raw_documents, n=1)
+print(top_docs)
+
+```
+
+### Hybrid Search Implementation Layout (Reciprocal Rank Fusion)
+
+In modern RAG pipelines, combining lexical text matching with vector space embeddings scales context performance. Reciprocal Rank Fusion (RRF) safely unifies dense rankings with BM25 outputs.
+
+```python
+from rank_bm25 import BM25Okapi
+import numpy as np
+
+def reciprocal_rank_fusion(dense_ranks: list[int], lexical_ranks: list[int], constant_k: int = 60) -> dict[int, float]:
+    """
+    Computes the standard RRF score to normalize structural rankings.
+    Arguments accept a list of unique document integer keys sorted by decreasing score.
+    """
+    rrf_scores = {}
+    
+    # Process dense embeddings rank list
+    for rank, doc_id in enumerate(dense_ranks):
+        rrf_scores[doc_id] = rrf_scores.get(doc_id, 0.0) + 1.0 / (constant_k + (rank + 1))
+        
+    # Process sparse lexical rank list
+    for rank, doc_id in enumerate(lexical_ranks):
+        rrf_scores[doc_id] = rrf_scores.get(doc_id, 0.0) + 1.0 / (constant_k + (rank + 1))
+        
+    # Sort documents by final fused structural weight
+    return dict(sorted(rrf_scores.items(), key=lambda item: item[1], reverse=True))
+
+# Implementation Flow Example:
+# 1. Fetch dense list from vector db: dense_ids = [2, 0, 1]
+# 2. Get BM25 raw vector output: scores = bm25.get_scores(tokenized_query)
+# 3. Sort array indicators: lexical_ids = list(np.argsort(scores)[::-1])
+# 4. Invoke hybrid balancer: consolidated_results = reciprocal_rank_fusion(dense_ids, lexical_ids)
+
+```
+
+---
+
+## Critical Traps & Anti-patterns
+
+* ❌ **Antipattern:** Passing single untokenized strings into the class index initialization phase: `BM25Okapi(["Hello world"])`.
+* ✅ **Modern Alternative:** Python evaluates raw strings as character arrays, causing the system to unintentionally index individual letters. Always structure arguments as a list of tokenized lists: `BM25Okapi([["hello", "world"]])`.
+
+
+* ❌ **Antipattern:** Mismatched pre-processing configurations between data storage maps and user queries.
+* ✅ **Modern Alternative:** The query parser **must replicate** the text modifications applied to the document database corpus perfectly. If you strip numeric tokens or apply word lemmatizers to the database, perform identical steps to the incoming user text query before computing scores.
+
+
+* ❌ **Antipattern:** Processing massive multi-gigabyte text corpora natively inside highly responsive, real-time application routes.
+* ✅ **Modern Alternative:** `rank_bm25` is an in-memory, single-threaded NumPy data frame construct. For millions of document matrices, migrate the data store layer onto high-throughput, memory-mapped vector engines (like `bm25s`), structured retrieval toolkits (`retriv`), or dedicated Elasticsearch installations.
+
+
+
+```
+
+```

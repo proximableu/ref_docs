@@ -1,0 +1,154 @@
+```markdown
+# Docker & Docker Compose
+
+> Open-source containerization engine and multi-container orchestration toolkit. Used to build, package, ship, and run application workloads inside isolated, lightweight OCI-compliant environments.
+
+Official Documentation: https://docs.docker.com
+
+## Dockerfile Directives Reference
+
+Optimize Dockerfile layouts to prioritize layer caching (putting rarely changing dependencies before frequently changing application source files) and minimize image size.
+
+| Directive | Syntax Example | Behavioral Rule & Best Practice |
+| :--- | :--- | :--- |
+| **`FROM`** | `FROM python:3.11-slim` | Defines the base image. Always pin explicit minor versions or immutable digests (`image@sha256:...`). Avoid `latest`. Prefer `slim`, `alpine`, or Google `distroless` for production targets. |
+| **`WORKDIR`** | `WORKDIR /app` | Sets the working directory for subsequent directives (`RUN`, `CMD`, `COPY`). Always use absolute paths. Automatically creates the directory if it does not exist. |
+| **`COPY`** | `COPY package.json ./` | Copies local files/directories into the container context. Use instead of `ADD` unless remote URLs or automatic tar extraction is explicitly required. |
+| **`RUN`** | `RUN apt-get update && apt-get install -y curl` | Executes commands in a new image layer. Group dependent shell commands with `&&` and clear installation caches in the *same* layer (`rm -rf /var/lib/apt/lists/*`) to reduce footprint. |
+| **`ENV`** | `ENV NODE_ENV=production` | Sets environment variables that persist both during the build phases and throughout container runtime execution. |
+| **`EXPOSE`** | `EXPOSE 8080` | Documentational metadata flag indicating the ports the container listens on at runtime. Does *not* actually publish or bind ports to the host machine. |
+| **`VOLUME`** | `VOLUME ["/data"]` | Creates a managed mount point for persistent or shared data. Caution: Any build steps occurring *after* a `VOLUME` declaration cannot modify files inside that directory paths. |
+| **`ENTRYPOINT`**| `ENTRYPOINT ["python"]` | Configures the main container executable. Use the **Exec form** (square brackets) instead of the Shell form to ensure system signals (`SIGTERM`) pass down correctly. |
+| **`CMD`** | `CMD ["main.py"]` | Provides default arguments for the `ENTRYPOINT` or sets a default command if no `ENTRYPOINT` is defined. Overwritten entirely if arguments are appended to the `docker run` command. |
+
+---
+
+## Docker Compose Specification Rules
+
+Docker Compose manages multi-container environments using a declarative YAML structure.
+
+> ⚠️ **The `version` Field is Obsolete:** In the modern Compose Specification (Compose V2+), the top-level `version` attribute (e.g., `version: '3.8'`) is deprecated and ignored. Omit it entirely from `docker-compose.yml` to prevent terminal validation warnings.
+
+### Service Configurations
+*   **`ports`**: Maps host ports to container ports (`"host:container"`). Always wrap values in explicit string quotes (e.g., `"8080:80"`) to prevent YAML parsers from evaluating colon-separated numbers as base-60 integers.
+*   **`volumes`**: Mounts host paths (`./data:/app/data`) or declares named volumes (`db_data:/var/lib/postgresql/data`). Named volumes must be registered in the root-level `volumes:` section.
+*   **`networks`**: Groups containers into isolated virtual networks. Containers connected to the same custom network can communicate dynamically using their `service_name` as the DNS hostname.
+*   **`depends_on`**: Dictates container startup ordering. Use the long-form declaration with a `condition: service_healthy` check to guarantee dependency health before downstream containers spawn.
+
+---
+
+## Production Patterns & Scaffolding
+
+### Optimized Multi-Stage Dockerfile (Node.js Build Example)
+Multi-stage builds decouple build dependencies from the final lean runtime layer.
+
+```dockerfile
+# --- Stage 1: Build & Dependency Resolution ---
+FROM node:20-alpine AS builder
+WORKDIR /usr/src/app
+
+# Copy dependency manifests first to leverage layer cache
+COPY package*.json ./
+RUN npm ci
+
+# Copy application logic and build static assets
+COPY . .
+RUN npm run build
+
+# --- Stage 2: Minimal Production Runtime ---
+FROM node:20-alpine AS runner
+WORKDIR /usr/src/app
+
+# Enforce secure, non-root execution context
+USER node
+
+# Copy runtime assets and production-only dependencies from stage 1
+COPY --chown=node:node package*.json ./
+RUN npm ci --only=production
+COPY --chown=node:node --from=builder /usr/src/app/dist ./dist
+
+EXPOSE 3000
+ENV NODE_ENV=production
+
+CMD ["node", "dist/main.js"]
+
+```
+
+### Modern Docker Compose Architecture Layout (`docker-compose.yml`)
+
+```yaml
+name: core-application-stack
+
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: app_user
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    networks:
+      - internal_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:3000"
+    environment:
+      DATABASE_HOST: database
+      NODE_ENV: production
+    secrets:
+      - db_password
+    networks:
+      - internal_network
+    depends_on:
+      database:
+        condition: service_healthy
+
+volumes:
+  pg_data:
+
+networks:
+  internal_network:
+    driver: bridge
+
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt
+
+```
+
+---
+
+## Core CLI Cheat Sheet
+
+### Image and Container Operations
+
+* `docker buildx build -t app:v1 .` : Builds a standardized OCI image using the modern BuildKit engine.
+* `docker run --rm -it -p 8080:3000 --env-file .env app:v1` : Runs an ephemeral interactive container, matching host port 8080 to container port 3000, importing environmental sets.
+* `docker exec -it container_name sh` : Attaches an interactive shell diagnostic terminal into an actively running target container.
+* `docker logs --tail 100 -f container_name` : Streams the trailing 100 stdout/stderr system log lines from a targeted resource.
+
+### Compose Orchestration Workflow
+
+* `docker compose up -d` : Parses the current path configuration, sets up missing network layers/volumes, and runs services background-detached.
+* `docker compose up -d --build --remove-orphans` : Rebuilds code updates on the fly and deletes old legacy containers no longer documented in the file blueprint.
+* `docker compose down -v` : Completely stops service states, tears down internal infrastructure networks, and wipes out all declared internal named volumes.
+* `docker compose config` : Validates, parses, and prints the fully expanded runtime schema architecture engine structure without starting services.
+
+### System Hygiene
+
+* `docker system prune -a --volumes` : Force sweeps and purges all stopped container allocations, unused networks, dangling build caches, and unreferenced local data volumes.
+
+```
+
+```

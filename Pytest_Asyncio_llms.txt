@@ -1,0 +1,146 @@
+```markdown
+# Pytest-Asyncio
+
+> Testing extension framework designed to coordinate asynchronous Python test execution environments and cleanly manage non-blocking context lifecycles.
+
+Official Documentation: https://pytest-asyncio.readthedocs.io/
+
+## Configuration Rules (`pyproject.toml`)
+
+Configure `pytest-asyncio` explicitly to operate in `auto` mode. This forces the system to auto-detect async test coroutines and async fixtures without requiring repetitive decorator boilerplate.
+
+```toml
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+# Explicitly declare default event loop scoping behavior for fixtures
+asyncio_default_fixture_loop_scope = "function"
+
+```
+
+| Configuration Parameter | Target Option | Functional Outcome |
+| --- | --- | --- |
+| **`asyncio_mode`** | `auto` | Automates collection of all async test targets. |
+| **`asyncio_default_fixture_loop_scope`** | `function` / `session` | Aligns fixture caching limits with loop contexts. |
+
+---
+
+## Complete Database & HTTP Integration Test Blueprint
+
+When testing asynchronous database engines (like SQLAlchemy 2.0 using `asyncpg`) alongside an API stack (FastAPI via `httpx`), you must ensure your transactions auto-rollback at the end of every individual test execution block to keep the data layer pristine.
+
+### File: `tests/conftest.py`
+
+```python
+import pytest
+import pytest_asyncio
+from httpx import AsyncClient, ASGITransport
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+
+from my_app.main import app
+from my_app.database import Base
+
+TEST_DB_URL = "postgresql+asyncpg://user:pass@localhost:5432/test_db"
+
+@pytest_asyncio.fixture(scope="session", autouse=True)
+async def setup_test_schema():
+    """Builds the complete physical schema structure once per suite execution pass."""
+    engine = create_async_engine(TEST_DB_URL)
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    yield
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.drop_all)
+    await engine.dispose()
+
+@pytest_asyncio.fixture
+async def db_session() -> AsyncSession:
+    """Yields an isolated, transaction-wrapped database session that auto-rolls back."""
+    engine = create_async_engine(TEST_DB_URL)
+    session_factory = async_sessionmaker(bind=engine, expire_on_commit=False)
+    
+    async with session_factory() as session:
+        async with session.begin():  # Structural context manager enforces safe rollback
+            yield session
+    await engine.dispose()
+
+@pytest_asyncio.fixture
+async def client() -> AsyncClient:
+    """Provides an in-process ASGITransport client wrapper bypassing physical socket layers."""
+    async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac:
+        yield ac
+
+```
+
+### File: `tests/test_endpoints.py`
+
+```python
+from httpx import AsyncClient
+from sqlalchemy.ext.asyncio import AsyncSession
+from my_app.models import DocumentChunk
+
+# NOTE: In 'auto' mode, explicit @pytest.mark.asyncio annotations are not required.
+async def test_create_and_retrieve_chunk(client: AsyncClient, db_session: AsyncSession):
+    # 1. Arrange: Prep raw database state using the injected async session
+    mock_chunk = DocumentChunk(text="Vector metadata index block", status="pending")
+    db_session.add(mock_chunk)
+    await db_session.flush() # Sync state with DB without committing the boundary transaction
+    
+    # 2. Act: Trigger the mock target endpoint
+    response = await client.get(f"/api/v1/chunks/{mock_chunk.id}")
+    
+    # 3. Assert: Verify the execution properties match expectations
+    assert response.status_code == 200
+    assert response.json()["text"] == "Vector metadata index block"
+
+```
+
+---
+
+## Mocking Asynchronous Code Components
+
+Standard unittest `Mock` constructs cannot handle step execution intervals across non-blocking code spaces. Always deploy `unittest.mock.AsyncMock` when intercepting internal asynchronous pipelines.
+
+```python
+from unittest.mock import AsyncMock
+import pytest
+from my_app.services import VectorSearchService
+
+async def test_rag_retrieval_flow(mocker):
+    # Construct an AsyncMock to replicate internal await actions cleanly
+    mock_ollama_client = AsyncMock()
+    mock_ollama_client.generate.return_value = {"response": "Synthesized summary response."}
+    
+    # Inject mock targets into active processing managers
+    service = VectorSearchService(llm_client=mock_ollama_client)
+    result = await service.summarize_chunks(chunk_ids=[1, 2, 3])
+    
+    assert result == "Synthesized summary response."
+    mock_ollama_client.generate.assert_awaited_once()
+
+```
+
+---
+
+## Critical Execution Traps & Antipatterns
+
+* ❌ **Antipattern:** Overriding or redefining the legacy global `event_loop` fixture structure inside your `conftest.py` layout.
+* ✅ **Modern Alternative:** This pattern is completely deprecated. If specialized custom loops are required for execution testing groups, use the modern `pytest_asyncio_loop_factories` hook layout.
+
+
+* ❌ **Antipattern:** Encountering a runtime crash: `RuntimeError: Task attached to a different loop`.
+* ✅ **Modern Alternative:** This occurs when a broadly scoped async fixture (e.g., `scope="session"`) sets up connections, but a more granularly scoped test function tries to access them over a brand new event loop lifecycle. Ensure your connection targets and your execution test scopes share matching lifetimes.
+
+
+* ❌ **Antipattern:** Passing explicit `scope="..."` arguments into structural `@pytest.mark.asyncio` target attributes.
+* ✅ **Modern Alternative:** The `scope` positional or keyword target parameter is deprecated within test markers. Always supply the alternative `loop_scope="..."` mapping parameter to declare loop persistence constraints.
+
+
+* ❌ **Antipattern:** Using raw synchronous decorators `@pytest.fixture` over an `async def` function payload.
+* ✅ **Modern Alternative:** In `strict` mode, this will crash runtime evaluation spaces. Always use the explicitly targeted `@pytest_asyncio.fixture` directive when composing non-blocking data setups to keep teardown actions isolated.
+
+
+
+```
+
+```
